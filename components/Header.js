@@ -5,10 +5,6 @@ class Header extends Component {
 
 
   render() {
-    const test = this.props.showSubmitForm;
-
-    console.log(test);
-
     return (
       <section className={styles.header}>
         <div>
