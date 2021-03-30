@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Header from '../components/Header'
 import Content from '../components/Content'
 import SubmitForm from '../components/SubmitForm'
+import Player from '../components/Player'
 import React, { Component } from 'react';
 
 
@@ -37,6 +38,7 @@ class Home extends Component {
 
         <main>
           <Header showSubmitForm={this.showSubmitForm}/>
+          <Player />
           <Content />
           <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
             <p>SubmitForm</p>
