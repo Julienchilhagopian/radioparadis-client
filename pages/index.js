@@ -20,11 +20,12 @@ class Home extends Component {
     this.hideSubmitForm = this.hideSubmitForm.bind(this);
   }
 
-  showSubmitForm = () => {
+  showSubmitForm = (e) => {
     this.setState({ show: true });
   };
 
-  hideSubmitForm = () => {
+  hideSubmitForm = (e) => {
+    console.log(e.stopPropagation());
     this.setState({ show: false });
   };
 
