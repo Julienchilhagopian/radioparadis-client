@@ -1,3 +1,6 @@
+@import 'variables';
+
+
 .modal {
   position: fixed;
   overflow: hidden;
@@ -28,10 +31,34 @@
 .formContent {
   display: flex; 
   flex-direction: column;
+  align-items: center;
 }
 
 .formContent input {
-  margin-bottom: 20px;
+  display: block;
+  width: 90%;
+  font-size: 14pt;
+  line-height: 28pt;
+  margin-bottom: 38px;
+  border: none;
+  border-bottom: 3px solid black;
+  min-width: 250px;
+  padding-left: 5px;
+  outline: none;
+  color: black;
+}
+
+.formContent input#comment {
+  margin-bottom: 40px;
+}
+
+
+.formContent input:focus {
+  border-bottom: 3px solid $btn-color;
+}
+
+.formContent button {
+  width: 300px;
 }
 
 .displayOn {
@@ -46,8 +73,16 @@
   display: none;
 }
 
+.ant-modal-title {
+  font-size: 44px;
+  line-height: 45px;
+  padding-left: 25px;
+  padding-top: 39px;
+}
+
 .ant-modal-header {
   border-radius: 30px 30px 0px 0px;
+  border-bottom: none;
 }
 
 .ant-modal-content {
@@ -55,6 +90,6 @@
 }
 
 .ant-modal-footer {
-  border-top: none;
+  display: none;
 }
 

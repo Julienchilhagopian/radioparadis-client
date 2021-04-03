@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 45px;
 }
 
 .radioname {
@@ -10,14 +11,3 @@
   text-transform: uppercase;
 }
 
-.songRequestBtn {
-  background-color: #FFA07A;
-  border: none;
-  color: white;
-  padding: 19px 18px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 11px;
-}

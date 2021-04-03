@@ -13,7 +13,7 @@ class Header extends Component {
         </div>
 
         <div>
-          <button className={styles.songRequestBtn} onClick={this.props.showSubmitForm}>Proposer une musique !</button>
+          <button className='requestBtn' onClick={this.props.showSubmitForm}>Proposer une musique !</button>
         </div>
       </section>
     )
