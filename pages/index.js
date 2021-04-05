@@ -25,7 +25,6 @@ class Home extends Component {
   };
 
   hideSubmitForm = (e) => {
-    console.log(e.stopPropagation());
     this.setState({ show: false });
   };
 
