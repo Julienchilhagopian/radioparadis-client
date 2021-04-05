@@ -6,9 +6,12 @@ class SubmitForm extends Component {
   registerSong = async (event) => {
     event.preventDefault()
 
-    const res = await fetch('/api/registerSong', {
+    const res = await fetch('/api/register-song', {
       body: JSON.stringify({
-        name: event.target.name.value
+        name: event.target.name.value, 
+        street: event.target.name.street, 
+        link: event.target.name.link,
+        comment: event.target.name.comment
       }),
       headers: {
         'Content-Type': 'application/json'
