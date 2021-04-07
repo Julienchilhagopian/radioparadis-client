@@ -1,24 +1,32 @@
-import mysql from 'serverless-mysql'
+const { Pool } = require('pg');
 
-export const db = mysql({
-  config: {
-    host: process.env.MYSQL_HOST,
-    database: process.env.MYSQL_DATABASE,
-    user: process.env.MYSQL_USERNAME,
-    password: process.env.MYSQL_PASSWORD,
-    port: parseInt(process.env.MYSQL_PORT),
-  },
+// Inialisation de la connexion
+const pool = new Pool({
+	user:  process.env.DB_USER,
+	host:  process.env.DB_HOST,
+	database: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	port: process.env.DB_PORT, 
 })
 
-export async function query(
-  q,
-  values = []
-) {
-  try {
-    const results = await db.query(q, values)
-    await db.end()
-    return results
-  } catch (e) {
-    throw Error(e.message)
-  }
+export async function executeQuery(sql, params, callback) {
+  // 1. Connection
+  pool.connect((err, client, done) => {
+    if(err) {
+      return console.error('error fetching client from pool', err)
+    }
+    // 2. Execute the query
+    client.query(sql, params, (err, result) => {
+      // 3. Close Connection
+      done();
+
+      if (err) {
+        console.log(err);
+      }
+      else {
+        // 4. Execute the callback(res)
+        callback(result)
+      }
+    })
+  });
 }
