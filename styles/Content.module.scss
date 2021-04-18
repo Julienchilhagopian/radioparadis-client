@@ -1,6 +1,5 @@
 .content {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 
 .chat {
@@ -8,17 +7,11 @@
   height: 650px;
 }
 
-
-.about {
-  width: 70%;
-  text-align: justify;
+.logo {
+  margin-bottom: 30px;
 }
 
-.about p {
-  line-height: 40px;
-}
 
-.about h1 {
-  font-size: 25px;
-  margin-bottom: 13px;
+.album img {
+  border-radius: 25px;
 }

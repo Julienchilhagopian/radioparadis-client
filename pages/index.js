@@ -37,12 +37,12 @@ class Home extends Component {
         </Head>
 
         <main>
-          <Header showSubmitForm={this.showSubmitForm}/>
-          <Player />
-          <Content />
-          <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
-            <p>SubmitForm</p>
-          </SubmitForm>
+            <Header />
+            <Content showSubmitForm={this.showSubmitForm}/>
+            <Player />
+            <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
+              <p>SubmitForm</p>
+            </SubmitForm>
         </main>
       </div>
     )

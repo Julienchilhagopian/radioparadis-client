@@ -3,21 +3,32 @@ import React, { Component } from 'react';
 
 class Header extends Component {
 
+  getDate() {
+    return new Date();
+  }
 
   render() {
+    let currentMood;
+    console.log(this.getDate());
+
+    if(this.getDate().getHours() >= 7 && this.getDate().getHours() < 10) {
+      currentMood =  <h3>07h00 - 10h00 : Musique de douche.</h3>;
+    } else if (this.getDate().getHours() >= 10 && this.getDate().getHours() < 19) {
+      currentMood =  <h3>10h00 - 19h00 : Musique du monde.</h3>;
+    } else {
+      currentMood = <h3>19h00 - 00h00 : Musique de bouge.</h3>; 
+    }
+
     return (
       <section className={styles.header}>
-        <div>
-          <h1 className={styles.radioname}>radio paradis</h1>
-          <p>Née au coeur du 10ème arrondissement, tournée vers le monde.</p>
-        </div>
+        {currentMood}
 
-        <div>
+        {/* <div>
           <button className='requestBtn' onClick={this.props.showSubmitForm}>Proposer une musique !</button>
-        </div>
+        </div> */}
       </section>
     )
-  }
+  } 
 }
 
 export default Header
