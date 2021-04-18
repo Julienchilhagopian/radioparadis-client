@@ -1,5 +1,6 @@
 import styles from '../styles/Player.module.scss'
 import React, { Component } from 'react';
+import Ticker from 'react-ticker'
 
 class Player extends Component {
 
@@ -27,7 +28,15 @@ class Player extends Component {
           <button onClick={this.togglePlay} className={this.state.isPlaying ? (styles.playBtn + " " + styles.paused) : styles.playBtn }></button>
         </div>
         <div className={styles.currentInfos}>
-          <h1 className={styles.songInfo}>PORTICO QUARTET - Knee deep in the north sea</h1>
+          <div className={styles.tickerContainer}>
+            <Ticker>
+              {({ index }) => (
+                <>   
+                  <h1>PORTICO QUARTET Knee deep in the north sea </h1>
+                </> 
+              )}
+            </Ticker>
+          </div>
           <h2 className={styles.albumInfo}>Knee deep in the north sea</h2>
         </div>
       </section>

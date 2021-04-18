@@ -39,20 +39,10 @@
   }
 }
 
+.tickerContainer {
+  width: 700px;
+}
+
 .currentInfos {
   overflow: hidden;
 }
-
-.songInfo {
-  display: inline-block;
-  white-space: nowrap;
-  animation: floatText 10s infinite linear;
-  padding-left: 10%;
-}
-
-@keyframes floatText {
-  to {
-    transform: translateX(-60%);
-  }
-}
-
