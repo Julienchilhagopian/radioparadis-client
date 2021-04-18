@@ -23,12 +23,12 @@ class Player extends Component {
   render() {
     return (
       <section className={styles.player}>
-        <div>
+        <div className={styles.playContainer}>
           <button onClick={this.togglePlay} className={this.state.isPlaying ? (styles.playBtn + " " + styles.paused) : styles.playBtn }></button>
         </div>
         <div className={styles.currentInfos}>
-          <h1>PORTICO QUARTET - Knee deep in the north see</h1>
-          <h2>Knee deep in the north see</h2>
+          <h1 className={styles.songInfo}>PORTICO QUARTET - Knee deep in the north sea</h1>
+          <h2 className={styles.albumInfo}>Knee deep in the north sea</h2>
         </div>
       </section>
     )

@@ -10,8 +10,8 @@
   align-items: center;
 }
 
-.currentInfos {
-
+.playContainer {
+  padding-left: 20px;
 }
 
 .playBtn {
@@ -38,3 +38,21 @@
     border-color: transparent transparent transparent #404040;
   }
 }
+
+.currentInfos {
+  overflow: hidden;
+}
+
+.songInfo {
+  display: inline-block;
+  white-space: nowrap;
+  animation: floatText 10s infinite linear;
+  padding-left: 10%;
+}
+
+@keyframes floatText {
+  to {
+    transform: translateX(-60%);
+  }
+}
+

@@ -8,7 +8,7 @@ class Content extends Component {
     return (
       <section className={styles.content}>
         <div className={styles.logo}>
-          <Image src="/../public/logo-mini.png" alt="Logo" width="110" height="115"/>
+          <Image src="/../public/logo-mini.png" alt="Logo" width="85" height="90"/>
         </div>
         <div className={styles.album}>
           <Image src="/../public/Kokoroko.jpeg" alt="Logo" width="320" height="320"/>
