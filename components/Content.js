@@ -12,11 +12,13 @@ class Content extends Component {
     this.div.appendChild(script);  
   }
 
+ // className={this.props.isPlaying ? (styles.logo + " " + styles.paused) : styles.logo }
+
   render() {
     return (
       <section className={styles.content}>
         <div className={styles.logo}>
-          <Image src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
+          <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
         </div>
         <div className={styles.album}>
           <Image src="/../public/Kokoroko.jpeg" alt="Logo" width="320" height="320"/>

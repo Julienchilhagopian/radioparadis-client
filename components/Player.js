@@ -7,25 +7,25 @@ class Player extends Component {
   constructor() {
     super();
 
-    this.state = {
-      isPlaying: false
-    };
+    // this.state = {
+    //   isPlaying: false
+    // };
 
-    this.togglePlay = this.togglePlay.bind(this);
+    //this.togglePlay = this.togglePlay.bind(this);
   }
 
 
-  togglePlay() {
-    this.setState(prevState => ({
-      isPlaying: !prevState.isPlaying
-    }));
-  }
+  // togglePlay() {
+  //   this.setState(prevState => ({
+  //     isPlaying: !prevState.isPlaying
+  //   }));
+  // }
   
   render() {
     return (
       <section className={styles.player}>
         <div className={styles.playContainer}>
-          <button onClick={this.togglePlay} className={this.state.isPlaying ? (styles.playBtn + " " + styles.paused) : styles.playBtn }></button>
+          <button onClick={this.props.togglePlay} className={this.props.isPlaying ? (styles.playBtn + " " + styles.paused) : styles.playBtn }></button>
         </div>
         <div className={styles.currentInfos}>
           <div className={styles.tickerContainer}>

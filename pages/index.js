@@ -13,11 +13,13 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      show: false
+      show: false, 
+      isPlaying: false
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
     this.hideSubmitForm = this.hideSubmitForm.bind(this);
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   showSubmitForm = (e) => {
@@ -27,6 +29,12 @@ class Home extends Component {
   hideSubmitForm = (e) => {
     this.setState({ show: false });
   };
+
+  togglePlay = () => {
+    this.setState(prevState => ({
+      isPlaying: !prevState.isPlaying
+    }));
+  }
 
   render(){
     return (
@@ -38,8 +46,8 @@ class Home extends Component {
 
         <main>
             <Header />
-            <Content showSubmitForm={this.showSubmitForm}/>
-            <Player />
+            <Content showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying}/>
+            <Player togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>
             </SubmitForm>
