@@ -11,7 +11,7 @@
 }
 
 .playContainer {
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .playBtn {
@@ -43,6 +43,16 @@
   width: 700px;
 }
 
+.tickerContainer h1 {
+  padding-left: 75px;
+}
+
+.currentInfos h2 {
+  text-align: right;
+  margin-right: 10px;
+}
+
 .currentInfos {
   overflow: hidden;
+  padding-left: 10px;
 }

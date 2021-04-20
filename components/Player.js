@@ -32,7 +32,7 @@ class Player extends Component {
             <Ticker>
               {({ index }) => (
                 <>   
-                  <h1>PORTICO QUARTET Knee deep in the north sea </h1>
+                  <h1>PORTICO QUARTET - Knee deep in the north sea</h1>
                 </> 
               )}
             </Ticker>
