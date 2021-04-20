@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 class Content extends Component {
 
   componentDidMount() {
-    console.log("hello");
     const script = document.createElement("script");    
     script.async = true;    
     script.src = "http://tlk.io/embed.js";  
