@@ -12,8 +12,6 @@ class Content extends Component {
     this.div.appendChild(script);  
   }
 
- // className={this.props.isPlaying ? (styles.logo + " " + styles.paused) : styles.logo }
-
   render() {
     return (
       <section className={styles.content}>

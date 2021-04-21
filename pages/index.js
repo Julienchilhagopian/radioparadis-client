@@ -14,7 +14,10 @@ class Home extends Component {
     super();
     this.state = {
       show: false, 
-      isPlaying: false
+      isPlaying: false, 
+      isMorning: false, 
+      isDay: false, 
+      isNight: false
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -36,6 +39,47 @@ class Home extends Component {
     }));
   }
 
+
+  getTime() {
+    return new Date();
+  }
+
+  updateTime(time) {
+    if(time.getHours() >= 7 && time.getHours() < 10) {
+      this.setState({
+        isMorning: true, 
+        isDay: false, 
+        isNight: false
+      });
+   } else if (time.getHours() >= 10 && time.getHours() < 19) {
+      this.setState({
+        isMorning: false, 
+        isDay: true, 
+        isNight: false
+      });
+   } else {
+      this.setState({
+        isMorning: false, 
+        isDay: false, 
+        isNight: true
+      });
+   }
+  }
+
+  componentDidMount(){
+    let time = this.getTime();
+    this.updateTime(time);
+
+    window.setInterval(function () {
+      time = this.getTime();
+      this.updateTime(time)
+    }.bind(this), 5000);
+ }
+
+  componentWillUnmount() {
+    clearInterval(window);
+  }
+
   render(){
     return (
       <div>
@@ -45,7 +89,7 @@ class Home extends Component {
         </Head>
 
         <main>
-            <Header />
+            <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
             <Content showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying}/>
             <Player togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
