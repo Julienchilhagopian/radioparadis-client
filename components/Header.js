@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 
 class Header extends Component {
 
-  getDate() {
-    return new Date();
-  }
-
   render() {
     let currentMood;
 
@@ -20,7 +16,14 @@ class Header extends Component {
 
     return (
       <section className={styles.header}>
-        {currentMood}
+        <div className={styles.singleMood}>
+          {currentMood}
+        </div>
+        <div className={styles.multipleMood}>
+          <h3>07h00 - 10h00 : Musique de douche.</h3>
+          <h3>10h00 - 19h00 : Musique du monde.</h3>
+          <h3>19h00 - 00h00 : Musique de bouge.</h3>
+        </div>
 
         {/* <div>
           <button className='requestBtn' onClick={this.props.showSubmitForm}>Proposer une musique !</button>
