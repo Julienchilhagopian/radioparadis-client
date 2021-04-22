@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.chat {
-  width: 100%;
-  height: 650px;
-}
 
 .logo {
   margin-bottom: 30px;
@@ -19,11 +15,29 @@
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
+.album {
+  margin-bottom: 5px
+}
+
 .album img {
   border-radius: 25px;
 }
 
+.request {
+  margin-bottom: 35px;
+}
 
-#tlkio {
-  height: 400px;
+
+.chat {
+  width: 100%;
+  height: 460px;
+  max-width: 320px;
+  margin: 0 auto;
+  border: 4px solid;
+  margin-bottom: 26px;
+}
+
+
+.footer {
+  padding-bottom: 125px ;
 }

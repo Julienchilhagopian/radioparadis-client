@@ -19,15 +19,19 @@ class Content extends Component {
           <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
         </div>
         <div className={styles.album}>
-          <Image src="/../public/Kokoroko.jpeg" alt="Logo" width="320" height="320"/>
+          <Image src="/../public/Kokoroko.jpeg" alt="Logo" width="300" height="300"/>
         </div>
-        <div className={styles.radiopitch}>
+        <div>
           <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
         </div>
 
-        <div className="chatContainer">
-          <div id="tlkio" data-channel="radioparadis"></div>
+        <div className={styles.chatContainer}>
+          <div className={styles.chat} id="tlkio" data-channel="radioparadis"></div>
           <div className="chat" ref={el => (this.div = el)}></div>
+        </div>
+
+        <div className={styles.footer}>
+          <p>Rue de Paradis, 10ème arrondissement.</p>
         </div>
 
       </section>
