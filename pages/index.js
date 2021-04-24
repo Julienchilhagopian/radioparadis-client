@@ -89,12 +89,14 @@ class Home extends Component {
         </Head>
 
         <main>
+          <section className={styles.home}>
             <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
             <Content showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying}/>
             <Player togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>
             </SubmitForm>
+          </section>
         </main>
       </div>
     )

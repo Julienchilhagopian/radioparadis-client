@@ -15,15 +15,31 @@ class Content extends Component {
   render() {
     return (
       <section className={styles.content}>
-        <div className={styles.logo}>
-          <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
-        </div>
-        <div className={styles.album}>
-          <Image src="/../public/Kokoroko.jpeg" alt="Logo" width="300" height="300"/>
-        </div>
-        <div>
-          <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
-        </div>
+        <section className={styles.musicContent}>
+          <div className={styles.mobileLogo}>
+            <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
+          </div>
+          <div className={styles.album}>
+            <Image src="/../public/Kokoroko.jpeg" alt="Logo" width={300} height={300}/>
+          </div>
+
+          <div className={styles.radioControls}>
+            <div className={styles.desktopLogo}>
+              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
+            </div> 
+
+            <div className={styles.radioPitch}>
+              <p>La radio d'un quartier.</p>
+              <p>En ces temps imparfaits.</p>
+              <p>La musique comme usage du monde.</p>
+              <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
+            </div>
+
+            <div className={styles.desktopPlayer}>
+              <p>PLAYER</p>
+            </div>
+          </div>
+        </section>
 
         <div className={styles.chatContainer}>
           <div className={styles.chat} id="tlkio" data-channel="radioparadis"></div>

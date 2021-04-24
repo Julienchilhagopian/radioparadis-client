@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.logo {
+.mobileLogo {
   margin-bottom: 30px;
 }
 
@@ -14,7 +14,7 @@
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .album {
-  margin-bottom: 5px
+  margin-bottom: 13px;
 }
 
 .album img {
@@ -36,4 +36,58 @@
 
 .footer {
   padding-bottom: 125px ;
+}
+
+.desktopLogo {
+  display: none;
+}
+
+.desktopPlayer {
+  display: none;
+}
+
+.radioControls {
+  display: unset;
+}
+
+
+@media (min-width: 767px){ 
+
+  .chatContainer {
+    display: none;
+  }
+
+  .mobileLogo {
+    display: none; 
+  }
+ 
+  .musicContent {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+
+  .radioControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .desktopLogo {
+    display: unset;
+  }
+
+  .album img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .footer {
+    padding: unset;
+  }
+
+  .desktopPlayer {
+    display: unset;
+  }
+
 }
