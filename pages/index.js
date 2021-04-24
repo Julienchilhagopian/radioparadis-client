@@ -90,8 +90,12 @@ class Home extends Component {
 
         <main>
           <section className={styles.home}>
-            <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
-            <Content showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying}/>
+            <div className={styles.frame}>
+              <div className={styles.frameContent}>
+                <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
+                <Content showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying}/>
+              </div>
+            </div>
             <Player togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>

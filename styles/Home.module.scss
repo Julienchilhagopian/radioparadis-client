@@ -1,6 +1,20 @@
 
+.frame {
+  background-color: unset
+}
+
 @media (min-width: 767px){ 
-  .home {
-    border: 1px solid black;
+  .frame {
+    background-color:  #c0853acc;
+    padding: 60px 80px 60px 80px;
+    height: 115vh;
   }
+
+  .frameContent {
+    background-color:  white;
+    border-radius: 30px;
+    padding: 30px;
+  }
+
+
 }

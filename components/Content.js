@@ -47,7 +47,7 @@ class Content extends Component {
         </div>
 
         <div className={styles.footer}>
-          <p>Rue de Paradis, 10ème arrondissement.</p>
+          <h3>Rue de Paradis, 10ème arrondissement.</h3>
         </div>
 
       </section>
