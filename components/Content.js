@@ -17,15 +17,15 @@ class Content extends Component {
       <section className={styles.content}>
         <section className={styles.musicContent}>
           <div className={styles.mobileLogo}>
-            <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
+            <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width={85} height={85}/>
           </div>
           <div className={styles.album}>
-            <Image src="/../public/Kokoroko.jpeg" alt="Logo" width={300} height={300}/>
+            <Image src="/../public/Kokoroko.jpeg" alt="Logo" width={400} height={400}/>
           </div>
 
           <div className={styles.radioControls}>
             <div className={styles.desktopLogo}>
-              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width="85" height="85"/>
+              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width={130} height={130}/>
             </div> 
 
             <div className={styles.radioPitch}>

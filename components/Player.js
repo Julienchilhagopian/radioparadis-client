@@ -1,6 +1,7 @@
 import styles from '../styles/Player.module.scss'
 import React, { Component } from 'react';
 import Ticker from 'react-ticker'
+import PlayBtn from './PlayBtn';
 
 class Player extends Component {
 
@@ -24,9 +25,7 @@ class Player extends Component {
   render() {
     return (
       <section className={styles.player}>
-        <div className={styles.playContainer}>
-          <button onClick={this.props.togglePlay} className={this.props.isPlaying ? (styles.playBtn + " " + styles.paused) : styles.playBtn }></button>
-        </div>
+        <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
         <div className={styles.currentInfos}>
           <div className={styles.tickerContainer}>
             <Ticker>
