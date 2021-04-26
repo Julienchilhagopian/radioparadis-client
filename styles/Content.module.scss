@@ -49,10 +49,6 @@
   margin-bottom: 30px;
 }
 
-.desktopPlayer {
-  display: none;
-}
-
 .radioControls {
   display: unset;
 }
@@ -75,6 +71,10 @@
     padding-top: 40px;
     padding-bottom: 40px;
     align-items: center;
+  }
+
+  .album {
+    margin-bottom: unset;
   }
 
   .album img {

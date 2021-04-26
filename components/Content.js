@@ -1,6 +1,7 @@
 import styles from '../styles/Content.module.scss'; 
 import Image from 'next/image'
 import React, { Component } from 'react';
+import DesktopPlayer from './DesktopPlayer';
 
 class Content extends Component {
 
@@ -25,7 +26,7 @@ class Content extends Component {
 
           <div className={styles.radioControls}>
             <div className={styles.desktopLogo}>
-              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width={130} height={130}/>
+              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width={135} height={135}/>
             </div> 
 
             <div className={styles.radioPitch}>
@@ -35,9 +36,7 @@ class Content extends Component {
               <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
             </div>
 
-            <div className={styles.desktopPlayer}>
-              <p>PLAYER</p>
-            </div>
+            <DesktopPlayer togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
           </div>
         </section>
 

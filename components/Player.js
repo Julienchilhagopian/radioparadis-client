@@ -7,20 +7,7 @@ class Player extends Component {
 
   constructor() {
     super();
-
-    // this.state = {
-    //   isPlaying: false
-    // };
-
-    //this.togglePlay = this.togglePlay.bind(this);
   }
-
-
-  // togglePlay() {
-  //   this.setState(prevState => ({
-  //     isPlaying: !prevState.isPlaying
-  //   }));
-  // }
   
   render() {
     return (
