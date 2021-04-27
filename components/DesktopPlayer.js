@@ -1,7 +1,7 @@
 import styles from '../styles/DesktopPlayer.module.scss'
 import React, { Component } from 'react';
-import Ticker from 'react-ticker'
 import PlayBtn from './PlayBtn';
+import RadioTicker from './RadioTicker'
 
 class DesktopPlayer extends Component {
 
@@ -15,15 +15,7 @@ class DesktopPlayer extends Component {
         <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
         <div className={styles.desktopPlayerContent}>
           <div className={styles.musicInfos}>
-            <div className={styles.tickerContainer}>
-              <Ticker>
-                {({ index }) => (
-                  <>   
-                    <h1>PORTICO QUARTET - Knee deep in the north sea</h1>
-                  </> 
-                )}
-              </Ticker>
-            </div>
+            <RadioTicker />
             <h2 className={styles.albumInfo}>Knee deep in the north sea</h2>
           </div>
          <div className={styles.enDirect}>
