@@ -1,0 +1,11 @@
+
+.side {
+  display: none;
+}
+
+@media (min-width: 767px){ 
+  .side {
+    display: unset;
+  }
+
+}

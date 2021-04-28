@@ -6,6 +6,7 @@ import Content from '../components/Content'
 import SubmitForm from '../components/SubmitForm'
 import Player from '../components/Player'
 import React, { Component } from 'react';
+import Side from '../components/Side'
 
 
 class Home extends Component {
