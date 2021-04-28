@@ -29,6 +29,8 @@
 
 .request {
   margin-bottom: 35px;
+  text-decoration: underline;
+  font-weight: bolder;
 }
 
 .chat {
@@ -92,7 +94,7 @@
   }
 
   .radioPitch {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .desktopPlayer {
@@ -103,6 +105,7 @@
 
   .desktopLogo {
     display: unset;
+    margin-bottom: 25px;
   }
 
   .album img {
