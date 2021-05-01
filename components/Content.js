@@ -26,7 +26,7 @@ class Content extends Component {
 
           <div className={styles.radioControls}>
             <div className={styles.desktopLogo}>
-              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width={135} height={135}/>
+              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-mini.png" alt="Logo" width={130} height={130}/>
             </div> 
 
             <div className={styles.radioPitch}>

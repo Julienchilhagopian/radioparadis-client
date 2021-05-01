@@ -2,6 +2,7 @@ import styles from '../styles/DesktopPlayer.module.scss'
 import React, { Component } from 'react';
 import PlayBtn from './PlayBtn';
 import RadioTicker from './RadioTicker'
+import Image from 'next/image'
 
 class DesktopPlayer extends Component {
 
@@ -11,19 +12,25 @@ class DesktopPlayer extends Component {
   
   render() {
     return (
-      <section className={styles.desktopPlayer}>
-        <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
-        <div className={styles.desktopPlayerContent}>
-          <div className={styles.musicInfos}>
-            <RadioTicker />
-            <h2 className={styles.albumInfo}>Knee deep in the north sea</h2>
+      <div className={styles.desktopPlayerContainer}>
+       
+        <section className={styles.desktopPlayer}>
+          <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
+          <div className={styles.desktopPlayerContent}>
+            <div className={styles.musicInfos}>
+              <RadioTicker />
+              <h2 className={styles.albumInfo}>Knee deep in the north sea</h2>
+            </div>
+          <div className={styles.enDirect}>
+              <h2>En direct </h2>
+              <span className={[styles.circle, styles.blink].join(' ')}></span>
+            </div>
           </div>
-         <div className={styles.enDirect}>
-            <h2>En direct </h2>
-            <span className={[styles.circle, styles.blink].join(' ')}></span>
-          </div>
+        </section>
+        <div className={styles.album}>
+            <Image className={styles.imgTest} src="/../public/Kokoroko.jpeg" alt="Logo" width={600} height={600}/>   
         </div>
-      </section>
+      </div>
     )
   }
 } 
