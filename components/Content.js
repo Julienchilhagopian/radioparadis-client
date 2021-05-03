@@ -26,9 +26,9 @@ class Content extends Component {
 
           <div className={styles.radioControls}>
             <div className={styles.desktopLogo}>
-              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-morning.png" alt="Logo" width={130} height={130}/>
-              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-day.png" alt="Logo" width={130} height={130}/>
-              <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-night.png" alt="Logo" width={130} height={130}/>
+              <Image className={(this.props.isPlaying && this.props.isMorning) ? styles.logoRotate : ""} src="/../public/logo-morning.png" alt="Logo" width={130} height={130}/>
+              <Image className={(this.props.isPlaying && this.props.isDay) ? styles.logoRotate : ""} src="/../public/logo-day.png" alt="Logo" width={130} height={130}/>
+              <Image className={(this.props.isPlaying && this.props.isNight) ? styles.logoRotate : ""} src="/../public/logo-night.png" alt="Logo" width={130} height={130}/>
             </div> 
 
             <div className={styles.radioPitch}>
