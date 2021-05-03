@@ -26,3 +26,9 @@
     border-color: transparent transparent transparent #404040;
   }
 }
+
+@media (min-width: 767px){ 
+  .playContainer {
+    padding-left: 40px;
+  } 
+}
