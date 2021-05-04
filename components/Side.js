@@ -20,6 +20,9 @@ class Side extends Component {
           ))
           }
         </div>
+        <div>
+          <h1>Radio Paradis chat</h1>
+        </div>
       </section>
     )
   }

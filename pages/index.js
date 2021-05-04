@@ -18,12 +18,18 @@ class Home extends Component {
       isPlaying: false, 
       isMorning: false, 
       isDay: false, 
-      isNight: false
+      isNight: false, 
+      currentTrack: {},
+      history: {}
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
     this.hideSubmitForm = this.hideSubmitForm.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
+    this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
+    this.radioURL = "https://www.radioking.com/play/radioparadis1";
+    this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis1/track/current";
+    this.nextFetch = 0;
   }
 
   showSubmitForm = (e) => {
@@ -86,20 +92,29 @@ class Home extends Component {
       this.updateTime(time)
     }.bind(this), 5000);
 
-    this.radioPlayer.audioEl.current.addEventListener('error', (e) => {
-      this.setState({isPlaying: false});
-      this.radioPlayer.audioEl.current.pause();
-    });
+    
+    this.setState({isPlaying: false});
+    this.radioPlayer.audioEl.current.pause();
 
-    console.log("MOUNT")
-    console.log("Audio player", this.radioPlayer.audioEl);
+    this.fetchCurrentTrack();
  }
 
   componentWillUnmount() {
     clearInterval(window);
   }
 
+  fetchCurrentTrack = () => {
+    fetch(this.currentTrackURL)
+    .then(response => response.json())
+    .then(data => this.setState({ currentTrack: data }))
+    .catch(error => console.log("error fetch current song", error));
+
+
+  }
+
   render(){
+    console.log(this.state.currentTrack);
+
     return (
       <div>
         <Head>
@@ -120,11 +135,11 @@ class Home extends Component {
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>
             </SubmitForm>
-            <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src="https://www.radioking.com/play/radioparadis-test"/>
+            <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL}/>
           </section>
         </main>
       </div>
-    )
+    ) 
   }
 }
 
