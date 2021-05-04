@@ -5,7 +5,17 @@
 
 @media (min-width: 767px){ 
   .side {
-    display: unset;
+    display: block;
+    padding: 50px 50px 0px 50px;
   }
 
+  .trackHistoryHeader {
+    font-size: 25pt;
+    margin-bottom: 50px;
+  }
+
+  .trackHistory {
+    display: flex;
+    justify-content: space-between;
+  }
 }
