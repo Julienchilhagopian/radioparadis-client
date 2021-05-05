@@ -20,7 +20,9 @@ class Home extends Component {
       isDay: false, 
       isNight: false, 
       currentTrack: {},
-      history: {}
+      history: {}, 
+      nextFetch: 0, 
+      isLoading: true
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -29,7 +31,6 @@ class Home extends Component {
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.radioURL = "https://www.radioking.com/play/radioparadis1";
     this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis1/track/current";
-    this.nextFetch = 0;
   }
 
   showSubmitForm = (e) => {
@@ -47,7 +48,7 @@ class Home extends Component {
       try {
           this.radioPlayer.audioEl.current.play();
       } catch (e) {
-          console.log(e);
+          console.log("Player error", e);
       }
     }
 
@@ -84,6 +85,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
+    this.setState({ isLoading: true });
     let time = this.getTime();
     this.updateTime(time);
 
@@ -106,15 +108,27 @@ class Home extends Component {
   fetchCurrentTrack = () => {
     fetch(this.currentTrackURL)
     .then(response => response.json())
-    .then(data => this.setState({ currentTrack: data }))
+    .then(data => {
+      this.setState({ currentTrack: data })
+      this.setState({ isLoading: false })
+      var endDate = new Date(data.end_at);
+      var now = new Date();
+
+      var millisecondsTillEnd = endDate.getTime() - now.getTime();
+
+      if (millisecondsTillEnd > 0) {
+        this.setState({ nextFetch: millisecondsTillEnd })
+        console.log("next fetch ", this.state.nextFetch);
+        setTimeout(
+          this.fetchCurrentTrack,
+          millisecondsTillEnd,
+        )
+      }
+    })
     .catch(error => console.log("error fetch current song", error));
-
-
   }
 
   render(){
-    console.log(this.state.currentTrack);
-
     return (
       <div>
         <Head>
@@ -127,7 +141,7 @@ class Home extends Component {
             <div className={styles.frame}>
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
-                <Content showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
+                <Content isLoading={this.state.isLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
               </div>
             </div>
             <Side />

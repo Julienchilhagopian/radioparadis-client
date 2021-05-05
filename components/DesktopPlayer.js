@@ -28,7 +28,10 @@ class DesktopPlayer extends Component {
           </div>
         </section>
         <div className={styles.album}>
-            <Image className={styles.imgTest} src="/../public/Kokoroko.jpeg" alt="Logo" width={600} height={600}/>   
+            { this.props.isLoading ? 
+                  <Image src="/../public/logo-day.png" alt="Logo" width={600} height={600}/>
+                :
+                  <Image className={styles.imgTest} src={this.props.currentTrack.cover} alt="Logo" width={600} height={600}/> }
         </div>
       </div>
     )
