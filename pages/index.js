@@ -133,11 +133,16 @@ class Home extends Component {
       console.log("NEXT FETCH ", nextFetch);
 
 
-      // Fetching colors 
-      //this.fetchColor();
+   
 
-      // Fetching song history
-      this.fetchTrackHistory();
+      if(nextFetch > 0) {
+        // Fetching colors 
+        this.fetchColor(data.cover);
+
+        // Fetching song history
+        this.fetchTrackHistory();
+      }
+     
 
       setTimeout(
         this.fetchCurrentTrack,
@@ -173,21 +178,32 @@ class Home extends Component {
     });
   }
 
-  fetchColor = () => {
-
-    const img = '../public/Kokoroko.jpeg';
+  fetchColor = (imgUrl) => {
     const colorThief = new ColorThief();
+    const img = new Image();
 
-    ColorThief.getColor(img)
-        .then(color => { console.log(color) })
-        .catch(err => { console.log(err) })
-    
-    ColorThief.getPalette(img, 5)
-        .then(palette => { console.log(palette) })
-        .catch(err => { console.log(err) })
+    img.addEventListener('load', () => {
+      const colors = colorThief.getPalette(img, 5);
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const secondColor = colors[Math.floor(Math.random() * colors.length)];
+  
+      this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
+      this.setState({ secondaryColor: `rgb(${secondColor[0]} ${secondColor[1]} ${secondColor[2]} / 0.20)`})
+
+      console.log("principal color", this.state.principalColor)
+      console.log("secondary color", this.state.secondaryColor)
+    });
+
+    img.crossOrigin = 'Anonymous';
+    img.src = imgUrl;
+
   }
 
   render(){
+    const frameStyle = {
+      "backgroundColor": this.state.principalColor,
+    };
+
     return (
       <div>
         <Head>
@@ -198,7 +214,7 @@ class Home extends Component {
         <main>
           <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL} preload={'none'}/>
           <section className={styles.home}>
-            <div className={styles.frame}>
+            <div className={styles.frame} style={frameStyle}>
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
                 <Content isTrackLoading={this.state.isTrackLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>

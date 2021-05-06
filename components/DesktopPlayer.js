@@ -9,7 +9,7 @@ class DesktopPlayer extends Component {
   constructor() {
     super();
   }
-  
+
   render() {
     return (
       <div className={styles.desktopPlayerContainer}>
@@ -31,7 +31,14 @@ class DesktopPlayer extends Component {
             { (this.props.isTrackLoading || !this.props.currentTrack) ? 
                   <Image src="/../public/logo-day.png" alt="Logo" width={600} height={600}/>
                 :
-                  <Image className={styles.imgTest} src={this.props.currentTrack.cover} alt="Logo" width={600} height={600}/> }
+                  <Image 
+                    className={styles.imgTest} 
+                    src={this.props.currentTrack.cover} 
+                    alt="Album cover" 
+                    width={600} 
+                    height={600}
+                  /> 
+            }
         </div>
       </div>
     )
