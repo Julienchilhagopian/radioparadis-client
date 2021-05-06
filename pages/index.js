@@ -7,7 +7,7 @@ import Player from '../components/Player'
 import React, { Component } from 'react';
 import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
-
+import ColorThief from "colorthief";
 
 class Home extends Component {
 
@@ -23,7 +23,9 @@ class Home extends Component {
       history: {}, 
       nextFetch: 0, 
       isTrackLoading: true,
-      isHistoryLoading: true
+      isHistoryLoading: true,
+      principalColor: '#c0853acc', 
+      secondaryColor: '#c0853a2e', 
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -31,6 +33,7 @@ class Home extends Component {
     this.togglePlay = this.togglePlay.bind(this);
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
+    this.fetchColor = this.fetchColor.bind(this);
     this.radioURL = "https://www.radioking.com/play/radioparadis1";
     this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis1/track/current";
     this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis1/track/ckoi?limit=4";
@@ -128,6 +131,10 @@ class Home extends Component {
       let nextFetch = this.getTimeSpan(data.end_at);
       console.log("NEXT FETCH ", nextFetch);
 
+
+      // Fetching colors 
+      //this.fetchColor();
+
       // Fetching song history
       this.fetchTrackHistory();
 
@@ -165,7 +172,22 @@ class Home extends Component {
     });
   }
 
+  fetchColor = () => {
+
+    const img = '../public/Kokoroko.jpeg';
+    const colorThief = new ColorThief();
+
+    ColorThief.getColor(img)
+        .then(color => { console.log(color) })
+        .catch(err => { console.log(err) })
+    
+    ColorThief.getPalette(img, 5)
+        .then(palette => { console.log(palette) })
+        .catch(err => { console.log(err) })
+  }
+
   render(){
+    console.log("btn ref", this.radioPlayer);
     return (
       <div>
         <Head>
@@ -174,7 +196,7 @@ class Home extends Component {
         </Head>
 
         <main>
-          <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL}/>
+          <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL} preload={'none'}/>
           <section className={styles.home}>
             <div className={styles.frame}>
               <div className={styles.frameContent}>
