@@ -52,6 +52,7 @@ class Home extends Component {
       this.radioPlayer.audioEl.current.pause();
     } else {
       try {
+          this.radioPlayer.audioEl.current.load();
           this.radioPlayer.audioEl.current.play();
       } catch (e) {
           console.log("Player error", e);
@@ -187,7 +188,6 @@ class Home extends Component {
   }
 
   render(){
-    console.log("btn ref", this.radioPlayer);
     return (
       <div>
         <Head>
