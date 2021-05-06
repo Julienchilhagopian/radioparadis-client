@@ -7,6 +7,8 @@ import Player from '../components/Player'
 import React, { Component } from 'react';
 import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
+import moment from 'moment';
+
 
 
 class Home extends Component {
@@ -22,7 +24,7 @@ class Home extends Component {
       currentTrack: {},
       history: {}, 
       nextFetch: 0, 
-      isLoading: true
+      isTrackLoading: true
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -85,7 +87,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    this.setState({ isLoading: true });
+    this.setState({ isTrackLoading: true });
     let time = this.getTime();
     this.updateTime(time);
 
@@ -110,22 +112,40 @@ class Home extends Component {
     .then(response => response.json())
     .then(data => {
       this.setState({ currentTrack: data })
-      this.setState({ isLoading: false })
+      this.setState({ isTrackLoading: false })
       var endDate = new Date(data.end_at);
       var now = new Date();
 
       var millisecondsTillEnd = endDate.getTime() - now.getTime();
+      this.setState({ nextFetch: millisecondsTillEnd })
 
-      if (millisecondsTillEnd > 0) {
-        this.setState({ nextFetch: millisecondsTillEnd })
-        console.log("next fetch ", this.state.nextFetch);
+      console.log("WHITH DATE")
+      console.log("next fetch ", this.state.nextFetch);
+
+      console.log("WITH MOMENT")
+      let endAt = moment(data.end_at, "YYYY-MM-DDTHH:mm:ssZ").utc();
+      let nowM = moment.utc();
+
+      let timeSpan = endAt.diff(nowM);
+      timeSpan = timeSpan >= 10000 ? timeSpan : 10000;
+
+      console.log("Next fetch in: "+timeSpan+" at "+moment.utc().add(timeSpan).format()+" song finish at: "+ data.end_at);
+
+
+      setTimeout(
+        this.fetchCurrentTrack,
+        millisecondsTillEnd,
+      )
+    })
+    .catch(error => {
+      console.log("error fetching current song", error)
+      this.setState({ currentTrack: null })
+
         setTimeout(
           this.fetchCurrentTrack,
-          millisecondsTillEnd,
+          10000
         )
-      }
-    })
-    .catch(error => console.log("error fetch current song", error));
+    });
   }
 
   render(){
@@ -141,7 +161,7 @@ class Home extends Component {
             <div className={styles.frame}>
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
-                <Content isLoading={this.state.isLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
+                <Content isLoading={this.state.isTrackLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
               </div>
             </div>
             <Side />
