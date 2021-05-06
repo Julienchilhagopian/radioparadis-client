@@ -10,14 +10,18 @@ class Side extends Component {
   }
   
   render() {
-    var trackHistory = data.default;
+    var trackHistory = this.props.history;
     return (
       <section className={styles.side}>
         <h1 className={styles.trackHistoryHeader}>Sonorités antérieures</h1>
         <div className={styles.trackHistory}>
-          {trackHistory.map((song, index) => (
-            <SongCard key={index} album={song.cover_url} artist={song.artist} songTitle={song.title} time={song.started_at}/>
-          ))
+          {
+            this.props.isHistoryLoading ? 
+            <h2> Loading history </h2> 
+            :
+            trackHistory.map((song, index) => (
+              <SongCard key={index} album={song.cover_url} artist={song.artist} songTitle={song.title} time={song.started_at}/>
+            ))
           }
         </div>
         <div>

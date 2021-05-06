@@ -7,8 +7,6 @@ import Player from '../components/Player'
 import React, { Component } from 'react';
 import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
-import moment from 'moment';
-
 
 
 class Home extends Component {
@@ -24,15 +22,18 @@ class Home extends Component {
       currentTrack: {},
       history: {}, 
       nextFetch: 0, 
-      isTrackLoading: true
+      isTrackLoading: true,
+      isHistoryLoading: true
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
     this.hideSubmitForm = this.hideSubmitForm.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
+    this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
     this.radioURL = "https://www.radioking.com/play/radioparadis1";
     this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis1/track/current";
+    this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis1/track/ckoi?limit=4";
   }
 
   showSubmitForm = (e) => {
@@ -107,34 +108,32 @@ class Home extends Component {
     clearInterval(window);
   }
 
+
+  getTimeSpan = (currentSongEnd) => {
+    var endDate = new Date(currentSongEnd);
+    var now = new Date();
+
+    var millisecondsTillEnd = endDate.getTime() - now.getTime();
+
+    return millisecondsTillEnd;
+  }
+
   fetchCurrentTrack = () => {
     fetch(this.currentTrackURL)
     .then(response => response.json())
     .then(data => {
       this.setState({ currentTrack: data })
       this.setState({ isTrackLoading: false })
-      var endDate = new Date(data.end_at);
-      var now = new Date();
 
-      var millisecondsTillEnd = endDate.getTime() - now.getTime();
-      this.setState({ nextFetch: millisecondsTillEnd })
+      let nextFetch = this.getTimeSpan(data.end_at);
+      console.log("NEXT FETCH ", nextFetch);
 
-      console.log("WHITH DATE")
-      console.log("next fetch ", this.state.nextFetch);
-
-      console.log("WITH MOMENT")
-      let endAt = moment(data.end_at, "YYYY-MM-DDTHH:mm:ssZ").utc();
-      let nowM = moment.utc();
-
-      let timeSpan = endAt.diff(nowM);
-      timeSpan = timeSpan >= 10000 ? timeSpan : 10000;
-
-      console.log("Next fetch in: "+timeSpan+" at "+moment.utc().add(timeSpan).format()+" song finish at: "+ data.end_at);
-
+      // Fetching song history
+      this.fetchTrackHistory();
 
       setTimeout(
         this.fetchCurrentTrack,
-        millisecondsTillEnd,
+        nextFetch
       )
     })
     .catch(error => {
@@ -143,6 +142,24 @@ class Home extends Component {
 
         setTimeout(
           this.fetchCurrentTrack,
+          10000
+        )
+    });
+  }
+
+  fetchTrackHistory = () => {
+    fetch(this.trackHistoryURL)
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ history: data })
+      this.setState({ isHistoryLoading: false })
+    })
+    .catch(error => {
+      console.log("error fetching history", error)
+      this.setState({ currentTrack: null })
+
+        setTimeout(
+          this.fetchTrackHistory,
           10000
         )
     });
@@ -157,19 +174,19 @@ class Home extends Component {
         </Head>
 
         <main>
+          <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL}/>
           <section className={styles.home}>
             <div className={styles.frame}>
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
-                <Content isLoading={this.state.isTrackLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
+                <Content isTrackLoading={this.state.isTrackLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
               </div>
             </div>
-            <Side />
+            <Side history={this.state.history} isHistoryLoading={this.state.isHistoryLoading}/>
             <Player togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>
             </SubmitForm>
-            <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL}/>
           </section>
         </main>
       </div>
