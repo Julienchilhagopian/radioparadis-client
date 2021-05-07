@@ -7,8 +7,14 @@
 @media (min-width: 767px){ 
 
   .tickerContainer {
-    width: 280px;
+    width: 325px;
   }
 
+
+  .tickerContainer h2 {
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 22pt;
+  }
 
 }

@@ -108,6 +108,7 @@ class Home extends Component {
     this.radioPlayer.audioEl.current.pause();
 
     this.fetchCurrentTrack();
+    this.fetchTrackHistory();
  }
 
   componentWillUnmount() {
@@ -134,17 +135,10 @@ class Home extends Component {
       let nextFetch = this.getTimeSpan(data.end_at);
       console.log("NEXT FETCH ", nextFetch);
 
-
-   
-
       if(nextFetch > 0) {
         // Fetching colors 
         this.fetchColor(data.cover);
-
-        // Fetching song history
-        this.fetchTrackHistory();
       }
-     
 
       setTimeout(
         this.fetchCurrentTrack,
@@ -168,6 +162,12 @@ class Home extends Component {
     .then(data => {
       this.setState({ history: data })
       this.setState({ isHistoryLoading: false })
+  
+      console.log('history fetch', this.state.history);
+      setTimeout(
+        this.fetchTrackHistory,
+        240000
+      )
     })
     .catch(error => {
       console.log("error fetching history", error)

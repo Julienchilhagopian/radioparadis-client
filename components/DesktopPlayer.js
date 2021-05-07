@@ -22,8 +22,17 @@ class DesktopPlayer extends Component {
           <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
           <div className={styles.desktopPlayerContent}>
             <div className={styles.musicInfos}>
-              <RadioTicker />
-              <h2 className={styles.albumInfo}>Knee deep in the north sea</h2>
+              { (this.props.isTrackLoading || !this.props.currentTrack) ? 
+                    <h2>..contact de la source musicale..</h2>
+                  :
+                    <RadioTicker artist={this.props.currentTrack.artist} title={this.props.currentTrack.title}/>
+              }
+              {
+                (this.props.currentTrack.album) ? 
+                  <h2 className={styles.albumInfo}>{this.props.currentTrack.album}</h2>
+                  :
+                  <h2></h2>
+              }
             </div>
           <div className={styles.enDirect}>
               <h2>En direct </h2>
@@ -36,7 +45,6 @@ class DesktopPlayer extends Component {
                   <Image src="/../public/logo-day.png" alt="Logo" width={600} height={600}/>
                 :
                   <Image 
-                    className={styles.imgTest} 
                     src={this.props.currentTrack.cover} 
                     alt="Album cover" 
                     width={600} 

@@ -13,8 +13,8 @@ class RadioTicker extends Component {
       <div className={styles.tickerContainer}>
         <Ticker mode="await">
           {({ index }) => (
-            <>   
-              <h1>PORTICO QUARTET - Knee deep in the north sea</h1>
+            <>
+              <h2>{this.props.artist} - {this.props.title}</h2>
             </> 
           )}
         </Ticker>

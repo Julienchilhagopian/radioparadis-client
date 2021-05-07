@@ -1,5 +1,6 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500;800&display=swap');
 
 html {
   box-sizing: border-box;
@@ -17,6 +18,15 @@ body {
 
 h1, h2, h3 {
   margin: 0;
+}
+
+h1 {
+  font-family: 'Prompt';
+  font-weight: bolder;
+}
+
+h2 {
+  font-family: 'Inconsolata';
 }
 
 h3 {

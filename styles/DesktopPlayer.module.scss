@@ -23,6 +23,10 @@
     width: 100%;
   }
 
+  .albumInfo {
+    font-size: 18pt;
+  }
+
   .desktopPlayer {
     display: flex;
     align-items: center;
@@ -53,6 +57,8 @@
 
   .enDirect h2{
     text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 2px;
   }
 
   .enDirect span {
