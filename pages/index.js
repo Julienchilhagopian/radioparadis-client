@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
 import ColorThief from "colorthief";
+import { isMobile } from "react-device-detect";
 
 class Home extends Component {
 
@@ -26,6 +27,7 @@ class Home extends Component {
       isHistoryLoading: true,
       principalColor: '#cecece', 
       secondaryColor: '#cecece8c', 
+      frameColor: ''
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -188,19 +190,25 @@ class Home extends Component {
       const secondColor = colors[Math.floor(Math.random() * colors.length)];
   
       this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
-      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
+      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.25)`})
 
       console.log("principal color", this.state.principalColor)
       console.log("secondary color", this.state.secondaryColor)
+
+      this.updateFrameColor();
     });
 
     img.crossOrigin = 'Anonymous';
     img.src = imgUrl;
   }
 
+  updateFrameColor = () => {
+    this.setState({frameColor: isMobile ? 'white' : this.state.principalColor})
+  }
+
   render(){
     const frameColor = {
-      "backgroundColor": this.state.principalColor,
+      "backgroundColor": this.state.frameColor,
     };
 
     return (
@@ -213,7 +221,7 @@ class Home extends Component {
         <main>
           <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL} preload={'none'}/>
           <section className={styles.home}>
-            <div style={frameColor} className={styles.frame} >
+            <div className={styles.frame} style={frameColor}>
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
                 <Content 
