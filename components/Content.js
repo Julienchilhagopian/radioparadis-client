@@ -38,7 +38,7 @@ class Content extends Component {
               <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
             </div>
 
-            <DesktopPlayer isTrackLoading={this.props.isTrackLoading} currentTrack={this.props.currentTrack} togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
+            <DesktopPlayer secondaryColor={this.props.secondaryColor} isTrackLoading={this.props.isTrackLoading} currentTrack={this.props.currentTrack} togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
           </div>
         </section>
 

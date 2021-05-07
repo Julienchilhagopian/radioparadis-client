@@ -1,11 +1,12 @@
 
 .frame {
-  background-color: unset
+  padding: unset;
+  //background-color: unset !important;
 }
 
 @media (min-width: 767px){ 
   .frame {
-    //background-color:  #c0853acc;
+    //background-color: initial !important;
     padding: 50px 50px 60px 50px;
   }
 

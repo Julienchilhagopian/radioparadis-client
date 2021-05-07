@@ -24,8 +24,8 @@ class Home extends Component {
       nextFetch: 0, 
       isTrackLoading: true,
       isHistoryLoading: true,
-      principalColor: '#c0853acc', 
-      secondaryColor: '#c0853a2e', 
+      principalColor: '#cecece', 
+      secondaryColor: '#cecece8c', 
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -188,7 +188,7 @@ class Home extends Component {
       const secondColor = colors[Math.floor(Math.random() * colors.length)];
   
       this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
-      this.setState({ secondaryColor: `rgb(${secondColor[0]} ${secondColor[1]} ${secondColor[2]} / 0.20)`})
+      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
 
       console.log("principal color", this.state.principalColor)
       console.log("secondary color", this.state.secondaryColor)
@@ -196,11 +196,10 @@ class Home extends Component {
 
     img.crossOrigin = 'Anonymous';
     img.src = imgUrl;
-
   }
 
   render(){
-    const frameStyle = {
+    const frameColor = {
       "backgroundColor": this.state.principalColor,
     };
 
@@ -214,10 +213,20 @@ class Home extends Component {
         <main>
           <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL} preload={'none'}/>
           <section className={styles.home}>
-            <div className={styles.frame} style={frameStyle}>
+            <div style={frameColor} className={styles.frame} >
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
-                <Content isTrackLoading={this.state.isTrackLoading} currentTrack={this.state.currentTrack} showSubmitForm={this.showSubmitForm} isPlaying={this.state.isPlaying} togglePlay={this.togglePlay} isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
+                <Content 
+                    secondaryColor={this.state.secondaryColor} 
+                    isTrackLoading={this.state.isTrackLoading} 
+                    currentTrack={this.state.currentTrack} 
+                    showSubmitForm={this.showSubmitForm} 
+                    isPlaying={this.state.isPlaying} 
+                    togglePlay={this.togglePlay} 
+                    isMorning={this.state.isMorning} 
+                    isDay={this.state.isDay} 
+                    isNight={this.state.isNight}
+                  />
               </div>
             </div>
             <Side history={this.state.history} isHistoryLoading={this.state.isHistoryLoading}/>

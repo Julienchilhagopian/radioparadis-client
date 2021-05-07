@@ -11,10 +11,14 @@ class DesktopPlayer extends Component {
   }
 
   render() {
+    const playerColor = {
+      "backgroundColor": this.props.secondaryColor,
+    };
+
     return (
       <div className={styles.desktopPlayerContainer}>
        
-        <section className={styles.desktopPlayer}>
+        <section className={styles.desktopPlayer} style={playerColor}>
           <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
           <div className={styles.desktopPlayerContent}>
             <div className={styles.musicInfos}>
