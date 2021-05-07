@@ -1,4 +1,5 @@
 @import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;800&display=swap');
 
 html {
   box-sizing: border-box;
@@ -19,7 +20,13 @@ h1, h2, h3 {
 }
 
 h3 {
-  font-size: 10px;
+  font-size: 9pt;
+  font-family: 'Inconsolata';
+}
+
+p {
+  font-family: 'Inconsolata';
+  font-size: 12pt;
 }
 
 
