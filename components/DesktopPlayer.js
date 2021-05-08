@@ -15,6 +15,7 @@ class DesktopPlayer extends Component {
       "backgroundColor": this.props.secondaryColor,
     };
 
+    console.log("Current track", this.props.currentTrack)
     return (
       <div className={styles.desktopPlayerContainer}>
        
