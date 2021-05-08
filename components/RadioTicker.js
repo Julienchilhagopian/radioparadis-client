@@ -6,30 +6,14 @@ class RadioTicker extends Component {
 
   constructor() {
     super();
-
-    // this.state = {
-    //   track: {}
-    // } 
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if(nextProps.currentTrack) {
-  //     this.setState({track: nextProps.currentTrack})
-  //     console.log("NEXT PROPS", this.state.track);
-  //   }
-  // }
   
   render() {
-
     return (
       <div className={styles.tickerContainer}>
-        <Ticker mode="await">
-          {() => (
-            <>
-              <h2>{this.props.artist} - {this.props.title}</h2>
-            </> 
-          )}
-        </Ticker>
+        <h2 className={styles.tickerAnimation}>
+          <span>{this.props.artist} - {this.props.title}</span>
+        </h2>
       </div>
     )
   }

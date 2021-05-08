@@ -15,7 +15,6 @@ class DesktopPlayer extends Component {
       "backgroundColor": this.props.secondaryColor,
     };
 
-    console.log("Current track", this.props.currentTrack)
     return (
       <div className={styles.desktopPlayerContainer}>
        
@@ -24,7 +23,7 @@ class DesktopPlayer extends Component {
           <div className={styles.desktopPlayerContent}>
             <div className={styles.musicInfos}>
               { (this.props.isTrackLoading || !this.props.currentTrack) ? 
-                    <h2>..contact de la source musicale..</h2>
+                    <h2>...contact de la source musicale...</h2>
                   :
                     <RadioTicker artist={this.props.currentTrack.artist} title={this.props.currentTrack.title}/>
               }
