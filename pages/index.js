@@ -188,8 +188,7 @@ class Home extends Component {
     img.addEventListener('load', () => {
       const colors = colorThief.getPalette(img, 5);
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      const secondColor = colors[Math.floor(Math.random() * colors.length)];
-  
+
       this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
       this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
       this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})`})
@@ -240,7 +239,7 @@ class Home extends Component {
                   />
               </div>
             </div>
-            <Side history={this.state.history} isHistoryLoading={this.state.isHistoryLoading}/>
+            <Side principalColor={this.state.principalColor} history={this.state.history} isHistoryLoading={this.state.isHistoryLoading}/>
             <MobilePlayer  mobileColor={this.state.mobileColor} currentTrack={this.state.currentTrack} togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>

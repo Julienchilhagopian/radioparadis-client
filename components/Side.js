@@ -13,7 +13,7 @@ class Side extends Component {
     var trackHistory = this.props.history;
     return (
       <section className={styles.side}>
-        <h1 className={styles.trackHistoryHeader}>Sonorités antérieures</h1>
+        <h1 className={styles.trackHistoryHeader} style={{'color': this.props.principalColor}} >Sonorités antérieures</h1>
         <TrackHistory isHistoryLoading={this.props.isHistoryLoading} history={this.props.history}/>
         <div>
           <h1>Radio Paradis chat</h1>
