@@ -2,6 +2,7 @@ import styles from '../styles/Content.module.scss';
 import Image from 'next/image'
 import React, { Component } from 'react';
 import DesktopPlayer from './DesktopPlayer';
+import Album from './Album';
 
 class Content extends Component {
 
@@ -18,10 +19,22 @@ class Content extends Component {
       <section className={styles.content}>
         <section className={styles.musicContent}>
           <div className={styles.mobileLogo}>
-            <Image className={this.props.isPlaying ? styles.logoRotate : ""} src="/../public/logo-day.png" alt="Logo" width={85} height={85}/>
+            {
+              (this.props.isMorning) ? 
+                <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-morning.png" alt="Logo" width={85} height={85}/>
+                : this.props.isDay ? 
+                <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-day.png" alt="Logo" width={85} height={85}/>
+                :
+                <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-night.png" alt="Logo" width={85} height={85}/>
+            }
           </div>
           <div className={styles.album}>
-            <Image src="/../public/Kokoroko.jpeg" alt="Logo" width={400} height={400}/>
+            <Album 
+                isTrackLoading={this.props.isTrackLoading} 
+                currentTrack={this.props.currentTrack} 
+                width={85}
+                height={85}
+              />
           </div>
 
           <div className={styles.radioControls}>
@@ -35,7 +48,7 @@ class Content extends Component {
               <p>La radio d'un quartier.</p>
               <p>En ces temps imparfaits.</p>
               <p>La musique comme usage du monde.</p>
-              <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
+              <p className={styles.request} onClick={this.props.showSubmitForm} style={{'color': this.props.principalColor}}>Proposez-nous un son !</p> 
             </div>
 
             <DesktopPlayer secondaryColor={this.props.secondaryColor} isTrackLoading={this.props.isTrackLoading} currentTrack={this.props.currentTrack} togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>

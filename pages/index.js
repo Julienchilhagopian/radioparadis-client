@@ -225,6 +225,7 @@ class Home extends Component {
               <div className={styles.frameContent}>
                 <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
                 <Content 
+                    principalColor={this.state.principalColor}
                     secondaryColor={this.state.secondaryColor} 
                     isTrackLoading={this.state.isTrackLoading} 
                     currentTrack={this.state.currentTrack} 

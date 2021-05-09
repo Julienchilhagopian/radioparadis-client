@@ -2,6 +2,7 @@ import styles from '../styles/DesktopPlayer.module.scss'
 import React, { Component } from 'react';
 import PlayBtn from './PlayBtn';
 import RadioTicker from './RadioTicker'
+import Album from './Album'
 import Image from 'next/image'
 
 class DesktopPlayer extends Component {
@@ -41,16 +42,12 @@ class DesktopPlayer extends Component {
           </div>
         </section>
         <div className={styles.album}>
-            { (this.props.isTrackLoading || !this.props.currentTrack) ? 
-                  <Image src="/../public/logo-day.png" alt="Logo" width={600} height={600}/>
-                :
-                  <Image 
-                    src={this.props.currentTrack.cover} 
-                    alt="Album cover" 
-                    width={600} 
-                    height={600}
-                  /> 
-            }
+            <Album 
+              isTrackLoading={this.props.isTrackLoading} 
+              currentTrack={this.props.currentTrack} 
+              width={600}
+              height={600}
+            />
         </div>
       </div>
     )
