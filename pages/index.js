@@ -38,7 +38,7 @@ class Home extends Component {
     this.fetchColor = this.fetchColor.bind(this);
     this.radioURL = "https://www.radioking.com/play/radioparadis1";
     this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis1/track/current";
-    this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis1/track/ckoi?limit=4";
+    this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis1/track/ckoi?limit=5";
   }
 
   showSubmitForm = (e) => {
