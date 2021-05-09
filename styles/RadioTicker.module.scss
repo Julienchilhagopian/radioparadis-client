@@ -3,6 +3,12 @@
   white-space: nowrap;
 }
 
+.tickerContainer h2 {
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 20pt;
+}
+
 .tickerAnimation {
   margin: 0 auto;
   white-space: nowrap;
@@ -21,17 +27,13 @@
     100% { transform: translate(-100%, 0); }
 }
 
-
 @media (min-width: 767px){ 
 
   .tickerContainer {
     width: 325px;
   }
 
-
   .tickerContainer h2 {
-    font-weight: bolder;
-    text-transform: uppercase;
     font-size: 22pt;
   }
 }

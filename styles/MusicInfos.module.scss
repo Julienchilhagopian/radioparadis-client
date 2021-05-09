@@ -1,0 +1,15 @@
+.albumInfo {
+  font-size: 14pt;
+  max-width: 260px;
+}
+
+.musicInfos {
+  text-align: right;
+}
+
+@media (min-width: 767px){ 
+  .albumInfo {
+    font-size: 18pt;
+    max-width: unset;
+  }
+}

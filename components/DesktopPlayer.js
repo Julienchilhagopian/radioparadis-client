@@ -1,9 +1,9 @@
 import styles from '../styles/DesktopPlayer.module.scss'
 import React, { Component } from 'react';
 import PlayBtn from './PlayBtn';
-import RadioTicker from './RadioTicker'
 import Album from './Album'
 import Image from 'next/image'
+import MusicInfos from './MusicInfos';
 
 class DesktopPlayer extends Component {
 
@@ -22,19 +22,10 @@ class DesktopPlayer extends Component {
         <section className={styles.desktopPlayer} style={playerColor}>
           <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
           <div className={styles.desktopPlayerContent}>
-            <div className={styles.musicInfos}>
-              { (this.props.isTrackLoading || !this.props.currentTrack) ? 
-                    <h2>...contact de la source musicale...</h2>
-                  :
-                    <RadioTicker artist={this.props.currentTrack.artist} title={this.props.currentTrack.title}/>
-              }
-              {
-                (this.props.currentTrack.album) ? 
-                  <h2 className={styles.albumInfo}>{this.props.currentTrack.album}</h2>
-                  :
-                  <h2></h2>
-              }
-            </div>
+          <MusicInfos 
+            currentTrack={this.props.currentTrack} 
+            isTrackLoading={this.props.isTrackLoading}
+            />
           <div className={styles.enDirect}>
               <h2>En direct </h2>
               <span className={[styles.circle, styles.blink].join(' ')}></span>

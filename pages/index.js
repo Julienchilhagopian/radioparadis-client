@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.scss'
 import Header from '../components/Header'
 import Content from '../components/Content'
 import SubmitForm from '../components/SubmitForm'
-import Player from '../components/Player'
+import MobilePlayer from '../components/MobilePlayer'
 import React, { Component } from 'react';
 import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
@@ -27,6 +27,7 @@ class Home extends Component {
       isHistoryLoading: true,
       principalColor: '#cecece', 
       secondaryColor: '#cecece8c', 
+      mobileColor: '#cecece', 
       frameColor: ''
     };
 
@@ -190,7 +191,8 @@ class Home extends Component {
       const secondColor = colors[Math.floor(Math.random() * colors.length)];
   
       this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
-      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.25)`})
+      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
+      this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})`})
 
       console.log("principal color", this.state.principalColor)
       console.log("secondary color", this.state.secondaryColor)
@@ -239,7 +241,7 @@ class Home extends Component {
               </div>
             </div>
             <Side history={this.state.history} isHistoryLoading={this.state.isHistoryLoading}/>
-            <Player togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
+            <MobilePlayer  mobileColor={this.state.mobileColor} currentTrack={this.state.currentTrack} togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>
             </SubmitForm>
