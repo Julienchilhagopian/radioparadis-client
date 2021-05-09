@@ -1,6 +1,5 @@
 import styles from '../styles/RadioTicker.module.scss'
 import React, { Component } from 'react';
-import Ticker from 'react-ticker'
 
 class RadioTicker extends Component {
 
