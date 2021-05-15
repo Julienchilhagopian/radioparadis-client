@@ -6,13 +6,13 @@ import Album from './Album';
 
 class Content extends Component {
 
-  componentDidMount() {
-    const script = document.createElement("script");    
-    script.async = true;    
-    script.src = "http://tlk.io/embed.js";  
-    script.type = "text/javascript";
-    this.div.appendChild(script);  
-  }
+  // componentDidMount() {
+  //   const script = document.createElement("script");    
+  //   script.async = true;    
+  //   script.src = "http://tlk.io/embed.js";  
+  //   script.type = "text/javascript";
+  //   this.div.appendChild(script);  
+  // }
 
   render() {
     return (
@@ -55,10 +55,10 @@ class Content extends Component {
           </div>
         </section>
 
-        <div className={styles.chatContainer}>
+        {/* <div className={styles.chatContainer}>
           <div className={styles.chat} id="tlkio" data-channel="radioparadis"></div>
           <div className="chat" ref={el => (this.div = el)}></div>
-        </div>
+        </div> */}
 
         <div className={styles.footer}>
           <h3>Rue de Paradis, 10ème arrondissement.</h3>

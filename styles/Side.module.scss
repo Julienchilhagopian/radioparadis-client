@@ -9,10 +9,19 @@
     padding: 50px 50px 0px 50px;
   }
 
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+  }
+
   .trackHistoryHeader {
-    font-size: 21pt;
-    margin-bottom: 40px;
+    font-size: 30pt;
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-align: center;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }

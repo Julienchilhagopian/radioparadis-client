@@ -39,7 +39,7 @@ class Home extends Component {
     this.fetchColor = this.fetchColor.bind(this);
     this.radioURL = "https://www.radioking.com/play/paradis-test";
     this.currentTrackURL = "https://api.radioking.io/widget/radio/paradis-test/track/current";
-    this.trackHistoryURL = "https://api.radioking.io/widget/radio/paradis-test/track/ckoi?limit=5";
+    this.trackHistoryURL = "https://api.radioking.io/widget/radio/paradis-test/track/ckoi?limit=6";
   }
 
   showSubmitForm = (e) => {
@@ -240,6 +240,7 @@ class Home extends Component {
               </div>
             </div>
             <Side 
+              isPlaying={this.state.isPlaying} 
               principalColor={this.state.principalColor} 
               history={this.state.history} 
               isHistoryLoading={this.state.isHistoryLoading}
