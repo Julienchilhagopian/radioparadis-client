@@ -37,9 +37,9 @@ class Home extends Component {
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
     this.fetchColor = this.fetchColor.bind(this);
-    this.radioURL = "https://www.radioking.com/play/radioparadis1";
-    this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis1/track/current";
-    this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis1/track/ckoi?limit=5";
+    this.radioURL = "https://www.radioking.com/play/paradis-test";
+    this.currentTrackURL = "https://api.radioking.io/widget/radio/paradis-test/track/current";
+    this.trackHistoryURL = "https://api.radioking.io/widget/radio/paradis-test/track/ckoi?limit=5";
   }
 
   showSubmitForm = (e) => {
@@ -239,7 +239,14 @@ class Home extends Component {
                   />
               </div>
             </div>
-            <Side principalColor={this.state.principalColor} history={this.state.history} isHistoryLoading={this.state.isHistoryLoading}/>
+            <Side 
+              principalColor={this.state.principalColor} 
+              history={this.state.history} 
+              isHistoryLoading={this.state.isHistoryLoading}
+              isMorning={this.state.isMorning} 
+              isDay={this.state.isDay} 
+              isNight={this.state.isNight}
+            />
             <MobilePlayer  mobileColor={this.state.mobileColor} currentTrack={this.state.currentTrack} togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>
