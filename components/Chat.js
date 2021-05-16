@@ -7,7 +7,6 @@ class Chat extends Component {
     super();
   }
 
-
   componentDidMount() {
     const script = document.createElement("script");    
     script.async = true;    
@@ -18,10 +17,12 @@ class Chat extends Component {
   
   render() {
     return (
-      <div className={styles.chatContainer}>
-          <div className={styles.chat} id="tlkio" data-channel="radioparadis"></div>
-          <div className="chat" ref={el => (this.div = el)}></div>
-      </div>
+      <section className={styles.chatArea}>
+        <div className={styles.chatContainer}>
+            <div className={styles.chat} id="tlkio" data-channel="radioparadis" data-custom-css={styles}></div>
+            <div className="chat" ref={el => (this.div = el)}></div>
+        </div>
+      </section>
     )
   }
 } 

@@ -1,11 +1,7 @@
-.tickerContainer {
-  width: 60%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 30px;
-}
-
-.separator {
+.separatorContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }

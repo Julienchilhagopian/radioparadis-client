@@ -4,6 +4,8 @@ import TrackHistory from './TrackHistory';
 import LogoSeparator from './LogoSeparator';
 import Chat from './Chat';
 import Logo from './Logo';
+import Interviews from './Interviews';
+import ColorHeader from './ColorHeader';
 
 class Side extends Component {
 
@@ -15,19 +17,29 @@ class Side extends Component {
     return (
       <section className={styles.side}>
         <div className={styles.headerContainer}>
-          <Logo isPlaying={this.props.isPlaying} size={40}/>
-          <h1 className={styles.trackHistoryHeader} style={{'color': this.props.principalColor}} >Sonorités antérieures</h1>
-          <Logo isPlaying={this.props.isPlaying} size={40}/>
+         <ColorHeader principalColor={this.props.principalColor} title='Sonorité antérieures'/>
         </div>
         <TrackHistory isHistoryLoading={this.props.isHistoryLoading} history={this.props.history}/>
-        <Chat />
-        <LogoSeparator 
-            isMorning={this.props.isMorning} 
-            isDay={this.props.isDay} 
-            isNight={this.props.isNight}
+        <div className={styles.separatorLogo}>
+          <h3>@radioparadis</h3>
+          <div className={styles.logo}>
+            <Logo
+                isMorning={this.props.isMorning} 
+                isDay={this.props.isDay} 
+                isPlaying={this.props.isPlaying} 
+                size={80}
+              />
+          </div>
+          <h3>@radioparadis</h3>
+        </div>
+        <div className={styles.sideContent}>
+          <Chat />
+          <Interviews 
+              isMorning={this.props.isMorning} 
+              isDay={this.props.isDay} 
+              isPlaying={this.props.isPlaying} 
+              principalColor={this.props.principalColor}
           />
-        <div>
-          <h1>Radio Paradis chat</h1>
         </div>
       </section>
     )

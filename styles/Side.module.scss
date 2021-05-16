@@ -10,18 +10,24 @@
   }
 
   .headerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 42px;
   }
 
-  .trackHistoryHeader {
-    font-size: 30pt;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: center;
-    padding-right: 30px;
-    padding-left: 30px;
+  .separatorLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+  }
+
+  .logo {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .sideContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }
