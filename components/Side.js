@@ -21,14 +21,14 @@ class Side extends Component {
                 isMorning={this.props.isMorning} 
                 isDay={this.props.isDay} 
                 isPlaying={this.props.isPlaying} 
-                size={80}
+                size={60}
             />
           <ColorHeader principalColor={this.props.principalColor} title='Sonorités antérieures'/>
           <Logo
                 isMorning={this.props.isMorning} 
                 isDay={this.props.isDay} 
                 isPlaying={this.props.isPlaying} 
-                size={80}
+                size={60}
             />
         </div>
         <TrackHistory isHistoryLoading={this.props.isHistoryLoading} history={this.props.history}/>

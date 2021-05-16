@@ -12,8 +12,13 @@
   .headerContainer {
     margin-bottom: 42px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+  }
+
+  .headerContainer h1 {
+    margin-right: 50px;
+    margin-left: 50px;
   }
 
   .sideContent {

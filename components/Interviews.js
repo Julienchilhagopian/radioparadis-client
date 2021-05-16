@@ -19,7 +19,7 @@ class Interviews extends Component {
           <p>Radio Paradis est née dans une coloc du 10ème arrondissement.</p>
           <p>C'est un nouveau canal qui traversera le quartier. Un canal dédié à l'échange de musiques et d'idées.</p>
           <p>Cet été, la radio ira à la rencontre des commercants et des habitants du 10ème.</p>
-          <p>On a tous une histoire à raconter, écrivez-nous et nous porterons la votre.</p>
+          <p>On a tous une histoire à raconter. Nous essayons de les rassembler.</p>
         </div>
         <div>
         <div className={styles.mail}>
