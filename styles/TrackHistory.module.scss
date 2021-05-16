@@ -1,5 +1,25 @@
 .trackHistory {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
+  row-gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+
+@media (min-width: 767px){ 
+  
+  .trackHistory {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+
+  .tickerContainer {
+    width: 325px;
+  }
+
+  .tickerContainer h2 {
+    font-size: 22pt;
+  }
 }

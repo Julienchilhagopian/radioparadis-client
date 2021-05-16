@@ -5,11 +5,17 @@
 
 .musicInfos {
   text-align: right;
+  width: 60%;
 }
 
 @media (min-width: 767px){ 
   .albumInfo {
     font-size: 18pt;
     max-width: unset;
+  }
+
+  .musicInfos {
+    text-align: right;
+    width: unset;
   }
 }

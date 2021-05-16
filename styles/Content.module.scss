@@ -6,6 +6,13 @@
   margin-bottom: 30px;
 }
 
+.mobileLogo h1 {
+  font-size: 45pt;
+  line-height: 50px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
 .logoRotate {
   animation:spin 12s linear infinite;
  }
@@ -43,8 +50,7 @@
 }
 
 .footer {
-  padding-bottom: 125px;
-  font-weight: bolder;
+  display: none;
 }
 
 .footer h3 {
@@ -95,6 +101,11 @@
 
   .radioPitch p {
     font-size: 10pt;
+  }
+
+  .footer {
+    display: unset;
+    font-weight: bolder;
   }
 
   .desktopPlayer {

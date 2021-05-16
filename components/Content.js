@@ -13,14 +13,13 @@ class Content extends Component {
       <section className={styles.content}>
         <section className={styles.musicContent}>
           <div className={styles.mobileLogo}>
-            {
-              (this.props.isMorning) ? 
-                <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-morning.png" alt="Logo" width={85} height={85}/>
-                : this.props.isDay ? 
-                <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-day.png" alt="Logo" width={85} height={85}/>
-                :
-                <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-night.png" alt="Logo" width={85} height={85}/>
-            }
+            <h1 style={{'color': this.props.principalColor}}>Radio paradis</h1> 
+            <Logo
+              isMorning={this.props.isMorning} 
+              isDay={this.props.isDay} 
+              isPlaying={this.props.isPlaying} 
+              size={80}
+            />
           </div>
           <div className={styles.album}>
             <Album 

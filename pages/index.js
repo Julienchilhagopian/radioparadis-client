@@ -183,7 +183,7 @@ class Home extends Component {
   }
 
   getColor = (colors) => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
 
     while(
       (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
@@ -201,7 +201,7 @@ class Home extends Component {
 
     img.addEventListener('load', () => {
       const colors = colorThief.getPalette(img, 5);
-      const randomColor = this.getColor(colors);
+      let randomColor = this.getColor(colors);
 
       this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
       this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
