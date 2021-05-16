@@ -19,7 +19,7 @@ class Chat extends Component {
     return (
       <section className={styles.chatArea}>
         <div className={styles.chatContainer}>
-            <div className={styles.chat} id="tlkio" data-channel="radioparadis" data-custom-css={styles}></div>
+            <div className={styles.chat} id="tlkio" data-channel="radioparadis" data-theme="theme--minimal" style={{'border': "4px solid " + this.props.principalColor}}></div>
             <div className="chat" ref={el => (this.div = el)}></div>
         </div>
       </section>

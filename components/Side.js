@@ -33,7 +33,7 @@ class Side extends Component {
           <h3>@radioparadis</h3>
         </div>
         <div className={styles.sideContent}>
-          <Chat />
+          <Chat principalColor={this.props.principalColor}/>
           <Interviews 
               isMorning={this.props.isMorning} 
               isDay={this.props.isDay} 
