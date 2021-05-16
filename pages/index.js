@@ -182,13 +182,26 @@ class Home extends Component {
     });
   }
 
+  getColor = (colors) => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    while(
+      (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
+      || (randomColor[0] < 100 && randomColor[1] < 100 && randomColor[2] < 100)
+      ) {
+      randomColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    return randomColor;
+  }
+
   fetchColor = (imgUrl) => {
     const colorThief = new ColorThief();
     const img = new Image();
 
     img.addEventListener('load', () => {
       const colors = colorThief.getPalette(img, 5);
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const randomColor = this.getColor(colors);
 
       this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
       this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
