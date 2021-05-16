@@ -19,6 +19,7 @@ class Footer extends Component {
         </div>
         <div className={styles.footerSocial}>
           <h3>Instagram</h3>
+          <h3>Spotify</h3>
           <h3>Soundcloud</h3>
         </div>
         <div className={styles.logo}>

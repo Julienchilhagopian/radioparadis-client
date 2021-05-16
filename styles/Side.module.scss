@@ -11,9 +11,11 @@
 
   .headerContainer {
     margin-bottom: 42px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
- 
   .sideContent {
     display: flex;
     align-items: center;

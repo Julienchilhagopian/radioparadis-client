@@ -17,13 +17,22 @@ class Side extends Component {
     return (
       <section className={styles.side}>
         <div className={styles.headerContainer}>
-          <Logo />
-         <ColorHeader principalColor={this.props.principalColor} title='Sonorité antérieures'/>
+          <Logo
+                isMorning={this.props.isMorning} 
+                isDay={this.props.isDay} 
+                isPlaying={this.props.isPlaying} 
+                size={80}
+            />
+          <ColorHeader principalColor={this.props.principalColor} title='Sonorités antérieures'/>
+          <Logo
+                isMorning={this.props.isMorning} 
+                isDay={this.props.isDay} 
+                isPlaying={this.props.isPlaying} 
+                size={80}
+            />
         </div>
         <TrackHistory isHistoryLoading={this.props.isHistoryLoading} history={this.props.history}/>
-        <LogoSeparator  
-              principalColor={this.props.principalColor}
-        /> 
+        <LogoSeparator principalColor={this.props.principalColor} /> 
         <div className={styles.sideContent}>
           <Chat principalColor={this.props.principalColor}/>
           <Interviews 
