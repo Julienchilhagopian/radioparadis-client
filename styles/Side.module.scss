@@ -6,25 +6,14 @@
 @media (min-width: 767px){ 
   .side {
     display: block;
-    padding: 50px 50px 0px 50px;
+    padding: 50px 50px 80px 50px;
   }
 
   .headerContainer {
     margin-bottom: 42px;
   }
 
-  .separatorLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 45px;
-  }
-
-  .logo {
-    margin-right: 30px;
-    margin-left: 30px;
-  }
-
+ 
   .sideContent {
     display: flex;
     align-items: center;

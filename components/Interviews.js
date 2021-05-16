@@ -16,7 +16,7 @@ class Interviews extends Component {
           <ColorHeader principalColor={this.props.principalColor} title='Rencontres'/>
         </div>
         <div className={styles.interviewsContent}>
-          <p>Radio Paradis s'anime depuis une coloc du 10ème arrondissement.</p>
+          <p>Radio Paradis est née dans une coloc du 10ème arrondissement.</p>
           <p>Un nouveau canal traversera ce quartier. Un canal dédié à l'échange de musiques et d'histoires.</p>
           <p>Cet été, la radio ira à la rencontre des commercants et des habitants du 10ème.</p>
           <p>On a tous une histoire à raconter, écrivez-nous et nous porterons la votre.</p>

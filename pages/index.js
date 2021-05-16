@@ -9,6 +9,7 @@ import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
 import ColorThief from "colorthief";
 import { isMobile } from "react-device-detect";
+import Footer from '../components/Footer'
 
 class Home extends Component {
 
@@ -248,6 +249,7 @@ class Home extends Component {
               isDay={this.state.isDay} 
               isNight={this.state.isNight}
             />
+            <Footer />
             <MobilePlayer  mobileColor={this.state.mobileColor} currentTrack={this.state.currentTrack} togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
             <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
               <p>SubmitForm</p>

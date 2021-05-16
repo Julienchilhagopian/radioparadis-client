@@ -1,7 +1,11 @@
-.separatorContainer {
+.separatorLogo {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.logo {
+  margin-right: 30px;
+  margin-left: 30px;
 }

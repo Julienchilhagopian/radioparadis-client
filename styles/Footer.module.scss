@@ -1,0 +1,41 @@
+.footerContainer {
+  display: none;
+}
+
+@media (min-width: 767px){ 
+  .footerContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 50px 30px 50px;
+    border-top: 2px solid black
+  }
+
+  .footerSpeech {
+    width: 25%;
+    text-align: left;
+  }
+
+  .footerSpeech p {
+    font-size: 8pt;
+  }
+
+  .footerSocial h3 {
+
+  }
+
+  .logo {
+   text-align: center;
+  }
+
+  .logo h1 {
+    text-transform: uppercase;
+    font-size: 18pt;
+
+  }
+
+
+  
+}
+
+
