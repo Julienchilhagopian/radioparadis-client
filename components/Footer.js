@@ -13,7 +13,7 @@ class Footer extends Component {
       <section className={styles.footerContainer}>
         <div className={styles.footerSpeech}>
           <p>Sur Radio Paradis nous militons pour une musique tournée vers le monde.</p>
-          <p>Faites nous part de vos projets. Nous serons ravis de vous accueillir à l'antenne : 
+          <p>Faites nous part de vos idées. Nous serons ravis de vous accueillir à l'antenne : 
             <a href="mailto:bonjour@radioparadis.com"> bonjour@radioparadis.com</a>
           </p>
         </div>

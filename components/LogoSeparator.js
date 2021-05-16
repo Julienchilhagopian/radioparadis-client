@@ -10,54 +10,14 @@ class LogoSeparator extends Component {
   
   render() {
     return (
-      <div className={styles.separatorLogo}>
-        <h3>@radioparadis</h3>
-        <div className={styles.logo}>
-          <Logo
-              isMorning={this.props.isMorning} 
-              isDay={this.props.isDay} 
-              isPlaying={this.props.isPlaying} 
-              size={this.props.size}
-            />
-        </div>
-        <h3>@radioparadis</h3>
-        <div className={styles.logo}>
-          <Logo
-              isMorning={this.props.isMorning} 
-              isDay={this.props.isDay} 
-              isPlaying={this.props.isPlaying} 
-              size={this.props.size}
-            />
-        </div>
-        <h3>@radioparadis</h3>
-        <div className={styles.logo}>
-          <Logo
-              isMorning={this.props.isMorning} 
-              isDay={this.props.isDay} 
-              isPlaying={this.props.isPlaying} 
-              size={this.props.size}
-            />
-        </div>
-        <h3>@radioparadis</h3>
-        <div className={styles.logo}>
-          <Logo
-              isMorning={this.props.isMorning} 
-              isDay={this.props.isDay} 
-              isPlaying={this.props.isPlaying} 
-              size={this.props.size}
-            />
-        </div>
-        <h3>@radioparadis</h3>
-        <div className={styles.logo}>
-          <Logo
-              isMorning={this.props.isMorning} 
-              isDay={this.props.isDay} 
-              isPlaying={this.props.isPlaying} 
-              size={this.props.size}
-            />
-        </div>
-        <h3>@radioparadis</h3>
-      </div>
+    <div className={styles.tickerContainer} style={{'color': this.props.principalColor}}>
+      <p className={styles.marquee}>
+        <span>@radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis &nbsp;</span>
+      </p>
+      <p className={styles.marquee + " " + styles.marquee2}>
+        <span>@radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis &nbsp;</span>
+      </p>
+    </div>
     )
   }
 } 
