@@ -1,6 +1,15 @@
 .trackHistoryHeader {
-  font-size: 30pt;
+  font-size: 17pt;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-align: center;
+}
+
+
+@media (min-width: 767px){ 
+  .trackHistoryHeader {
+    font-size: 30pt;
+    line-height: unset;
+  }
+  
 }

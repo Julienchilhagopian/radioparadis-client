@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
 import LogoSeparator from './LogoSeparator';
 import Chat from './Chat';
-import Logo from './Logo';
 import Interviews from './Interviews';
-import ColorHeader from './ColorHeader';
 
 class Side extends Component {
 
@@ -16,22 +14,14 @@ class Side extends Component {
   render() {
     return (
       <section className={styles.side}>
-        <div className={styles.headerContainer}>
-          <Logo
-                isMorning={this.props.isMorning} 
-                isDay={this.props.isDay} 
-                isPlaying={this.props.isPlaying} 
-                size={60}
-            />
-          <ColorHeader principalColor={this.props.principalColor} title='Sonorités antérieures'/>
-          <Logo
-                isMorning={this.props.isMorning} 
-                isDay={this.props.isDay} 
-                isPlaying={this.props.isPlaying} 
-                size={60}
-            />
-        </div>
-        <TrackHistory isHistoryLoading={this.props.isHistoryLoading} history={this.props.history}/>
+        <TrackHistory 
+          isMorning={this.props.isMorning} 
+          isDay={this.props.isDay} 
+          isPlaying={this.props.isPlaying} 
+          isHistoryLoading={this.props.isHistoryLoading} 
+          history={this.props.history}
+          principalColor={this.props.principalColor}
+        />
         <LogoSeparator principalColor={this.props.principalColor} /> 
         <div className={styles.sideContent}>
           <Chat principalColor={this.props.principalColor}/>

@@ -1,9 +1,7 @@
 import styles from '../styles/Content.module.scss'; 
-import Image from 'next/image'
 import React, { Component } from 'react';
 import DesktopPlayer from './DesktopPlayer';
 import Album from './Album';
-import ColorHeader from './ColorHeader';
 import Logo from './Logo';
 
 class Content extends Component {
@@ -18,7 +16,7 @@ class Content extends Component {
               isMorning={this.props.isMorning} 
               isDay={this.props.isDay} 
               isPlaying={this.props.isPlaying} 
-              size={80}
+              size={90}
             />
           </div>
           <div className={styles.album}>

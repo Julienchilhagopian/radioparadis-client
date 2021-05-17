@@ -1,5 +1,6 @@
 .content {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .mobileLogo {
@@ -10,7 +11,7 @@
   font-size: 45pt;
   line-height: 50px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .logoRotate {
@@ -26,7 +27,7 @@
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .album {
-  margin-bottom: 13px;
+  margin-bottom: 35px;
 }
 
 .album img {
@@ -54,7 +55,7 @@
 }
 
 .footer h3 {
-  font-weight: bolder;
+  font-size: 10pt;
 }
 
 .desktopHeader {
@@ -67,6 +68,11 @@
 
 
 @media (min-width: 767px){ 
+
+  .content {
+    margin-bottom: unset;
+  }
+  
 
   .mobileLogo {
     display: none; 
@@ -104,9 +110,8 @@
   }
 
   .footer {
-    display: unset;
-    font-weight: bolder;
-  }
+    display: block;
+    }
 
   .desktopPlayer {
     border: 1px solid;
@@ -130,7 +135,7 @@
   }
 
   .desktopPlayer {
-    display: unset;
+    display: block;
   }
 
 }

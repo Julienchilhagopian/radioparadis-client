@@ -3,10 +3,29 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 35px;
+}
+
+.headerContainer {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.headerLogo {
+  display: none;
 }
 
 
 @media (min-width: 767px){ 
+
+  .headerLogo {
+    display: block;
+  }
   
   .trackHistory {
     display: flex;
@@ -14,6 +33,14 @@
     margin-bottom: 60px;
   }
 
+  .headerContainer { 
+    margin-bottom: 42px;
+  }
+
+  .headerContainer h1 {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
 
   .tickerContainer {
     width: 325px;

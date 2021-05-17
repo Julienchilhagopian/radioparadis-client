@@ -1,6 +1,8 @@
 import styles from '../styles/TrackHistory.module.scss'
 import React, { Component } from 'react';
 import SongCard from './songCard';
+import Logo from './Logo';
+import ColorHeader from './ColorHeader';
 
 class TrackHistory extends Component {
 
@@ -11,6 +13,27 @@ class TrackHistory extends Component {
   render() {
     var trackHistory = this.props.history;
     return (
+      <section>
+        <div className={styles.headerContainer}>
+          <div className={styles.headerLogo}>
+            <Logo
+                isMorning={this.props.isMorning} 
+                isDay={this.props.isDay} 
+                isPlaying={this.props.isPlaying} 
+                size={60}
+              />
+          </div>
+          <ColorHeader principalColor={this.props.principalColor} title='Sonorités antérieures'/>
+          <div className={styles.headerLogo}>
+            <Logo
+                  className={styles.headerLogo}
+                  isMorning={this.props.isMorning} 
+                  isDay={this.props.isDay} 
+                  isPlaying={this.props.isPlaying} 
+                  size={60}
+              />
+          </div>
+        </div>
         <div className={styles.trackHistory}>
           {
             (this.props.isHistoryLoading || !this.props.history) ? 
@@ -21,6 +44,7 @@ class TrackHistory extends Component {
               ))
           }
         </div>
+      </section>
     )
   }
 } 
