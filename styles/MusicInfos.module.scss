@@ -1,3 +1,5 @@
+@import 'variables';
+
 .albumInfo {
   font-size: 14pt;
   max-width: 260px;
@@ -8,7 +10,7 @@
   width: 60%;
 }
 
-@media (min-width: 767px){ 
+@media (min-width: $desktopWidth){ 
   .albumInfo {
     font-size: 18pt;
     max-width: unset;

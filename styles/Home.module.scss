@@ -1,10 +1,16 @@
+@import 'variables';
 
 .frame {
   padding: unset;
   //background-color: unset !important;
 }
 
-@media (min-width: 767px){ 
+.mobileFitter {
+  display: block;
+  height: 135px;
+}
+
+@media (min-width: $desktopWidth){ 
   .frame {
     //background-color: initial !important;
     padding: 50px 50px 60px 50px;
@@ -16,5 +22,7 @@
     padding: 50px 30px 30px 30px;
   }
 
-
+  .mobileFitter {
+    display: none;
+  }
 }

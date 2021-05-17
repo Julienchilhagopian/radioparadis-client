@@ -1,8 +1,10 @@
+@import 'variables';
+
 .sideContent {
   display: none;
 }
 
-@media (min-width: 767px){ 
+@media (min-width: $desktopWidth){ 
   .side {
     display: block;
     padding: 50px 50px 80px 50px;

@@ -1,16 +1,15 @@
+@import 'variables';
 // .tickerContainer {
 //   display: none;
 // }
-
 
   .tickerContainer {
     display: block;
     height: 50px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 45px;
-    padding-bottom: 300px;
-}
+    margin-bottom: 35px;
+  }
 
   .tickerContainer p {
     font-size: 20pt;
@@ -44,5 +43,8 @@
   }
 
 
-//@media (min-width: 767px){ 
-//}
+@media (min-width: $desktopWidth){ 
+  .tickerContainer {
+    margin-bottom: 50px;
+  }
+}

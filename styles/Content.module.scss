@@ -1,3 +1,5 @@
+@import 'variables';
+
 .content {
   text-align: center;
   margin-bottom: 50px;
@@ -67,7 +69,7 @@
 }
 
 
-@media (min-width: 767px){ 
+@media (min-width: $desktopWidth){ 
 
   .content {
     margin-bottom: unset;

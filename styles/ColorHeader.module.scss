@@ -1,15 +1,22 @@
+@import 'variables';
+
 .trackHistoryHeader {
-  font-size: 17pt;
+  font-size: 15pt;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
 }
 
+@media (min-width: 350px) {
+  .trackHistoryHeader {
+    font-size: 17pt;
+  }
+}
 
-@media (min-width: 767px){ 
+
+@media (min-width: $desktopWidth){ 
   .trackHistoryHeader {
     font-size: 30pt;
     line-height: unset;
   }
-  
 }

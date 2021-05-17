@@ -3,7 +3,7 @@
   border-radius: 22px;
   text-align: center;
   padding: 14px;
-  width: 150px;
+  width: 130px;
 }
 
 .cardContainer img {
@@ -30,5 +30,11 @@
 
 .hours {
   font-size: 7pt;
+}
+
+@media (min-width: 350px) {
+  .cardContainer {
+    width: 150px;
+  }
 }
 

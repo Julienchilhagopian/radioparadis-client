@@ -1,3 +1,5 @@
+@import 'variables';
+
 .header {
   text-align: center;
   letter-spacing: 1px;
@@ -10,7 +12,7 @@
 }
 
 
-@media (min-width: 767px){
+@media (min-width: $desktopWidth){
 
   .header  { 
     padding-top: unset;
