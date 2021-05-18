@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { Modal } from 'antd';
-
 class SubmitForm extends Component {
 
   constructor(){
@@ -16,22 +15,26 @@ class SubmitForm extends Component {
   registerSong = async (event) => {
     event.preventDefault()
 
-    const res = await fetch('/api/register-song', {
-      body: JSON.stringify({
-        name: event.target.name.value, 
-        link: event.target.name.link,
-        comment: event.target.name.comment
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
+    try{
+      const res = await fetch('/api/register-song', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: event.target.name.value, 
+          link: event.target.link.value,
+          comment: event.target.comment.value
+        }),
+        method: 'POST'
+      })
+  
+      const result = await res.json()
+      if (!res.ok) throw Error(json.message)
+      this.props.handleClose();
+    } catch (e) {
+      throw Error(e.message)
+    }
 
-    const result = await res.json()
-    
-    console.log(event.target.name.value)
-    this.props.handleClose();
   }
 
   changeColorInput = () => {
@@ -62,7 +65,7 @@ class SubmitForm extends Component {
        <div>
          <form className='formContent' onSubmit={this.registerSong}>
            <input 
-              onClick={this.changeColorInput}
+              onFocus={this.changeColorInput}
               style={{'borderBottom': input_border}}  
               id="name" 
               type="text" 
@@ -70,7 +73,7 @@ class SubmitForm extends Component {
               required 
               />
            <textarea 
-              onClick={this.changeColorTextarea1}
+              onFocus={this.changeColorTextarea1}
               style={{'borderBottom': textarea1_border}}  
               rows="3" 
               id="link" 
@@ -78,7 +81,7 @@ class SubmitForm extends Component {
               placeholder="On accepte le nom, le lien ou toute forme de chemin vers votre pépite musicale." 
               required/>
            <textarea 
-              onClick={this.changeColorTextarea2}
+              onFocus={this.changeColorTextarea2}
               style={{'borderBottom': textarea2_border}}  
               id="comment" 
               type="text" 

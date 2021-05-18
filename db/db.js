@@ -9,7 +9,7 @@ const pool = new Pool({
 	port: process.env.DB_PORT, 
 })
 
-export async function executeQuery(sql, params, callback) {
+export async function query(sql, params, callback) {
   // 1. Connection
   pool.connect((err, client, done) => {
     if(err) {
