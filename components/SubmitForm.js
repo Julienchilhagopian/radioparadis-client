@@ -9,6 +9,7 @@ class SubmitForm extends Component {
       input_clicked: false, 
       textarea1_clicked: false, 
       textarea2_clicked: false,
+      flag: false
     }
 }
 
@@ -31,6 +32,7 @@ class SubmitForm extends Component {
       const result = await res.json()
       if (!res.ok) throw Error(json.message)
       this.props.handleClose();
+      this.clearForm();
     } catch (e) {
       throw Error(e.message)
     }
@@ -55,6 +57,10 @@ class SubmitForm extends Component {
     this.setState({textarea2_clicked: !this.state.textarea2_clicked});
   }
 
+  clearForm = () => { 
+    document.getElementById("requestPost").reset();
+  }
+
   render() {
     let input_border = this.state.input_clicked ? '3px solid ' + this.props.principalColor : "3px solid black";
     let textarea1_border = this.state.textarea1_clicked ? '3px solid ' + this.props.principalColor : "3px solid black";
@@ -63,7 +69,7 @@ class SubmitForm extends Component {
     return (
       <Modal title="Nourissez la radio de vos écoutes." visible={this.props.show} onOk={this.props.handleClose} onCancel={this.props.handleClose} footer={[]}>
        <div>
-         <form className='formContent' onSubmit={this.registerSong}>
+         <form id='requestPost' className='formContent' onSubmit={this.registerSong}>
            <input 
               onFocus={this.changeColorInput}
               style={{'borderBottom': input_border}}  
