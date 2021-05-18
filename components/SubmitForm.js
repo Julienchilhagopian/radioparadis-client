@@ -9,7 +9,6 @@ class SubmitForm extends Component {
     const res = await fetch('/api/register-song', {
       body: JSON.stringify({
         name: event.target.name.value, 
-        street: event.target.name.street, 
         link: event.target.name.link,
         comment: event.target.name.comment
       }),
@@ -20,7 +19,6 @@ class SubmitForm extends Component {
     })
 
     const result = await res.json()
-    // result.user => 'Ada Lovelace'
     
     console.log(event.target.name.value)
     this.props.handleClose();
@@ -31,12 +29,11 @@ class SubmitForm extends Component {
       <Modal title="Nourissez la radio de vos écoutes." visible={this.props.show} onOk={this.props.handleClose} onCancel={this.props.handleClose} footer={[]}>
        <div>
          <form className='formContent' onSubmit={this.registerSong}>
-           <input id="name" type="text" placeholder="Nom" required />
-           <input id="street" type="text" placeholder="Rue" />
-           <input id="link" type="text" placeholder="Le lien vers votre pépite musicale" />
-           <input id="comment" type="text" placeholder="Ecrivez-nous !" />
+           <input id="name" type="text" placeholder="Qui êtes-vous ?" required />
+           <textarea rows="3" id="link" type="text" placeholder="On accepte le nom, le lien ou toute forme de chemin vers votre pépite musicale." required/>
+           <textarea id="comment" type="text" placeholder="Ecrivez-nous un petit mot si vous avez envie." />
            <button className='requestBtn' type="submit">
-            Envoyer au Paradis !
+            envoyer au paradis
            </button>
          </form>
        </div>

@@ -189,6 +189,7 @@ class Home extends Component {
       (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
       || (randomColor[0] < 100 && randomColor[1] < 100 && randomColor[2] < 100)
       ) {
+      console.log("Colorformat loop");
       randomColor = colors[Math.floor(Math.random() * colors.length)];
     }
 
@@ -265,9 +266,7 @@ class Home extends Component {
             <Footer />
             <div className={styles.mobileFitter}></div>
             <MobilePlayer  mobileColor={this.state.mobileColor} currentTrack={this.state.currentTrack} togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
-            <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}>
-              <p>SubmitForm</p>
-            </SubmitForm>
+            <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}></SubmitForm>
           </section>
         </main>
       </div>

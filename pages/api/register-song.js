@@ -1,21 +1,20 @@
 import { query } from '../../db/db'
 
 const postSong = async (req, res) => {
-  const {name, street, link, comment} = req.body
+  const {name, link, comment} = req.body
   try {
-    // TO DO - Form validation
-    if (!name || !street) {
+    if (!name || !link) {
       return res
         .status(400)
-        .json({ message: '`name` and `street` are both required' })
+        .json({ message: '`name` and `link` are required' })
     }
 
     const results = await query(
       `
-      INSERT INTO songs (name, link, street, comment)
-      VALUES (?, ?, ?, ?)
+      INSERT INTO songs (name, link, comment)
+      VALUES (?, ?, ?)
       `,
-      [name, street, link, comment]
+      [name, link, comment]
     )
 
     return res.json(results)

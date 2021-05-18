@@ -1,40 +1,13 @@
 @import 'variables';
 
-
-.modal {
-  position: fixed;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
-  left : 0;
-  top: 0;
-  width: 0px;
-  height : 0px;
-  opacity: 0;
-  transition: opacity 0.15s ease-out, width 0s linear 0.15s, height 0s linear 0.15s;
-}
-
-.modalMain {
-  margin: 0 auto;
-  width: 600px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.formTitle {
-  font-size: 40px;
-}
-
 .formContent {
   display: flex; 
   flex-direction: column;
   align-items: center;
 }
 
-.formContent input {
+.formContent input, .formContent textarea {
+  font-family: "Inconsolata";
   display: block;
   width: 90%;
   font-size: 14pt;
@@ -48,6 +21,11 @@
   color: black;
 }
 
+.formContent textarea {
+  line-height: 18pt; 
+  padding-bottom: 10px;
+}
+
 .formContent input#comment {
   margin-bottom: 40px;
 }
@@ -58,26 +36,15 @@
 }
 
 .formContent button {
-  width: 300px;
-}
-
-.displayOn {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transition: opacity 0.15s ease-out;
-  display: block;
-}
-
-.displayOff {
-  display: none;
+  width: 200px;
 }
 
 .ant-modal-title {
-  font-size: 44px;
-  line-height: 45px;
-  padding-left: 25px;
-  padding-top: 39px;
+  font-size: 30px;
+  line-height: 30px;
+  padding-left: 15px;
+  padding-top: 40px;
+  font-family: "Prompt";
 }
 
 .ant-modal-header {
@@ -86,7 +53,7 @@
 }
 
 .ant-modal-body {
-  padding: 24px 24px 38px 24px;
+  padding: 0px 24px 38px 24px;
 }
 
 .ant-modal-content {
