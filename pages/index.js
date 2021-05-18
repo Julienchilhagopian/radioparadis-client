@@ -265,8 +265,17 @@ class Home extends Component {
             />
             <Footer />
             <div className={styles.mobileFitter}></div>
-            <MobilePlayer  mobileColor={this.state.mobileColor} currentTrack={this.state.currentTrack} togglePlay={this.togglePlay} isPlaying={this.state.isPlaying}/>
-            <SubmitForm show={this.state.show} handleClose={this.hideSubmitForm}></SubmitForm>
+            <MobilePlayer  
+              mobileColor={this.state.mobileColor} 
+              currentTrack={this.state.currentTrack} 
+              togglePlay={this.togglePlay} 
+              isPlaying={this.state.isPlaying}
+              />
+            <SubmitForm 
+              principalColor={this.state.principalColor}  
+              show={this.state.show} 
+              handleClose={this.hideSubmitForm}>
+            </SubmitForm>
           </section>
         </main>
       </div>
