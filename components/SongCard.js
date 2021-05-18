@@ -9,15 +9,27 @@ class SongCard extends Component {
   constructor() {
     super();
   }
+
+  formatTime = (date) => {
+    var hours = Array.from(String(date.getHours()), Number);
+    hours = (hours.length == 1) ? "0" + date.getHours() : date.getHours(); 
+
+    var minutes = Array.from(String(date.getMinutes()), Number);
+    minutes = (minutes.length == 1) ? "0" + date.getMinutes() : date.getMinutes(); 
+
+    return hours + " h " + minutes;
+  }
   
   render() {
     var date = new Date(this.props.time); 
+    var formatedTime = this.formatTime(date);
+    
     return (
       <div className={styles.cardContainer}>
         <img src={this.props.album} alt="Logo" width={90} height={90}/>
         <h2 className={styles.artistName}>{this.props.artist}</h2>
         <h2 className={styles.songTitle}>{this.props.songTitle}</h2>
-        <h3 className={styles.hours}>{date.getHours()} h {date.getMinutes()}</h3>
+        <h3 className={styles.hours}>{formatedTime}</h3>
       </div> 
     )
   }
