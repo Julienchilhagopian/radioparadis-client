@@ -62,6 +62,10 @@
   display: none;
 }
 
+.popupMsg div {
+  border-radius: 15px;
+}
+
 @media (min-width: 760px) {
   .ant-modal-header {
     padding: 60px 90px 0px 90px;

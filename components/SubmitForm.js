@@ -1,5 +1,8 @@
 import { Component } from 'react';
 import { Modal } from 'antd';
+import { message } from 'antd';
+
+
 class SubmitForm extends Component {
 
   constructor(){
@@ -11,7 +14,7 @@ class SubmitForm extends Component {
       textarea2_clicked: false,
       flag: false
     }
-}
+  }
 
   registerSong = async (event) => {
     event.preventDefault()
@@ -32,6 +35,7 @@ class SubmitForm extends Component {
       const result = await res.json()
       if (!res.ok) throw Error(json.message)
       this.props.handleClose();
+      this.success();
       this.clearForm();
     } catch (e) {
       throw Error(e.message)
@@ -60,6 +64,13 @@ class SubmitForm extends Component {
   clearForm = () => { 
     document.getElementById("requestPost").reset();
   }
+
+  success = () => {
+    message.success({
+      content: 'Merci beaucoup ! On va écouter ça.',
+      className: 'popupMsg'
+    });
+  };
 
   render() {
     let input_border = this.state.input_clicked ? '3px solid ' + this.props.principalColor : "3px solid black";

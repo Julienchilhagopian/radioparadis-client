@@ -23,8 +23,7 @@ const postSong = async (req, res) => {
       }
     )
 
-    //console.log("res query ", results)
-    //return res.json(results)
+    return results
   } catch (e) {
     res.status(500).json({ message: e.message })
   }
