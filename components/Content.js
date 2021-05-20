@@ -30,26 +30,32 @@ class Content extends Component {
 
           <div className={styles.radioControls}>
             <div className={styles.desktopHeader}>
-              <Logo
-                isMorning={this.props.isMorning} 
-                isDay={this.props.isDay} 
-                isPlaying={this.props.isPlaying} 
-                size={80}
-              />
               <h1 style={{'color': this.props.principalColor}}>Radio paradis</h1> 
-              <Logo
-                isMorning={this.props.isMorning} 
-                isDay={this.props.isDay} 
-                isPlaying={this.props.isPlaying} 
-                size={80}
-              />
             </div> 
 
             <div className={styles.radioPitch}>
-              <p>La radio d'un quartier.</p>
-              <p>En ces temps imparfaits.</p>
-              <p>La musique comme usage du monde.</p>
-              <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
+              <div className={styles.logoClass}>
+                <Logo
+                  isMorning={this.props.isMorning} 
+                  isDay={this.props.isDay} 
+                  isPlaying={this.props.isPlaying} 
+                  size={110}
+                />
+              </div>
+              <div className={styles.radioPitchText}>           
+                <h3>La radio d'un quartier.</h3>
+                <h3>En ces temps imparfaits.</h3>
+                <h3>La musique comme usage du monde.</h3>
+                <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p> 
+              </div>
+              <div className={styles.logoClass}>
+                <Logo
+                  isMorning={this.props.isMorning} 
+                  isDay={this.props.isDay} 
+                  isPlaying={this.props.isPlaying} 
+                  size={110}
+                />
+              </div>
             </div>
 
             <DesktopPlayer 

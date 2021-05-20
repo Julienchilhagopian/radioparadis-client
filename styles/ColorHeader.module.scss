@@ -20,3 +20,10 @@
     line-height: unset;
   }
 }
+
+@media (min-width: $desktopWidth-large){
+  .trackHistoryHeader {
+    font-size: 40pt;
+    line-height: unset;
+  }
+}

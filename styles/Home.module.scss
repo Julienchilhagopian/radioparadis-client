@@ -26,3 +26,11 @@
     display: none;
   }
 }
+
+@media (min-width: $desktopWidth-large){
+  .frame {
+    padding: 70px 100px 70px 100px;
+  }
+
+  
+}

@@ -90,3 +90,10 @@
     -webkit-animation:fade 2000ms infinite;
   }
 }
+
+@media (min-width: $desktopWidth-large){
+  .album {
+    width: 350px;
+    height: 350px;
+  }
+}

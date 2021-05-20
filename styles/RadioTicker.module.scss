@@ -39,3 +39,9 @@
     font-size: 22pt;
   }
 }
+
+@media (min-width: $desktopWidth-large){
+  .tickerContainer h2  {
+    font-size: 25pt;
+  }
+}

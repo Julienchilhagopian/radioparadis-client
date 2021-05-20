@@ -1,3 +1,6 @@
+@import 'variables';
+
+
 .cardContainer {
   background-color: #EDEDED;
   border-radius: 22px;
@@ -35,6 +38,30 @@
 @media (min-width: 350px) {
   .cardContainer {
     width: 150px;
+  }
+}
+
+@media (min-width: $desktopWidth-large){
+  .cardContainer img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cardContainer {
+    padding: 20px;
+    width: 210px;
+  }
+
+  .artistName {
+    font-size: 12pt;
+  }
+
+  .songTitle {
+    font-size: 10pt;
+  }
+
+  .hours {
+    font-size: 9pt;
   }
 }
 
