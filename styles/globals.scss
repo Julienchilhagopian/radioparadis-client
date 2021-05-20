@@ -52,7 +52,7 @@ p {
   border-radius: 11px;
 }
 
-// --- Volume slider --- //
+// --- Volume slider  --- //
 
 .ant-slider-track {
   background-color: black;
@@ -60,4 +60,11 @@ p {
 
 .ant-slider-handle {
   border: solid 2px black;
+}
+
+
+// --- Popup message  --- //
+
+.popupMsg div {
+  border-radius: 15px;
 }

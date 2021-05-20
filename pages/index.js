@@ -9,7 +9,8 @@ import Side from '../components/Side'
 import ReactAudioPlayer from 'react-audio-player';
 import ColorThief from "colorthief";
 import { isMobile } from "react-device-detect";
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import { message } from 'antd';
 
 class Home extends Component {
 
@@ -60,8 +61,8 @@ class Home extends Component {
           this.radioPlayer.audioEl.current.load();
           this.radioPlayer.audioEl.current.play();
 
-          console.log("Radio player", this.radioPlayer.audioEl);
         } catch (e) {
+          this.errorMsg();
           console.log("Player error", e);
       }
     }
@@ -71,6 +72,12 @@ class Home extends Component {
     }));
   }
 
+  errorMsg = () => {
+    message.error({
+      content: 'Mmmm la musique ne marche plus. On fait le maximum !',
+      className: 'popupMsg'
+    });
+  };
 
   getTime() {
     return new Date();

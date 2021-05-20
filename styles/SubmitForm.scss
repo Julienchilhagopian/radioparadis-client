@@ -30,10 +30,6 @@
 }
 
 
-.formContent input:focus {
-  border-bottom: 3px solid $btn-color;
-}
-
 .formContent button {
   width: 200px;
 }
@@ -60,10 +56,6 @@
 
 .ant-modal-footer {
   display: none;
-}
-
-.popupMsg div {
-  border-radius: 15px;
 }
 
 @media (min-width: 760px) {
