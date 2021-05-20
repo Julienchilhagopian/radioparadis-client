@@ -29,7 +29,8 @@ class Home extends Component {
       principalColor: '#cecece', 
       secondaryColor: '#cecece8c', 
       mobileColor: '#cecece', 
-      frameColor: ''
+      frameColor: '', 
+      volume: 1
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -58,7 +59,9 @@ class Home extends Component {
       try {
           this.radioPlayer.audioEl.current.load();
           this.radioPlayer.audioEl.current.play();
-      } catch (e) {
+
+          console.log("Radio player", this.radioPlayer.audioEl);
+        } catch (e) {
           console.log("Player error", e);
       }
     }
@@ -222,6 +225,13 @@ class Home extends Component {
     this.setState({frameColor: isMobile ? 'white' : this.state.principalColor})
   }
 
+  onVolumeChange  = (value) => {
+    //event.preventDefault();
+    console.log(value);
+    this.setState({volume: (value / 100)})
+  };
+
+
   render(){
     const frameColor = {
       "backgroundColor": this.state.frameColor,
@@ -235,11 +245,24 @@ class Home extends Component {
         </Head>
 
         <main>
-          <ReactAudioPlayer ref={(element) => { this.radioPlayer = element; }} src={this.radioURL} preload={'none'}/>
+          <ReactAudioPlayer 
+            ref={(element) => {
+              this.radioPlayer = element;
+              if(this.radioPlayer) {
+                this.radioPlayer.audioEl.current.volume = this.state.volume;
+              }
+            }} 
+            src={this.radioURL} 
+            preload={'auto'}
+            />
           <section className={styles.home}>
             <div className={styles.frame} style={frameColor}>
               <div className={styles.frameContent}>
-                <Header isMorning={this.state.isMorning} isDay={this.state.isDay} isNight={this.state.isNight}/>
+                <Header 
+                  isMorning={this.state.isMorning} 
+                  isDay={this.state.isDay} 
+                  isNight={this.state.isNight}
+                  />
                 <Content 
                     principalColor={this.state.principalColor}
                     secondaryColor={this.state.secondaryColor} 
@@ -251,6 +274,7 @@ class Home extends Component {
                     isMorning={this.state.isMorning} 
                     isDay={this.state.isDay} 
                     isNight={this.state.isNight}
+                    onVolumeChange={this.onVolumeChange}
                   />
               </div>
             </div>

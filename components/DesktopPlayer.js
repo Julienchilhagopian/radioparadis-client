@@ -2,8 +2,8 @@ import styles from '../styles/DesktopPlayer.module.scss'
 import React, { Component } from 'react';
 import PlayBtn from './PlayBtn';
 import Album from './Album'
-import Image from 'next/image'
 import MusicInfos from './MusicInfos';
+import { Slider } from 'antd';
 
 class DesktopPlayer extends Component {
 
@@ -16,9 +16,22 @@ class DesktopPlayer extends Component {
       "backgroundColor": this.props.secondaryColor,
     };
 
+    const sliderStyle = {
+      display: 'inline-block', 
+      "backgroundColor": this.props.principalColor,
+    };
+
     return (
       <div className={styles.desktopPlayerContainer}>
-       
+        <div className={styles.volumeContainer} style={sliderStyle}>
+          <Slider  
+            onChange={(value) => {
+              this.props.onVolumeChange(value);
+            }}
+            vertical 
+            defaultValue={50} 
+          />
+        </div>
         <section className={styles.desktopPlayer} style={playerColor}>
           <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
           <div className={styles.desktopPlayerContent}>

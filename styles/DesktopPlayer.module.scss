@@ -11,6 +11,15 @@
     justify-content: center;
   }
 
+  .volumeContainer {
+    border-radius: 30px 0px 0px 30px;
+    padding: 50px 0px;
+  } 
+
+  .volumeContainer > div {
+    margin: 0px 45px;
+  }
+
   .desktopPlayerContainer img {
     border-radius: 0px 30px 30px 0px;
   }
@@ -29,10 +38,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #c0853a2e;
-    width: 55%;
+    background-color: #afafaf2e;
+    width: 46%;
     padding-right: 10px;
-    border-radius: 30px 0px 0px 30px;
   }
 
   .desktopPlayerContent {
