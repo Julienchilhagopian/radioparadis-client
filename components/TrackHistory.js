@@ -1,6 +1,6 @@
 import styles from '../styles/TrackHistory.module.scss'
 import React, { Component } from 'react';
-import SongCard from './songCard';
+import SongCard from './SongCard';
 import Logo from './Logo';
 import ColorHeader from './ColorHeader';
 
