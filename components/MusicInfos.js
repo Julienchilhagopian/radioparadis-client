@@ -1,6 +1,6 @@
 import styles from '../styles/MusicInfos.module.scss'
 import React, { Component } from 'react';
-import RadioTicker from './RadioTicker'
+import RadioTicker from './RadioTicker';
 
 class MusicInfos extends Component {
 
@@ -14,7 +14,7 @@ class MusicInfos extends Component {
         { (this.props.isTrackLoading || !this.props.currentTrack) ? 
               <h2>...contact de la source musicale...</h2>
             :
-              <RadioTicker artist={this.props.currentTrack.artist} title={this.props.currentTrack.title}/>
+              <RadioTicker content={this.props.currentTrack.artist + " - " + this.props.currentTrack.title}/>
         }
         {
           (this.props.currentTrack.album) ? 

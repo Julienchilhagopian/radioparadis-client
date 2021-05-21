@@ -11,7 +11,7 @@ class RadioTicker extends Component {
     return (
       <div className={styles.tickerContainer}>
         <h2 className={styles.tickerAnimation}>
-          <span>{this.props.artist} - {this.props.title}</span>
+          <span>{this.props.content}</span>
         </h2>
       </div>
     )

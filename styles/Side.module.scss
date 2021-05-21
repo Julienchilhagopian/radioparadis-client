@@ -4,13 +4,16 @@
   display: none;
 }
 
+.side {
+  margin-bottom: 25px;
+}
+
 @media (min-width: $desktopWidth){ 
   .side {
     display: block;
     padding: 50px 50px 80px 50px;
+    margin-bottom: unset;
   }
-
-  
 
   .sideContent {
     display: flex;

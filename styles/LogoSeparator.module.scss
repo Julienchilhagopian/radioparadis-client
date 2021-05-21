@@ -1,46 +1,36 @@
 @import 'variables';
-// .tickerContainer {
-//   display: none;
-// }
 
-.tickerContainer {
-  display: block;
-  height: 50px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 35px;
-  cursor: pointer;
-}
 
-.tickerContainer p {
+.tickerContainer span {
   font-size: 20pt;
   font-family: $headerFont;
 }
 
 .marquee {
-  margin: 0 auto;
-  white-space: nowrap;
+  height: 50px;
   overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 50px;
+
   position: absolute;
+  overflow: hidden;
+
+  animation: marquee 10s linear infinite;
 }
 
 .marquee span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 25s linear infinite;
-}
-
-.marquee2 span {
-  animation-delay: 12.5s;
+  float: left;
+  width: 50%;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
+  0% { left: 0; }
+  100% { left: -100%; }
 }
 
 
@@ -55,3 +45,94 @@
     font-size: 25pt;
   }
 }
+
+
+.marqueeContent {
+  margin-right: 30px
+}
+
+
+// .tickerContainer {
+//   display: block;
+//   height: 50px;
+//   position: relative;
+//   overflow: hidden;
+//   margin-bottom: 35px;
+//   cursor: pointer;
+// }
+
+// .tickerContainer span {
+//   font-size: 20pt;
+//   font-family: $headerFont;
+// }
+
+
+// .marquee {
+//   height: 40px;
+//   width: 100%;
+//   overflow: hidden;
+//   position: relative;
+// }
+
+// .marquee div {
+//   display: block;
+//   width: 200%;
+//   height: 50px;
+
+//   position: absolute;
+//   overflow: hidden;
+
+//   animation: marquee 5s linear infinite;
+// }
+
+// .marquee span {
+//   float: left;
+//   width: 50%;
+// }
+
+// @keyframes marquee {
+//   0% { left: 0; }
+//   100% { left: -100%; }
+// }
+
+
+// .marquee {
+//   margin: 0 auto;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   position: absolute;
+// }
+
+// .marquee p {
+//   display: inline-block;
+//   padding-left: 100%;
+//   animation: marquee 20s linear infinite;
+// }
+
+// .marquee2 p {
+//   animation-delay: 10s;
+// }
+
+// @keyframes marquee {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   100% {
+//     transform: translate(-100%, 0);
+//   }
+// }
+
+
+// @media (min-width: $desktopWidth){ 
+//   .tickerContainer {
+//     margin-bottom: 50px;
+//   }
+// }
+
+// @media (min-width: $desktopWidth-large){
+//   .tickerContainer p {
+//     font-size: 25pt;
+//   }
+// }
+
+

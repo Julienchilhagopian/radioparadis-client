@@ -1,4 +1,5 @@
-import styles from '../styles/LogoSeparator.module.scss'
+import styles from '../styles/LogoSeparator.module.scss'; 
+import { isMobile } from "react-device-detect";
 import React, { Component } from 'react';
 
 class LogoSeparator extends Component {
@@ -10,12 +11,12 @@ class LogoSeparator extends Component {
   render() {
     return (
       <div onClick={()=> window.open("google.com", "_blank")} className={styles.tickerContainer} style={{'color': this.props.principalColor}}>
-        <p className={styles.marquee}>
-          <span>@radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis &nbsp;</span>
-        </p>
-        <p className={styles.marquee + " " + styles.marquee2}>
-          <span>@radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis &nbsp;</span>
-        </p>
+        <div className={styles.marquee}>
+          <div>
+            <span> @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis</span>
+            <span> @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis</span>
+          </div>
+        </div>
       </div>
     )
   }
