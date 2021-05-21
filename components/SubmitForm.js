@@ -18,7 +18,7 @@ class SubmitForm extends Component {
 
   registerSong = async (event) => {
     event.preventDefault()
-
+    this.disableBtn();
     try{
       const res = await fetch('/api/register-song', {
         headers: {
@@ -30,10 +30,11 @@ class SubmitForm extends Component {
           comment: event.target.comment.value
         }),
         method: 'POST'
-      })
-  
+      });
+
       const result = await res.json()
       if (!res.ok) throw Error(json.message)
+
       this.props.handleClose();
       this.success();
       this.clearForm();
@@ -70,6 +71,18 @@ class SubmitForm extends Component {
       content: 'Merci beaucoup ! On va écouter ça.',
       className: 'popupMsg'
     });
+    this.enableBtn();
+  };
+
+
+  disableBtn = () => {
+    var btn = document.getElementById("submitBtn"); 
+    btn.disabled = true;
+  };
+
+  enableBtn = () => {
+    var btn = document.getElementById("submitBtn"); 
+    btn.disabled = false;
   };
 
   render() {
@@ -104,7 +117,7 @@ class SubmitForm extends Component {
               type="text" 
               placeholder="Ecrivez-nous un petit mot si vous avez envie." 
               />
-           <button style={{'backgroundColor': this.props.principalColor}} className='requestBtn' type="submit">
+           <button id="submitBtn" style={{'backgroundColor': this.props.principalColor}} className='requestBtn' type="submit">
             envoyer au paradis
            </button>
          </form>
