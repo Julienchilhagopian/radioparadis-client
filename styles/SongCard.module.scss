@@ -35,7 +35,7 @@
   font-size: 7pt;
 }
 
-@media (min-width: 350px) {
+@media (min-width: $desktopWidth-small) {
   .cardContainer {
     width: 150px;
   }

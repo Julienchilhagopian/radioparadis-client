@@ -7,7 +7,7 @@
 }
 
 .formContent input, .formContent textarea {
-  font-family: "Inconsolata";
+  font-family: $textFont;
   display: block;
   width: 100%;
   font-size: 14pt;
