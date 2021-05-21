@@ -10,7 +10,7 @@ class Chat extends Component {
   componentDidMount() {
     const script = document.createElement("script");    
     script.async = true;    
-    script.src = "http://tlk.io/embed.js";  
+    script.src = "https://tlk.io/embed.js";  
     script.type = "text/javascript";
     this.div.appendChild(script);  
   }
