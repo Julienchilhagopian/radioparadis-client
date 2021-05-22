@@ -39,6 +39,7 @@ p {
   font-size: 12pt;
 }
 
+// --- Modal submit button  --- //
 
 .requestBtn {
   font-family: $headerFont;
@@ -51,6 +52,10 @@ p {
   font-size: 16px;
   border-radius: 11px;
   cursor: pointer;
+}
+
+.requestBtn:disabled {
+  opacity: 0.4;
 }
 
 // --- Volume slider  --- //
