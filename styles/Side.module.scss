@@ -1,6 +1,6 @@
 @import 'variables';
 
-.sideContent {
+.sideChat {
   display: none;
 }
 
@@ -8,7 +8,21 @@
   margin-bottom: 25px;
 }
 
+.sideInterview {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 @media (min-width: $desktopWidth){ 
+
+  .sideInterview {
+    width: 45%;
+  }
+
+  .sideChat {
+    display: block;
+  }
+  
   .side {
     display: block;
     padding: 50px 50px 80px 50px;
@@ -19,5 +33,11 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+}
+
+@media (min-width: $desktopWidth-large){ 
+  .sideInterview {
+    width: 50%;
   }
 }

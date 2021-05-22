@@ -1,11 +1,11 @@
 @import 'variables';
 
 .interviews {
-  width: 47%;
-  background-color: #ededed;
-  padding: 30px 90px 30px 90px;
-  border-radius: 35px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 25px;
   text-align: center;
+  border: 3px solid #EDEDED;
 }
 
 
@@ -21,8 +21,17 @@
   margin-bottom: 20px;
 }
 
+@media (min-width: $desktopWidth){
+  .interviews {
+    border: none;
+    padding: 30px 90px 30px 90px;
+    background-color: #ededed;
+    border-radius: 35px;
+  }
+}
+
 @media (min-width: $desktopWidth-large){
   .interviews {
-    width: 50%;
+    //width: 50%;
   }
 }

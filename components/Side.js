@@ -24,13 +24,17 @@ class Side extends Component {
         />
         <LogoSeparator principalColor={this.props.principalColor} /> 
         <div className={styles.sideContent}>
-          <Chat principalColor={this.props.principalColor}/>
-          <Interviews 
+          <div className={styles.sideChat}>
+            <Chat principalColor={this.props.principalColor}/>
+          </div>
+          <div className={styles.sideInterview}>
+            <Interviews 
               isMorning={this.props.isMorning} 
               isDay={this.props.isDay} 
               isPlaying={this.props.isPlaying} 
               principalColor={this.props.principalColor}
-          />
+            />
+          </div>
         </div>
       </section>
     )

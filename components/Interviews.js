@@ -2,6 +2,7 @@ import styles from '../styles/Interviews.module.scss'
 import React, { Component } from 'react';
 import ColorHeader from './ColorHeader';
 import Logo from './Logo';
+import { isMobile } from "react-device-detect";
 
 class Interviews extends Component {
 
