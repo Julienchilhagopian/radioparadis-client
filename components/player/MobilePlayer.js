@@ -16,7 +16,13 @@ class MobilePlayer extends Component {
 
     return (
       <section className={styles.player} style={playerColor}>
-        <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying}/>
+        <PlayBtn 
+          togglePlay={this.props.togglePlay} 
+          isPlaying={this.props.isPlaying}
+          loading={this.props.loading}
+          isDay={this.props.isDay} 
+          isNight={this.props.isNight}
+        />
         <MusicInfos 
             currentTrack={this.props.currentTrack} 
             isTrackLoading={this.props.isTrackLoading}

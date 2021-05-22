@@ -66,6 +66,9 @@ class Content extends Component {
               togglePlay={this.props.togglePlay}
               isPlaying={this.props.isPlaying}
               onVolumeChange={this.props.onVolumeChange}
+              loading={this.props.loading}
+              isMorning={this.props.isMorning}
+              isDay={this.props.isDay}
             />
           </div>
         </section>

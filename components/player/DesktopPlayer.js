@@ -33,7 +33,13 @@ class DesktopPlayer extends Component {
           />
         </div>
         <section className={styles.desktopPlayer} style={playerColor}>
-          <PlayBtn togglePlay={this.props.togglePlay} isPlaying={this.props.isPlaying} />
+          <PlayBtn 
+            togglePlay={this.props.togglePlay} 
+            isPlaying={this.props.isPlaying}
+            loading={this.props.loading} 
+            isMorning={this.props.isMorning}
+            isDay={this.props.isDay}
+          />
           <div className={styles.desktopPlayerContent}>
             <MusicInfos
               currentTrack={this.props.currentTrack}

@@ -31,7 +31,8 @@ class Home extends Component {
       secondaryColor: '#cecece8c', 
       mobileColor: '#cecece', 
       frameColor: '', 
-      volume: 1
+      volume: 1, 
+      loading: false
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -58,6 +59,7 @@ class Home extends Component {
       this.radioPlayer.audioEl.current.pause();
     } else {
       try {
+          this.showLoader()
           this.radioPlayer.audioEl.current.load();
           this.radioPlayer.audioEl.current.play();
 
@@ -70,6 +72,14 @@ class Home extends Component {
     this.setState(prevState => ({
       isPlaying: !prevState.isPlaying
     }));
+  }
+
+  showLoader = () => {
+    this.setState({ loading: true });
+  }
+
+  hideLoader = () => {
+    this.setState({ loading: false });
   }
 
   errorMsg = () => {
@@ -253,6 +263,7 @@ class Home extends Component {
             }} 
             src={this.radioURL} 
             preload={'auto'}
+            onCanPlay={this.hideLoader}
             />
           <section className={styles.home}>
             <div className={styles.frame} style={frameColor}>
@@ -274,6 +285,7 @@ class Home extends Component {
                     isDay={this.state.isDay} 
                     isNight={this.state.isNight}
                     onVolumeChange={this.onVolumeChange}
+                    loading={this.state.loading}
                   />
               </div>
             </div>
@@ -293,7 +305,10 @@ class Home extends Component {
               currentTrack={this.state.currentTrack} 
               togglePlay={this.togglePlay} 
               isPlaying={this.state.isPlaying}
-              />
+              loading={this.state.loading}
+              isDay={this.state.isDay} 
+              isNight={this.state.isNight}
+            />
             <SubmitForm 
               principalColor={this.state.principalColor}  
               show={this.state.show} 
