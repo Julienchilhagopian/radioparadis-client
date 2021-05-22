@@ -27,12 +27,16 @@ class SongCard extends Component {
     return (
       <div className={styles.cardContainer}>
         <div className={styles.cardLogo}>
-          <Image
-            src={this.props.album}
-            alt="Album cover"
-            width={90}
-            height={90}
-          />
+          { (this.props.album) ? 
+              <Image
+                src={this.props.album}
+                alt="Album cover"
+                width={90}
+                height={90}
+              />
+              : 
+              <p>Image de l'album</p>
+          }
         </div>
         <h2 className={styles.artistName}>{this.props.artist}</h2>
         <h2 className={styles.songTitle}>{this.props.songTitle}</h2>

@@ -23,7 +23,7 @@ class TrackHistory extends Component {
               size={60}
             />
           </div>
-          <ColorHeader principalColor={this.props.principalColor} title='Sonorités antérieures' />
+          <ColorHeader principalColor={this.props.principalColor} title='Les derniers sons' />
           <div className={styles.headerLogo}>
             <Logo
               className={styles.headerLogo}
