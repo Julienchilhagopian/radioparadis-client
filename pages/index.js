@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import Header from '../components/Header'
-import Content from '../components/Content'
-import SubmitForm from '../components/SubmitForm'
-import MobilePlayer from '../components/MobilePlayer'
+import Header from '../components/layout/Header'
+import Content from '../components/layout/Content'
+import SubmitForm from '../components/form/SubmitForm'
+import MobilePlayer from '../components/player/MobilePlayer'
 import React, { Component } from 'react';
-import Side from '../components/Side'
+import Side from '../components/layout/Side'
 import ReactAudioPlayer from 'react-audio-player';
 import ColorThief from "colorthief";
 import { isMobile } from "react-device-detect";
-import Footer from '../components/Footer';
+import Footer from '../components/layout/Footer';
 import { message } from 'antd';
 
 class Home extends Component {
@@ -145,7 +145,6 @@ class Home extends Component {
       this.setState({ isTrackLoading: false })
 
       let nextFetch = this.getTimeSpan(data.end_at);
-      console.log("NEXT FETCH ", nextFetch);
 
       if(nextFetch > 0) {
         // Fetching colors 
@@ -175,7 +174,6 @@ class Home extends Component {
       this.setState({ history: data })
       this.setState({ isHistoryLoading: false })
   
-      console.log('history fetch', this.state.history);
       setTimeout(
         this.fetchTrackHistory,
         240000
@@ -199,7 +197,6 @@ class Home extends Component {
       (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
       || (randomColor[0] < 100 && randomColor[1] < 100 && randomColor[2] < 100)
       ) {
-      console.log("Colorformat loop");
       randomColor = colors[Math.floor(Math.random() * colors.length)];
     }
 
@@ -214,12 +211,9 @@ class Home extends Component {
       const colors = colorThief.getPalette(img, 5);
       let randomColor = this.getColor(colors);
 
-      this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`})
-      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`})
-      this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})`})
-
-      console.log("principal color", this.state.principalColor)
-      console.log("secondary color", this.state.secondaryColor)
+      this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`});
+      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`});
+      this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})`});
 
       this.updateFrameColor();
     });
@@ -233,8 +227,6 @@ class Home extends Component {
   }
 
   onVolumeChange  = (value) => {
-    //event.preventDefault();
-    console.log(value);
     this.setState({volume: (value / 100)})
   };
 

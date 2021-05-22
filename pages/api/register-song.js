@@ -2,8 +2,7 @@ import { query } from '../../db/db'
 
 const postSong = async (req, res) => {
   const {name, link, comment} = req.body
-
-  console.log("BODY", req.body)
+  
   try {
     if (!name || !link) {
       return res

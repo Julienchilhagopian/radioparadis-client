@@ -8,7 +8,6 @@
   border: 3px solid #EDEDED;
 }
 
-
 .interviewsHeader {
   margin-bottom: 15px;
 }
@@ -27,11 +26,5 @@
     padding: 30px 90px 30px 90px;
     background-color: #ededed;
     border-radius: 35px;
-  }
-}
-
-@media (min-width: $desktopWidth-large){
-  .interviews {
-    //width: 50%;
   }
 }

@@ -1,4 +1,4 @@
-import styles from '../styles/Chat.module.scss'
+import styles from '../../styles/Chat.module.scss'
 import React, { Component } from 'react';
 
 class Chat extends Component {

@@ -1,4 +1,4 @@
-import styles from '../styles/Side.module.scss'
+import styles from '../../styles/Side.module.scss'
 import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
 import LogoSeparator from './LogoSeparator';

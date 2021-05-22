@@ -1,4 +1,4 @@
-import styles from '../styles/RadioTicker.module.scss'
+import styles from '../../styles/RadioTicker.module.scss'
 import React, { Component } from 'react';
 
 class RadioTicker extends Component {
@@ -6,7 +6,7 @@ class RadioTicker extends Component {
   constructor() {
     super();
   }
-  
+
   render() {
     return (
       <div className={styles.tickerContainer}>
@@ -16,7 +16,7 @@ class RadioTicker extends Component {
       </div>
     )
   }
-} 
+}
 
 
 export default RadioTicker

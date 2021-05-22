@@ -1,4 +1,4 @@
-import styles from '../styles/ColorHeader.module.scss'
+import styles from '../../styles/ColorHeader.module.scss'
 import React, { Component } from 'react';
 
 class ColorHeader extends Component {
@@ -9,10 +9,10 @@ class ColorHeader extends Component {
 
   render() {
     return (
-      <h1 className={styles.trackHistoryHeader} style={{'color': this.props.principalColor}} >{this.props.title}</h1>
+      <h1 className={styles.trackHistoryHeader} style={{ 'color': this.props.principalColor }} >{this.props.title}</h1>
     )
   }
-} 
+}
 
 
 export default ColorHeader

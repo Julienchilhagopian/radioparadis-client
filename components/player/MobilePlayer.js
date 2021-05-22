@@ -1,8 +1,7 @@
-import styles from '../styles/MobilePlayer.module.scss'
+import styles from '../../styles/MobilePlayer.module.scss'
 import React, { Component } from 'react';
 import PlayBtn from './PlayBtn';
-import MusicInfos from './MusicInfos';
-import RadioTicker from './RadioTicker';
+import MusicInfos from '../elements/MusicInfos';
 
 class MobilePlayer extends Component {
 
