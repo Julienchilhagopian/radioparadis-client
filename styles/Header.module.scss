@@ -11,12 +11,15 @@
   display: none;
 }
 
+.bolder {
+  font-weight: bolder;
+}
 
 @media (min-width: $desktopWidth){
 
   .header  { 
     padding-top: unset;
-    margin-bottom: 10px;
+    margin-bottom: unset;
   }
 
   .singleMood {
