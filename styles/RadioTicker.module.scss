@@ -41,6 +41,11 @@
 }
 
 @media (min-width: $desktopWidth-large){
+
+  .tickerContainer {
+    width: 365px;
+  }
+
   .tickerContainer h2  {
     font-size: 25pt;
   }

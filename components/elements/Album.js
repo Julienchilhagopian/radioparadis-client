@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
+import { isMobile } from "react-device-detect";
 
 class Album extends Component {
 
@@ -11,9 +12,16 @@ class Album extends Component {
     return (
       <div>
         { (this.props.isTrackLoading || !this.props.currentTrack) ?
-          <Image src="/../public/logo-day.png" alt="Logo" width={this.props.width} height={this.props.height} />
+          <Image 
+            quality={40}
+            src="/../public/logo-day.png" 
+            alt="Logo" 
+            width={this.props.width} 
+            height={this.props.height} 
+          />
           :
           <Image
+            quality={isMobile ? 40 : 75}
             src={this.props.currentTrack.cover}
             alt="Album cover"
             width={this.props.width}

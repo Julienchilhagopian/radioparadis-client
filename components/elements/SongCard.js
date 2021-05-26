@@ -1,7 +1,7 @@
 import styles from '../../styles/SongCard.module.scss'
 import React, { Component } from 'react';
 import Image from 'next/image'
-
+import { isMobile } from "react-device-detect";
 
 
 class SongCard extends Component {
@@ -29,13 +29,14 @@ class SongCard extends Component {
         <div className={styles.cardLogo}>
           { (this.props.album) ? 
               <Image
+                quality={isMobile ? 40 : 75}
                 src={this.props.album}
                 alt="Album cover"
                 width={90}
                 height={90}
               />
               : 
-              <p>Image de l'album</p>
+              <p>Absence de l'image :)</p>
           }
         </div>
         <h2 className={styles.artistName}>{this.props.artist}</h2>

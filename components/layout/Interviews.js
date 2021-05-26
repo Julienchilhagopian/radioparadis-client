@@ -22,14 +22,11 @@ class Interviews extends Component {
           <p>On a tous une histoire à raconter, nous essayons de les rassembler.</p>
         </div>
         <div>
-          <div className={styles.mail}>
-            <a href="mailto:bonjour@radioparadis.com">bonjour@radioparadis.com</a>
-          </div>
           <Logo
             isMorning={this.props.isMorning}
             isDay={this.props.isDay}
             isPlaying={this.props.isPlaying}
-            size={50}
+            size={70}
           />
         </div>
       </section>

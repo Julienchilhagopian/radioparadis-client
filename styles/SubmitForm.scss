@@ -37,7 +37,8 @@
 .ant-modal-title {
   font-size: 30px;
   line-height: 30px;
-  font-family: "Prompt";
+  font-family: $textFont;
+  font-weight: bolder;
 }
 
 .ant-modal-header {
