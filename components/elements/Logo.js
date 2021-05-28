@@ -7,8 +7,8 @@ class Logo extends Component {
   constructor() {
     super();
 
-    this.logoDayURL = '';
-    this.logoNightURL = '';
+    this.logoDayURL = 'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day-900x.png';
+    this.logoNightURL = 'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night-900x.png';
   }
 
   render() {
@@ -16,11 +16,11 @@ class Logo extends Component {
       <div className={styles.logo}>
         {
           (this.props.isMorning) ?
-            <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-morning.png" alt="Logo" width={this.props.size} height={this.props.size} />
+            <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src={this.logoDayURL} alt="Logo" width={this.props.size} height={this.props.size} />
             : this.props.isDay ?
-              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-day-900x.png" alt="Logo" width={this.props.size} height={this.props.size} />
+              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src={this.logoDayURL} alt="Logo" width={this.props.size} height={this.props.size} />
               :
-              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.png" alt="Logo" width={this.props.size} height={this.props.size} />
+              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src={this.logoNightURL} alt="Logo" width={this.props.size} height={this.props.size} />
         }
       </div>
     )

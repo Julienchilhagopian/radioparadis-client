@@ -44,6 +44,7 @@ class Home extends Component {
     this.radioURL = "https://www.radioking.com/play/myradioparadis";
     this.currentTrackURL = "https://api.radioking.io/widget/radio/myradioparadis/track/current";
     this.trackHistoryURL = "https://api.radioking.io/widget/radio/myradioparadis/track/ckoi?limit=6";
+    this.faviconURL = "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.ico";
   }
 
   showSubmitForm = (e) => {
@@ -250,7 +251,7 @@ class Home extends Component {
       <div>
         <Head>
           <title>Radio Paradis</title>
-          <link rel="icon" href="logo-night.ico" />
+          <link rel="icon" href={this.faviconURL} />
         </Head>
 
         <main>
