@@ -16,6 +16,8 @@
 
 .footerSocial {
   margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo h1 {
@@ -36,13 +38,6 @@
     width: 35%;
     text-align: left;
     margin-bottom: 0px;
-  }
-
-  .footerSpeech a {
-    color: black;
-    font-family: 'Inconsolata';
-    font-weight: bolder;
-    letter-spacing: 1px;
   }
 
   .footerSocial {

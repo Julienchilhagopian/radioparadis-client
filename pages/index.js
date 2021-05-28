@@ -250,7 +250,7 @@ class Home extends Component {
       <div>
         <Head>
           <title>Radio Paradis</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/logo-favicon.ico" />
         </Head>
 
         <main>

@@ -117,7 +117,7 @@ class SubmitForm extends Component {
               placeholder="Ecrivez-nous un petit mot si vous avez envie."
             />
             <button id="submitBtn" style={{ 'backgroundColor': this.props.principalColor }} className='requestBtn' type="submit">
-              envoyer au paradis
+              Envoyer au paradis
            </button>
           </form>
         </div>

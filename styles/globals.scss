@@ -39,6 +39,17 @@ p {
   font-size: 12pt;
 }
 
+a {
+  color: black;
+  font-family: 'Inconsolata';
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+a:hover {
+  color: #58D68D;
+}
+
 // --- Modal submit button  --- //
 
 .requestBtn {

@@ -6,6 +6,9 @@ class Logo extends Component {
 
   constructor() {
     super();
+
+    this.logoDayURL = '';
+    this.logoNightURL = '';
   }
 
   render() {
@@ -15,9 +18,9 @@ class Logo extends Component {
           (this.props.isMorning) ?
             <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-morning.png" alt="Logo" width={this.props.size} height={this.props.size} />
             : this.props.isDay ?
-              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-day.png" alt="Logo" width={this.props.size} height={this.props.size} />
+              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-day-900x.png" alt="Logo" width={this.props.size} height={this.props.size} />
               :
-              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="/../public/logo-night.png" alt="Logo" width={this.props.size} height={this.props.size} />
+              <Image className={(this.props.isPlaying) ? styles.logoRotate : ""} src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.png" alt="Logo" width={this.props.size} height={this.props.size} />
         }
       </div>
     )
