@@ -24,10 +24,6 @@ class Header extends Component {
           <h3 className={this.props.isDay ? (styles.bolder) : '' }>10h00 - 19h00 : Musique du monde.</h3>
           <h3 className={this.props.isNight ? (styles.bolder) : ''}>19h00 - 00h00 : Musique qui bouge.</h3>
         </div>
-
-        {/* <div>
-          <button className='requestBtn' onClick={this.props.showSubmitForm}>Proposer une musique !</button>
-        </div> */}
       </section>
     )
   }
