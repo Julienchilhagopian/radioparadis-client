@@ -21,7 +21,7 @@ class Album extends Component {
           />
           :
           <Image
-            quality={isMobile ? 40 : 75}
+            quality={isMobile ? 60 : 75}
             src={this.props.currentTrack.cover}
             alt="Album cover"
             width={this.props.width}
