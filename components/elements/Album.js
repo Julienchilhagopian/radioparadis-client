@@ -14,7 +14,7 @@ class Album extends Component {
         { (this.props.isTrackLoading || !this.props.currentTrack) ?
           <Image 
             quality={40}
-            src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day-900x.png" 
+            src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day.png" 
             alt="Logo" 
             width={this.props.width} 
             height={this.props.height} 
