@@ -9,7 +9,7 @@ class LogoSeparator extends Component {
 
   render() {
     return (
-      <div onClick={() => window.open("google.com", "_blank")} className={styles.tickerContainer} style={{ 'color': this.props.principalColor }}>
+      <div onClick={() => window.open("https://www.instagram.com/radioparadis/", "_blank")} className={styles.tickerContainer} style={{ 'color': this.props.principalColor }}>
         <div className={styles.marquee}>
           <div>
             <span> @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis @radioparadis</span>

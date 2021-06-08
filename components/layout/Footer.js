@@ -18,7 +18,7 @@ class Footer extends Component {
           </p>
         </div>
         <div className={styles.footerSocial}>
-          <a href="" target="_blank">Instagram</a>
+          <a href="https://www.instagram.com/radioparadis/" target="_blank">Instagram</a>
           <a href="https://open.spotify.com/user/chil-hagopian?si=wHQ2N2L3RQGqUuEFyAyLFg" target="_blank">Spotify</a>
           <a href="https://soundcloud.com/radio-paradis-13" target="_blank">Soundcloud</a>
           <a href="https://www.mixcloud.com/radioparadis/" target="_blank">Mixcloud</a>
