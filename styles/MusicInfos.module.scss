@@ -18,6 +18,9 @@
 
   .musicInfos {
     text-align: right;
-    width: unset;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
