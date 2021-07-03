@@ -3,20 +3,23 @@
 .albumInfo {
   font-size: 14pt;
   max-width: 260px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .musicInfos {
   text-align: right;
   width: 60%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 @media (min-width: $desktopWidth){ 
   .albumInfo {
     font-size: 18pt;
     max-width: unset;
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
   }
 
   .musicInfos {
