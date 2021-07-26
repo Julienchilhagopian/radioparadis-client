@@ -14,19 +14,18 @@ class Side extends Component {
   render() {
     return (
       <section className={styles.side}>
-        <TrackHistory 
-          isMorning={this.props.isMorning} 
-          isDay={this.props.isDay} 
-          isPlaying={this.props.isPlaying} 
-          isHistoryLoading={this.props.isHistoryLoading} 
-          history={this.props.history}
-          principalColor={this.props.principalColor}
-        />
-        <LogoSeparator principalColor={this.props.principalColor} /> 
+        <div className={styles.trackHistorySideContainer}>
+          <TrackHistory 
+            isMorning={this.props.isMorning} 
+            isDay={this.props.isDay} 
+            isPlaying={this.props.isPlaying} 
+            isHistoryLoading={this.props.isHistoryLoading} 
+            history={this.props.history}
+            principalColor={this.props.principalColor}
+          />
+        </div>
+        {/* <LogoSeparator principalColor={this.props.principalColor} />  */}
         <div className={styles.sideContent}>
-          <div className={styles.sideChat}>
-            <Chat principalColor={this.props.principalColor}/>
-          </div>
           <div className={styles.sideInterview}>
             <Interviews 
               isMorning={this.props.isMorning} 

@@ -23,19 +23,14 @@
 
 
 @media (min-width: $desktopWidth){ 
-
   .sideInterview {
     width: 45%;
     padding-right: unset;
     padding-left: unset;
   }
-
-  .sideChat {
-    display: block;
-  }
   
   .side {
-    display: block;
+    display: flex;
     padding: 50px 50px 80px 50px;
     margin-bottom: unset;
   }
@@ -44,6 +39,10 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  .trackHistorySideContainer {
+    width: min-content;
   }
 }
 

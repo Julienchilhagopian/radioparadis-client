@@ -15,34 +15,33 @@ class TrackHistory extends Component {
     return (
       <section>
         <div className={styles.headerContainer}>
-          <div className={styles.headerLogo}>
-            <Logo
-              isMorning={this.props.isMorning}
-              isDay={this.props.isDay}
-              isPlaying={this.props.isPlaying}
-              size={60}
-            />
-          </div>
           <ColorHeader principalColor={this.props.principalColor} title='Les derniers sons' />
           <div className={styles.headerLogo}>
             <Logo
-              className={styles.headerLogo}
               isMorning={this.props.isMorning}
               isDay={this.props.isDay}
               isPlaying={this.props.isPlaying}
-              size={60}
+              size={50}
             />
           </div>
         </div>
         <div className={styles.trackHistory}>
-          {
-            (this.props.isHistoryLoading || !this.props.history) ?
-              <h2> Loading history </h2>
-              :
-              trackHistory.map((song, index) => (
-                <SongCard key={index} album={song.cover_url} artist={song.artist} songTitle={song.title} time={song.started_at} />
-              ))
-          }
+            {
+              (this.props.isHistoryLoading || !this.props.history) ?
+                <h2> Loading history </h2>
+                :
+                trackHistory.map((song, index) => (
+                  <SongCard key={index} album={song.cover_url} artist={song.artist} songTitle={song.title} time={song.started_at} />
+                ))
+            }
+          <div className={styles.headerLogo}>
+            <Logo
+              isMorning={this.props.isMorning}
+              isDay={this.props.isDay}
+              isPlaying={this.props.isPlaying}
+              size={50}
+            />
+          </div>
         </div>
       </section>
     )
