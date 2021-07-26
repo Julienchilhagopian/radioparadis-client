@@ -1,6 +1,7 @@
 import styles from '../../styles/Side.module.scss'
 import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
+import BehindRadio from './BehindRadio';
 import LogoSeparator from './LogoSeparator';
 import Chat from './Chat';
 import Interviews from './Interviews';
@@ -26,6 +27,9 @@ class Side extends Component {
         </div>
         {/* <LogoSeparator principalColor={this.props.principalColor} />  */}
         <div className={styles.sideContent}>
+          <div className={styles.behindRadio}>
+            <BehindRadio principalColor={this.props.principalColor}/>
+          </div>
           <div className={styles.sideInterview}>
             <Interviews 
               isMorning={this.props.isMorning} 

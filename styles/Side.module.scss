@@ -4,6 +4,10 @@
   display: none;
 }
 
+.behindRadio {
+  display: none;
+}
+
 .side {
   margin-bottom: 25px;
 }
@@ -23,23 +27,27 @@
 
 
 @media (min-width: $desktopWidth){ 
+  .side {
+    display: flex;
+    padding: 50px 50px 80px 50px;
+    margin-bottom: unset;
+    justify-content: space-between;
+  }
+  
+  .sideContent {
+   
+  }
+
   .sideInterview {
     width: 45%;
     padding-right: unset;
     padding-left: unset;
   }
-  
-  .side {
-    display: flex;
-    padding: 50px 50px 80px 50px;
-    margin-bottom: unset;
-  }
 
-  .sideContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  .behindRadio {
+    display: unset;
   }
+  
 
   .trackHistorySideContainer {
     width: min-content;
