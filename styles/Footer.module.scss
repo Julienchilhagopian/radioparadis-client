@@ -20,6 +20,10 @@
   flex-direction: column;
 }
 
+.footerSocial a {
+  margin-bottom: 5px;
+}
+
 .logo h1 {
   text-transform: uppercase;
   font-size: 18pt;
@@ -41,6 +45,10 @@
   }
 
   .footerSocial {
+    margin-bottom: none;
+  }
+
+  .footerSocial a {
     margin-bottom: none;
   }
 

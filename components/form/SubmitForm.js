@@ -107,7 +107,7 @@ class SubmitForm extends Component {
               rows="3"
               id="link"
               type="text"
-              placeholder="On accepte le nom, le lien ou toute forme de chemin vers votre pépite musicale."
+              placeholder="On accepte le nom, le lien ou tout autre chemin vers votre pépite musicale."
               required />
             <textarea
               onFocus={this.changeColorTextarea2}

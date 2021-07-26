@@ -22,6 +22,7 @@ class Home extends Component {
       isMorning: false, 
       isDay: false, 
       isNight: false, 
+      isSunday: false,
       currentTrack: {},
       history: {}, 
       nextFetch: 0, 
@@ -95,6 +96,8 @@ class Home extends Component {
   }
 
   updateTime(time) {
+
+    console.log("DAY : ", time.getDay())
     if(time.getHours() >= 7 && time.getHours() < 10) {
       this.setState({
         isMorning: true, 
@@ -113,6 +116,16 @@ class Home extends Component {
         isDay: false, 
         isNight: true
       });
+   }
+
+   if(time.getDay() == 0 ) {
+    this.setState({
+      isSunday: true
+    });
+   } else {
+    this.setState({
+      isSunday: false
+    });
    }
   }
 
@@ -273,6 +286,7 @@ class Home extends Component {
                   isMorning={this.state.isMorning} 
                   isDay={this.state.isDay} 
                   isNight={this.state.isNight}
+                  isSunday={this.state.isSunday}
                   />
                 <Content 
                     principalColor={this.state.principalColor}

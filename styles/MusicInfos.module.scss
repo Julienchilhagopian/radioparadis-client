@@ -3,6 +3,8 @@
 .albumInfo {
   font-size: 14pt;
   max-width: 260px;
+  text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -15,8 +17,9 @@
   .albumInfo {
     font-size: 18pt;
     max-width: unset;
-    white-space: nowrap;
-    overflow: hidden;
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
   }
 
   .musicInfos {
