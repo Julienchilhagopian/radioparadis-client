@@ -1,0 +1,30 @@
+.headerContainer {
+  margin-bottom: 50px;
+}
+
+.imageCard {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 90px;
+}
+
+.imageCardMiddle {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  margin-bottom: 90px;
+}
+
+.imageCardEnd{
+  display: flex;
+  align-items: flex-end;
+}
+
+.imageDescription h2 {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+.imageDescription p {
+  font-size: 8pt;
+}

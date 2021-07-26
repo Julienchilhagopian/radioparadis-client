@@ -29,23 +29,21 @@
 @media (min-width: $desktopWidth){ 
   .side {
     display: flex;
-    padding: 50px 50px 80px 50px;
+    padding: 50px 50px 50px 50px;
     margin-bottom: unset;
     justify-content: space-between;
   }
-  
-  .sideContent {
-   
-  }
 
   .sideInterview {
-    width: 45%;
+    width: 50%;
     padding-right: unset;
     padding-left: unset;
+    margin: 0 auto 100px auto;
   }
 
   .behindRadio {
     display: unset;
+    width: 80%;
   }
   
 
