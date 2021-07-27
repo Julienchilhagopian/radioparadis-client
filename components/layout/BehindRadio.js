@@ -41,7 +41,7 @@ class BehindRadio extends Component {
                 />
               </div>
               <div className={styles.imageDescription}>
-                <h2>La radio c'est aussi toutes les conversations du jardin.</h2>
+                <h2>La radio c'est aussi les conversations du jardin.</h2>
                 <p>Jardin Villemin</p>
               </div>
             </div> 
