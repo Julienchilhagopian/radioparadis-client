@@ -1,3 +1,5 @@
+@import 'variables';
+
 .headerContainer {
   margin-bottom: 50px;
 }
@@ -15,9 +17,28 @@
   margin-bottom: 90px;
 }
 
-.imageCardEnd{
+.imageCardMiddle p {
+  float: right;
+}
+
+.imageCardEnd {
   display: flex;
   align-items: flex-end;
+}
+
+.imageContent {
+  position: relative; 
+  width: 525px;
+  height: 358px;
+}
+
+.imageContent img {
+  border-radius: 10px;
+}
+
+.imageDescription {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .imageDescription h2 {
@@ -27,4 +48,12 @@
 
 .imageDescription p {
   font-size: 8pt;
+}
+
+
+@media (min-width: $desktopWidth-large){ 
+  .imageContent {
+    width: 736px;
+    height: 501.6px;
+  }
 }

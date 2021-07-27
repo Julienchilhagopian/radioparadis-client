@@ -19,11 +19,10 @@ class BehindRadio extends Component {
             <div className={styles.imageCard}>
               <div className={styles.imageContent}>
                 <Image 
-                  quality={40}
-                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day.png" 
+                  quality={30}
+                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.JPG" 
                   alt="Logo" 
-                  width={600} 
-                  height={400} 
+                  layout="fill"
                 />
               </div>
               <div className={styles.imageDescription}>
@@ -35,27 +34,25 @@ class BehindRadio extends Component {
             <div className={styles.imageCardMiddle}>
               <div className={styles.imageContent}>
                 <Image 
-                  quality={40}
-                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day.png" 
+                  quality={30}
+                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.JPG" 
                   alt="Logo" 
-                  width={600} 
-                  height={400} 
+                  layout="fill"
                 />
               </div>
               <div className={styles.imageDescription}>
-                <h2>Enregistrement des jingles.</h2>
-                <p>Rue de Paradis</p>
+                <h2>La radio c'est aussi toutes les conversations du jardin.</h2>
+                <p>Jardin Villemin</p>
               </div>
             </div> 
 
             <div className={styles.imageCardEnd}>
               <div className={styles.imageContent}>
                 <Image 
-                  quality={40}
-                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day.png" 
+                  quality={30}
+                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.JPG" 
                   alt="Logo" 
-                  width={600} 
-                  height={400} 
+                  layout="fill"
                 />
               </div>
               <div className={styles.imageDescription}>
