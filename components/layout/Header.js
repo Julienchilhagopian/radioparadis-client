@@ -22,7 +22,9 @@ class Header extends Component {
           {currentMood}
         </div>
         { (!this.props.isMorning && !this.props.isDay && !this.props.isNight) ?
-          <h3>La radio est au repos. Elle s'éveille de 7h00 à 00h00.</h3>
+          <div className={styles.multipleMood}> 
+            <h3>La radio est au repos. Elle s'éveille de 7h00 à 00h00.</h3>
+          </div>
           :
           <div className={styles.multipleMood}>         
             <h3 className={this.props.isMorning ? (styles.bolder) : ''}>07h00 - 10h00 : Musique de douche.</h3>

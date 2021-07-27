@@ -107,13 +107,19 @@ class Home extends Component {
         isDay: true, 
         isNight: false
       });
-   } else {
+   } else if (time.getHours() >= 19 && time.getHours() < 0) {
       this.setState({
         isMorning: false, 
         isDay: false, 
         isNight: true
       });
-   }
+   } else {
+      this.setState({
+        isMorning: false, 
+        isDay: false, 
+        isNight: false
+      });
+    }
   }
 
   componentDidMount(){
@@ -307,6 +313,7 @@ class Home extends Component {
               togglePlay={this.togglePlay} 
               isPlaying={this.state.isPlaying}
               loading={this.state.loading}
+              isMorning={this.state.isMorning}
               isDay={this.state.isDay} 
               isNight={this.state.isNight}
             />

@@ -20,6 +20,7 @@ class MobilePlayer extends Component {
           togglePlay={this.props.togglePlay} 
           isPlaying={this.props.isPlaying}
           loading={this.props.loading}
+          isMorning={this.props.isMorning} 
           isDay={this.props.isDay} 
           isNight={this.props.isNight}
         />
