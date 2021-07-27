@@ -12,6 +12,8 @@ class Header extends Component {
       currentMood = <h3>10h00 - 19h00 : Musique du monde.</h3>;
     } else if (this.props.isNight) {
       currentMood = <h3>19h00 - 00h00 : Musique de bouge.</h3>;
+    } else {
+      currentMood = <h3>La radio est au repos. Elle s'éveille de 7h00 à 00h00.</h3>;
     }
 
     return (
@@ -19,11 +21,16 @@ class Header extends Component {
         <div className={styles.singleMood}>
           {currentMood}
         </div>
-        <div className={styles.multipleMood}>         
-          <h3 className={this.props.isMorning ? (styles.bolder) : ''}>07h00 - 10h00 : Musique de douche.</h3>
-          <h3 className={this.props.isDay ? (styles.bolder) : '' }>10h00 - 19h00 : Musique du monde.</h3>
-          <h3 className={this.props.isNight ? (styles.bolder) : ''}>19h00 - 00h00 : Musique qui bouge.</h3>
-        </div>
+        { (!this.props.isMorning && !this.props.isDay && !this.props.isNight) ?
+          <h3>La radio est au repos. Elle s'éveille de 7h00 à 00h00.</h3>
+          :
+          <div className={styles.multipleMood}>         
+            <h3 className={this.props.isMorning ? (styles.bolder) : ''}>07h00 - 10h00 : Musique de douche.</h3>
+            <h3 className={this.props.isDay ? (styles.bolder) : '' }>10h00 - 19h00 : Musique du monde.</h3>
+            <h3 className={this.props.isNight ? (styles.bolder) : ''}>19h00 - 00h00 : Musique qui bouge.</h3>
+          </div>
+        }
+      
       </section>
     )
   }
