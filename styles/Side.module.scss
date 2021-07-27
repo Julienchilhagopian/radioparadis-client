@@ -15,6 +15,7 @@
 .sideInterview {
   padding-right: 20px;
   padding-left: 20px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: $ipadWidth){ 
@@ -29,13 +30,13 @@
 @media (min-width: $desktopWidth){ 
   .side {
     display: flex;
-    padding: 50px 50px 50px 50px;
+    padding: 50px 50px 0px 50px;
     margin-bottom: unset;
     justify-content: space-between;
   }
 
   .sideInterview {
-    width: 50%;
+    width: 45%;
     padding-right: unset;
     padding-left: unset;
     margin: 0 auto 100px auto;
