@@ -16,6 +16,10 @@ class Header extends Component {
       currentMood = <h3>La radio est au repos. Elle s'éveille de 7h00 à 00h00.</h3>;
     }
 
+    console.log("morning", this.props.isMorning)
+    console.log("day", this.props.isDay)
+    console.log("night", this.props.isNight)
+    
     return (
       <section className={styles.header}>
         <div className={styles.singleMood}>
@@ -32,7 +36,6 @@ class Header extends Component {
             <h3 className={this.props.isNight ? (styles.bolder) : ''}>19h00 - 00h00 : Musique de bouge.</h3>
           </div>
         }
-      
       </section>
     )
   }

@@ -107,7 +107,7 @@ class Home extends Component {
         isDay: true, 
         isNight: false
       });
-   } else if (time.getHours() >= 19 && time.getHours() < 0) {
+   } else if (time.getHours() >= 19 && (time.getHours() < 23 && time.getMinutes() < 59)) {
       this.setState({
         isMorning: false, 
         isDay: false, 
