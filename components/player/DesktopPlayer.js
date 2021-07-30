@@ -39,6 +39,7 @@ class DesktopPlayer extends Component {
             loading={this.props.loading} 
             isMorning={this.props.isMorning}
             isDay={this.props.isDay}
+            isNight={this.props.isNight}
           />
           <div className={styles.desktopPlayerContent}>
             <MusicInfos

@@ -110,23 +110,25 @@ class Home extends Component {
         isDay: true, 
         isNight: false
       });
-   } else {
+   } else if (time.getHours() >= 19 && time.getHours() < 23) {
       this.setState({
         isMorning: false, 
         isDay: false, 
         isNight: true
       });
-   }
-
-   if(time.getDay() == 0 ) {
-    this.setState({
-      isSunday: true
-    });
+   } else if (time.getHours() == 23 && time.getMinutes() < 59) {
+      this.setState({
+        isMorning: false, 
+        isDay: false, 
+        isNight: true
+      });
    } else {
-    this.setState({
-      isSunday: false
-    });
-   }
+      this.setState({
+        isMorning: false, 
+        isDay: false, 
+        isNight: false
+      });
+    }
   }
 
   componentDidMount(){
@@ -321,6 +323,7 @@ class Home extends Component {
               togglePlay={this.togglePlay} 
               isPlaying={this.state.isPlaying}
               loading={this.state.loading}
+              isMorning={this.state.isMorning}
               isDay={this.state.isDay} 
               isNight={this.state.isNight}
             />
