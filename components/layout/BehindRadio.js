@@ -20,22 +20,7 @@ class BehindRadio extends Component {
               <div className={styles.imageContent}>
                 <Image 
                   quality={20}
-                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.JPG" 
-                  alt="Logo" 
-                  layout="fill"
-                />
-              </div>
-              <div className={styles.imageDescription}>
-                <h2>La radio existe aussi grâce au Jardin.</h2>
-                <p>Jardin Villemin</p>
-              </div>
-            </div> 
-
-            <div className={styles.imageCardMiddle}>
-              <div className={styles.imageContent}>
-                <Image 
-                  quality={20}
-                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.JPG" 
+                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.png" 
                   alt="Logo" 
                   layout="fill"
                 />
@@ -46,17 +31,32 @@ class BehindRadio extends Component {
               </div>
             </div> 
 
-            <div className={styles.imageCardEnd}>
+            <div className={styles.imageCardMiddle}>
               <div className={styles.imageContent}>
                 <Image 
                   quality={20}
-                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.JPG" 
+                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/record-jingles.png" 
                   alt="Logo" 
                   layout="fill"
                 />
               </div>
               <div className={styles.imageDescription}>
-                <h2>Enregistrement des jingles.</h2>
+                <h2>Enregistrement des jingles</h2>
+                <p>Rue de Paradis</p>
+              </div>
+            </div> 
+
+            <div className={styles.imageCardEnd}>
+              <div className={styles.imageContent}>
+                <Image 
+                  quality={20}
+                  src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-paradis.png" 
+                  alt="Logo" 
+                  layout="fill"
+                />
+              </div>
+              <div className={styles.imageDescription}>
+                <h2>La plus belle rue du 10ème</h2>
                 <p>Rue de Paradis</p>
               </div>
             </div> 
