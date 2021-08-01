@@ -32,7 +32,9 @@ class Header extends Component {
           :
           <div>
             { this.props.isSunday ? 
-                <h3 className={styles.bolder}>07h00 - 00h00 : Jazzzz.</h3>
+              <div className={styles.multipleMood}>   
+                  <h3 className={styles.bolder}>07h00 - 00h00 : Jazzzz.</h3>
+              </div>
                   :
               <div className={styles.multipleMood}>         
                 <h3 className={this.props.isMorning ? (styles.bolder) : ''}>07h00 - 10h00 : Musique de douche.</h3>
