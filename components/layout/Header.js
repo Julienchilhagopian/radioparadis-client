@@ -30,10 +30,16 @@ class Header extends Component {
             <h3>La radio est au repos. Elle s'éveille de 7h00 à 00h00.</h3>
           </div>
           :
-          <div className={styles.multipleMood}>         
-            <h3 className={this.props.isMorning ? (styles.bolder) : ''}>07h00 - 10h00 : Musique de douche.</h3>
-            <h3 className={this.props.isDay ? (styles.bolder) : '' }>10h00 - 19h00 : Musique de travail.</h3>
-            <h3 className={this.props.isNight ? (styles.bolder) : ''}>19h00 - 00h00 : Musique de bouge.</h3>
+          <div>
+            { this.props.isSunday ? 
+                <h3 className={styles.bolder}>07h00 - 00h00 : Jazzzz.</h3>
+                  :
+              <div className={styles.multipleMood}>         
+                <h3 className={this.props.isMorning ? (styles.bolder) : ''}>07h00 - 10h00 : Musique de douche.</h3>
+                <h3 className={this.props.isDay ? (styles.bolder) : '' }>10h00 - 19h00 : Musique de travail.</h3>
+                <h3 className={this.props.isNight ? (styles.bolder) : ''}>19h00 - 00h00 : Musique de bouge.</h3>
+              </div>
+            }
           </div>
         }
       </section>

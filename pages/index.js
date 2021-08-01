@@ -129,6 +129,17 @@ class Home extends Component {
         isNight: false
       });
     }
+
+
+    if(time.getDay() == 0 ) {
+      this.setState({
+        isSunday: true
+      });
+     } else {
+      this.setState({
+        isSunday: false
+      });
+     }
   }
 
   componentDidMount(){
