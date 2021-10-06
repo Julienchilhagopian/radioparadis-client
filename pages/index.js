@@ -45,7 +45,7 @@ class Home extends Component {
     this.radioURL = "http://c28.radioboss.fm:8436/stream";
     this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
     this.albumCoverURL = 'https://c28.radioboss.fm/w/artwork/436.png'
-    this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis13/track/ckoi?limit=6";
+    this.trackHistoryURL = "https://c28.radioboss.fm/w/recenttrackslist?u=436";
     this.faviconURL = "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.ico";
   }
 
@@ -191,7 +191,7 @@ class Home extends Component {
 
       setTimeout(
         this.fetchCurrentTrack,
-        60000
+        30000
       )
     })
     .catch(error => {
@@ -200,7 +200,7 @@ class Home extends Component {
 
         setTimeout(
           this.fetchCurrentTrack,
-          10000
+          60000
         )
     });
   }
@@ -301,7 +301,7 @@ class Home extends Component {
                   isNight={this.state.isNight}
                   isSunday={this.state.isSunday}
                   />
-                { <Content 
+                 <Content 
                     principalColor={this.state.principalColor}
                     secondaryColor={this.state.secondaryColor} 
                     isTrackLoading={this.state.isTrackLoading} 
@@ -314,7 +314,7 @@ class Home extends Component {
                     isNight={this.state.isNight}
                     onVolumeChange={this.onVolumeChange}
                     loading={this.state.loading}
-                  /> }
+                  />
               </div>
             </div>
             <Side 
@@ -328,7 +328,7 @@ class Home extends Component {
             />
             <Footer />
             <div className={styles.mobileFitter}></div>
-            {/* <MobilePlayer  
+             <MobilePlayer  
               mobileColor={this.state.mobileColor} 
               currentTrack={this.state.currentTrack} 
               togglePlay={this.togglePlay} 
@@ -337,7 +337,7 @@ class Home extends Component {
               isMorning={this.state.isMorning}
               isDay={this.state.isDay} 
               isNight={this.state.isNight}
-            /> */}
+            /> 
             <SubmitForm 
               principalColor={this.state.principalColor}  
               show={this.state.show} 
