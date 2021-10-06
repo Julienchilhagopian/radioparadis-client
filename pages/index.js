@@ -42,8 +42,9 @@ class Home extends Component {
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
     this.fetchColor = this.fetchColor.bind(this);
-    this.radioURL = "https://www.radioking.com/play/radioparadis13";
-    this.currentTrackURL = "https://api.radioking.io/widget/radio/radioparadis13/track/current";
+    this.radioURL = "http://c28.radioboss.fm:8436/stream";
+    this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
+    this.albumCoverURL = 'https://c28.radioboss.fm/w/artwork/436.png'
     this.trackHistoryURL = "https://api.radioking.io/widget/radio/radioparadis13/track/ckoi?limit=6";
     this.faviconURL = "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.ico";
   }
@@ -178,19 +179,19 @@ class Home extends Component {
     fetch(this.currentTrackURL)
     .then(response => response.json())
     .then(data => {
-      this.setState({ currentTrack: data })
-      this.setState({ isTrackLoading: false })
+      this.setState({ currentTrack: {
+        artist: data.nowplaying,
+        cover: this.albumCoverURL
+      }});
 
-      let nextFetch = this.getTimeSpan(data.end_at);
-
-      if(nextFetch > 0) {
-        // Fetching colors 
-        this.fetchColor(data.cover);
-      }
+      this.setState({ isTrackLoading: false });
+      this.fetchColor(this.state.currentTrack.cover);
+  
+      console.log("CURRENT TRACK", this.state.currentTrack);
 
       setTimeout(
         this.fetchCurrentTrack,
-        nextFetch
+        60000
       )
     })
     .catch(error => {
@@ -229,7 +230,6 @@ class Home extends Component {
 
   getColor = (colors) => {
     let randomColor = colors[Math.floor(Math.random() * colors.length)];
-
     while(
       (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
       || (randomColor[0] < 100 && randomColor[1] < 100 && randomColor[2] < 100)
@@ -301,7 +301,7 @@ class Home extends Component {
                   isNight={this.state.isNight}
                   isSunday={this.state.isSunday}
                   />
-                <Content 
+                { <Content 
                     principalColor={this.state.principalColor}
                     secondaryColor={this.state.secondaryColor} 
                     isTrackLoading={this.state.isTrackLoading} 
@@ -314,7 +314,7 @@ class Home extends Component {
                     isNight={this.state.isNight}
                     onVolumeChange={this.onVolumeChange}
                     loading={this.state.loading}
-                  />
+                  /> }
               </div>
             </div>
             <Side 
@@ -328,7 +328,7 @@ class Home extends Component {
             />
             <Footer />
             <div className={styles.mobileFitter}></div>
-            <MobilePlayer  
+            {/* <MobilePlayer  
               mobileColor={this.state.mobileColor} 
               currentTrack={this.state.currentTrack} 
               togglePlay={this.togglePlay} 
@@ -337,7 +337,7 @@ class Home extends Component {
               isMorning={this.state.isMorning}
               isDay={this.state.isDay} 
               isNight={this.state.isNight}
-            />
+            /> */}
             <SubmitForm 
               principalColor={this.state.principalColor}  
               show={this.state.show} 

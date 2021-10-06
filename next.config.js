@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['image.radioking.io', 'raw.githubusercontent.com'],
+    domains: ['image.radioking.io', 'raw.githubusercontent.com', 'c28.radioboss.fm'],
   },
 }
