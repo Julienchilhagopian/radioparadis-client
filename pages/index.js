@@ -179,19 +179,29 @@ class Home extends Component {
     fetch(this.currentTrackURL)
     .then(response => response.json())
     .then(data => {
-      this.setState({ currentTrack: {
+
+      let currentTrackData = {
         artist: data.nowplaying,
         cover: this.albumCoverURL
-      }});
+      }
 
-      this.setState({ isTrackLoading: false });
-      this.fetchColor(this.state.currentTrack.cover);
+      if (this.state.currentTrack.artist != currentTrackData.artist) {
+
+        console.log("current track", this.state.currentTrack)
+        console.log("current track DATA", currentTrackData)
+
+        this.setState({ currentTrack: currentTrackData});
   
-      console.log("CURRENT TRACK", this.state.currentTrack);
+        this.setState({ isTrackLoading: false });
+        this.fetchColor(this.state.currentTrack.cover);
+      }
+
+
+      console.log("OUTSIDE IF TRACK", currentTrackData)
 
       setTimeout(
         this.fetchCurrentTrack,
-        30000
+        5000
       )
     })
     .catch(error => {
