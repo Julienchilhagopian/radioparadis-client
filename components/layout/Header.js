@@ -17,7 +17,7 @@ class Header extends Component {
     }
 
     if(this.props.isSunday) {
-      currentMood = <h3>20h00 - 21h30 : Funky J de Maison Grabuge !!</h3>;
+      currentMood = <h3>07h00 - 00h00 : Jazzzz.</h3>;
     }
 
     return (
@@ -33,7 +33,7 @@ class Header extends Component {
           <div>
             { this.props.isSunday ? 
               <div className={styles.multipleMood}>   
-                  <h3 className={styles.bolder}>20h00 - 21h30 : Funky J de Maison Grabuge !!</h3>
+                  <h3 className={styles.bolder}>07h00 - 00h00 : Jazzzz.</h3>
               </div>
                   :
               <div className={styles.multipleMood}>         
