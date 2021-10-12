@@ -23,7 +23,12 @@ class Home extends Component {
       isDay: false, 
       isNight: false, 
       isSunday: false,
-      currentTrack: {},
+      currentTrack: {
+        artist: "",
+        cover: ""
+      },
+      albumCover: "https://c28.radioboss.fm/w/artwork/436.png",
+      albumHash: 0,
       history: {}, 
       nextFetch: 0, 
       isTrackLoading: true,
@@ -97,8 +102,6 @@ class Home extends Component {
   }
 
   updateTime(time) {
-
-    console.log("DAY : ", time.getDay())
     if(time.getHours() >= 7 && time.getHours() < 10) {
       this.setState({
         isMorning: true, 
@@ -184,20 +187,20 @@ class Home extends Component {
         artist: data.nowplaying,
         cover: this.albumCoverURL
       }
+     
+      let prevArtist = this.state.currentTrack.artist
+      
+      this.setState({ currentTrack: currentTrackData});
+      this.setState({ isTrackLoading: false });
 
-      if (this.state.currentTrack.artist != currentTrackData.artist) {
+      console.log("current track", this.state.currentTrack)
 
-        console.log("current track", this.state.currentTrack)
-        console.log("current track DATA", currentTrackData)
-
-        this.setState({ currentTrack: currentTrackData});
-  
-        this.setState({ isTrackLoading: false });
+      if(this.state.currentTrack.artist != prevArtist) {
+        console.log('fetch', this.state.currentTrack);
         this.fetchColor(this.state.currentTrack.cover);
+        this.fetchCurrentCover();
       }
-
-
-      console.log("OUTSIDE IF TRACK", currentTrackData)
+      
 
       setTimeout(
         this.fetchCurrentTrack,
@@ -213,6 +216,17 @@ class Home extends Component {
           60000
         )
     });
+  }
+
+  fetchCurrentCover = () => {
+    fetch(this.albumCoverURL)
+    .then(response => {
+      this.setState({ albumCover: response.url });
+      console.log('album cover', this.state.albumCover);
+    })
+    // .then(data => {
+    //   console.log(data)
+    // })
   }
 
   fetchTrackHistory = () => {
@@ -316,6 +330,7 @@ class Home extends Component {
                     secondaryColor={this.state.secondaryColor} 
                     isTrackLoading={this.state.isTrackLoading} 
                     currentTrack={this.state.currentTrack} 
+                    albumCover={this.state.albumCover} 
                     showSubmitForm={this.showSubmitForm} 
                     isPlaying={this.state.isPlaying} 
                     togglePlay={this.togglePlay} 

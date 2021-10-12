@@ -23,6 +23,7 @@ class Content extends Component {
             <Album
               isTrackLoading={this.props.isTrackLoading}
               currentTrack={this.props.currentTrack}
+              albumCover={this.props.albumCover} 
               width={85}
               height={85}
             />
