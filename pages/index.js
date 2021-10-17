@@ -47,7 +47,7 @@ class Home extends Component {
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
     this.fetchColor = this.fetchColor.bind(this);
-    this.radioURL = "http://c28.radioboss.fm:8436/stream";
+    this.radioURL = "https://c28.radioboss.fm:8436/stream";
     this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
     this.albumCoverURL = 'https://c28.radioboss.fm/w/artwork/436.png'
     this.trackHistoryURL = "https://c28.radioboss.fm/w/recenttrackslist?u=436";
