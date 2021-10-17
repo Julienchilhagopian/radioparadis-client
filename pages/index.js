@@ -187,21 +187,21 @@ class Home extends Component {
         artist: data.nowplaying,
         cover: this.albumCoverURL
       }
-     
+
       let prevArtist = this.state.currentTrack.artist
+      if(this.state.currentTrack) {
+        prevArtist = this.state.currentTrack.artist
+      } else {
+        prevArtist = ""
+      }
       
       this.setState({ currentTrack: currentTrackData});
       this.setState({ isTrackLoading: false });
-
-      console.log("current track", this.state.currentTrack)
-
+      
       if(this.state.currentTrack.artist != prevArtist) {
-        console.log('fetch', this.state.currentTrack);
         this.fetchColor(this.state.currentTrack.cover);
-        this.fetchCurrentCover();
       }
       
-
       setTimeout(
         this.fetchCurrentTrack,
         5000
@@ -216,17 +216,6 @@ class Home extends Component {
           60000
         )
     });
-  }
-
-  fetchCurrentCover = () => {
-    fetch(this.albumCoverURL)
-    .then(response => {
-      this.setState({ albumCover: response.url });
-      console.log('album cover', this.state.albumCover);
-    })
-    // .then(data => {
-    //   console.log(data)
-    // })
   }
 
   fetchTrackHistory = () => {
