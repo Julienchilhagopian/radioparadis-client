@@ -1,60 +1,29 @@
 @import 'variables';
 
 .trackHistory {
-  row-gap: 24px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-bottom: 35px;
-}
-
-.headerContainer {
-  margin-bottom: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
 .headerLogo {
   display: none;
 }
 
-
-@media (min-width: 760px) {
-  .trackHistory {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (min-width: $desktopWidth){ 
-  .headerLogo {
-    display: block;
+
+  .historyHeader {
+    font-weight: bold;
   }
-  
+
   .trackHistory {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 50px;
-    flex-direction: column;
-    align-items: center;
   }
 
-  .headerContainer { 
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-  .headerContainer h1 { 
-    margin-bottom: 20px;
-  }
-
-  .tickerContainer {
-    width: 325px;
-  }
-
-  .tickerContainer h2 {
-    font-size: 22pt;
+  .previousTrack {
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

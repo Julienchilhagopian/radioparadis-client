@@ -11,7 +11,7 @@ class BehindRadio extends Component {
 
   render() {
     return (
-      <section>
+      <section className={styles.behindRadioContainer}>
           <div className={styles.headerContainer}>
             <ColorHeader principalColor={this.props.principalColor} title='Derrière la radio'/>
           </div> 

@@ -26,13 +26,10 @@
 }
 
 
-
 @media (min-width: $desktopWidth){ 
   .side {
-    display: flex;
     padding: 50px 50px 0px 50px;
-    margin-bottom: unset;
-    justify-content: space-between;
+    margin-bottom: 60px;
   }
 
   .sideInterview {
@@ -47,10 +44,6 @@
     width: 80%;
   }
   
-
-  .trackHistorySideContainer {
-    width: min-content;
-  }
 }
 
 @media (min-width: $desktopWidth-large){ 

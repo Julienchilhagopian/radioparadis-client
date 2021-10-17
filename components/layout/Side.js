@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
 import BehindRadio from './BehindRadio';
 import LogoSeparator from './LogoSeparator';
-import Chat from './Chat';
 import Interviews from './Interviews';
 
 class Side extends Component {
@@ -16,8 +15,8 @@ class Side extends Component {
     return (
       <section>
         <div className={styles.side}>
-          <div className={styles.trackHistorySideContainer}>
-            <TrackHistory 
+          <div>
+             <TrackHistory 
               isMorning={this.props.isMorning} 
               isDay={this.props.isDay} 
               isPlaying={this.props.isPlaying} 
