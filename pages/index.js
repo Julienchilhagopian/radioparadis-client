@@ -188,7 +188,7 @@ class Home extends Component {
         cover: this.albumCoverURL
       }
 
-      let prevArtist = this.state.currentTrack.artist
+      let prevArtist;
       if(this.state.currentTrack) {
         prevArtist = this.state.currentTrack.artist
       } else {
