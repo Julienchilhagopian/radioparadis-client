@@ -22,7 +22,7 @@ class Album extends Component {
           :
           <Image
             quality={isMobile ? 60 : 75}
-            src={'https://c28.radioboss.fm/w/artwork/436.png?' + new Date().getTime()}
+            src={this.props.currentTrack.cover}
             alt="Album cover"
             width={this.props.width}
             height={this.props.height}

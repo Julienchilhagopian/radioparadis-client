@@ -27,7 +27,6 @@ class Home extends Component {
         artist: "",
         cover: ""
       },
-      albumCover: "https://c28.radioboss.fm/w/artwork/436.png",
       albumHash: 0,
       history: {}, 
       nextFetch: 0, 
@@ -41,6 +40,7 @@ class Home extends Component {
       loading: false
     };
 
+    this.counter = 0;
     this.showSubmitForm = this.showSubmitForm.bind(this);
     this.hideSubmitForm = this.hideSubmitForm.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
@@ -179,13 +179,14 @@ class Home extends Component {
   }
 
   fetchCurrentTrack = () => {
+    this.counter++;
     fetch(this.currentTrackURL)
     .then(response => response.json())
     .then(data => {
 
       let currentTrackData = {
         artist: data.nowplaying,
-        cover: this.albumCoverURL
+        cover: this.albumCoverURL + "?" + this.counter
       }
 
       let prevArtist;
@@ -204,7 +205,7 @@ class Home extends Component {
       
       setTimeout(
         this.fetchCurrentTrack,
-        5000
+        7000
       )
     })
     .catch(error => {
