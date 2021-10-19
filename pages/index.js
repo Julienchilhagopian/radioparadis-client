@@ -182,7 +182,7 @@ class Home extends Component {
     this.counter++;
     fetch(this.currentTrackURL)
     .then(response => {
-      let res = response.json();
+      let res = response && response.json() || {};
       return res;
     })
     .then(data => {
