@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "migrate": "node db/migrate-db.js"
+    "migrate": "node db/migrate-db.js",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "antd": "^4.15.0",
