@@ -206,9 +206,10 @@ class Home extends Component {
         this.fetchColor(this.state.currentTrack.cover);
       }
       
+      console.log("current song", this.state.currentTrack);
       setTimeout(
         this.fetchCurrentTrack,
-        10000
+        30000
       )
     })
     .catch(error => {
