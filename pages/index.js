@@ -208,7 +208,7 @@ class Home extends Component {
       
       setTimeout(
         this.fetchCurrentTrack,
-        7000
+        10000
       )
     })
     .catch(error => {
