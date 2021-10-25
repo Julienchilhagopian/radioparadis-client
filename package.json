@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "migrate": "node db/migrate-db.js",
     "heroku-postbuild": "npm run build"
   },

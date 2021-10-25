@@ -26,7 +26,7 @@ class Side extends Component {
             />
           </div>
           <div className={styles.behindRadio}>
-            {/* <BehindRadio principalColor={this.props.principalColor}/> */}
+            <BehindRadio principalColor={this.props.principalColor}/>
           </div>
         </div>
         <LogoSeparator principalColor={this.props.principalColor} />
