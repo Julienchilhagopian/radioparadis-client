@@ -179,7 +179,6 @@ class Home extends Component {
   }
 
   fetchCurrentTrack = () => {
-    this.counter++;
     fetch(this.currentTrackURL)
     .then(response => {
       let res = response && response.json() || {};
@@ -189,7 +188,7 @@ class Home extends Component {
 
       let currentTrackData = {
         artist: data.nowplaying,
-        cover: this.albumCoverURL + "?" + this.counter
+        cover: this.albumCoverURL + "?song_num=" + this.counter
       }
 
       let prevArtist;
@@ -203,7 +202,8 @@ class Home extends Component {
       this.setState({ isTrackLoading: false });
       
       if(this.state.currentTrack.artist != prevArtist) {
-        this.fetchColor(this.state.currentTrack.cover);
+        this.fetchColor(currentTrackData.cover);
+        this.counter++;
       }
       
       console.log("current song", this.state.currentTrack);
