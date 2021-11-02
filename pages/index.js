@@ -296,6 +296,11 @@ class Home extends Component {
         <Head>
           <title>Radio Paradis</title>
           <link rel="icon" href={this.faviconURL} />
+          <meta name="description" content="RADIO PARADIS - Radio de quartier - 10ème arrondissement - Paris" />
+          <meta property="og:title" content="Radio Paradis" />
+          <meta property="og:description" content="Radio Paradis - 10ème arrondissement - Paris" />
+          <meta property="og:url" content="https://www.radioparadis.live/" />
+          <meta property="og:type" content="website" />
         </Head>
 
         <main>
