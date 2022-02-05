@@ -23,18 +23,18 @@ class Content extends Component {
             <Album
               isTrackLoading={this.props.isTrackLoading}
               currentTrack={this.props.currentTrack}
-              albumCover={this.props.albumCover} 
+              albumCover={this.props.albumCover}
               width={85}
               height={85}
             />
           </div>
 
-          <div className={styles.radioControls}>
+          <div className={styles.radioMainHeader}>
             <div className={styles.desktopHeader}>
               <h1 style={{ 'color': this.props.principalColor }}>Radio paradis</h1>
             </div>
 
-            <div className={styles.radioPitch}>
+            {/* <div className={styles.radioPitch}>
               <div className={styles.logoClass}>
                 <Logo
                   isMorning={this.props.isMorning}
@@ -57,21 +57,31 @@ class Content extends Component {
                   size={110}
                 />
               </div>
+            </div> */}
+            <div className={styles.logoClass}>
+              <Logo
+                isMorning={this.props.isMorning}
+                isDay={this.props.isDay}
+                isPlaying={this.props.isPlaying}
+                size={110}
+              />
             </div>
 
-            <DesktopPlayer
-              principalColor={this.props.principalColor}
-              secondaryColor={this.props.secondaryColor}
-              isTrackLoading={this.props.isTrackLoading}
-              currentTrack={this.props.currentTrack}
-              togglePlay={this.props.togglePlay}
-              isPlaying={this.props.isPlaying}
-              onVolumeChange={this.props.onVolumeChange}
-              loading={this.props.loading}
-              isMorning={this.props.isMorning}
-              isDay={this.props.isDay}
-              isNight={this.props.isNight}
-            />
+            <div className={styles.desktopPlayerMainContainer}>
+              <DesktopPlayer
+                principalColor={this.props.principalColor}
+                secondaryColor={this.props.secondaryColor}
+                isTrackLoading={this.props.isTrackLoading}
+                currentTrack={this.props.currentTrack}
+                togglePlay={this.props.togglePlay}
+                isPlaying={this.props.isPlaying}
+                onVolumeChange={this.props.onVolumeChange}
+                loading={this.props.loading}
+                isMorning={this.props.isMorning}
+                isDay={this.props.isDay}
+                isNight={this.props.isNight}
+              />
+            </div>
           </div>
         </section>
 

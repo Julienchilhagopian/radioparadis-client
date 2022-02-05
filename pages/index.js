@@ -17,26 +17,26 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      show: false, 
-      isPlaying: false, 
-      isMorning: false, 
-      isDay: false, 
-      isNight: false, 
+      show: false,
+      isPlaying: false,
+      isMorning: false,
+      isDay: false,
+      isNight: false,
       isSunday: false,
       currentTrack: {
         artist: "",
         cover: ""
       },
       albumHash: 0,
-      history: {}, 
-      nextFetch: 0, 
+      history: {},
+      nextFetch: 0,
       isTrackLoading: true,
       isHistoryLoading: true,
-      principalColor: '#cecece', 
-      secondaryColor: '#cecece8c', 
-      mobileColor: '#cecece', 
-      frameColor: '', 
-      volume: 1, 
+      principalColor: '#cecece',
+      secondaryColor: '#cecece8c',
+      mobileColor: '#cecece',
+      frameColor: '',
+      volume: 1,
       loading: false
     };
 
@@ -63,17 +63,17 @@ class Home extends Component {
   };
 
   togglePlay = () => {
-    if(this.state.isPlaying) {
+    if (this.state.isPlaying) {
       this.radioPlayer.audioEl.current.pause();
     } else {
       try {
-          this.showLoader()
-          this.radioPlayer.audioEl.current.load();
-          this.radioPlayer.audioEl.current.play();
+        this.showLoader()
+        this.radioPlayer.audioEl.current.load();
+        this.radioPlayer.audioEl.current.play();
 
-        } catch (e) {
-          this.errorMsg();
-          console.log("Player error", e);
+      } catch (e) {
+        this.errorMsg();
+        console.log("Player error", e);
       }
     }
 
@@ -102,51 +102,51 @@ class Home extends Component {
   }
 
   updateTime(time) {
-    if(time.getHours() >= 7 && time.getHours() < 10) {
+    if (time.getHours() >= 7 && time.getHours() < 10) {
       this.setState({
-        isMorning: true, 
-        isDay: false, 
+        isMorning: true,
+        isDay: false,
         isNight: false
       });
-   } else if (time.getHours() >= 10 && time.getHours() < 19) {
+    } else if (time.getHours() >= 10 && time.getHours() < 19) {
       this.setState({
-        isMorning: false, 
-        isDay: true, 
+        isMorning: false,
+        isDay: true,
         isNight: false
       });
-   } else if (time.getHours() >= 19 && time.getHours() < 23) {
+    } else if (time.getHours() >= 19 && time.getHours() < 23) {
       this.setState({
-        isMorning: false, 
-        isDay: false, 
+        isMorning: false,
+        isDay: false,
         isNight: true
       });
-   } else if (time.getHours() == 23 && time.getMinutes() < 59) {
+    } else if (time.getHours() == 23 && time.getMinutes() < 59) {
       this.setState({
-        isMorning: false, 
-        isDay: false, 
+        isMorning: false,
+        isDay: false,
         isNight: true
       });
-   } else {
+    } else {
       this.setState({
-        isMorning: false, 
-        isDay: false, 
+        isMorning: false,
+        isDay: false,
         isNight: false
       });
     }
 
 
-    if(time.getDay() == 0 ) {
+    if (time.getDay() == 0) {
       this.setState({
         isSunday: true
       });
-     } else {
+    } else {
       this.setState({
         isSunday: false
       });
-     }
+    }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({ isTrackLoading: true });
     let time = this.getTime();
     this.updateTime(time);
@@ -156,13 +156,13 @@ class Home extends Component {
       this.updateTime(time)
     }.bind(this), 5000);
 
-    
-    this.setState({isPlaying: false});
+
+    this.setState({ isPlaying: false });
     this.radioPlayer.audioEl.current.pause();
 
     this.fetchCurrentTrack();
     this.fetchTrackHistory();
- }
+  }
 
   componentWillUnmount() {
     clearInterval(window);
@@ -180,78 +180,78 @@ class Home extends Component {
 
   fetchCurrentTrack = () => {
     fetch(this.currentTrackURL)
-    .then(response => {
-      let res = response && response.json() || {};
-      return res;
-    })
-    .then(data => {
+      .then(response => {
+        let res = response && response.json() || {};
+        return res;
+      })
+      .then(data => {
 
-      let currentTrackData = {
-        artist: data.nowplaying,
-        cover: this.albumCoverURL + "?song_num=" + this.counter
-      }
+        let currentTrackData = {
+          artist: data.nowplaying,
+          cover: this.albumCoverURL + "?song_num=" + this.counter
+        }
 
-      let prevArtist;
-      if(this.state.currentTrack) {
-        prevArtist = this.state.currentTrack.artist
-      } else {
-        prevArtist = ""
-      }
-      
-      this.setState({ currentTrack: currentTrackData});
-      this.setState({ isTrackLoading: false });
-      
-      if(this.state.currentTrack.artist != prevArtist) {
-        this.fetchColor(currentTrackData.cover);
-        this.counter++;
-      }
-      
-      console.log("current song", this.state.currentTrack);
-      setTimeout(
-        this.fetchCurrentTrack,
-        30000
-      )
-    })
-    .catch(error => {
-      console.log("error fetching current song", error)
-      this.setState({ currentTrack: null })
+        let prevArtist;
+        if (this.state.currentTrack) {
+          prevArtist = this.state.currentTrack.artist
+        } else {
+          prevArtist = ""
+        }
+
+        this.setState({ currentTrack: currentTrackData });
+        this.setState({ isTrackLoading: false });
+
+        if (this.state.currentTrack.artist != prevArtist) {
+          this.fetchColor(currentTrackData.cover);
+          this.counter++;
+        }
+
+        console.log("current song", this.state.currentTrack);
+        setTimeout(
+          this.fetchCurrentTrack,
+          30000
+        )
+      })
+      .catch(error => {
+        console.log("error fetching current song", error)
+        this.setState({ currentTrack: null })
 
         setTimeout(
           this.fetchCurrentTrack,
           60000
         )
-    });
+      });
   }
 
   fetchTrackHistory = () => {
     fetch(this.trackHistoryURL)
-    .then(response => response.json())
-    .then(data => {
-      this.setState({ history: data })
-      this.setState({ isHistoryLoading: false })
-  
-      setTimeout(
-        this.fetchTrackHistory,
-        240000
-      )
-    })
-    .catch(error => {
-      console.log("error fetching history", error)
-      this.setState({ currentTrack: null })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ history: data })
+        this.setState({ isHistoryLoading: false })
+
+        setTimeout(
+          this.fetchTrackHistory,
+          240000
+        )
+      })
+      .catch(error => {
+        console.log("error fetching history", error)
+        this.setState({ currentTrack: null })
 
         setTimeout(
           this.fetchTrackHistory,
           10000
         )
-    });
+      });
   }
 
   getColor = (colors) => {
     let randomColor = colors[Math.floor(Math.random() * colors.length)];
-    while(
+    while (
       (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
       || (randomColor[0] < 100 && randomColor[1] < 100 && randomColor[2] < 100)
-      ) {
+    ) {
       randomColor = colors[Math.floor(Math.random() * colors.length)];
     }
 
@@ -266,9 +266,9 @@ class Home extends Component {
       const colors = colorThief.getPalette(img, 5);
       let randomColor = this.getColor(colors);
 
-      this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)`});
-      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)`});
-      this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})`});
+      this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)` });
+      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)` });
+      this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})` });
 
       this.updateFrameColor();
     });
@@ -278,15 +278,15 @@ class Home extends Component {
   }
 
   updateFrameColor = () => {
-    this.setState({frameColor: isMobile ? 'white' : this.state.principalColor})
+    this.setState({ frameColor: isMobile ? 'white' : this.state.principalColor })
   }
 
-  onVolumeChange  = (value) => {
-    this.setState({volume: (value / 100)})
+  onVolumeChange = (value) => {
+    this.setState({ volume: (value / 100) })
   };
 
 
-  render(){
+  render() {
     const frameColor = {
       "backgroundColor": this.state.frameColor,
     };
@@ -304,73 +304,71 @@ class Home extends Component {
         </Head>
 
         <main>
-          <ReactAudioPlayer 
+          <ReactAudioPlayer
             ref={(element) => {
               this.radioPlayer = element;
-              if(this.radioPlayer) {
+              if (this.radioPlayer) {
                 this.radioPlayer.audioEl.current.volume = this.state.volume;
               }
-            }} 
-            src={this.radioURL} 
+            }}
+            src={this.radioURL}
             preload={'auto'}
             onCanPlay={this.hideLoader}
-            />
+          />
           <section className={styles.home}>
-            <div className={styles.frame} style={frameColor}>
-              <div className={styles.frameContent}>
-                <Header 
-                  isMorning={this.state.isMorning} 
-                  isDay={this.state.isDay} 
-                  isNight={this.state.isNight}
-                  isSunday={this.state.isSunday}
-                  />
-                 <Content 
-                    principalColor={this.state.principalColor}
-                    secondaryColor={this.state.secondaryColor} 
-                    isTrackLoading={this.state.isTrackLoading} 
-                    currentTrack={this.state.currentTrack} 
-                    albumCover={this.state.albumCover} 
-                    showSubmitForm={this.showSubmitForm} 
-                    isPlaying={this.state.isPlaying} 
-                    togglePlay={this.togglePlay} 
-                    isMorning={this.state.isMorning} 
-                    isDay={this.state.isDay} 
-                    isNight={this.state.isNight}
-                    onVolumeChange={this.onVolumeChange}
-                    loading={this.state.loading}
-                  />
-              </div>
+            <div className={styles.frameContent}>
+              {/* <Header
+                isMorning={this.state.isMorning}
+                isDay={this.state.isDay}
+                isNight={this.state.isNight}
+                isSunday={this.state.isSunday}
+              /> */}
+              <Content
+                principalColor={this.state.principalColor}
+                secondaryColor={this.state.secondaryColor}
+                isTrackLoading={this.state.isTrackLoading}
+                currentTrack={this.state.currentTrack}
+                albumCover={this.state.albumCover}
+                showSubmitForm={this.showSubmitForm}
+                isPlaying={this.state.isPlaying}
+                togglePlay={this.togglePlay}
+                isMorning={this.state.isMorning}
+                isDay={this.state.isDay}
+                isNight={this.state.isNight}
+                onVolumeChange={this.onVolumeChange}
+                loading={this.state.loading}
+              />
             </div>
-            <Side 
-              isPlaying={this.state.isPlaying} 
-              principalColor={this.state.principalColor} 
-              history={this.state.history} 
+            <Side
+              isPlaying={this.state.isPlaying}
+              principalColor={this.state.principalColor}
+              history={this.state.history}
               isHistoryLoading={this.state.isHistoryLoading}
-              isMorning={this.state.isMorning} 
-              isDay={this.state.isDay} 
+              isMorning={this.state.isMorning}
+              isDay={this.state.isDay}
               isNight={this.state.isNight}
             />
             <Footer />
             <div className={styles.mobileFitter}></div>
-             <MobilePlayer  
-              mobileColor={this.state.mobileColor} 
-              currentTrack={this.state.currentTrack} 
-              togglePlay={this.togglePlay} 
+            <MobilePlayer
+              mobileColor={this.state.mobileColor}
+              currentTrack={this.state.currentTrack}
+              togglePlay={this.togglePlay}
               isPlaying={this.state.isPlaying}
               loading={this.state.loading}
               isMorning={this.state.isMorning}
-              isDay={this.state.isDay} 
+              isDay={this.state.isDay}
               isNight={this.state.isNight}
-            /> 
-            <SubmitForm 
-              principalColor={this.state.principalColor}  
-              show={this.state.show} 
+            />
+            <SubmitForm
+              principalColor={this.state.principalColor}
+              show={this.state.show}
               handleClose={this.hideSubmitForm}>
             </SubmitForm>
           </section>
         </main>
       </div>
-    ) 
+    )
   }
 }
 

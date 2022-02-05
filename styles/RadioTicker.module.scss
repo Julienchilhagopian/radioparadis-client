@@ -1,7 +1,7 @@
 @import 'variables';
 
 .tickerContainer {
-  width: 100%;
+  // width: 100%;
   white-space: nowrap;
 }
 
@@ -32,7 +32,7 @@
 @media (min-width: $desktopWidth){ 
 
   .tickerContainer h2 {
-    font-size: 22pt;
+    font-size: 15pt;
   }
 }
 

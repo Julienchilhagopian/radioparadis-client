@@ -70,7 +70,7 @@
   display: none;
 }
 
-.radioControls {
+.radioMainHeader {
   display: unset;
 }
 
@@ -86,22 +86,17 @@
   }
  
   .musicContent {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
     padding-bottom: 30px;
-    align-items: center;
   }
 
   .album {
     display: none;
   }
 
-  .radioControls {
+  .radioMainHeader {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .request {
@@ -135,14 +130,15 @@
   }
 
   .desktopHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    display: block;
   }
 
   .desktopHeader h1 {
-    font-size: 90pt;
+    font-size: 65pt;
     text-transform: uppercase;
+    line-height: 75px;
+    width: 375px;
+    text-align: left;
   }
 
   .footer {
@@ -151,6 +147,10 @@
 
   .desktopPlayer {
     display: block;
+  }
+  
+  .desktopPlayerMainContainer {
+    width: 375px;
   }
 
 }
