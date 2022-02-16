@@ -136,7 +136,7 @@
   .desktopHeader h1 {
     font-size: 65pt;
     text-transform: uppercase;
-    line-height: 75px;
+    line-height: 80%;
     width: 375px;
     text-align: left;
   }
@@ -174,5 +174,12 @@
     width: 130px;
     height: 130px;
   }
-  
+
+  .desktopPlayerMainContainer {
+    width: 500px;
+  }
+
+  .desktopHeader h1 {
+    width: 500px;
+  }
 }

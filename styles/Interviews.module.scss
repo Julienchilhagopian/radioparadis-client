@@ -1,31 +1,64 @@
 @import 'variables';
 
-.interviews {
-  width: 100%;
-  padding: 30px;
-  border-radius: 25px;
-  text-align: center;
-  border: 2px solid black;
+.InterviewsContainer {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-.interviewsHeader {
-  margin-bottom: 15px;
+.headerContainer {
+  margin-bottom: 50px;
 }
 
-.interviewsContent {
-  margin-bottom: 20px;
+.imageCard {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 90px;
 }
 
-.mail {
-  margin-bottom: 20px;
-
+.imageCardMiddle {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  margin-bottom: 90px;
 }
 
-@media (min-width: $desktopWidth){
-  .interviews {
-    border: none;
-    padding: 30px 90px 30px 90px;
-    background-color: #ededed;
-    border-radius: 35px;
+.imageCardMiddle p {
+  float: right;
+}
+
+.imageCardEnd {
+  display: flex;
+  align-items: flex-end;
+}
+
+.imageContent {
+  position: relative; 
+  width: 525px;
+  height: 358px;
+}
+
+.imageContent img {
+  border-radius: 10px;
+}
+
+.imageDescription {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.imageDescription h2 {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+.imageDescription p {
+  font-size: 8pt;
+}
+
+
+@media (min-width: $desktopWidth-large){ 
+  .imageContent {
+    width: 736px;
+    height: 501.6px;
   }
 }

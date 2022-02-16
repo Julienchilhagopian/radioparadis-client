@@ -1,9 +1,8 @@
 import styles from '../../styles/Side.module.scss'
 import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
-import BehindRadio from './BehindRadio';
-import LogoSeparator from './LogoSeparator';
 import Interviews from './Interviews';
+import LogoSeparator from './LogoSeparator';
 
 class Side extends Component {
 
@@ -14,7 +13,7 @@ class Side extends Component {
   render() {
     return (
       <section>
-        <div className={styles.side}>
+        <div className={styles.side} style={{ 'backgroundColor': this.props.principalColor }}>
           <div>
              <TrackHistory 
               isMorning={this.props.isMorning} 
@@ -25,19 +24,11 @@ class Side extends Component {
               principalColor={this.props.principalColor}
             />
           </div>
-          <div className={styles.behindRadio}>
-            <BehindRadio principalColor={this.props.principalColor}/>
+          <div className={styles.Interviews}>
+            <Interviews principalColor={this.props.principalColor}/>
           </div>
         </div>
         <LogoSeparator principalColor={this.props.principalColor} />
-        <div className={styles.sideInterview}>
-          <Interviews 
-            isMorning={this.props.isMorning} 
-            isDay={this.props.isDay} 
-            isPlaying={this.props.isPlaying} 
-            principalColor={this.props.principalColor}
-          />
-        </div>
       </section>
     )
   }
