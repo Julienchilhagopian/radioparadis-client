@@ -317,12 +317,12 @@ class Home extends Component {
           />
           <section className={styles.home}>
             <div className={styles.frameContent}>
-              {/* <Header
+              <Header
                 isMorning={this.state.isMorning}
                 isDay={this.state.isDay}
                 isNight={this.state.isNight}
                 isSunday={this.state.isSunday}
-              /> */}
+              />
               <Content
                 principalColor={this.state.principalColor}
                 secondaryColor={this.state.secondaryColor}
@@ -340,6 +340,7 @@ class Home extends Component {
               />
             </div>
             <Side
+              isMobile={isMobile}
               isPlaying={this.state.isPlaying}
               principalColor={this.state.principalColor}
               history={this.state.history}

@@ -11,9 +11,14 @@ class Side extends Component {
   }
   
   render() {
+    const bgColor = {
+      "backgroundColorDesktop": this.props.principalColor,
+      "backgroundColorMobile": '',
+    };
+
     return (
       <section>
-        <div className={styles.side} style={{ 'backgroundColor': this.props.principalColor }}>
+        <div className={styles.side} style={this.props.isMobile ? { "backgroundColor": bgColor.backgroundColorMobile} : { "backgroundColor": bgColor.backgroundColorDesktop}}>
           <div>
              <TrackHistory 
               isMorning={this.props.isMorning} 

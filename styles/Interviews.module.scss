@@ -1,64 +1,37 @@
 @import 'variables';
 
 .InterviewsContainer {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.headerContainer {
-  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imageCard {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 90px;
+  margin-bottom: 25px;
 }
 
-.imageCardMiddle {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: row-reverse;
-  margin-bottom: 90px;
+.imageCard h3 {
+  text-align: center; 
 }
 
-.imageCardMiddle p {
-  float: right;
-}
-
-.imageCardEnd {
-  display: flex;
-  align-items: flex-end;
+.imageCard .subTitle {
+  text-transform: uppercase;
 }
 
 .imageContent {
-  position: relative; 
-  width: 525px;
-  height: 358px;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
 .imageContent img {
-  border-radius: 10px;
+  object-fit: cover;
+  border-radius: 25px;
 }
 
-.imageDescription {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.imageDescription h2 {
-  font-weight: bold;
-  font-size: 10pt;
-}
-
-.imageDescription p {
-  font-size: 8pt;
-}
 
 
 @media (min-width: $desktopWidth-large){ 
-  .imageContent {
-    width: 736px;
-    height: 501.6px;
-  }
+ 
 }

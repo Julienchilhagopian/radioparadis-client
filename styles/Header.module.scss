@@ -22,8 +22,7 @@
 @media (min-width: $desktopWidth){
 
   .header  { 
-    padding-top: unset;
-    margin-bottom: unset;
+    display: none
   }
 
   .singleMood {
