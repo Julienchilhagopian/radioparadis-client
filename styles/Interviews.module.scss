@@ -1,6 +1,6 @@
 @import 'variables';
 
-.InterviewsContainer {
+.imagesContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,7 @@
 
 .imageCard {
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .imageCard h3 {
@@ -16,6 +17,7 @@
 
 .imageCard .subTitle {
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .imageContent {
@@ -32,6 +34,28 @@
 
 
 
-@media (min-width: $desktopWidth-large){ 
+@media (min-width: $desktopWidth){ 
  
+  .imagesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(670px, 1fr));
+    grid-gap: 1rem;
+  }
+
+  .imageContent {
+    width: 670px;
+    height: 670px;
+  }
+
+  .imageCard {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageCard h3 {
+    color: white; 
+  }
+  
+
 }

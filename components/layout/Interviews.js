@@ -13,25 +13,25 @@ class Interviews extends Component {
       {
         "title": "Le café comme vecteur de rencontres",
         "shop_name": "café josé",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.png",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-paradis.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       },
       {
         "title": "Le café comme vecteur de rencontres",
         "shop_name": "café josé",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.png",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-paradis.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       },
       {
         "title": "Le café comme vecteur de rencontres",
         "shop_name": "café josé",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.png",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-paradis.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       },
       {
         "title": "Le café comme vecteur de rencontres",
         "shop_name": "café josé",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/jardin-villemin.png",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-paradis.png",
         "link_show": "https://www.lemonde.fr/"
       }
     ]
