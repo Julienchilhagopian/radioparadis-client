@@ -12,28 +12,23 @@ class Content extends Component {
         <section className={styles.musicContent}>
           <div className={styles.mobileLogo}>
             <h1 style={{ 'color': this.props.principalColor }}>Radio paradis</h1>
-            <Logo
-              isMorning={this.props.isMorning}
-              isDay={this.props.isDay}
-              isPlaying={this.props.isPlaying}
-              size={100}
-            />
-          </div>
-          <div className={styles.album}>
-            <Album
-              isTrackLoading={this.props.isTrackLoading}
-              currentTrack={this.props.currentTrack}
-              albumCover={this.props.albumCover}
-              width={85}
-              height={85}
-            />
+            <div className={styles.mobileLogoContainer}>
+              <Logo
+                isMorning={this.props.isMorning}
+                isDay={this.props.isDay}
+                isPlaying={this.props.isPlaying}
+                size={100}
+              />
+            </div>
+            <div>
+              <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p>
+            </div>
           </div>
 
           <div className={styles.radioMainHeader}>
             <div className={styles.desktopHeader}>
-              <h1 style={{ 'color': this.props.principalColor }}>Radio paradis</h1>
+              <h1>Radio paradis</h1>
             </div>
-
             {/* <div className={styles.radioPitch}>
               <div className={styles.logoClass}>
                 <Logo
@@ -87,6 +82,7 @@ class Content extends Component {
 
         <div className={styles.footer}>
           <h3>Rue de Paradis, 10ème arrondissement.</h3>
+          <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p>
         </div>
 
       </section>

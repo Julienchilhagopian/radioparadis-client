@@ -32,9 +32,9 @@ class Home extends Component {
       nextFetch: 0,
       isTrackLoading: true,
       isHistoryLoading: true,
-      principalColor: '#cecece',
+      principalColor: 'white',
       secondaryColor: '#cecece8c',
-      mobileColor: '#cecece',
+      mobileColor: 'white',
       frameColor: '',
       volume: 1,
       loading: false

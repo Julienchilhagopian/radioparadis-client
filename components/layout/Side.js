@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
 import Interviews from './Interviews';
 import LogoSeparator from './LogoSeparator';
+import { isMobile } from "react-device-detect";
 
 class Side extends Component {
 
@@ -11,14 +12,14 @@ class Side extends Component {
   }
   
   render() {
-    const bgColor = {
+    const bgColorc = {
       "backgroundColorDesktop": this.props.principalColor,
-      "backgroundColorMobile": '',
+      "backgroundColorMobile": 'white',
     };
 
     return (
       <section>
-        <div className={styles.side} style={this.props.isMobile ? { "backgroundColor": bgColor.backgroundColorMobile} : { "backgroundColor": bgColor.backgroundColorDesktop}}>
+        <div className={styles.side} style={{ "backgroundColor":  isMobile ? bgColorc.backgroundColorMobile : bgColorc.backgroundColorDesktop}}>
           <div>
              <TrackHistory 
               isMorning={this.props.isMorning} 
