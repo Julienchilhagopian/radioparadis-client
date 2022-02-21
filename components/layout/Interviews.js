@@ -13,7 +13,7 @@ class Interviews extends Component {
       {
         "title": "Rue de Paradis",
         "shop_name": "Plus belle rue du 10eme",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-paradis.JPG",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-de-paradis.JPG",
         "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       },
       {
