@@ -32,7 +32,7 @@ class Interviews extends Component {
         "title": "Enregistrement des jingles",
         "shop_name": "Rue de Paradis",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/record-jingles.JPG",
-        "link_show": "https://www.lemonde.fr/"
+        "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       }
     ]
     return (
@@ -43,7 +43,7 @@ class Interviews extends Component {
               <div key={index} className={styles.imageCard} onClick={()=> window.open(`${interview.link_show}`, "_blank")}>
                 <div className={styles.imageContent}>
                   <Image
-                    quality={10}
+                    quality={60}
                     src={interview.link_img}
                     alt="Logo"
                     layout="fill"

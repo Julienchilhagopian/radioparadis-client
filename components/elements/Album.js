@@ -22,7 +22,7 @@ class Album extends Component {
           :
           <Image
             quality={isMobile ? 60 : 75}
-            src={this.props.currentTrack.cover}
+            src="https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/pochette-min.png"
             alt="Album cover"
             width={this.props.width}
             height={this.props.height}
