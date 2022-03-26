@@ -11,16 +11,16 @@ class Interviews extends Component {
   render() {
     let interviews = [
       {
-        "title": "Rue de Paradis",
-        "shop_name": "Plus belle rue du 10eme",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rue-de-paradis.JPG",
-        "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
+        "title": "Curieuse cave - 11 Rue de la Fidélité",
+        "shop_name": "RENCONTRE DE QUARTIER DIMANCHE 20H",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min2.jpg",
+        "link_show": ""
       },
       {
-        "title": "DJ SET - Antoine Rouaud",
-        "shop_name": "DEEP HOUSE",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/post-djset-tonio.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
+        "title": "Curieuse cave - 11 Rue de la Fidélité",
+        "shop_name": "RENCONTRE DE QUARTIER DIMANCHE 20H",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min.jpg",
+        "link_show": ""
       },
       {
         "title": "Les couleurs du 10",
@@ -29,11 +29,11 @@ class Interviews extends Component {
         "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       },
       {
-        "title": "Enregistrement des jingles",
-        "shop_name": "Rue de Paradis",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/record-jingles.JPG",
+        "title": "DJ SET - Antoine Rouaud",
+        "shop_name": "DEEP HOUSE",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/post-djset-tonio.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
-      }
+      },
     ]
     return (
       <section className={styles.InterviewsContainer}>
