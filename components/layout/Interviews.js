@@ -12,13 +12,13 @@ class Interviews extends Component {
     let interviews = [
       {
         "title": "Curieuse cave - 11 Rue de la Fidélité",
-        "shop_name": "RENCONTRE DE QUARTIER DIMANCHE 20H",
+        "shop_name": "RENCONTRE DE QUARTIER",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min2.jpg",
         "link_show": "https://soundcloud.com/radio-paradis-13/rencontre-de-quartier-curieuse-cave"
       },
       {
         "title": "Curieuse cave - 11 Rue de la Fidélité",
-        "shop_name": "RENCONTRE DE QUARTIER DIMANCHE 20H",
+        "shop_name": "RENCONTRE DE QUARTIER",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min.jpg",
         "link_show": "https://soundcloud.com/radio-paradis-13/rencontre-de-quartier-curieuse-cave"
       },
