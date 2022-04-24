@@ -11,6 +11,12 @@ class Interviews extends Component {
   render() {
     let interviews = [
       {
+        "title": "Philippe le Libraire - 32 Rue des Vinaigriers",
+        "shop_name": "RENCONTRE DE QUARTIER",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/philippe-libraire.png",
+        "link_show": "https://www.mixcloud.com/radioparadis/rencontre-de-quartier-philippe-le-libraire/"
+      },
+      {
         "title": "Curieuse cave - 11 Rue de la Fidélité",
         "shop_name": "RENCONTRE DE QUARTIER",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min2.jpg",
@@ -21,12 +27,6 @@ class Interviews extends Component {
         "shop_name": "RENCONTRE DE QUARTIER",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min.jpg",
         "link_show": "https://soundcloud.com/radio-paradis-13/rencontre-de-quartier-curieuse-cave"
-      },
-      {
-        "title": "Les couleurs du 10",
-        "shop_name": "Hotel amour",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/hotel-amour.jpg",
-        "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
       },
       {
         "title": "DJ SET - Antoine Rouaud",
