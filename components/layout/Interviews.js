@@ -13,7 +13,7 @@ class Interviews extends Component {
       {
         "title": "Philippe le Libraire - 32 Rue des Vinaigriers",
         "shop_name": "RENCONTRE DE QUARTIER",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/philippe-libraire.png",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/philippe-libraire2.png",
         "link_show": "https://www.mixcloud.com/radioparadis/rencontre-de-quartier-philippe-le-libraire/"
       },
       {
