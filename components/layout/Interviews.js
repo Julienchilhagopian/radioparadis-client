@@ -13,7 +13,7 @@ class Interviews extends Component {
       {
         "title": "DIMANCHE 28 AOÛT - POINT ÉPHÉMÈRE",
         "shop_name": "QUE DU 10",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUEDU10_low.png",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUEDU10_low.jpeg",
         "link_show": "https://www.facebook.com/events/5268951943181938
         "
       },
