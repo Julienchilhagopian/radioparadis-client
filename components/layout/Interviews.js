@@ -11,10 +11,10 @@ class Interviews extends Component {
   render() {
     let interviews = [
       {
-        "title": "Philippe le Libraire - 32 Rue des Vinaigriers",
-        "shop_name": "RENCONTRE DE QUARTIER",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/philippe-libraire2.png",
-        "link_show": "https://www.mixcloud.com/radioparadis/rencontre-de-quartier-philippe-le-libraire/"
+        "title": "DIMANCHE 28 AOÛT - POINT ÉPHÉMÈRE",
+        "shop_name": "QUE DU 10",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/affiche-insta.png",
+        "link_show": "https://www.facebook.com/events/5268951943181938"
       },
       {
         "title": "Curieuse cave - 11 Rue de la Fidélité",
@@ -29,11 +29,11 @@ class Interviews extends Component {
         "link_show": "https://soundcloud.com/radio-paradis-13/rencontre-de-quartier-curieuse-cave"
       },
       {
-        "title": "DJ SET - Antoine Rouaud",
-        "shop_name": "DEEP HOUSE",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/post-djset-tonio.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/set-du-dimanche-antoine-rouaud-12-jan-2022"
-      },
+        "title": "Philippe le Libraire - 32 Rue des Vinaigriers",
+        "shop_name": "RENCONTRE DE QUARTIER",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/philippe-libraire2.png",
+        "link_show": "https://www.mixcloud.com/radioparadis/rencontre-de-quartier-philippe-le-libraire/"
+      }
     ]
     return (
       <section className={styles.InterviewsContainer}>
