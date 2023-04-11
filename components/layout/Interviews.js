@@ -37,7 +37,7 @@ class Interviews extends Component {
       {
         "title": "PATIMO - Quirks",
         "shop_name": "REPLAY",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/patimo_quirks.jpg",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/patimo_quirks.png",
         "link_show": "https://soundcloud.com/j-r-my-berloty/patimo-quirks-rp-30-03-23"
       },
       {
