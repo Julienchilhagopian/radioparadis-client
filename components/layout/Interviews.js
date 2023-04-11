@@ -11,28 +11,40 @@ class Interviews extends Component {
   render() {
     let interviews = [
       {
+        "title": "RÉSIDENCE FUNKY GIGI",
+        "shop_name": "REPLAY",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/story_replay.png",
+        "link_show": "https://soundcloud.com/j-r-my-berloty/sets"
+      },
+      {
+        "title": "MAYFLO",
+        "shop_name": "REPLAY",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/MAYFLO.png",
+        "link_show": "https://soundcloud.com/j-r-my-berloty/mayflo-dj-set-for-radio-paradis"
+      },
+      {
+        "title": "C-LYYA (MQ Records)",
+        "shop_name": "REPLAY",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/C-LYYA.png",
+        "link_show": "https://soundcloud.com/j-r-my-berloty/clyya-dj-set-mq-records"
+      },
+      {
+        "title": "FARID (On Verra Music)",
+        "shop_name": "REPLAY",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/farid.png",
+        "link_show": "https://soundcloud.com/j-r-my-berloty/farid-radio-paradis-9-2-2023wav"
+      },
+      {
+        "title": "PATIMO - Quirks",
+        "shop_name": "REPLAY",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/patimo_quirks.jpg",
+        "link_show": "https://soundcloud.com/j-r-my-berloty/patimo-quirks-rp-30-03-23"
+      },
+      {
         "title": "DIMANCHE 28 AOÛT - POINT ÉPHÉMÈRE",
         "shop_name": "QUE DU 10",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUEDU10_low.jpeg",
         "link_show": "https://www.facebook.com/events/5268951943181938"
-      },
-      {
-        "title": "Curieuse cave - 11 Rue de la Fidélité",
-        "shop_name": "RENCONTRE DE QUARTIER",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min2.jpg",
-        "link_show": "https://soundcloud.com/radio-paradis-13/rencontre-de-quartier-curieuse-cave"
-      },
-      {
-        "title": "Curieuse cave - 11 Rue de la Fidélité",
-        "shop_name": "RENCONTRE DE QUARTIER",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/curieuse-cave-itw-min.jpg",
-        "link_show": "https://soundcloud.com/radio-paradis-13/rencontre-de-quartier-curieuse-cave"
-      },
-      {
-        "title": "Philippe le Libraire - 32 Rue des Vinaigriers",
-        "shop_name": "RENCONTRE DE QUARTIER",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/philippe-libraire2.png",
-        "link_show": "https://www.mixcloud.com/radioparadis/rencontre-de-quartier-philippe-le-libraire/"
       }
     ]
     return (
