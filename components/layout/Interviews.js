@@ -11,6 +11,18 @@ class Interviews extends Component {
   render() {
     let interviews = [
       {
+        "title": "QUI SI FA ROMA #1",
+        "shop_name": "ROBERTA STRADA",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/qui-si-fa-roma-1-roberta-strada"
+      },
+      {
+        "title": "QUI SI FA ROMA #2",
+        "shop_name": "AVA ALAMI",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/qui-si-fa-roma-2-ava-alami"
+      },
+      {
         "title": "RÉSIDENCE FUNKY GIGI",
         "shop_name": "REPLAY",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/story_replay.png",
