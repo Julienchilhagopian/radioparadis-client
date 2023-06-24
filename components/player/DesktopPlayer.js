@@ -52,14 +52,6 @@ class DesktopPlayer extends Component {
             </div>
           </div>
         </section>
-        <div className={styles.album}>
-          <Album
-            isTrackLoading={this.props.isTrackLoading}
-            currentTrack={this.props.currentTrack}
-            width={600}
-            height={600}
-          />
-        </div>
       </div>
     )
   }

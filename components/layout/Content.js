@@ -1,7 +1,6 @@
 import styles from '../../styles/Content.module.scss';
 import React, { Component } from 'react';
 import DesktopPlayer from '../player/DesktopPlayer';
-import Album from '../elements/Album';
 import Logo from '../elements/Logo';
 
 class Content extends Component {
