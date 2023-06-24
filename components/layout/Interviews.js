@@ -23,6 +23,12 @@ class Interviews extends Component {
         "link_show": "https://soundcloud.com/radio-paradis-13/tomasi-brothers"
       },
       {
+        "title": "STO B2B BAKAER",
+        "shop_name": "DIAC SHOW #1",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_show_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-1-sto-b2b-bakear?in=radio-paradis-13/sets/diac-show"
+      },
+      {
         "title": "QUI SI FA ROMA #3",
         "shop_name": "GUINEVERE",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_3.png",
@@ -57,12 +63,6 @@ class Interviews extends Component {
         "shop_name": "REPLAY",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/C-LYYA.png",
         "link_show": "https://soundcloud.com/j-r-my-berloty/clyya-dj-set-mq-records"
-      },
-      {
-        "title": "FARID (On Verra Music)",
-        "shop_name": "REPLAY",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/farid.png",
-        "link_show": "https://soundcloud.com/j-r-my-berloty/farid-radio-paradis-9-2-2023wav"
       },
       {
         "title": "DIMANCHE 28 AOÛT - POINT ÉPHÉMÈRE",
