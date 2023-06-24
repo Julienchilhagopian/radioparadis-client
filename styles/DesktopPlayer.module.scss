@@ -11,11 +11,10 @@
   }
 
   .volumeContainer {
-    border-radius: 15px 0px 0px 15px;
     padding: 10px 0px;
-    border-left: 1px solid;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    border-left: 2px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
   } 
 
   .volumeContainer > div {
@@ -35,12 +34,11 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #afafaf2e;
-    width: 260px;
+    background-color: #ffffff;
+    width: 250px;
     min-height: 130px;
     padding-right: 15px;
-    border: 1px solid;
-    border-radius: 0px 15px 15px 0px;
+    border: 2px solid;
   }
 
   .desktopPlayerContent {

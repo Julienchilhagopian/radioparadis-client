@@ -303,7 +303,7 @@ class Home extends Component {
           <meta property="og:type" content="website" />
         </Head>
 
-        <main>
+        <main className={styles.main}>
           <ReactAudioPlayer
             ref={(element) => {
               this.radioPlayer = element;

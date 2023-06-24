@@ -6,8 +6,6 @@ class Logo extends Component {
 
   constructor() {
     super();
-
-    this.logoDayURL = 'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-day.png';
     this.logoNightURL = 'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.png';
   }
 

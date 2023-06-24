@@ -2,7 +2,7 @@
 
 .tickerContainer {
   cursor: pointer;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .tickerContainer span {
@@ -39,7 +39,7 @@
 
 @media (min-width: $desktopWidth){ 
   .tickerContainer {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
   }
 }
 

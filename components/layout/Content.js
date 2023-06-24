@@ -25,41 +25,23 @@ class Content extends Component {
           </div>
 
           <div className={styles.radioMainHeader}>
-            <div className={styles.desktopHeader}>
-              <h1>Radio paradis</h1>
-            </div>
-            {/* <div className={styles.radioPitch}>
+
+            <div className={styles.topBar}>
               <div className={styles.logoClass}>
                 <Logo
                   isMorning={this.props.isMorning}
                   isDay={this.props.isDay}
                   isPlaying={this.props.isPlaying}
-                  size={110}
+                  size={150}
                 />
               </div>
-              <div className={styles.radioPitchText}>
-                <h3>La radio d'un quartier.</h3>
-                <h3>En ces temps imparfaits.</h3>
-                <h3>La musique comme usage du monde.</h3>
-                <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p>
+              <div className={styles.footerSocial}>
+                <a href="https://soundcloud.com/radio-paradis-13" target="_blank">Soundcloud</a>
+                <a href="https://open.spotify.com/user/chil-hagopian?si=wHQ2N2L3RQGqUuEFyAyLFg" target="_blank">Spotify</a>
+                <a href="https://www.instagram.com/radioparadis/" target="_blank">Instagram</a>
               </div>
-              <div className={styles.logoClass}>
-                <Logo
-                  isMorning={this.props.isMorning}
-                  isDay={this.props.isDay}
-                  isPlaying={this.props.isPlaying}
-                  size={110}
-                />
-              </div>
-            </div> */}
-            <div className={styles.logoClass}>
-              <Logo
-                isMorning={this.props.isMorning}
-                isDay={this.props.isDay}
-                isPlaying={this.props.isPlaying}
-                size={110}
-              />
             </div>
+
 
             <div className={styles.desktopPlayerMainContainer}>
               <DesktopPlayer
@@ -78,12 +60,6 @@ class Content extends Component {
             </div>
           </div>
         </section>
-
-        <div className={styles.footer}>
-          <h3>Rue de Paradis, 10ème arrondissement.</h3>
-          <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p>
-        </div>
-
       </section>
     )
   }

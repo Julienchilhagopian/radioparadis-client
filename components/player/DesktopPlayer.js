@@ -12,10 +12,6 @@ class DesktopPlayer extends Component {
   }
 
   render() {
-    const playerColor = {
-      "backgroundColor": this.props.secondaryColor,
-    };
-
     const sliderStyle = {
       display: 'inline-block',
       "backgroundColor": this.props.principalColor,
@@ -32,7 +28,7 @@ class DesktopPlayer extends Component {
             defaultValue={50}
           />
         </div>
-        <section className={styles.desktopPlayer} style={playerColor}>
+        <section className={styles.desktopPlayer}>
           <PlayBtn 
             togglePlay={this.props.togglePlay} 
             isPlaying={this.props.isPlaying}

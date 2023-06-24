@@ -1,5 +1,9 @@
 @import 'variables';
 
+.main {
+  background-color: #fff6ea;
+}
+
 .frame {
   padding: unset;
   //background-color: unset !important;
@@ -17,9 +21,7 @@
   }
 
   .frameContent {
-    background-color:  white;
-    border-radius: 50px;
-    padding: 30px 30px 30px 30px;
+    padding: 20px 40px 20px 40px;
   }
 
   .mobileFitter {

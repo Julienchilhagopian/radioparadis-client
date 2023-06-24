@@ -75,16 +75,22 @@
     display: none; 
   }
  
-  .musicContent {
-    padding-bottom: 30px;
-  }
-
- 
-
   .radioMainHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .topBar {
+    display: flex;
+    align-items: center;
+  }
+
+  .topBar a {
+    font-size: 15pt;
+    text-transform: uppercase;
+    margin-left: 40px;
+    letter-spacing: 2px;
   }
 
   .request {
@@ -104,7 +110,7 @@
   }
 
   .logoClass {
-    display: block
+    display: block;
   }
 
   .footer {
