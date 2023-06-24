@@ -21,7 +21,7 @@
   }
 
   .frameContent {
-    padding: 20px 40px 20px 40px;
+    padding: 15px 40px 15px 40px;
   }
 
   .mobileFitter {
@@ -32,6 +32,10 @@
 @media (min-width: $desktopWidth-large){
   .frame {
     padding: 70px 100px 70px 100px;
+  }
+
+  .frameContent {
+    padding: 25px 40px 25px 40px;
   }
 
   
