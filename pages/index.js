@@ -49,7 +49,7 @@ class Home extends Component {
     this.fetchColor = this.fetchColor.bind(this);
     this.radioURL = "https://c28.radioboss.fm:8436/stream";
     this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
-    this.albumCoverURL = 'https://c28.radioboss.fm/w/artwork/436.png'
+    this.albumCoverURL = 'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_1.png'
     this.trackHistoryURL = "https://c28.radioboss.fm/w/recenttrackslist?u=436";
     this.faviconURL = "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.ico";
   }
