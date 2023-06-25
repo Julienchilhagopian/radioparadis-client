@@ -15,7 +15,7 @@ class MobilePlayer extends Component {
     };
 
     return (
-      <section className={styles.player} style={playerColor}>
+      <section className={styles.player}>
         <PlayBtn 
           togglePlay={this.props.togglePlay} 
           isPlaying={this.props.isPlaying}
