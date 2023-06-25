@@ -35,7 +35,7 @@ class Content extends Component {
                   size={150}
                 />
               </div>
-              <div className={styles.footerSocial}>
+              <div>
                 <a href="https://soundcloud.com/radio-paradis-13" target="_blank">Soundcloud</a>
                 <a href="https://open.spotify.com/playlist/08wmfh933ZtrExQNbCFbyQ?si=a895de757a9947b9" target="_blank">Spotify</a>
                 <a href="https://www.instagram.com/radioparadis/" target="_blank">Instagram</a>
