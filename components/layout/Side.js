@@ -19,7 +19,7 @@ class Side extends Component {
 
     return (
       <section>
-        <div className={styles.side} style={{ "backgroundColor":  isMobile ? bgColorc.backgroundColorMobile : bgColorc.backgroundColorDesktop}}>
+        <div className={styles.side}>
           <div>
              <TrackHistory 
               isMorning={this.props.isMorning} 
