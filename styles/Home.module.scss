@@ -1,8 +1,5 @@
 @import 'variables';
 
-.main {
-  background-color: #fff6ea;
-}
 
 .frame {
   padding: unset;
@@ -15,6 +12,10 @@
 }
 
 @media (min-width: $desktopWidth){ 
+  .main {
+    background-color: #fff6ea;
+  }
+  
   .frame {
     //background-color: initial !important;
     padding: 50px 50px 60px 50px;
