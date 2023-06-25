@@ -7,7 +7,7 @@
 
 .tickerContainer span {
   font-size: 20pt;
-  font-family: $headerFont;
+  font-family: var(--font-prompt);
 }
 
 .marquee {

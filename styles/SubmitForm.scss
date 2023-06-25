@@ -7,7 +7,7 @@
 }
 
 .formContent input, .formContent textarea {
-  font-family: $textFont;
+  font-family: var(--font-inconsolata);
   display: block;
   width: 100%;
   font-size: 14pt;
@@ -37,7 +37,7 @@
 .ant-modal-title {
   font-size: 30px;
   line-height: 30px;
-  font-family: $textFont;
+  font-family: var(--font-inconsolata);
   font-weight: bolder;
 }
 
