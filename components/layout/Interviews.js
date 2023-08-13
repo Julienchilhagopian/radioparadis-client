@@ -11,58 +11,46 @@ class Interviews extends Component {
   render() {
     let interviews = [
       {
-        "title": "Victor Tomasi",
-        "shop_name": "DERRIERE LES NOTES #1",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/DERRIERE_LES_NOTES_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/sets/derriere-les-notes"
+        "title": "SAMEDI 26 AOÛT - POINT ÉPHÉMÈRE",
+        "shop_name": "PARADIX PHONIQUE",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/paradix_phonique_affiche.jpg",
+        "link_show": "https://fb.me/e/17Ky7iDbu"
       },
       {
-        "title": "Tomasi Brothers présentent Rythm Diaries",
-        "shop_name": "Rythm Diaries",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rythm_diaries.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/tomasi-brothers"
+        "title": "MOVE YOUR BOOGIE MODY",
+        "shop_name": "Feez",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/mybb.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/sets/move-your-boogie-mody-w-feez"
       },
       {
-        "title": "STO B2B BAKAER",
-        "shop_name": "DIAC SHOW #1",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_show_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-1-sto-b2b-bakear?in=radio-paradis-13/sets/diac-show"
+        "title": "QUIRKS #4",
+        "shop_name": "Patimo w/ Tentak<3r",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_4.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/quirks-4-w-tentakeur"
       },
       {
-        "title": "QUI SI FA ROMA #3",
-        "shop_name": "GUINEVERE",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_3.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/qui-si-fa-roma-3-guinevere"
+        "title": "DIAC SHOW #3",
+        "shop_name": "Paul Diac w/ FALAFEF",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_show_3.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-3-w-falafef"
       },
       {
-        "title": "QUI SI FA ROMA #2",
-        "shop_name": "AVA ALAMI",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_2.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/qui-si-fa-roma-2-ava-alami"
+        "title": "TRANSMISSION ELECTRONIQUE #2",
+        "shop_name": "Louis Reine w/ Simon111",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/t_elec_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/transmission-electronqie-2-w-simon111"
       },
       {
-        "title": "QUI SI FA ROMA #1",
-        "shop_name": "ROBERTA STRADA",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/qui-si-fa-roma-1-roberta-strada"
+        "title": "DERRIERE LES NOTES #2",
+        "shop_name": "Victor Tomasi",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/DERRIERE_LES_NOTES_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/derriere-les-notes-2-w-kazam"
       },
       {
-        "title": "RÉSIDENCE FUNKY GIGI",
-        "shop_name": "REPLAY",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/story_replay.png",
-        "link_show": "https://soundcloud.com/j-r-my-berloty/sets"
-      },
-      {
-        "title": "MAYFLO",
-        "shop_name": "REPLAY",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/MAYFLO.png",
-        "link_show": "https://soundcloud.com/j-r-my-berloty/mayflo-dj-set-for-radio-paradis"
-      },
-      {
-        "title": "C-LYYA (MQ Records)",
-        "shop_name": "REPLAY",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/C-LYYA.png",
-        "link_show": "https://soundcloud.com/j-r-my-berloty/clyya-dj-set-mq-records"
+        "title": "QUI SI FA ROMA #4",
+        "shop_name": "JEMMA",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_4.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/qui-si-fa-roma-4-jemma"
       },
       {
         "title": "DIMANCHE 28 AOÛT - POINT ÉPHÉMÈRE",
