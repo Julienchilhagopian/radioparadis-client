@@ -1,7 +1,7 @@
 import styles from '../../styles/Side.module.scss'
 import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
-import Interviews from './Interviews';
+import Shows from './Shows';
 import LogoSeparator from './LogoSeparator';
 import { isMobile } from "react-device-detect";
 
@@ -30,8 +30,8 @@ class Side extends Component {
               principalColor={this.props.principalColor}
             />
           </div>
-          <div className={styles.Interviews}>
-            <Interviews principalColor={this.props.principalColor}/>
+          <div className={styles.Shows}>
+            <Shows principalColor={this.props.principalColor}/>
           </div>
         </div>
         <LogoSeparator principalColor={this.props.principalColor} />

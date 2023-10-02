@@ -1,15 +1,15 @@
-import styles from '../../styles/Interviews.module.scss'
+import styles from '../../styles/Shows.module.scss'
 import React, { Component } from 'react';
 import Image from 'next/image';
 
-class Interviews extends Component {
+class Shows extends Component {
 
   constructor() {
     super();
   }
 
   render() {
-    let interviews = [
+    let shows = [
       {
         "title": "SAMEDI 26 AOÛT - POINT ÉPHÉMÈRE",
         "shop_name": "PARADIX PHONIQUE",
@@ -60,21 +60,21 @@ class Interviews extends Component {
       }
     ]
     return (
-      <section className={styles.InterviewsContainer}>
+      <section>
         <div className={styles.imagesContainer}>
           {
-            interviews.map((interview, index) => (
-              <div key={index} className={styles.imageCard} onClick={()=> window.open(`${interview.link_show}`, "_blank")}>
+            shows.map((show, index) => (
+              <div key={index} className={styles.imageCard} onClick={()=> window.open(`${show.link_show}`, "_blank")}>
                 <div className={styles.imageContent}>
                   <Image
                     quality={60}
-                    src={interview.link_img}
+                    src={show.link_img}
                     alt="Logo"
                     layout="fill"
                   />
                 </div>
-                <h3>{interview.title}</h3>
-                <h3 className={styles.subTitle}>{interview.shop_name}</h3>
+                <h3>{show.title}</h3>
+                <h3 className={styles.subTitle}>{show.shop_name}</h3>
               </div>
             ))
           }
@@ -85,4 +85,4 @@ class Interviews extends Component {
 }
 
 
-export default Interviews
+export default Shows

@@ -16,13 +16,6 @@ class MusicInfos extends Component {
           :
           <RadioTicker content={this.props.currentTrack.artist} />
         }
-        {/* No album info anymore on currentTrack */}
-        {/* {
-          (this.props.currentTrack.album) ?
-            <h2 className={styles.albumInfo}>{this.props.currentTrack.album}</h2>
-            :
-            <h2></h2>
-        } */}
       </div>
     )
   }
