@@ -1,7 +1,6 @@
 import styles from '../../styles/DesktopPlayer.module.scss'
 import React, { Component } from 'react';
 import PlayBtn from './PlayBtn';
-import Album from '../elements/Album'
 import MusicInfos from '../elements/MusicInfos';
 import { Slider } from 'antd';
 
