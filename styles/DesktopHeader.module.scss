@@ -9,19 +9,8 @@
   margin-bottom: 30px;
 }
 
-.mobileLogo h1 {
-  font-size: 45pt;
-  line-height: 50px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
 .logoRotate {
   animation:spin 12s linear infinite;
- }
-
- .mobileLogoContainer {
-   margin-bottom: 30px;
  }
 
 //@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -36,11 +25,7 @@
   margin-bottom: 15px;
 }
 
-.request {
-  text-decoration: underline;
-  font-weight: bolder;
-  cursor: pointer;
-}
+
 
 .footer {
   display: none;
@@ -61,10 +46,6 @@
   .content {
     margin-bottom: unset;
   }
-  
-  .mobileLogo {
-    display: none; 
-  }
  
   .radioMainHeader {
     display: flex;
@@ -82,10 +63,6 @@
     text-transform: uppercase;
     margin-left: 40px;
     letter-spacing: 2px;
-  }
-
-  .request {
-    margin-bottom: unset;
   }
 
   .radioPitch {

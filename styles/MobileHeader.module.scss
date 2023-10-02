@@ -1,0 +1,45 @@
+@import 'variables';
+
+.header {
+  text-align: center;
+  letter-spacing: 1px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mood {
+  padding: 0px 20px 20px 20px;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.mobileLogoContainer {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 45pt;
+  line-height: 50px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.request {
+  text-decoration: underline;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+
+@media (min-width: $desktopWidth){
+
+  .header  { 
+    display: none
+  }
+
+  .mood {
+    display: none;
+  }
+ }

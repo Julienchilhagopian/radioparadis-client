@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import Header from '../components/layout/Header'
-import Content from '../components/layout/Content'
+import MobileHeader from '../components/layout/MobileHeader'
+import DesktopHeader from '../components/layout/DesktopHeader'
 import SubmitForm from '../components/form/SubmitForm'
 import MobilePlayer from '../components/player/MobilePlayer'
 import React, { Component } from 'react';
-import Side from '../components/layout/Side'
+import ShowsContainer from '../components/layout/ShowsContainer'
 import ReactAudioPlayer from 'react-audio-player';
-import ColorThief from "colorthief";
 import { isMobile } from "react-device-detect";
 import Footer from '../components/layout/Footer';
 import { message } from 'antd';
@@ -24,32 +23,25 @@ class Home extends Component {
       isNight: false,
       isSunday: false,
       currentTrack: {
-        artist: "",
-        cover: ""
+        artist: ""
       },
-      albumHash: 0,
       history: {},
-      nextFetch: 0,
       isTrackLoading: true,
       isHistoryLoading: true,
       principalColor: '#e6a041',
       secondaryColor: '#cecece8c',
       mobileColor: 'white',
-      frameColor: '',
       volume: 1,
       loading: false
     };
 
-    this.counter = 0;
     this.showSubmitForm = this.showSubmitForm.bind(this);
     this.hideSubmitForm = this.hideSubmitForm.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
-    this.fetchColor = this.fetchColor.bind(this);
     this.radioURL = "https://c28.radioboss.fm:8436/stream";
     this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
-    this.albumCoverURL = 'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/QUI_SI_FA_ROMA_1.png'
     this.trackHistoryURL = "https://c28.radioboss.fm/w/recenttrackslist?u=436";
     this.faviconURL = "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.ico";
   }
@@ -188,7 +180,6 @@ class Home extends Component {
 
         let currentTrackData = {
           artist: data.nowplaying,
-          cover: this.albumCoverURL + "?song_num=" + this.counter
         }
 
         let prevArtist;
@@ -200,11 +191,6 @@ class Home extends Component {
 
         this.setState({ currentTrack: currentTrackData });
         this.setState({ isTrackLoading: false });
-
-        if (this.state.currentTrack.artist != prevArtist) {
-          this.fetchColor(currentTrackData.cover);
-          this.counter++;
-        }
 
         console.log("current song", this.state.currentTrack);
         setTimeout(
@@ -246,51 +232,11 @@ class Home extends Component {
       });
   }
 
-  getColor = (colors) => {
-    let randomColor = colors[Math.floor(Math.random() * colors.length)];
-    while (
-      (randomColor[0] > 200 && randomColor[1] > 200 && randomColor[2] > 200)
-      || (randomColor[0] < 100 && randomColor[1] < 100 && randomColor[2] < 100)
-    ) {
-      randomColor = colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    return randomColor;
-  }
-
-  fetchColor = (imgUrl) => {
-    const colorThief = new ColorThief();
-    const img = new Image();
-
-    img.addEventListener('load', () => {
-      const colors = colorThief.getPalette(img, 5);
-      let randomColor = this.getColor(colors);
-
-      this.setState({ principalColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.85)` });
-      this.setState({ secondaryColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]} / 0.20)` });
-      this.setState({ mobileColor: `rgb(${randomColor[0]} ${randomColor[1]} ${randomColor[2]})` });
-
-      this.updateFrameColor();
-    });
-
-    img.crossOrigin = 'Anonymous';
-    img.src = imgUrl;
-  }
-
-  updateFrameColor = () => {
-    this.setState({ frameColor: isMobile ? 'white' : this.state.principalColor })
-  }
-
   onVolumeChange = (value) => {
     this.setState({ volume: (value / 100) })
   };
 
-
   render() {
-    const frameColor = {
-      "backgroundColor": this.state.frameColor,
-    };
-
     return (
       <div>
         <Head>
@@ -317,18 +263,18 @@ class Home extends Component {
           />
           <section className={styles.home}>
             <div className={styles.frameContent}>
-              <Header
+              <MobileHeader
                 isMorning={this.state.isMorning}
                 isDay={this.state.isDay}
                 isNight={this.state.isNight}
                 isSunday={this.state.isSunday}
+                isPlaying={this.state.isPlaying}
               />
-              <Content
+              <DesktopHeader
                 principalColor={this.state.principalColor}
                 secondaryColor={this.state.secondaryColor}
                 isTrackLoading={this.state.isTrackLoading}
                 currentTrack={this.state.currentTrack}
-                albumCover={this.state.albumCover}
                 showSubmitForm={this.showSubmitForm}
                 isPlaying={this.state.isPlaying}
                 togglePlay={this.togglePlay}
@@ -339,7 +285,7 @@ class Home extends Component {
                 loading={this.state.loading}
               />
             </div>
-            <Side
+            <ShowsContainer
               isMobile={isMobile}
               isPlaying={this.state.isPlaying}
               principalColor={this.state.principalColor}

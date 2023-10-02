@@ -1,25 +1,19 @@
-import styles from '../../styles/Side.module.scss'
+import styles from '../../styles/ShowsContainer.module.scss'
 import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
 import Shows from './Shows';
 import LogoSeparator from './LogoSeparator';
-import { isMobile } from "react-device-detect";
 
-class Side extends Component {
+class ShowsContainer extends Component {
 
   constructor() {
     super();
   }
   
   render() {
-    const bgColorc = {
-      "backgroundColorDesktop": this.props.principalColor,
-      "backgroundColorMobile": 'white',
-    };
-
     return (
       <section>
-        <div className={styles.side}>
+        <div className={styles.ShowsContainer}>
           <div>
              <TrackHistory 
               isMorning={this.props.isMorning} 
@@ -41,4 +35,4 @@ class Side extends Component {
 } 
 
 
-export default Side
+export default ShowsContainer

@@ -1,31 +1,15 @@
-import styles from '../../styles/Content.module.scss';
+import styles from '../../styles/DesktopHeader.module.scss';
 import React, { Component } from 'react';
 import DesktopPlayer from '../player/DesktopPlayer';
 import Logo from '../elements/Logo';
 
-class Content extends Component {
+class DesktopHeader extends Component {
 
   render() {
     return (
       <section className={styles.content}>
         <section className={styles.musicContent}>
-          <div className={styles.mobileLogo}>
-            <h1 style={{ 'color': this.props.principalColor }}>Radio paradis</h1>
-            <div className={styles.mobileLogoContainer}>
-              <Logo
-                isMorning={this.props.isMorning}
-                isDay={this.props.isDay}
-                isPlaying={this.props.isPlaying}
-                size={100}
-              />
-            </div>
-            <div>
-              <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p>
-            </div>
-          </div>
-
           <div className={styles.radioMainHeader}>
-
             <div className={styles.topBar}>
               <div className={styles.logoClass}>
                 <Logo
@@ -67,4 +51,4 @@ class Content extends Component {
 
 
 
-export default Content
+export default DesktopHeader
