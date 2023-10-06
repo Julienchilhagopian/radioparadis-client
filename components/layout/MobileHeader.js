@@ -36,9 +36,6 @@ class MobileHeader extends Component {
                 size={100}
               />
             </div>
-            <div>
-              <p className={styles.request} onClick={this.props.showSubmitForm}>Proposez-nous un son !</p>
-            </div>
           </div>
       </section>
     )
