@@ -28,7 +28,7 @@ class Home extends Component {
       history: {},
       isTrackLoading: true,
       isHistoryLoading: true,
-      principalColor: '#e6a041',
+      principalColor: '#d1bdd9',
       secondaryColor: '#cecece8c',
       mobileColor: 'white',
       volume: 1,
