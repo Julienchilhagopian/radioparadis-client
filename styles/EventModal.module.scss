@@ -1,0 +1,18 @@
+.EventModalContent h1 {
+  line-height: 32px;
+  font-family: var(--font-prompt);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.EventLink {
+  text-align: center;
+  font-family: var(--font-inconsolata);
+  margin-bottom: 10px;
+}
+
+.EventPoster {
+  display: flex;
+  justify-content: center;
+}

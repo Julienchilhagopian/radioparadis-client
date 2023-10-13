@@ -23,9 +23,9 @@ class MobileHeader extends Component {
 
     return (
       <section className={styles.header}>
-        <div className={styles.mood}>
+        {/* <div className={styles.mood}>
           {currentMood}
-        </div>  
+        </div>   */}
           <div>
             <h1>radio paradis</h1>
             <div className={styles.mobileLogoContainer}>
@@ -35,6 +35,11 @@ class MobileHeader extends Component {
                 isPlaying={this.props.isPlaying}
                 size={100}
               />
+            </div>
+            <div className={styles.introRadioContainer}>
+              <div className={styles.introRadioText}>
+                <p>Radio locale née en 2022 dans le 10ème arrondissement. Aujourd’hui, Radio Paradis est une association loi 1901 qui se distingue par une programmation musicale pointue animée par une dizaine de résident.es.</p>
+              </div>
             </div>
           </div>
       </section>
