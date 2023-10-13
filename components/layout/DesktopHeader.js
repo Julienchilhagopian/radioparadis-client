@@ -31,8 +31,8 @@ class DesktopHeader extends Component {
                         quality={80}
                         src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/soundcloud_logo.png"}
                         alt="Logo"
-                        width={35}
-                        height={35}
+                        width={30}
+                        height={30}
                       />
                     </div>
                   </div>
@@ -42,8 +42,8 @@ class DesktopHeader extends Component {
                         quality={80}
                         src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/spotify_logo.png"}
                         alt="Logo"
-                        width={35}
-                        height={35}
+                        width={30}
+                        height={30}
                       />
                     </div>
                   </div>
@@ -53,8 +53,8 @@ class DesktopHeader extends Component {
                         quality={80}
                         src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/insta_logo.png"}
                         alt="Logo"
-                        width={35}
-                        height={35}
+                        width={30}
+                        height={30}
                       />
                     </div>
                   </div>

@@ -9,7 +9,13 @@
   text-align: center;
 }
 
-.EventModalContent div {
+.EventLink {
   text-align: center;
   font-family: var(--font-inconsolata);
+  margin-bottom: 10px;
+}
+
+.EventPoster {
+  display: flex;
+  justify-content: center;
 }
