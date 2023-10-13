@@ -12,7 +12,7 @@ class Footer extends Component {
     return (
       <section className={styles.footerContainer}>
         <div className={styles.footerSpeech}>
-          <p>Sur Radio Paradis, nous militons pour une musique tournée vers le monde.</p>
+          <p>La radio c'est une diziane de résident.es et huit bénévoles engagé.es pour représenter la diversité de la scène musicale Parisienne.</p>
           <p>Faites nous part de vos idées. Nous serons ravis de vous accueillir à l'antenne :
             <a href="mailto:13radioparadis@gmail.com"> 13radioparadis@gmail.com</a>
           </p>

@@ -26,6 +26,15 @@
   margin-bottom: 30px;
 }
 
+.introRadioText {
+  width: 350px;
+}
+
+.introRadioContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .request {
   text-decoration: underline;
   font-weight: bolder;

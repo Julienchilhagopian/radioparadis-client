@@ -2,6 +2,7 @@ import styles from '../../styles/DesktopHeader.module.scss';
 import React, { Component } from 'react';
 import DesktopPlayer from '../player/DesktopPlayer';
 import Logo from '../elements/Logo';
+import Image from 'next/image'
 
 class DesktopHeader extends Component {
 
@@ -19,10 +20,45 @@ class DesktopHeader extends Component {
                   size={150}
                 />
               </div>
-              <div>
-                <a href="https://soundcloud.com/radio-paradis-13" target="_blank">Soundcloud</a>
-                <a href="https://open.spotify.com/playlist/08wmfh933ZtrExQNbCFbyQ?si=a895de757a9947b9" target="_blank">Spotify</a>
-                <a href="https://www.instagram.com/radioparadis/" target="_blank">Instagram</a>
+              <div className={styles.radioHeaderIntro}>
+                <div>
+                  <p>Radio locale née en 2022 dans le 10ème arrondissement. Aujourd’hui, Radio Paradis est une association loi 1901 qui se distingue par une programmation musicale pointue animée par une dizaine de résident.es.</p>
+                </div>
+                <div className={styles.radioHeaderSocials}>
+                  <div onClick={()=> window.open(`${"https://soundcloud.com/radio-paradis-13"}`, "_blank")}>
+                    <div>
+                      <Image
+                        quality={80}
+                        src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/soundcloud_logo.png"}
+                        alt="Logo"
+                        width={50}
+                        height={50}
+                      />
+                    </div>
+                  </div>
+                  <div onClick={()=> window.open(`${"https://soundcloud.com/radio-paradis-13"}`, "_blank")}>
+                    <div>
+                      <Image
+                        quality={80}
+                        src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/spotify_logo.png"}
+                        alt="Logo"
+                        width={50}
+                        height={50}
+                      />
+                    </div>
+                  </div>
+                  <div onClick={()=> window.open(`${"https://soundcloud.com/radio-paradis-13"}`, "_blank")}>
+                    <div>
+                      <Image
+                        quality={80}
+                        src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/insta_logo.png"}
+                        alt="Logo"
+                        width={50}
+                        height={50}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
