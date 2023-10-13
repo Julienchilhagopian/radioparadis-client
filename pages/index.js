@@ -9,6 +9,7 @@ import ShowsContainer from '../components/layout/ShowsContainer'
 import ReactAudioPlayer from 'react-audio-player';
 import { isMobile } from "react-device-detect";
 import Footer from '../components/layout/Footer';
+import EventModal from '../components/elements/EventModal';
 import { message } from 'antd';
 
 class Home extends Component {
@@ -32,7 +33,8 @@ class Home extends Component {
       secondaryColor: '#cecece8c',
       mobileColor: 'white',
       volume: 1,
-      loading: false
+      loading: false,
+      isModalOpen: false
     };
 
     this.showSubmitForm = this.showSubmitForm.bind(this);
@@ -154,6 +156,7 @@ class Home extends Component {
 
     this.fetchCurrentTrack();
     this.fetchTrackHistory();
+    this.showModal();
   }
 
   componentWillUnmount() {
@@ -236,6 +239,13 @@ class Home extends Component {
     this.setState({ volume: (value / 100) })
   };
 
+  showModal = () => {
+    this.setState({ isModalOpen: true })
+  };
+  hideModal = () => {
+    this.setState({ isModalOpen: false })
+  };
+
   render() {
     return (
       <div>
@@ -312,6 +322,10 @@ class Home extends Component {
               show={this.state.show}
               handleClose={this.hideSubmitForm}>
             </SubmitForm>
+            <EventModal 
+              show={this.state.isModalOpen}
+              handleModalClose={this.hideModal}>
+            </EventModal>
           </section>
         </main>
       </div>
