@@ -36,7 +36,7 @@ class DesktopHeader extends Component {
                       />
                     </div>
                   </div>
-                  <div onClick={()=> window.open(`${"https://soundcloud.com/radio-paradis-13"}`, "_blank")}>
+                  <div onClick={()=> window.open(`${"https://open.spotify.com/playlist/08wmfh933ZtrExQNbCFbyQ?si=a895de757a9947b9"}`, "_blank")}>
                     <div>
                       <Image
                         quality={80}
@@ -47,7 +47,7 @@ class DesktopHeader extends Component {
                       />
                     </div>
                   </div>
-                  <div onClick={()=> window.open(`${"https://soundcloud.com/radio-paradis-13"}`, "_blank")}>
+                  <div onClick={()=> window.open(`${"https://www.instagram.com/radioparadis/"}`, "_blank")}>
                     <div>
                       <Image
                         quality={80}
