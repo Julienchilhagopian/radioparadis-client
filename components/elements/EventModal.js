@@ -27,6 +27,7 @@ class EventModal extends Component {
               height={407}
             />
           </div>
+          <p className={styles.EventModalCredits}>Affiche de Diane Thouve</p>
         </div>
       </Modal>
     );
