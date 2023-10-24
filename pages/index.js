@@ -27,6 +27,7 @@ class Home extends Component {
         artist: ""
       },
       history: {},
+      calendarEvents: {},
       isTrackLoading: true,
       isHistoryLoading: true,
       principalColor: '#d1bdd9',
@@ -42,6 +43,7 @@ class Home extends Component {
     this.togglePlay = this.togglePlay.bind(this);
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
+    this.fetchCalendarEvents = this.fetchCalendarEvents.bind(this);
     this.radioURL = "https://c28.radioboss.fm:8436/stream";
     this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
     this.trackHistoryURL = "https://c28.radioboss.fm/w/recenttrackslist?u=436";
@@ -156,6 +158,7 @@ class Home extends Component {
 
     this.fetchCurrentTrack();
     this.fetchTrackHistory();
+    this.fetchCalendarEvents();
     this.showModal();
   }
 
@@ -232,6 +235,19 @@ class Home extends Component {
           this.fetchTrackHistory,
           10000
         )
+      });
+  }
+
+  fetchCalendarEvents = () => {
+    fetch('/api/calendar-events')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ calendarEvents: data })
+        console.log(data)
+      })
+      .catch(error => {
+        console.log("error fetching google calendar events", error)
+        this.setState({ calendarEvents: null })
       });
   }
 
