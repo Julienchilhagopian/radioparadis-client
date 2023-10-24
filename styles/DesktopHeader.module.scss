@@ -2,7 +2,6 @@
 
 .content {
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .mobileLogo {
@@ -44,7 +43,7 @@
 @media (min-width: $desktopWidth){ 
 
   .content {
-    margin-bottom: unset;
+    margin-bottom: 50px;
   }
  
   .radioMainHeader {

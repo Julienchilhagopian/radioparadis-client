@@ -3,16 +3,20 @@
 .imagesContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .imageCard {
   margin-bottom: 25px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imageCard h3 {
   text-align: center; 
+  text-wrap: pretty;
+  max-width: 270px;
 }
 
 .imageCard .subTitle {
