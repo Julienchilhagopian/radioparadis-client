@@ -60,9 +60,9 @@ class Shows extends Component {
       }
     ]
     return (
-      <section>
+      <section className={styles.showsSection}>
+        <h1>SHOWS</h1>
         <div className={styles.showsContainer}>
-          <h1>SHOWS</h1>
           {
             shows.map((show, index) => (
               <div key={index} className={styles.imageCard} onClick={()=> window.open(`${show.link_show}`, "_blank")}>

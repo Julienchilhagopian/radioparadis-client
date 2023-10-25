@@ -1,16 +1,16 @@
 @import 'variables';
 
+.showsSection h1 {
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .showsContainer {
   display: flex;
   flex-direction: column;
 }
 
-.showsContainer h1 {
-  font-size: 20pt;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 20px;
-}
 
 .imageCard {
   margin-bottom: 25px;
@@ -47,6 +47,11 @@
 
 
 @media (min-width: $desktopWidth){ 
+
+  .showsSection h1 {
+    text-align: left;
+    padding-left: 30px;
+  }
 
   .showsContainer {
     display: grid;

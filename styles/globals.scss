@@ -21,6 +21,7 @@ h1, h2, h3 {
 h1 {
   font-family: var(--font-prompt);
   font-weight: bolder;
+  font-size: 25pt;
 }
 
 h2 {
@@ -86,9 +87,20 @@ a:hover {
   border-radius: 15px;
 }
 
+
+@media (min-width: $desktopWidth){ 
+  h1 {
+    font-size: 35pt;
+  }
+}
+
 @media (min-width: $desktopWidth-large){
+  h1 {
+    font-size: 40pt;
+  }
+
   h3 {
-    font-size: 12pt;
+    font-size: 16pt;
   }
 
   p {

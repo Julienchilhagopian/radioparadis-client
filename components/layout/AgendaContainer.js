@@ -13,11 +13,11 @@ class AgendaContainer extends Component {
       <section>
         <div className={styles.AgendaContainer}>
           <h1>AGENDA</h1>
-          <div className={styles.AgendaContainer}>
+          <div className={styles.agendaData}>
           {
             events.slice(0,5).map((day, index) => (
-              <div key={index}>
-                <h3 className={styles.eventsDate}>{day.date}</h3>
+              <div key={index} className={styles.eventsDate}>
+                <h3>{day.date}</h3>
                 {
                   day.events.map((event, index) => (
                     <div className={styles.agendaEvent} key={index}>
