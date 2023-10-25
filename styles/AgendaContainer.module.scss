@@ -1,10 +1,35 @@
 @import 'variables';
 
 
+.AgendaContainer {
+  padding: 0px 30px 0px 30px;
+  margin-bottom: 30px;
+}
+
 .AgendaContainer h1 {
   font-size: 20pt;
   letter-spacing: 2px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.eventsDate {
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.agendaEvent {
+  margin-bottom: 10px;
+  line-height: 20px;
+  overflow: hidden;
+}
+
+.agendaEvent p {
+  margin-bottom: unset;
+}
+
+.agendaEvent h2 {
+  text-transform: uppercase;
 }
 
 

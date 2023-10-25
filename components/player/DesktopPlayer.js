@@ -42,7 +42,7 @@ class DesktopPlayer extends Component {
               isTrackLoading={this.props.isTrackLoading}
             />
             <div className={styles.enDirect}>
-              <h2>En direct </h2>
+              <h3>En direct </h3>
               <span className={[styles.circle, styles.blink].join(' ')}></span>
             </div>
           </div>

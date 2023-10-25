@@ -5,7 +5,7 @@
   white-space: nowrap;
 }
 
-.tickerContainer h2 {
+.tickerContainer h3 {
   font-weight: bolder;
   text-transform: uppercase;
   font-size: 20pt;
@@ -31,14 +31,14 @@
 
 @media (min-width: $desktopWidth){ 
 
-  .tickerContainer h2 {
+  .tickerContainer h3 {
     font-size: 15pt;
   }
 }
 
 @media (min-width: $desktopWidth-large){
 
-  .tickerContainer h2  {
+  .tickerContainer h3  {
     font-size: 25pt;
   }
 }

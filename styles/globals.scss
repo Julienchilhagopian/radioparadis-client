@@ -24,17 +24,19 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-inconsolata);
+  font-family: var(--font-prompt);
+  font-weight: bolder;
+  font-size: 14pt;
 }
 
 h3 {
-  font-size: 12pt;
+  font-size: 14pt;
   font-family: var(--font-inconsolata);
 }
 
 p {
   font-family: var(--font-inconsolata);
-  font-size: 9pt;
+  font-size: 11pt;
 }
 
 a {

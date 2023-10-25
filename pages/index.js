@@ -28,7 +28,7 @@ class Home extends Component {
         artist: ""
       },
       history: {},
-      calendarEvents: {},
+      calendarEvents: [],
       isTrackLoading: true,
       isHistoryLoading: true,
       principalColor: '#d1bdd9',
@@ -243,12 +243,11 @@ class Home extends Component {
     fetch('/api/calendar-events')
       .then(response => response.json())
       .then(data => {
-        this.setState({ calendarEvents: data })
-        console.log(data)
+        this.setState({calendarEvents: data})
       })
       .catch(error => {
         console.log("error fetching google calendar events", error)
-        this.setState({ calendarEvents: null })
+        this.setState({ calendarEvents: [] })
       });
   }
 

@@ -1,8 +1,15 @@
 @import 'variables';
 
-.imagesContainer {
+.showsContainer {
   display: flex;
   flex-direction: column;
+}
+
+.showsContainer h1 {
+  font-size: 20pt;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .imageCard {
@@ -41,7 +48,7 @@
 
 @media (min-width: $desktopWidth){ 
 
-  .imagesContainer {
+  .showsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(45vw, 1fr));
     grid-gap: 1rem;
