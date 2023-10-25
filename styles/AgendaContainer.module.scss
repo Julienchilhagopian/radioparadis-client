@@ -12,6 +12,9 @@
   margin-bottom: 20px;
 }
 
+.eventsDate {
+  margin-bottom: 30px;
+}
 
 .eventsDate h3 {
   border-bottom: 2px solid black;
@@ -40,13 +43,22 @@
 
 @media (min-width: $desktopWidth){ 
 
+  .AgendaContainer {
+    padding: 25px 40px 25px 40px;
+    margin-bottom: unset;
+  }
+
+  .AgendaContainer h1 {
+    margin-bottom: unset;
+  }
+
   .eventsDate {
     max-width: 20%;
   }
 
   .agendaData {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   .AgendaContainer h1 {
@@ -55,5 +67,5 @@
 }
 
 @media (min-width: $desktopWidth-large){ 
-  
+
 }

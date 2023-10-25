@@ -12,7 +12,7 @@ class MusicInfos extends Component {
     return (
       <div className={styles.musicInfos}>
         { (this.props.isTrackLoading || !this.props.currentTrack) ?
-          <h2>...contact de la source musicale...</h2>
+          <h3>...contact de la source musicale...</h3>
           :
           <RadioTicker content={this.props.currentTrack.artist} />
         }
