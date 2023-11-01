@@ -24,7 +24,6 @@
 .agendaEvent {
   margin-bottom: 10px;
   line-height: 20px;
-  overflow: hidden;
 }
 
 .agendaEvent p {
@@ -52,13 +51,14 @@
     margin-bottom: unset;
   }
 
-  .eventsDate {
-    max-width: 20%;
-  }
-
   .agendaData {
     display: flex;
     justify-content: space-between;
+  }
+
+  .eventsDate { 
+    min-width: 18%;
+    max-width: 18%;
   }
 
   .AgendaContainer h1 {
