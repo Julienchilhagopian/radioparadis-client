@@ -14,31 +14,31 @@ class Shows extends Component {
         "title": "FAMILY APPROVED SHOW #2",
         "artist_name": "DJ Suspect",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fam_app_2.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+        "link_show": "https://soundcloud.com/radio-paradis-13/family-approved-show-2-w-dj-suspect"
       },
       {
         "title": "DIAC SHOW #6",
         "artist_name": "Djilali (Discolaincourt)",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_6.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-6-w-djilali-discolaincourt"
       },
       {
         "title": "Fem In Mix #1",
         "artist_name": "M.A.M",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/feminmix_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+        "link_show": "https://soundcloud.com/radio-paradis-13/fem-in-mix-1-w-mam?in=radio-paradis-13/sets/fem-in-mix-par-anais-chilou"
       },
       {
         "title": "SPIRALE BLEUE #1",
         "artist_name": "Clara Samson",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/sp_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+        "link_show": "https://soundcloud.com/radio-paradis-13/spirale-bleue-1-clara-samson?in=radio-paradis-13/sets/spirale-bleue-par-clara-samson"
       },
       {
         "title": "DERRIERE LES NOTES #4",
         "artist_name": "J.O.S.H.U.A",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/dln_4.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+        "link_show": "https://soundcloud.com/radio-paradis-13/derriere-les-notes-4-w-joshua"
       },
       {
         "title": "BOUNCE FM #2",
