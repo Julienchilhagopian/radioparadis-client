@@ -2,7 +2,6 @@
 
 .content {
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .mobileLogo {
@@ -25,12 +24,9 @@
   margin-bottom: 15px;
 }
 
-
-
 .footer {
   display: none;
 }
-
 
 .desktopHeader {
   display: none;
@@ -42,10 +38,6 @@
 
 
 @media (min-width: $desktopWidth){ 
-
-  .content {
-    margin-bottom: unset;
-  }
  
   .radioMainHeader {
     display: flex;

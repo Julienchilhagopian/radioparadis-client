@@ -24,7 +24,7 @@ class Footer extends Component {
         </div>
         <div className={styles.logo}>
           <h1>Radio Paradis</h1>
-          <h3>Rue de paradis, 10ème arrondissement.</h3>
+          <p>Rue de paradis, 10ème arrondissement.</p>
         </div>
       </section>
     )
