@@ -6,7 +6,6 @@ import SubmitForm from '../components/form/SubmitForm'
 import MobilePlayer from '../components/player/MobilePlayer'
 import React, { Component } from 'react';
 import ShowsContainer from '../components/layout/ShowsContainer'
-import AgendaContainer from '../components/layout/AgendaContainer'
 import ReactAudioPlayer from 'react-audio-player';
 import { isMobile } from "react-device-detect";
 import Footer from '../components/layout/Footer';
@@ -311,9 +310,6 @@ class Home extends Component {
                 loading={this.state.loading}
               />
             </div>
-            <AgendaContainer 
-              calendarEvents={this.state.calendarEvents}>
-            </AgendaContainer>
             <ShowsContainer
               isMobile={isMobile}
               isPlaying={this.state.isPlaying}
@@ -323,6 +319,7 @@ class Home extends Component {
               isMorning={this.state.isMorning}
               isDay={this.state.isDay}
               isNight={this.state.isNight}
+              calendarEvents={this.state.calendarEvents}
             />
             <Footer />
             <div className={styles.mobileFitter}></div>

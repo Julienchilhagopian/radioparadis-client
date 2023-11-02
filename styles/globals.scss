@@ -21,7 +21,7 @@ h1, h2, h3 {
 h1 {
   font-family: var(--font-prompt);
   font-weight: bolder;
-  font-size: 25pt;
+  font-size: 30pt;
 }
 
 h2 {
@@ -90,7 +90,7 @@ a:hover {
 
 @media (min-width: $desktopWidth){ 
   h1 {
-    font-size: 35pt;
+    font-size: 40pt;
   }
 }
 

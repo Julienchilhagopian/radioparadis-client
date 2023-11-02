@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import TrackHistory from './TrackHistory';
 import Shows from './Shows';
 import LogoSeparator from './LogoSeparator';
+import AgendaContainer from '../../components/layout/AgendaContainer';
 
 class ShowsContainer extends Component {
 
@@ -24,6 +25,9 @@ class ShowsContainer extends Component {
               principalColor={this.props.principalColor}
             />
           </div>
+          <AgendaContainer 
+              calendarEvents={this.props.calendarEvents}>
+          </AgendaContainer>
           <div className={styles.Shows}>
             <Shows principalColor={this.props.principalColor}/>
           </div>
