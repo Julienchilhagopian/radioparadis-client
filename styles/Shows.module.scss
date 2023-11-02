@@ -32,8 +32,8 @@
 }
 
 .imageContent {
-  width: 350px;
-  height: 350px;
+  width: 80vw;
+  height: 80vw;
   position: relative;
   margin-bottom: 10px;
   transition: transform .2s;
@@ -41,7 +41,7 @@
 
 .imageContent img {
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 
@@ -54,13 +54,13 @@
 
   .showsContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(45vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
     grid-gap: 1rem;
   }
 
   .imageContent {
-    width: 45vw;
-    height: 45vw;
+    width: 30vw;
+    height: 30vw;
   }
 
   .imageContent:hover {

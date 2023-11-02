@@ -11,6 +11,36 @@ class Shows extends Component {
   render() {
     let shows = [
       {
+        "title": "FAMILY APPROVED SHOW #2",
+        "artist_name": "DJ Suspect",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fam_app_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+      },
+      {
+        "title": "DIAC SHOW #6",
+        "artist_name": "Djilali (Discolaincourt)",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_6.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+      },
+      {
+        "title": "Fem In Mix #1",
+        "artist_name": "M.A.M",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/feminmix_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+      },
+      {
+        "title": "SPIRALE BLEUE #1",
+        "artist_name": "Clara Samson",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/sp_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+      },
+      {
+        "title": "DERRIERE LES NOTES #4",
+        "artist_name": "J.O.S.H.U.A",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/dln_4.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
+      },
+      {
         "title": "BOUNCE FM #2",
         "artist_name": "Guèze",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/bounce_fm_2.png",
@@ -51,12 +81,6 @@ class Shows extends Component {
         "artist_name": "Mon Cher Guy",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_5_pt1.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-mon-cher-guy"
-      },
-      {
-        "title": "SAMEDI 26 AOÛT - POINT ÉPHÉMÈRE",
-        "artist_name": "PARADIX PHONIQUE",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/paradix_phonique_affiche.jpg",
-        "link_show": "https://fb.me/e/17Ky7iDbu"
       }
     ]
     return (
