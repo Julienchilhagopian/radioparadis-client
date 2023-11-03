@@ -16,15 +16,15 @@ class EventModal extends Component {
         <div className={styles.EventModalContent}>
           <h1 >Radio Paradis à la Java le 10 Novembre avec Family Approved Records !</h1>
           <div className={styles.EventLink}>
-            <a href="https://fb.me/e/1meVwuN7P" target="_blank"> &rarr; Lien event &larr; </a>
+            <a href="https://www.facebook.com/events/la-java/family-approved-invite-dj-suspect-random-et-radio-paradis/1244699469536918/" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
           <div className={styles.EventPoster}>
             <Image
               quality={80}
-              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/affiche_java_novembre.jpeg"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/affiche_java_novembre.jpeg"}
               alt="Logo"
-              width={286}
-              height={407}
+              width={400}
+              height={400}
             />
           </div>
           <p className={styles.EventModalCredits}></p>
