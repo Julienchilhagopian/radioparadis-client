@@ -239,7 +239,7 @@ class Home extends Component {
   }
 
   fetchCalendarEvents = () => {
-    fetch('/api/calendar-events')
+    fetch('/api/agenda-events')
       .then(response => response.json())
       .then(data => {
         this.setState({calendarEvents: data})
