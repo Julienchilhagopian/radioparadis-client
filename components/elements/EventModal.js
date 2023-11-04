@@ -14,7 +14,7 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1 >Radio Paradis à la Java le 10 Novembre avec Family Approved Records !</h1>
+          <h1>Radio Paradis à la Java le 10 Novembre avec Family Approved Records !</h1>
           <div className={styles.EventLink}>
             <a href="https://www.facebook.com/events/la-java/family-approved-invite-dj-suspect-random-et-radio-paradis/1244699469536918/" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
