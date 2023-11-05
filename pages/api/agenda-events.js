@@ -16,22 +16,14 @@ const dateHandler = (date) => {
 
 const timeHandler = (date) => {
   let dateFormat = new Date(date);
-  let hours = dateFormat.getHours();
-  hours = hours < 10 ? "0" + hours : hours;
+  let hours = dateFormat.getHours() + 1; // +1 because the deployed site version is in another time zone
+  hours = hours < 10 ? "0" + hours : hours; // adding 0 for print
 
   let minutes = dateFormat.getMinutes();
   minutes = minutes < 10 ? "0" + minutes : minutes;
   
 
   return hours + ':' + minutes
-} 
-
-const getTimeOrder = (date) => {
-  let dateFormat = new Date(date);
-  let hours = dateFormat.getHours();
-  let minutes = dateFormat.getMinutes() / 60; // moving to decimal time
-
-  return hours + minutes;
 } 
 
 export default async function GET(req, res) {
