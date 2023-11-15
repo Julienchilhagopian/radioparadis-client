@@ -11,6 +11,36 @@ class Shows extends Component {
   render() {
     let shows = [
       {
+        "title": "QUIRKS #8",
+        "artist_name": "Luz Del Fuego",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_8.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/quirks-8-w-luz-del-fuego"
+      },
+      {
+        "title": "KASPER SHOW #7",
+        "artist_name": "Acyn",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_7.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/kasper-show-7-w-acyn"
+      },
+      {
+        "title": "LA CASSETTE #1",
+        "artist_name": "ChatoB",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/cassette_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/la-cassette-1-w-chatob"
+      },
+      {
+        "title": "Transmission Electronique #4",
+        "artist_name": "Ana Ebsen",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/te_4.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/transmission-electronique-6-w"
+      },
+      {
+        "title": "BOUNCE FM #3",
+        "artist_name": "Aksel",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/bounce_fm_3.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm-3-w-aksel"
+      },
+      {
         "title": "FAMILY APPROVED SHOW #2",
         "artist_name": "DJ Suspect",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fam_app_2.png",
@@ -51,36 +81,6 @@ class Shows extends Component {
         "artist_name": "Chich",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_7.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/radio-paradis-chich"
-      },
-      {
-        "title": "FAMILY APPROVED SHOW #1",
-        "artist_name": "PolEm",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/family_app_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/family-approved-show"
-      },
-      {
-        "title": "TRANSMISSION ELECTRONIQUE #3 - Special Free Party ",
-        "artist_name": "Louis Reine w/ Ilian",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/trans_elec_3.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/transmission-electronique-5-special-free-party"
-      },
-      {
-        "title": "KASPER SHOW #6",
-        "artist_name": "Lascar",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_6.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/kasper-show-6-w-lascar"
-      },
-      {
-        "title": "DIAC SHOW #5 - (Part 2)",
-        "artist_name": "Luna Kolinka",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_5_pt2.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-luna"
-      },
-      {
-        "title": "DIAC SHOW #5 - (Part 1)",
-        "artist_name": "Mon Cher Guy",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_5_pt1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-mon-cher-guy"
       }
     ]
     return (
