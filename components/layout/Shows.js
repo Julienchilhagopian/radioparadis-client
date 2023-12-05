@@ -63,12 +63,6 @@ class Shows extends Component {
         "artist_name": "Acyn",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_7.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/kasper-show-7-w-acyn"
-      },
-      {
-        "title": "LA CASSETTE #1",
-        "artist_name": "ChatoB",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/cassette_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/la-cassette-1-w-chatob"
       }
     ]
     return (
