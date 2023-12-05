@@ -11,6 +11,48 @@ class Shows extends Component {
   render() {
     let shows = [
       {
+        "title": "DIAC SHOW #7",
+        "artist_name": "Housecall",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_7.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-7-w-housecall"
+      },
+      {
+        "title": "DISCO HEAT #1",
+        "artist_name": "Feez",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/disco_heat_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/disco-heat-1"
+      },
+      {
+        "title": "Derrière Les Notes #5",
+        "artist_name": "Maison Blanche",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/DLN_5.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/deriere-les-notes-5-w-maison-blanche"
+      },
+      {
+        "title": "Special Guest",
+        "artist_name": "Corsica One",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/special_guest_corsica.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/special-guest-corsica-one"
+      },
+      {
+        "title": "Special Hardgroove",
+        "artist_name": "Haüt",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/Haut.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/haut-special-hardgroove"
+      },
+      {
+        "title": "SELECSTASE #1",
+        "artist_name": "Antoine",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/selecstase.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/selecstase-1-antoine"
+      },
+      {
+        "title": "MQ RECORDS SHOW #6",
+        "artist_name": "Moïse Keane",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/MQ6.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/mq-records-show-6-w-mose-keane"
+      },
+      {
         "title": "QUIRKS #8",
         "artist_name": "Luz Del Fuego",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_8.png",
@@ -27,60 +69,6 @@ class Shows extends Component {
         "artist_name": "ChatoB",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/cassette_1.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/la-cassette-1-w-chatob"
-      },
-      {
-        "title": "Transmission Electronique #4",
-        "artist_name": "Ana Ebsen",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/te_4.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/transmission-electronique-6-w"
-      },
-      {
-        "title": "BOUNCE FM #3",
-        "artist_name": "Aksel",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/bounce_fm_3.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm-3-w-aksel"
-      },
-      {
-        "title": "FAMILY APPROVED SHOW #2",
-        "artist_name": "DJ Suspect",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fam_app_2.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/family-approved-show-2-w-dj-suspect"
-      },
-      {
-        "title": "DIAC SHOW #6",
-        "artist_name": "Djilali (Discolaincourt)",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_6.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-6-w-djilali-discolaincourt"
-      },
-      {
-        "title": "Fem In Mix #1",
-        "artist_name": "M.A.M",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/feminmix_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/fem-in-mix-1-w-mam?in=radio-paradis-13/sets/fem-in-mix-par-anais-chilou"
-      },
-      {
-        "title": "SPIRALE BLEUE #1",
-        "artist_name": "Clara Samson",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/sp_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/spirale-bleue-1-clara-samson?in=radio-paradis-13/sets/spirale-bleue-par-clara-samson"
-      },
-      {
-        "title": "DERRIERE LES NOTES #4",
-        "artist_name": "J.O.S.H.U.A",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/dln_4.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/derriere-les-notes-4-w-joshua"
-      },
-      {
-        "title": "BOUNCE FM #2",
-        "artist_name": "Guèze",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/bounce_fm_2.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm2-gueze"
-      },
-      {
-        "title": "QUIRKS #7",
-        "artist_name": "Chich",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_7.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/radio-paradis-chich"
       }
     ]
     return (
