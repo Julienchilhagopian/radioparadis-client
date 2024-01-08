@@ -11,6 +11,36 @@ class Shows extends Component {
   render() {
     let shows = [
       {
+        "title": "Girl From The Beyond",
+        "artist_name": "Simon Bijaoui",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/simon_bij.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/simon-bijaoui-presente-girl-from-the-beyond"
+      },
+      {
+        "title": "Diac Show #8",
+        "artist_name": "Robinson",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_8.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/diac-show-8-w-robinson"
+      },
+      {
+        "title": "Family Approved Show #4",
+        "artist_name": "Laura Super",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fam_app_4.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/family-approved-show-4-w-laura-super"
+      },
+      {
+        "title": "Derrière les Notes #6",
+        "artist_name": "Loryn",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/DLN_6.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/derriere-les-notes-6-w-loryn"
+      },
+      {
+        "title": "SPIRALE BLEUE #2",
+        "artist_name": "Nessiel",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/spirale_bleue_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/spirale-bleue-2-w-nessiel"
+      },
+      {
         "title": "DIAC SHOW #7",
         "artist_name": "Housecall",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_7.png",
@@ -33,36 +63,6 @@ class Shows extends Component {
         "artist_name": "Corsica One",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/special_guest_corsica.png",
         "link_show": "https://soundcloud.com/radio-paradis-13/special-guest-corsica-one"
-      },
-      {
-        "title": "Special Hardgroove",
-        "artist_name": "Haüt",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/Haut.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/haut-special-hardgroove"
-      },
-      {
-        "title": "SELECSTASE #1",
-        "artist_name": "Antoine",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/selecstase.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/selecstase-1-antoine"
-      },
-      {
-        "title": "MQ RECORDS SHOW #6",
-        "artist_name": "Moïse Keane",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/MQ6.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/mq-records-show-6-w-mose-keane"
-      },
-      {
-        "title": "QUIRKS #8",
-        "artist_name": "Luz Del Fuego",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_8.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/quirks-8-w-luz-del-fuego"
-      },
-      {
-        "title": "KASPER SHOW #7",
-        "artist_name": "Acyn",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_7.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/kasper-show-7-w-acyn"
       }
     ]
     return (
