@@ -23,8 +23,9 @@ class EventModal extends Component {
               quality={80}
               src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/lesamarres_affiche.png"}
               alt="Logo"
-              width={300}
-              height={300}
+              //fill={true}
+              width={400}
+              height={506}
             />
           </div>
           <p className={styles.EventModalCredits}></p>
