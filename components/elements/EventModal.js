@@ -14,14 +14,14 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1>Radio Paradis à la Java le 10 Novembre avec Family Approved Records !</h1>
+          <h1>Plateau Radio Paradis aux Amarres !</h1>
           <div className={styles.EventLink}>
-            <a href="https://www.facebook.com/events/la-java/family-approved-invite-dj-suspect-random-et-radio-paradis/1244699469536918/" target="_blank"> &rarr; Lien event &larr; </a>
+            <a href="https://fb.me/e/1yNOiaoRd" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
           <div className={styles.EventPoster}>
             <Image
               quality={80}
-              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/affiche_java_novembre.jpeg"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/lesamarres_affiche.jpeg"}
               alt="Logo"
               width={300}
               height={300}

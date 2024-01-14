@@ -159,7 +159,7 @@ class Home extends Component {
     this.fetchCurrentTrack();
     this.fetchTrackHistory();
     this.fetchCalendarEvents();
-    //this.showModal();
+    this.showModal();
   }
 
   componentWillUnmount() {
@@ -254,12 +254,12 @@ class Home extends Component {
     this.setState({ volume: (value / 100) })
   };
 
-  // showModal = () => {
-  //   this.setState({ isModalOpen: true })
-  // };
-  // hideModal = () => {
-  //   this.setState({ isModalOpen: false })
-  // };
+  showModal = () => {
+    this.setState({ isModalOpen: true })
+  };
+  hideModal = () => {
+    this.setState({ isModalOpen: false })
+  };
 
   render() {
     return (
@@ -338,10 +338,10 @@ class Home extends Component {
               show={this.state.show}
               handleClose={this.hideSubmitForm}>
             </SubmitForm>
-            {/* <EventModal 
+            <EventModal 
               show={this.state.isModalOpen}
               handleModalClose={this.hideModal}>
-            </EventModal> */}
+            </EventModal>
           </section>
         </main>
       </div>
