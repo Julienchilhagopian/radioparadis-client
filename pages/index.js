@@ -30,7 +30,7 @@ class Home extends Component {
       calendarEvents: [],
       isTrackLoading: true,
       isHistoryLoading: true,
-      principalColor: '#d1bdd9',
+      principalColor: '#83c5be',
       secondaryColor: '#cecece8c',
       mobileColor: 'white',
       volume: 1,
@@ -159,7 +159,7 @@ class Home extends Component {
     this.fetchCurrentTrack();
     this.fetchTrackHistory();
     this.fetchCalendarEvents();
-    this.showModal();
+    //this.showModal();
   }
 
   componentWillUnmount() {
