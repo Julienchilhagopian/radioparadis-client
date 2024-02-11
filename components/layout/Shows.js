@@ -14,7 +14,7 @@ class Shows extends Component {
         "title": "Bounce FM #5",
         "artist_name": "Nightchou",
         "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/bounce_fm_5.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/simon-bijaoui-presente-girl-from-the-beyond"
+        "link_show": "https://soundcloud.com/radio-paradis-13/bounce-fm-5-with-nightchou"
       },
       {
         "title": "Quirks #10",
