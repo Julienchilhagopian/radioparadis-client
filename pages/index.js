@@ -44,8 +44,8 @@ class Home extends Component {
     this.fetchCurrentTrack = this.fetchCurrentTrack.bind(this);
     this.fetchTrackHistory = this.fetchTrackHistory.bind(this);
     this.fetchCalendarEvents = this.fetchCalendarEvents.bind(this);
-    this.radioURL = "https://c28.radioboss.fm:8436/stream";
-    this.currentTrackURL = "https://c28.radioboss.fm/w/nowplayinginfo?u=436";
+    this.radioURL = "http://138.68.68.216:8000/radio.mp3";
+    this.currentTrackURL = "http://138.68.68.216/api/nowplaying";
     this.trackHistoryURL = "https://c28.radioboss.fm/w/recenttrackslist?u=436";
     this.faviconURL = "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/logo-night.ico";
   }
@@ -184,8 +184,10 @@ class Home extends Component {
       })
       .then(data => {
 
+        //console.log(data[0].now_playing)
+
         let currentTrackData = {
-          artist: data.nowplaying,
+          artist: data[0].now_playing.song.text,
         }
 
         let prevArtist;
