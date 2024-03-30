@@ -14,9 +14,9 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1>Plateau Radio Paradis aux Amarres !</h1>
+          <h1>Plateau Radio Paradis #2 aux Amarres !</h1>
           <div className={styles.EventLink}>
-            <a href="https://fb.me/e/1yNOiaoRd" target="_blank"> &rarr; Lien event &larr; </a>
+            <a href="https://fb.me/e/1Py5w2FwF" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
           <div className={styles.EventPoster}>
             <Image

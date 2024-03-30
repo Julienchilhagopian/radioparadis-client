@@ -11,64 +11,52 @@ class Shows extends Component {
   render() {
     let shows = [
       {
-        "title": "Discussion avec Sarah Fryde (foncière solidaire Base Commune)",
-        "artist_name": "Plateau Radio Paradis aux Amarres",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/poster_sarah.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/discussion-avec-sarah-fryde-fonciere-solidaire-base-commune"
+        "title": "Kasper Show #12",
+        "artist_name": "DONNIE TABASCO",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_12_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/kasper-show-12-part-2"
       },
       {
-        "title": "Closing de C.LYYA",
-        "artist_name": "Plateau Radio Paradis aux Amarres",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/closing_clyya.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/dj-set-clya"
+        "title": "DISCO HEAT #5",
+        "artist_name": "JIMMY DISCO",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/disco_heat_5.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/disco-heat-5"
       },
       {
-        "title": "Salade Radio Paradis crew",
-        "artist_name": "Plateau Radio Paradis aux Amarres",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/rp_crew.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/dj-set-rp"
+        "title": "KASPER SHOW #12",
+        "artist_name": "PETRUS",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_12_1.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/240202-petrus"
       },
       {
-        "title": "Les radios libres : l'épopée de la libération des ondes dans les années 70/80",
-        "artist_name": "Plateau Radio Paradis aux Amarres",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/radio_libres.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/radios-libres"
+        "title": "DERRIÈRE LES NOTES #9",
+        "artist_name": "CONTRECOEUR",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/DLN_9.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/contrecoeur"
       },
       {
-        "title": "Diac Show #10",
-        "artist_name": "Koudur (Bold House)",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/diac_show_10.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/koudur"
+        "title": "QUIRKS #11",
+        "artist_name": "DOMICIL",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/quirks_11.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/domicil-mix1"
       },
       {
-        "title": "Kasper Show #11",
-        "artist_name": "Laluis",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/kasper_11.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/laluis-radioparadiswav"
+        "title": "FAMILY APPROVED SHOW #7",
+        "artist_name": "DIELLI",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fam_app_7.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/dielli"
       },
       {
-        "title": "Oups, I Played It Again #1",
-        "artist_name": "Adou",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/oups_1.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/oups-i-played-it-again-1"
+        "title": "OUPS, I PLAYED IT AGAIN ! #2",
+        "artist_name": "ADOU",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/oups_2.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/oups-2"
       },
       {
-        "title": "Disco Heat #4",
-        "artist_name": "Relight Crew",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/disco_heat_4.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/disco-heat-4"
-      },
-      {
-        "title": "DERRIÈRE LES NOTES #8",
-        "artist_name": "DJ Software",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/DLN_8.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/dj-software"
-      },
-      {
-        "title": "MQ RECORDS SHOW #9",
-        "artist_name": "POLOPONNÈSE",
-        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/MQ9.png",
-        "link_show": "https://soundcloud.com/radio-paradis-13/poloponese"
+        "title": "SELECSTASE #3",
+        "artist_name": "Antoine",
+        "link_img": "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/SELECSTASE_3.png",
+        "link_show": "https://soundcloud.com/radio-paradis-13/antoine-3"
       },
       {
         "title": "Fem In Mix #3",
