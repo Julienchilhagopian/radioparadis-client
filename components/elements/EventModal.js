@@ -21,7 +21,7 @@ class EventModal extends Component {
           <div className={styles.EventPoster}>
             <Image
               quality={80}
-              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/lesamarres_affiche.png"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/lesamarres_affiche.jpg"}
               alt="Logo"
               //fill={true}
               width={350}
