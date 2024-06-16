@@ -16,7 +16,7 @@ const dateHandler = (date) => {
 
 const timeHandler = (date) => {
   let dateFormat = new Date(date);
-  let hours = dateFormat.getHours() + 1; // +1 because the deployed site version is in another time zone
+  let hours = dateFormat.getHours(); // +1 because the deployed site version is in another time zone
   hours = hours < 10 ? "0" + hours : hours; // adding 0 for print
 
   let minutes = dateFormat.getMinutes();

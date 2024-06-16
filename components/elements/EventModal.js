@@ -14,14 +14,14 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1>Radio Paradis au Solarium le 15 juin !</h1>
+          <h1>Radio Paradis au Transistor pour la fête de la musique  !</h1>
           <div className={styles.EventLink}>
-            <a href="https://www.facebook.com/share/JrD4UNRPgnneZgDL/" target="_blank"> &rarr; Lien event &larr; </a>
+            <a href="https://www.facebook.com/share/CDqZPkCyWt1nVw4X/" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
           <div className={styles.EventPoster}>
             <Image
               quality={80}
-              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/solarium_affiche.jpeg"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fdlm_event_fb.png"}
               alt="Logo"
               width={450}
               height={300}
