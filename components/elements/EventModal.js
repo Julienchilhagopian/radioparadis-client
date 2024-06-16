@@ -23,8 +23,8 @@ class EventModal extends Component {
               quality={80}
               src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/fdlm_event_fb.png"}
               alt="Logo"
-              width={450}
-              height={300}
+              width={400}
+              height={200}
             />
           </div>
           <p className={styles.EventModalCredits}></p>
