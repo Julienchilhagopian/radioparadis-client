@@ -159,7 +159,7 @@ class Home extends Component {
     this.fetchCurrentTrack();
     this.fetchTrackHistory();
     this.fetchCalendarEvents();
-    this.showModal();
+    //this.showModal();
   }
 
   componentWillUnmount() {
