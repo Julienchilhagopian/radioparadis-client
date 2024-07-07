@@ -14,17 +14,17 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1>Radio Paradis à la Capsule du Badaboum</h1>
+          <h1>Plateau Radio Paradis #3 aux Amarres</h1>
           <div className={styles.EventLink}>
-            <a href="https://www.facebook.com/share/HHQrJytKP5gp3MhT/" target="_blank"> &rarr; Lien event &larr; </a>
+            <a href="https://www.facebook.com/share/1LECzngUjZotZ8fB/" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
           <div className={styles.EventPoster}>
             <Image
               quality={80}
-              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/badaboum.jpg"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/les_amarres_3.png"}
               alt="Logo"
-              width={450}
-              height={250}
+              width={250}
+              height={450}
             />
           </div>
           <p className={styles.EventModalCredits}></p>
