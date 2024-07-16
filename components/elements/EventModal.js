@@ -14,14 +14,14 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1>Plateau Radio Paradis #3 aux Amarres</h1>
+          <h1>Radio Paradis avec Victor Tomasi à l'Alimentation Générale !</h1>
           <div className={styles.EventLink}>
-            <a href="https://www.facebook.com/share/1LECzngUjZotZ8fB/" target="_blank"> &rarr; Lien event &larr; </a>
+            <a href="https://www.facebook.com/share/hzkBZA2fWK1U5SKs" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
           <div className={styles.EventPoster}>
             <Image
               quality={80}
-              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/les_amarres_3.png"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/main/public/event_pic.jpeg"}
               alt="Logo"
               width={350}
               height={450}
