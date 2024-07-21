@@ -70,6 +70,8 @@ a:hover {
   opacity: 0.4;
 }
 
+// --- Custom ant design --- //
+
 // --- Volume slider  --- //
 
 .ant-slider-track {
@@ -78,6 +80,11 @@ a:hover {
 
 .ant-slider-handle {
   border: solid 2px black;
+}
+
+// --- Volume slider  --- //
+.ant-carousel .slick-track {
+  height: 100vh;
 }
 
 

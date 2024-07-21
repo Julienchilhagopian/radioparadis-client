@@ -16,17 +16,23 @@
   }
   
   .frame {
-    //background-color: initial !important;
-    padding: 50px 50px 60px 50px;
+    
   }
 
   .frameContent {
-    padding: 15px 40px 15px 40px;
     border-bottom: 2px solid black;
   }
 
   .mobileFitter {
     display: none;
+  }
+
+  .desktopPlayerMainContainer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    left: 10px;
+    z-index: 2;
   }
 }
 

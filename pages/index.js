@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import MobileHeader from '../components/layout/MobileHeader'
 import DesktopHeader from '../components/layout/DesktopHeader'
 import SubmitForm from '../components/form/SubmitForm'
 import MobilePlayer from '../components/player/MobilePlayer'
+import DesktopPlayer from '../components/player/DesktopPlayer'
 import React, { Component } from 'react';
 import ShowsContainer from '../components/layout/ShowsContainer'
 import ReactAudioPlayer from 'react-audio-player';
@@ -288,27 +288,29 @@ class Home extends Component {
           />
           <section className={styles.home}>
             <div className={styles.frameContent}>
-              <MobileHeader
-                isMorning={this.state.isMorning}
-                isDay={this.state.isDay}
-                isNight={this.state.isNight}
-                isSunday={this.state.isSunday}
-                isPlaying={this.state.isPlaying}
-              />
-              <DesktopHeader
+            <div className={styles.desktopPlayerMainContainer}>
+              <DesktopPlayer
                 principalColor={this.state.principalColor}
                 secondaryColor={this.state.secondaryColor}
                 isTrackLoading={this.state.isTrackLoading}
                 currentTrack={this.state.currentTrack}
-                showSubmitForm={this.showSubmitForm}
-                isPlaying={this.state.isPlaying}
                 togglePlay={this.togglePlay}
+                isPlaying={this.state.isPlaying}
+                onVolumeChange={this.onVolumeChange}
+                loading={this.state.loading}
                 isMorning={this.state.isMorning}
                 isDay={this.state.isDay}
                 isNight={this.state.isNight}
-                onVolumeChange={this.onVolumeChange}
-                loading={this.state.loading}
               />
+            </div>
+              <DesktopHeader
+                principalColor={this.state.principalColor}
+                secondaryColor={this.state.secondaryColor}
+                isMorning={this.state.isMorning}
+                isDay={this.state.isDay}
+                isNight={this.state.isNight}
+              />
+              
             </div>
             <ShowsContainer
               isMobile={isMobile}
