@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import DesktopHeader from '../components/layout/DesktopHeader'
+import Header from '../components/layout/Header'
 import SubmitForm from '../components/form/SubmitForm'
 import MobilePlayer from '../components/player/MobilePlayer'
 import DesktopPlayer from '../components/player/DesktopPlayer'
@@ -303,14 +303,8 @@ class Home extends Component {
                 isNight={this.state.isNight}
               />
             </div>
-              <DesktopHeader
-                principalColor={this.state.principalColor}
-                secondaryColor={this.state.secondaryColor}
-                isMorning={this.state.isMorning}
-                isDay={this.state.isDay}
-                isNight={this.state.isNight}
+              <Header
               />
-              
             </div>
             <ShowsContainer
               isMobile={isMobile}

@@ -12,7 +12,7 @@ class CarouselComponent extends Component {
   render() {
     return (
       <div className={styles.customCarousel}>
-        <Carousel autoplay effect="fade">
+        <Carousel dotPosition="right" autoplay effect="fade">
           <div>
             <Image
               quality={80}
