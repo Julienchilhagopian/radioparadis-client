@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@next/font": "^13.4.7",
+    "@nextui-org/react": "^2.4.6",
     "antd": "^4.15.0",
     "colorthief": "^2.2.3",
     "dotenv": "^8.2.0",
+    "framer-motion": "^11.3.8",
     "next": "^13.4.7",
     "pg": "^8.5.1",
     "react": "^18.2.0",
