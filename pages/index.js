@@ -303,8 +303,7 @@ class Home extends Component {
                 isNight={this.state.isNight}
               />
             </div>
-              <Header
-              />
+              <Header />
             </div>
             <ShowsContainer
               isMobile={isMobile}
