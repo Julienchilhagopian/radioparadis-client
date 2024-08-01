@@ -29,9 +29,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
         <Providers>
-          <header>
             <RadioNavbar />
-          </header>
 
           {children}
 
