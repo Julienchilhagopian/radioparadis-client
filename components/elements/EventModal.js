@@ -14,7 +14,7 @@ class EventModal extends Component {
     return (
       <Modal title="" open={this.props.show} onCancel={this.props.handleModalClose}>
         <div className={styles.EventModalContent}>
-          <h1>Warmup : Radio Paradis x Bold à la Marbrerie !</h1>
+          <h1>Warmup : Bold x Radio Paradis à la Marbrerie !</h1>
           <div className={styles.EventLink}>
             <a href="https://shotgun.live/events/warm-up-x-escrime-par-bold-collectif-radio-paradis" target="_blank"> &rarr; Lien event &larr; </a>
           </div>
