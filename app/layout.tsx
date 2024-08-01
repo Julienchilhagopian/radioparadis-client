@@ -36,7 +36,55 @@ export default function RootLayout({
           {children}
 
           <footer>
-            <p>Footer</p>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+            <h1>Footer</h1>
+           
           </footer>
 
 
