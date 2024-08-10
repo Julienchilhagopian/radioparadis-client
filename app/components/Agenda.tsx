@@ -10,12 +10,10 @@ function Agenda() {
   let [events, setEvents] = useState([]);
 
   useEffect(() => {
-    getAgenda().then((data: any) => {
-      if (data.error) {
-        console.log(data.error);
-      }
-      setEvents(data);
-    })
+    getAgenda()
+      .then((data: any) => {
+        setEvents(data);
+      })
   }, []);
 
 

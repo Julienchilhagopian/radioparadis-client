@@ -25,7 +25,8 @@
     "react-audio-player": "^0.17.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/node": "^20.14.11",

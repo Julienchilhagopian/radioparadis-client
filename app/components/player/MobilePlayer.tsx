@@ -11,10 +11,7 @@ function MobilePlayer() {
     <div>
       <section className={styles.player}>
         <PlayButton />
-        <PlayerContent
-          currentTrack={this.props.currentTrack}
-          isTrackLoading={this.props.isTrackLoading}
-        />
+        <PlayerContent />
       </section>
     </div>
   )
