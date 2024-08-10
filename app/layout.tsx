@@ -2,10 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Providers from './providers'
 import RadioNavbar from './components/RadioNavbar'
+import Player from './components/player/Player'
 import "./styles/globals.scss";
 import "./globals.css";
-
-
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,13 +24,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="fr">
       <body className={inter.className}>
         <Providers>
             <RadioNavbar />
+            <Player />
+
 
           {children}
+
 
           <footer>
             <h1>Footer</h1>

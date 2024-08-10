@@ -1,7 +1,5 @@
 'use server'
 
-import {useEffect, useState} from "react"
-
 const dateHandler = (date: any) => {
   const dayNames = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
   let dateFormat: Date = new Date(date); 
@@ -63,7 +61,6 @@ export async function getAgenda() {
       };
     });
 
-    console.log(eventsGroupToArray)
     return eventsGroupToArray
    } catch (err) {
     return err

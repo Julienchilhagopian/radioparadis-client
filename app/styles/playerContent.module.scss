@@ -1,0 +1,14 @@
+@import 'variables';
+
+
+.PlayerContent {
+  text-align: right;
+  width: 60%;
+}
+
+@media (min-width: $desktopWidth){ 
+  .PlayerContent {
+    text-align: right;
+    width: 100%;
+  }
+}
