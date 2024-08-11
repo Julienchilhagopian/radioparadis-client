@@ -1,10 +1,9 @@
 'use client'
 
 import React from "react";
-import { useEffect, useState } from "react"
 import styles from '../../styles/playerContent.module.scss';
-import { getCurrentTrack } from '../../lib/actions/track'
 import useSWR from "swr";
+import TextTicker from "../TextTicker"
 
 async function fetcher<JSON = any>(
   input: RequestInfo,
@@ -23,13 +22,11 @@ function PlayerContent() {
   const { data, error, isLoading } = useSWR<Track>(currentTrack_url, fetcher);
 
   if (error) return <p>Error loading data</p>;
-  if (isLoading) return <div>loading...</div>;
-  
+  if (isLoading || !data) return <div>loading...</div>;
+
   return (
-    <div>
-      <div className={styles.playerContent}>
-        <h2>{data?.nowplaying}</h2>
-      </div>
+    <div className={styles.playerContent}>
+      <TextTicker content={data?.nowplaying}/>
     </div>
   )
 }

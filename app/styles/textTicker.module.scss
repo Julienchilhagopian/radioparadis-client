@@ -1,0 +1,44 @@
+@import 'variables';
+
+.tickerContainer {
+  // width: 100%;
+  white-space: nowrap;
+}
+
+.tickerContainer h3 {
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 20pt;
+}
+
+.tickerAnimation {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tickerAnimation span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: tickerAnimation 15s linear infinite;
+}
+
+/* Make it move */
+@keyframes tickerAnimation {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+
+@media (min-width: $desktopWidth){ 
+  .tickerContainer h3 {
+    font-size: 15pt;
+  }
+}
+
+@media (min-width: $desktopWidth-large){
+
+  .tickerContainer h3  {
+    font-size: 25pt;
+  }
+}

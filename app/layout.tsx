@@ -29,12 +29,10 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
         <Providers>
-            <RadioNavbar />
-            <Player />
-
+          <RadioNavbar />
+          <Player />
 
           {children}
-
 
           <footer>
             <h1>Footer</h1>
@@ -85,7 +83,7 @@ export default function RootLayout({
             <h1>Footer</h1>
             <h1>Footer</h1>
             <h1>Footer</h1>
-           
+
           </footer>
 
 
