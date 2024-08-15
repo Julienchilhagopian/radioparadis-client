@@ -13,7 +13,6 @@
   background-color: #83c5be;
 }
 
-
 .playBtn {
   border: 0;
   background: transparent;
@@ -55,10 +54,4 @@
 .currentInfos {
   overflow: hidden;
   padding-left: 10px;
-}
-
-@media (min-width: $desktopWidth){ 
-  .player {
-    display: none;
-  }
 }
