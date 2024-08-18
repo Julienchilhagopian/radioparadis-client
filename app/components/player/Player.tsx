@@ -2,13 +2,15 @@
 
 import React from "react";
 import MobilePlayer from './MobilePlayer'
+import ReplayPlayer from "./ReplayPlayer";
 
 
 function Player() {
  
   return (
     <div>
-      <MobilePlayer />
+      {/* <MobilePlayer /> */}
+      <ReplayPlayer />
     </div>
   )
 }

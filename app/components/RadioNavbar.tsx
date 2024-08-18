@@ -19,7 +19,7 @@ function RadioNavbar() {
 
 
   return (
-    <div className="absolute h-full w-full">
+    <div className="absolute w-full">
       <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
         <NavbarContent className="lg:hidden">
           <NavbarMenuToggle

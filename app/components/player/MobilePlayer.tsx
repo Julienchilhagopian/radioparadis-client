@@ -2,7 +2,7 @@
 
 import React from "react";
 import PlayButton from './PlayButton'
-import styles from '../../styles/MobilePlayer.module.scss';
+import styles from '../../styles/mobilePlayer.module.scss';
 import PlayerContent from '../player/PlayerContent';
 
 function MobilePlayer() {

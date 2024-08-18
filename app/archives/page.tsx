@@ -2,6 +2,8 @@
 
 import type { Metadata } from "next";
 import { useEffect, useState } from "react"
+import Episode from "../components/Episode";
+import styles from '../styles/archives.module.scss';
 
 // export const metadata: Metadata = {
 //   title: "Archives Radio Paradis",
@@ -129,23 +131,10 @@ export default function Archives() {
     }, []);
 
   return (
-      <div>
-        <div>
-        <ul>
-          {tracks.map(track => (
-            <li key={track.id}>{track.title}</li>
-          ))}
-        </ul>
-      </div>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
-      <h1>Archives</h1>
+      <div className={styles.archives}>
+        {tracks.map(episode => (
+          <Episode key={episode.id} episode={episode} />
+        ))}
       <h1>Archives</h1>
     </div>
   )
