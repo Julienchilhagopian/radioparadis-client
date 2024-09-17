@@ -5,11 +5,16 @@ import PlayButton from './PlayButton'
 import styles from '../../styles/mobilePlayer.module.scss';
 import PlayerContent from '../player/PlayerContent';
 
-function MobilePlayer() {
+interface Props {
+  isSticky: boolean
+}
+
+
+function MobilePlayer(props: Props) {
 
   return (
     <div>
-      <section className={styles.player}>
+      <section className={`${styles.player} ${props.isSticky ? styles.stickyPlayer : styles.notStickyPlayer}`}>
         <PlayButton />
         <PlayerContent />
       </section>

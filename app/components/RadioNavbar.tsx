@@ -2,14 +2,15 @@
 
 import styles from '../styles/navbar.module.scss';
 import React from "react";
+import MobilePlayer from '../components/player/MobilePlayer'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
-
-
 
 
 function RadioNavbar() {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isSticky, setIsSticky] = React.useState(false)
+
 
   const menuItems = [
     "Archives",
@@ -17,10 +18,9 @@ function RadioNavbar() {
     "À propos"
   ];
 
-
   return (
     <div className="absolute w-full">
-      <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
+      <Navbar onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(position) => position >= 64 ? setIsSticky(true) : setIsSticky(false)}>
         <NavbarContent className="lg:hidden">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -65,6 +65,8 @@ function RadioNavbar() {
           ))}
         </NavbarMenu>
       </Navbar>
+
+      <MobilePlayer isSticky={isSticky}/>
     </div>
   )
 }

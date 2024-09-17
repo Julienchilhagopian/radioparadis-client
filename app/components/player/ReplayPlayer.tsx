@@ -13,8 +13,6 @@ function ReplayPlayer(props: any) {
   const { playingReplay, setPlayingReplay } = useContext(PlayContext);
   const { replayUrl, setReplayUrl } = useContext(PlayContext);
 
-
-
   const defaultUrl = "https://soundcloud.com/radio-paradis-13/vagabond-3"
 
   return (

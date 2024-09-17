@@ -9,7 +9,6 @@ function Player() {
  
   return (
     <div>
-      {/* <MobilePlayer /> */}
       <ReplayPlayer />
     </div>
   )
