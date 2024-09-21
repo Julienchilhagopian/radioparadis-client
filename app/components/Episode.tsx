@@ -13,8 +13,8 @@ type PropsType = {
 
 
 function Episode(props: any) {
-  const { playingReplay, setPlayingReplay } = useContext(PlayContext);
   const { replayUrl, setReplayUrl } = useContext(PlayContext);
+  const { playingReplay, setPlayingReplay } = useContext(PlayContext);
 
   const getImageUrl = (url: string) => {
     const clean_url = url.replace(
@@ -26,8 +26,8 @@ function Episode(props: any) {
 
   return (
     <div className={styles.episode} onClick={() => {
-      setPlayingReplay(!playingReplay)
       setReplayUrl(props.episode.permalink_url)
+      setPlayingReplay(true)
     }
     }>
       <h2>{props.episode.title}</h2>

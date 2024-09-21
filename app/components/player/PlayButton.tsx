@@ -10,6 +10,7 @@ function PlayButton() {
   let radioPlayer: any;
   const radioURL = "https://c28.radioboss.fm:8436/stream";
   const { playing, setPlaying } = useContext(PlayContext);
+  const { playingReplay, setPlayingReplay } = useContext(PlayContext);
 
 
   function play() {
@@ -34,6 +35,7 @@ function PlayButton() {
   useEffect(() => {
     if (playing) {
       play();
+      setPlayingReplay(false)
     } else {
       pause();
     }

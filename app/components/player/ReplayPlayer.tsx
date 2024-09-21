@@ -11,17 +11,29 @@ const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 function ReplayPlayer(props: any) {
   const { playingReplay, setPlayingReplay } = useContext(PlayContext);
+  const { playing, setPlaying } = useContext(PlayContext);
   const { replayUrl, setReplayUrl } = useContext(PlayContext);
 
   const defaultUrl = "https://soundcloud.com/radio-paradis-13/vagabond-3"
 
+  function onPlay() {
+    setPlayingReplay(true)
+    setPlaying(false)
+  }
+
+  function onPause() {
+    setPlayingReplay(false)
+  }
+
   return (
-    replayUrl ? 
+    (replayUrl) ? 
     <div className={styles.replayPlayer}>
       <ReactPlayer
-        url={replayUrl ? replayUrl : "https://soundcloud.com/radio-paradis-13/vagabond-3"}
-        playing={false}
+        url={replayUrl ? replayUrl : defaultUrl}
+        playing={playingReplay} 
         controls={true}
+        onPlay={onPlay}
+        onPause={onPause}
       />
     </div>
    : 

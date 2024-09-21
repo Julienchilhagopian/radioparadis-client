@@ -25,7 +25,7 @@ function PlayProvider({
   children: React.ReactNode;
 }>) {
   const [playing, setPlaying] = useState(false);
-  const [playingReplay, setPlayingReplay] = useState(false);
+  const [playingReplay, setPlayingReplay] = useState(true);
   const [replayUrl, setReplayUrl] = useState("");
 
   return (
