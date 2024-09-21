@@ -132,9 +132,12 @@ export default function Archives() {
 
   return (
       <div className={styles.archives}>
+        (tracks) ?
         {tracks.map(episode => (
           <Episode key={episode.id} episode={episode} />
         ))}
+        :
+        <div></div>
       <h1>Archives</h1>
     </div>
   )
