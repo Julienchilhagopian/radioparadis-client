@@ -13,9 +13,18 @@ function RadioNavbar() {
 
 
   const menuItems = [
-    "Archives",
-    "Se retrouver",
-    "À propos"
+    {
+      title: "Archives",
+      url: "../archives"
+    },
+    {
+      title: "Se retrouver",
+      url: "#"
+    },
+    {
+      title: "À propos",
+      url: "#"
+    }
   ];
 
   return (
@@ -28,7 +37,7 @@ function RadioNavbar() {
         </NavbarContent>
         <NavbarContent className="hidden lg:flex gap-4">
           <NavbarItem>
-            <Link href="#">
+            <Link href="../archives">
               Archives
             </Link>
           </NavbarItem>
@@ -56,17 +65,17 @@ function RadioNavbar() {
                   index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
                 }
                 className="w-full"
-                href="#"
+                href={item.url}
                 size="lg"
               >
-                {item}
+                {item.title}
               </Link>
             </NavbarMenuItem>
           ))}
         </NavbarMenu>
       </Navbar>
 
-      <MobilePlayer isSticky={isSticky}/>
+      <MobilePlayer isSticky={isSticky} />
     </div>
   )
 }
