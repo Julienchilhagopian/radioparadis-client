@@ -6,12 +6,6 @@ import Image from 'next/image';
 import styles from '../styles/episode.module.scss'
 
 
-type PropsType = {
-  title: string,
-  stream_url: string
-}
-
-
 function Episode(props: any) {
   const { replayUrl, setReplayUrl } = useContext(PlayContext);
   const { playingReplay, setPlayingReplay } = useContext(PlayContext);
@@ -31,14 +25,17 @@ function Episode(props: any) {
     }
     }>
       <h2>{props.episode.title}</h2>
-      <Image
-        quality={100}
-        src={getImageUrl(props.episode.artwork_url)}
-        alt="Episode image"
-        width={200}
-        height={200}
-        className={styles.episodeImage}
-      />
+      <div>
+        <Image
+          quality={100}
+          src={getImageUrl(props.episode.artwork_url)}
+          alt="Episode image"
+          className={styles.episodeImage}
+          width={100}
+          height={100}
+          style={ {position: 'relative'}}
+        />
+      </div>
     </div>
   )
 }

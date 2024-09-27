@@ -28,7 +28,7 @@ function RadioNavbar() {
   ];
 
   return (
-    <div className="absolute w-full">
+    <div className="relative w-full">
       <Navbar onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(position) => position >= 64 ? setIsSticky(true) : setIsSticky(false)}>
         <NavbarContent className="lg:hidden">
           <NavbarMenuToggle
