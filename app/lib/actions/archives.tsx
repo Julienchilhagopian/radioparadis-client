@@ -135,7 +135,7 @@ export async function fetchTracks(tracksLimit: number) {
 
   // Faire la requête pour récupérer les tracks
   const tracksResponse = await fetch(
-    `https://api.soundcloud.com/users/989649643/tracks?limit=${tracksLimit}`,
+    `https://api.soundcloud.com/users/${userId}/tracks?limit=${tracksLimit}`,
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -150,4 +150,37 @@ export async function fetchTracks(tracksLimit: number) {
   const tracks = await tracksResponse.json();
   console.log(tracks.length)
   return tracks;
+}
+
+export async function fetchPlaylists() {
+  //Si le token n'existe pas ou a expiré, le régénérer
+  if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiry) {
+    if (!refreshToken) {
+      console.log("no refresh token")
+      // Si pas de refresh token, on obtient un nouveau jeton
+      await getAccessToken();
+    } else {
+      // Sinon on rafraîchit le jeton
+      console.log("refreshing token")
+      await refreshAccessToken();
+    }
+  }
+
+
+  const playlistResponse = await fetch(
+    `https://api.soundcloud.com/users/${userId}/playlists`,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+
+  if (!playlistResponse.ok) {
+    throw new Error(`Erreur API SoundCloud: ${playlistResponse.statusText}`);
+  }
+
+  const playlists = await playlistResponse.json();
+  console.log(playlists)
+  return playlists;
 }
