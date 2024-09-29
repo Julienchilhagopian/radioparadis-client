@@ -1,3 +1,6 @@
+// lib/actions/archives.ts
+import {redis, connectRedis}  from '../server/redis'; // Assurez-vous que ce module n'est jamais importé côté client
+
 let accessToken: string | null = null;
 let refreshToken: string | null = null;
 let tokenExpiry: number | null = null;
@@ -7,66 +10,10 @@ const clientSecret = '85LLuWd0NZ0REfOS2YsvNyYCNOikQwbW';
 const userId = '989649643';
 
 
-const tracks_backup = [
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  },
-  {
-    title: 'tracks 1',
-    permalink_url: 'https://soundcloud.com/radio-paradis-13/disco-heat-9-mona-bone',
-    artwork_url: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg'
-  }
-]
-
 // Fonction pour obtenir un nouveau jeton
 async function getAccessToken() {
+  await connectRedis(); 
+  
   const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
     method: 'POST',
     headers: {
@@ -79,8 +26,8 @@ async function getAccessToken() {
     }),
   });
 
+  console.log('ASKING NEW TOKEN')
 
-  console.log("Token response status:", tokenResponse.status);
   if (!tokenResponse.ok) {
     const errorText = await tokenResponse.text();
     console.error("Error response from API:", errorText);
@@ -89,12 +36,16 @@ async function getAccessToken() {
 
   const tokenData = await tokenResponse.json();
   accessToken = tokenData.access_token;
-  refreshToken = tokenData.refresh_token; // On stocke aussi le refresh token
-  tokenExpiry = Date.now() + tokenData.expires_in * 1000; // On calcule l'heure d'expiration
+  refreshToken = tokenData.refresh_token;
+  tokenExpiry = Date.now() + tokenData.expires_in * 1000;
+
+  await redis.set('soundcloud_access_token', accessToken, { EX: tokenData.expires_in });
+  await redis.set('soundcloud_refresh_token', refreshToken, { EX: tokenData.expires_in });
 }
 
-// Fonction pour rafraîchir le token d'accès
 async function refreshAccessToken() {
+  await connectRedis(); 
+
   const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
     method: 'POST',
     headers: {
@@ -102,38 +53,45 @@ async function refreshAccessToken() {
     },
     body: new URLSearchParams({
       grant_type: 'refresh_token',
-      refresh_token: refreshToken || '', // Utilise le refresh token stocké
+      refresh_token: refreshToken || '',
       client_id: clientId,
       client_secret: clientSecret,
     }),
   });
 
   const tokenData = await tokenResponse.json();
+
+  console.log('refresh token', tokenData)
+
   if (tokenData.access_token) {
     accessToken = tokenData.access_token;
-    refreshToken = tokenData.refresh_token; // Met à jour le refresh token
+    refreshToken = tokenData.refresh_token;
     tokenExpiry = Date.now() + tokenData.expires_in * 1000;
+
+    await redis.set('soundcloud_access_token', accessToken, { EX: tokenData.expires_in });
+    await redis.set('soundcloud_refresh_token', refreshToken, { EX: tokenData.expires_in });
   } else {
     throw new Error('Erreur lors du rafraîchissement du token.');
   }
 }
 
-// Fonction principale pour récupérer les tracks
 export async function fetchTracks(tracksLimit: number) {
-  //Si le token n'existe pas ou a expiré, le régénérer
+  await connectRedis(); 
+
+  console.log("FETCH TRACKS")
+
+  accessToken = await redis.get('soundcloud_access_token');
+  refreshToken = await redis.get('soundcloud_refresh_token');
+  tokenExpiry = await redis.ttl('soundcloud_access_token');
+
   if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiry) {
     if (!refreshToken) {
-      console.log("no refresh token")
-      // Si pas de refresh token, on obtient un nouveau jeton
       await getAccessToken();
     } else {
-      // Sinon on rafraîchit le jeton
-      console.log("refreshing token")
       await refreshAccessToken();
     }
   }
 
-  // Faire la requête pour récupérer les tracks
   const tracksResponse = await fetch(
     `https://api.soundcloud.com/users/${userId}/tracks?limit=${tracksLimit}`,
     {
@@ -148,24 +106,25 @@ export async function fetchTracks(tracksLimit: number) {
   }
 
   const tracks = await tracksResponse.json();
-  console.log(tracks.length)
   return tracks;
 }
 
 export async function fetchPlaylists() {
-  //Si le token n'existe pas ou a expiré, le régénérer
+  await connectRedis();
+
+  console.log("FETCH PLAYLIST")
+
+  accessToken = await redis.get('soundcloud_access_token');
+  refreshToken = await redis.get('soundcloud_refresh_token');
+  tokenExpiry = await redis.ttl('soundcloud_access_token');
+
   if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiry) {
     if (!refreshToken) {
-      console.log("no refresh token")
-      // Si pas de refresh token, on obtient un nouveau jeton
       await getAccessToken();
     } else {
-      // Sinon on rafraîchit le jeton
-      console.log("refreshing token")
       await refreshAccessToken();
     }
   }
-
 
   const playlistResponse = await fetch(
     `https://api.soundcloud.com/users/${userId}/playlists`,
@@ -181,6 +140,5 @@ export async function fetchPlaylists() {
   }
 
   const playlists = await playlistResponse.json();
-  console.log(playlists)
   return playlists;
 }

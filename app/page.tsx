@@ -6,8 +6,6 @@ import { fetchTracks } from './lib/actions/archives';
 export default async function Home() {
   const tracks = await fetchTracks(10);
 
-  console.log(tracks)
-
   return (
     <main>
       <Carousel tracks={tracks}/>
