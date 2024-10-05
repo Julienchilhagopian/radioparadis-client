@@ -8,7 +8,7 @@ import { PlayContext } from '../../context/playContext';
 
 function PlayButton() {
   let radioPlayer: any;
-  const radioURL = "https://c28.radioboss.fm:8436/stream";
+  const radioURL = "http://161.35.19.210:8000/radio.mp3";
   const { playing, setPlaying } = useContext(PlayContext);
   const { playingReplay, setPlayingReplay } = useContext(PlayContext);
 

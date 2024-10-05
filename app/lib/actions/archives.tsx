@@ -1,96 +1,27 @@
 // lib/actions/archives.ts
-import {redis, connectRedis}  from '../server/redis'; // Assurez-vous que ce module n'est jamais importé côté client
-
-let accessToken: string | null = null;
-let refreshToken: string | null = null;
-let tokenExpiry: number | null = null;
-
-const clientId = '5L6745YdtIFMSY4SRbSoZZfeFv1wE3vV';
-const clientSecret = '85LLuWd0NZ0REfOS2YsvNyYCNOikQwbW';
 const userId = '989649643';
+const API_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000';
 
-
-// Fonction pour obtenir un nouveau jeton
-async function getAccessToken() {
-  await connectRedis(); 
-  
-  const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams({
-      grant_type: 'client_credentials',
-      client_id: clientId,
-      client_secret: clientSecret,
-    }),
-  });
-
-  console.log('ASKING NEW TOKEN')
-
-  if (!tokenResponse.ok) {
-    const errorText = await tokenResponse.text();
-    console.error("Error response from API:", errorText);
-    throw new Error(`Failed to fetch access token: ${tokenResponse.statusText}`);
-  }
-
-  const tokenData = await tokenResponse.json();
-  accessToken = tokenData.access_token;
-  refreshToken = tokenData.refresh_token;
-  tokenExpiry = Date.now() + tokenData.expires_in * 1000;
-
-  await redis.set('soundcloud_access_token', accessToken, { EX: tokenData.expires_in });
-  await redis.set('soundcloud_refresh_token', refreshToken, { EX: tokenData.expires_in });
-}
-
-async function refreshAccessToken() {
-  await connectRedis(); 
-
-  const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams({
-      grant_type: 'refresh_token',
-      refresh_token: refreshToken || '',
-      client_id: clientId,
-      client_secret: clientSecret,
-    }),
-  });
-
-  const tokenData = await tokenResponse.json();
-
-  console.log('refresh token', tokenData)
-
-  if (tokenData.access_token) {
-    accessToken = tokenData.access_token;
-    refreshToken = tokenData.refresh_token;
-    tokenExpiry = Date.now() + tokenData.expires_in * 1000;
-
-    await redis.set('soundcloud_access_token', accessToken, { EX: tokenData.expires_in });
-    await redis.set('soundcloud_refresh_token', refreshToken, { EX: tokenData.expires_in });
-  } else {
-    throw new Error('Erreur lors du rafraîchissement du token.');
-  }
-}
-
+// Fonction pour obtenir les pistes
 export async function fetchTracks(tracksLimit: number) {
-  await connectRedis(); 
+  console.log("FETCH TRACKS");
 
-  console.log("FETCH TRACKS")
+  // Appel à la route GET de route.ts qui s'occupe de la gestion des tokens
+  // const tokenResponse = await fetch(`${API_URL}/api/soundcloud/token`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // });
 
-  accessToken = await redis.get('soundcloud_access_token');
-  refreshToken = await redis.get('soundcloud_refresh_token');
-  tokenExpiry = await redis.ttl('soundcloud_access_token');
+  // if (!tokenResponse.ok) {
+  //   throw new Error(`Erreur lors de la récupération du token : ${tokenResponse.statusText}`);
+  // }
 
-  if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiry) {
-    if (!refreshToken) {
-      await getAccessToken();
-    } else {
-      await refreshAccessToken();
-    }
-  }
+  // const { accessToken } = await tokenResponse.json();
+  // console.log('ACCESS TOKEN FROM ROUTE:', accessToken);
+
+  const accessToken  = "2-294368--FDs7XvcaIb9Sem5OD4mUibD"
 
   const tracksResponse = await fetch(
     `https://api.soundcloud.com/users/${userId}/tracks?limit=${tracksLimit}`,
@@ -102,6 +33,8 @@ export async function fetchTracks(tracksLimit: number) {
   );
 
   if (!tracksResponse.ok) {
+    const errorBody = await tracksResponse.text(); // Affiche le corps de la réponse pour plus de détails
+    console.error('Erreur API SoundCloud:', tracksResponse.statusText, errorBody);
     throw new Error(`Erreur API SoundCloud: ${tracksResponse.statusText}`);
   }
 
@@ -109,22 +42,23 @@ export async function fetchTracks(tracksLimit: number) {
   return tracks;
 }
 
+// Fonction pour obtenir les playlists
 export async function fetchPlaylists() {
-  await connectRedis();
+  console.log("FETCH PLAYLIST");
 
-  console.log("FETCH PLAYLIST")
+  const tokenResponse = await fetch(`${API_URL}/api/soundcloud/token`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-  accessToken = await redis.get('soundcloud_access_token');
-  refreshToken = await redis.get('soundcloud_refresh_token');
-  tokenExpiry = await redis.ttl('soundcloud_access_token');
-
-  if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiry) {
-    if (!refreshToken) {
-      await getAccessToken();
-    } else {
-      await refreshAccessToken();
-    }
+  if (!tokenResponse.ok) {
+    throw new Error(`Erreur lors de la récupération du token : ${tokenResponse.statusText}`);
   }
+
+  const { accessToken } = await tokenResponse.json();
+  console.log('ACCESS TOKEN FROM ROUTE:', accessToken);
 
   const playlistResponse = await fetch(
     `https://api.soundcloud.com/users/${userId}/playlists`,
