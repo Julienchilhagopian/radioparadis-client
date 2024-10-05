@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import Providers from './providers'
 import RadioNavbar from './components/RadioNavbar'
-import Player from './components/player/Player'
-import "./styles/globals.scss";
-import "./globals.css";
+import ReplayPlayer from './components/player/ReplayPlayer'
+import { Prompt, Inconsolata, Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import "./styles/globals.scss";
 
 export const metadata: Metadata = {
   title: "Radio Paradis",
@@ -18,6 +17,24 @@ export const viewport: Viewport = {
   width: 'device-width'
 }
 
+export const prompt = Prompt({
+  subsets: ['latin'],
+  variable: '--font-prompt',
+  weight: ['500', '800']
+})
+
+export const inconsolata = Inconsolata({
+  subsets: ['latin'],
+  variable: '--font-inconsolata',
+  weight: ['500', '800']
+})
+
+export const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  weight: ['100', '200', '500', '800']
+})
+
 
 export default function RootLayout({
   children,
@@ -26,11 +43,11 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="fr">
-      <body className={inter.className}>
+    <html lang="fr" className={`${inconsolata.variable} ${prompt.variable} ${inter.variable}`}>
+      <body>
         <Providers>
           <RadioNavbar />
-          <Player />
+          <ReplayPlayer />
 
           {children}
 

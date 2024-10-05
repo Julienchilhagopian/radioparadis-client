@@ -1,10 +1,12 @@
 'use client'
 
-import styles from '../styles/navbar.module.scss';
+import styles from '../styles/radioNavbar.module.scss';
 import React from "react";
-import MobilePlayer from '../components/player/MobilePlayer'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
-
+import Player from './player/Player'
+import Logo from './Logo'
+import { Navbar, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
+import Link from 'next/link'
+import Socials from './Socials';
 
 function RadioNavbar() {
 
@@ -29,20 +31,20 @@ function RadioNavbar() {
 
   return (
     <div className="relative w-full">
-      <Navbar onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(position) => position >= 64 ? setIsSticky(true) : setIsSticky(false)}>
-        <NavbarContent className="lg:hidden">
+      <Navbar onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(position: any) => position >= 64 ? setIsSticky(true) : setIsSticky(false)}>
+        <NavbarContent className="lg:hidden max-w-2.5">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           />
         </NavbarContent>
         <NavbarContent className="hidden lg:flex gap-4">
-          <NavbarItem>
+          <NavbarItem >
             <Link href="../archives">
               Archives
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link href="#" aria-current="page">
+            <Link  href="#" aria-current="page">
               Se retrouver
             </Link>
           </NavbarItem>
@@ -54,28 +56,33 @@ function RadioNavbar() {
         </NavbarContent>
 
         <NavbarContent justify="end">
-          <p>logo</p>
+          <Logo size={40} />
         </NavbarContent>
 
-        <NavbarMenu>
+        <NavbarMenu className={styles.navMenu} >
           {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
+            <NavbarMenuItem className={styles.navMenuItem} key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                }
-                className="w-full"
+                className={styles.navLink}
                 href={item.url}
-                size="lg"
               >
                 {item.title}
               </Link>
             </NavbarMenuItem>
           ))}
+
+            <NavbarMenuItem>
+              <div className={styles.radioPitch}>
+                <p>Radio Paradis est une radio musicale de quartier née en 2022 dans la rue de Paradis. 
+                  Nous visons à construire une plateforme de dialogue entre la scène émergente musicale et les acteurs du 10ème arrondissement.</p>
+              <Socials />
+              </div>
+            </NavbarMenuItem>
+            
         </NavbarMenu>
       </Navbar>
 
-      <MobilePlayer isSticky={isSticky} />
+      <Player isSticky={isSticky} />
     </div>
   )
 }

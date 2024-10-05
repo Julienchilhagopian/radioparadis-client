@@ -1,15 +1,23 @@
 'use client'
 
 import React from "react";
-import MobilePlayer from './MobilePlayer'
-import ReplayPlayer from "./ReplayPlayer";
+import PlayButton from './PlayButton'
+import styles from '../../styles/mobilePlayer.module.scss';
+import PlayerContent from './PlayerContent';
+
+interface Props {
+  isSticky: boolean
+}
 
 
-function Player() {
- 
+function Player(props: Props) {
+
   return (
     <div>
-      <ReplayPlayer />
+      <section className={`${styles.player} ${props.isSticky ? styles.stickyPlayer : styles.notStickyPlayer}`}>
+        <PlayButton />
+        <PlayerContent />
+      </section>
     </div>
   )
 }

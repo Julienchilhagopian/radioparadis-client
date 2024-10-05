@@ -25,25 +25,24 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-prompt);
+  font-family: var(--font-inter);
   font-weight: bolder;
   font-size: 14pt;
 }
 
 h3 {
   font-size: 14pt;
-  font-family: var(--font-inconsolata);
+  font-family: var(--font-inter);
 }
 
 p {
-  font-family: var(--font-inconsolata);
-  font-size: 11pt;
+  font-family: var(--font-inter);
+  font-size: 1rem;
 }
 
 a {
   color: black;
-  font-family: var(--font-inconsolata);
-  font-weight: bolder;
+  font-family: var(--font-inter);
   letter-spacing: 1px;
 }
 
@@ -56,7 +55,7 @@ a:hover {
 // --- Modal submit button  --- //
 
 .requestBtn {
-  font-family: var(--font-inconsolata);
+  font-family: var(--font-inter);
   border: none;
   color: white;
   padding: 13px 14px;
