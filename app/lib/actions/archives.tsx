@@ -6,7 +6,7 @@ const API_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000';
 export async function fetchTracks(tracksLimit: number) {
   console.log("FETCH TRACKS");
 
-  // Appel à la route GET de route.ts qui s'occupe de la gestion des tokens
+  // // Appel à la route GET de route.ts qui s'occupe de la gestion des tokens
   // const tokenResponse = await fetch(`${API_URL}/api/soundcloud/token`, {
   //   method: 'GET',
   //   headers: {
@@ -41,7 +41,7 @@ export async function fetchTracks(tracksLimit: number) {
   // const tracks = await tracksResponse.json();
   // console.log("TRACKS", tracks)
 
-  const tracks = [
+  const tracks  = [
     {
       "id": 123456789,
       "title": "Chill Vibes",
@@ -51,7 +51,7 @@ export async function fetchTracks(tracksLimit: number) {
         "permalink_url": "https://soundcloud.com/djchill"
       },
       "permalink_url": "https://soundcloud.com/djchill/chill-vibes",
-      "artwork_url": "https://i1.sndcdn.com/artworks-000123456789-abcde-t500x500.jpg",
+      "artwork_url": "https://i1.sndcdn.com/artworks-LnFQFK5yzbhLyycV-M19DNw-t3000x3000.jpg",
       "waveform_url": "https://wis.sndcdn.com/abcde_m.png",
       "stream_url": "https://api.soundcloud.com/tracks/123456789/stream",
       "duration": 240000,  // durée en millisecondes (4 minutes)
@@ -71,7 +71,7 @@ export async function fetchTracks(tracksLimit: number) {
         "permalink_url": "https://soundcloud.com/sunsetdj"
       },
       "permalink_url": "https://soundcloud.com/sunsetdj/summer-beats",
-      "artwork_url": "https://i1.sndcdn.com/artworks-000987654321-zyxwv-t500x500.jpg",
+      "artwork_url": "https://i1.sndcdn.com/artworks-EwughO38TbVHz0ql-fiJmHg-t3000x3000.jpg",
       "waveform_url": "https://wis.sndcdn.com/zyxwv_m.png",
       "stream_url": "https://api.soundcloud.com/tracks/987654321/stream",
       "duration": 180000,  // durée en millisecondes (3 minutes)
@@ -81,8 +81,28 @@ export async function fetchTracks(tracksLimit: number) {
       "downloadable": true,
       "description": "An energetic house track to vibe with the summer sun.",
       "created_at": "2024-08-15T08:30:00Z"
+    },
+    {
+      "id": 112233445,
+      "title": "Late Night Grooves",
+      "user": {
+        "id": 223344556,
+        "username": "Night Owl",
+        "permalink_url": "https://soundcloud.com/nightowl"
+      },
+      "permalink_url": "https://soundcloud.com/nightowl/late-night-grooves",
+      "artwork_url": "https://i1.sndcdn.com/artworks-6o0L7yzvULJBRTyA-tn2AYA-t3000x3000.jpg",
+      "waveform_url": "https://wis.sndcdn.com/xyzde_m.png",
+      "stream_url": "https://api.soundcloud.com/tracks/112233445/stream",
+      "duration": 300000,  // durée en millisecondes (5 minutes)
+      "genre": "Jazz",
+      "playback_count": 800,
+      "likes_count": 100,
+      "downloadable": false,
+      "description": "Smooth jazz for late night relaxation.",
+      "created_at": "2024-07-20T22:00:00Z"
     }
-  ]
+  ];
   
 
 

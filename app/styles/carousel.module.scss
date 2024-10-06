@@ -7,14 +7,16 @@
 
 .embla__container {
   display: flex;
+  height: 100vh;
+  margin-top: $playerHeight;
+  margin-bottom: 1.5rem
 }
 
 .embla__slide {
   flex: 0 0 100%;
-  height: 100vh;
-  width: 100vh;
 }
 
 .embla__slide__img {
   object-fit: cover;
+  object-position: top;
 } 

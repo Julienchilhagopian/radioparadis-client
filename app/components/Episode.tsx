@@ -24,7 +24,6 @@ function Episode(props: any) {
       setPlayingReplay(true)
     }
     }>
-      <h2>{props.episode.title}</h2>
       <div>
         <Image
           quality={100}
@@ -33,8 +32,9 @@ function Episode(props: any) {
           className={styles.episodeImage}
           width={100}
           height={100}
-          style={ {position: 'relative'}}
-        />
+          />
+      <h2>{props.episode.title}</h2>
+      <p>{props.episode.genre}</p>
       </div>
     </div>
   )

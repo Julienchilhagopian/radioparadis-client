@@ -17,8 +17,8 @@ function Agenda() {
 
 
   return (
-    <div>
-      <p>Agenda</p>
+    <div className={styles.agendaContainer}>
+    <h1>Agenda</h1>
       <div className={styles.agendaData}>
         {(!events.length) ?
           <h3>...chargement de l'agenda...</h3>

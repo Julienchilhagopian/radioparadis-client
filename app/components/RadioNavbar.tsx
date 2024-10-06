@@ -57,9 +57,10 @@ function RadioNavbar() {
 
         <NavbarContent justify="end">
           <Logo size={40} />
+          {/* <h2>RADIO PARADIS</h2> */}
         </NavbarContent>
 
-        <NavbarMenu className={styles.navMenu} >
+        <NavbarMenu>
           {menuItems.map((item, index) => (
             <NavbarMenuItem className={styles.navMenuItem} key={`${item}-${index}`}>
               <Link
@@ -78,7 +79,7 @@ function RadioNavbar() {
               <Socials />
               </div>
             </NavbarMenuItem>
-            
+
         </NavbarMenu>
       </Navbar>
 

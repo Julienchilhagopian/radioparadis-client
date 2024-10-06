@@ -12,9 +12,9 @@ function TextTicker(props: propsType) {
 
   return (
     <div className={styles.tickerContainer}>
-      <h3 className={styles.tickerAnimation}>
+      <p className={styles.tickerAnimation}>
         <span>{props.content}</span>
-      </h3>
+      </p>
     </div>
   )
 }

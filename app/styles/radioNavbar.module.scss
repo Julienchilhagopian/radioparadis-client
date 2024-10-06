@@ -1,12 +1,12 @@
 @import 'variables';
 
 
-.navMenu {
-  padding-top: 2rem;
+.navMenuItem li:first {
+  padding-top: 5rem;
 }
 
 .navMenuItem {
-  padding-top: 15px;
+  padding-top: 1rem;
 }
 
 .navLink {
@@ -15,7 +15,7 @@
 }
 
 .radioPitch {
-  padding-top: 7rem
+  padding-top: 8rem
 }
 
 .radioPitch p {

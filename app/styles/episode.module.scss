@@ -1,11 +1,20 @@
 
 
 .episode {
-  
+  margin-bottom: 25px;
 }
 
+.episode p {
+  font-weight: 300;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+
+
 .episodeImage {
-  position: relative;
-  
+  width: 100vw;
+  object-fit: cover;
+  margin-bottom: 5px;
 }
 
