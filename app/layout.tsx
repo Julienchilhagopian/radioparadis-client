@@ -6,6 +6,7 @@ import { Prompt, Inconsolata, Inter } from 'next/font/google'
 
 import "./globals.css";
 import "./styles/globals.scss";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Radio Paradis",
@@ -35,6 +36,20 @@ export const inter = Inter({
   weight: ['100', '200', '300', '500', '800']
 })
 
+const menuItems = [
+  {
+    title: "Archives",
+    url: "../archives"
+  },
+  {
+    title: "Se retrouver",
+    url: "#"
+  },
+  {
+    title: "À propos",
+    url: "#"
+  }
+];
 
 export default function RootLayout({
   children,
@@ -46,63 +61,14 @@ export default function RootLayout({
     <html lang="fr" className={`${inconsolata.variable} ${prompt.variable} ${inter.variable}`}>
       <body>
         <Providers>
-          <RadioNavbar />
+          <RadioNavbar menuItems={menuItems}/>
           <ReplayPlayer />
 
           {children}
 
           <footer>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-            <h1>Footer</h1>
-
+            <Footer menuItems={menuItems}/>
           </footer>
-
 
         </Providers>
       </body>

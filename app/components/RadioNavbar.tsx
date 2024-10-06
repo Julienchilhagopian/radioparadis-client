@@ -8,26 +8,10 @@ import { Navbar, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, Navbar
 import Link from 'next/link'
 import Socials from './Socials';
 
-function RadioNavbar() {
+function RadioNavbar(props: any) {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isSticky, setIsSticky] = React.useState(false)
-
-
-  const menuItems = [
-    {
-      title: "Archives",
-      url: "../archives"
-    },
-    {
-      title: "Se retrouver",
-      url: "#"
-    },
-    {
-      title: "À propos",
-      url: "#"
-    }
-  ];
 
   return (
     <div className="relative w-full">
@@ -38,30 +22,22 @@ function RadioNavbar() {
           />
         </NavbarContent>
         <NavbarContent className="hidden lg:flex gap-4">
-          <NavbarItem >
-            <Link href="../archives">
-              Archives
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link  href="#" aria-current="page">
-              Se retrouver
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="#">
-              À propos
-            </Link>
-          </NavbarItem>
+
+        {props.menuItems.map((item: any, index: any) => (
+            <NavbarItem key={`${item}-${index}`}>
+              <Link href={item.url}>
+                {item.title}
+              </Link>
+            </NavbarItem>
+          ))}
         </NavbarContent>
 
         <NavbarContent justify="end">
           <Logo size={40} />
-          {/* <h2>RADIO PARADIS</h2> */}
         </NavbarContent>
 
         <NavbarMenu>
-          {menuItems.map((item, index) => (
+          {props.menuItems.map((item: any, index: any) => (
             <NavbarMenuItem className={styles.navMenuItem} key={`${item}-${index}`}>
               <Link
                 className={styles.navLink}
