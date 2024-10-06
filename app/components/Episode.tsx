@@ -13,7 +13,7 @@ function Episode(props: any) {
   const getImageUrl = (url: string) => {
     const clean_url = url.replace(
       'large',
-      't500x500'
+      't3000x3000'
     )
     return clean_url
   }
@@ -30,8 +30,8 @@ function Episode(props: any) {
           src={getImageUrl(props.episode.artwork_url)}
           alt="Episode image"
           className={styles.episodeImage}
-          width={100}
-          height={100}
+          width={3000}
+          height={3000}
           />
       <h2>{props.episode.title}</h2>
       <p>{props.episode.genre}</p>

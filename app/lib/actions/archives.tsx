@@ -1,134 +1,183 @@
 // lib/actions/archives.ts
-const userId = '989649643';
-const API_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000';
+import { MongoClient } from 'mongodb';
 
-// Fonction pour obtenir les pistes
-export async function fetchTracks(tracksLimit: number) {
-  console.log("FETCH TRACKS");
+const uri:string = process.env.NEXT_MONGO_URI;
+console.log("URI", uri)
+const client = new MongoClient(uri);
 
-  // // Appel à la route GET de route.ts qui s'occupe de la gestion des tokens
-  // const tokenResponse = await fetch(`${API_URL}/api/soundcloud/token`, {
-  //   method: 'GET',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  // });
+const dbName = process.env.NEXT_MONGO_DB_NAME; // Remplace par le nom de ta base de données
+const collectionName = process.env.NEXT_MONGO_COLLECTION_NAME;
 
-  // if (!tokenResponse.ok) {
-  //   throw new Error(`Erreur lors de la récupération du token : ${tokenResponse.statusText}`);
-  // }
+let accessToken: string | null = null;
+let refreshToken: string | null = null;
+let tokenExpiry: number | null = null;
 
-  // const { accessToken } = await tokenResponse.json();
-  // console.log('ACCESS TOKEN FROM ROUTE:', accessToken);
+const clientId = process.env.NEXT_SOUNDCLOUD_CLIENT_ID;
+const clientSecret = process.env.NEXT_SOUNDCLOUD_CLIENT_SECRET;
+const soundCloudUserId = process.env.NEXT_SOUNDCLOUD_USER_ID; // ID du compte SoundCloud à partir duquel récupérer les sons
 
-  // //const accessToken  = "2-294368--FDs7XvcaIb9Sem5OD4mUibD"
-
-  // const tracksResponse = await fetch(
-  //   `https://api.soundcloud.com/users/${userId}/tracks?limit=${tracksLimit}`,
-  //   {
-  //     headers: {
-  //       Authorization: `Bearer ${accessToken}`,
-  //     },
-  //   }
-  // );
-
-  // if (!tracksResponse.ok) {
-  //   const errorBody = await tracksResponse.text(); // Affiche le corps de la réponse pour plus de détails
-  //   console.error('Erreur API SoundCloud:', tracksResponse.statusText, errorBody);
-  //   throw new Error(`Erreur API SoundCloud: ${tracksResponse.statusText}`);
-  // }
-
-  // const tracks = await tracksResponse.json();
-  // console.log("TRACKS", tracks)
-
-  const tracks  = [
-    {
-      "id": 123456789,
-      "title": "Chill Vibes",
-      "user": {
-        "id": 987654321,
-        "username": "DJ Chill",
-        "permalink_url": "https://soundcloud.com/djchill"
-      },
-      "permalink_url": "https://soundcloud.com/djchill/chill-vibes",
-      "artwork_url": "https://i1.sndcdn.com/artworks-LnFQFK5yzbhLyycV-M19DNw-t3000x3000.jpg",
-      "waveform_url": "https://wis.sndcdn.com/abcde_m.png",
-      "stream_url": "https://api.soundcloud.com/tracks/123456789/stream",
-      "duration": 240000,  // durée en millisecondes (4 minutes)
-      "genre": "Lo-fi",
-      "playback_count": 1200,
-      "likes_count": 150,
-      "downloadable": false,
-      "description": "A relaxing lo-fi track to unwind.",
-      "created_at": "2024-09-30T10:00:00Z"
+// Fonction pour obtenir un nouveau jeton
+async function getAccessToken() {
+  const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    {
-      "id": 987654321,
-      "title": "Summer Beats",
-      "user": {
-        "id": 123456789,
-        "username": "Sunset DJ",
-        "permalink_url": "https://soundcloud.com/sunsetdj"
-      },
-      "permalink_url": "https://soundcloud.com/sunsetdj/summer-beats",
-      "artwork_url": "https://i1.sndcdn.com/artworks-EwughO38TbVHz0ql-fiJmHg-t3000x3000.jpg",
-      "waveform_url": "https://wis.sndcdn.com/zyxwv_m.png",
-      "stream_url": "https://api.soundcloud.com/tracks/987654321/stream",
-      "duration": 180000,  // durée en millisecondes (3 minutes)
-      "genre": "House",
-      "playback_count": 3400,
-      "likes_count": 300,
-      "downloadable": true,
-      "description": "An energetic house track to vibe with the summer sun.",
-      "created_at": "2024-08-15T08:30:00Z"
-    },
-    {
-      "id": 112233445,
-      "title": "Late Night Grooves",
-      "user": {
-        "id": 223344556,
-        "username": "Night Owl",
-        "permalink_url": "https://soundcloud.com/nightowl"
-      },
-      "permalink_url": "https://soundcloud.com/nightowl/late-night-grooves",
-      "artwork_url": "https://i1.sndcdn.com/artworks-6o0L7yzvULJBRTyA-tn2AYA-t3000x3000.jpg",
-      "waveform_url": "https://wis.sndcdn.com/xyzde_m.png",
-      "stream_url": "https://api.soundcloud.com/tracks/112233445/stream",
-      "duration": 300000,  // durée en millisecondes (5 minutes)
-      "genre": "Jazz",
-      "playback_count": 800,
-      "likes_count": 100,
-      "downloadable": false,
-      "description": "Smooth jazz for late night relaxation.",
-      "created_at": "2024-07-20T22:00:00Z"
-    }
-  ];
+    body: new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: clientId,
+      client_secret: clientSecret,
+    }),
+  });
+
+  console.log('ASKING NEW TOKEN');
+
+  if (!tokenResponse.ok) {
+    const errorText = await tokenResponse.text();
+    console.error("Error response from API:", errorText);
+    throw new Error(`Failed to fetch access token: ${tokenResponse.statusText}`);
+  }
+
+  const tokenData = await tokenResponse.json();
+  accessToken = tokenData.access_token;
+  refreshToken = tokenData.refresh_token;
+  tokenExpiry = Date.now() + tokenData.expires_in * 1000;
+
+  await client.connect();
+  const db = client.db(dbName);
+  const collection = db.collection(collectionName);
+  await collection.updateOne(
+    { type: 'accessToken' },
+    { $set: { token: accessToken, expiry: tokenExpiry } },
+    { upsert: true }
+  );
   
+  await collection.updateOne(
+    { type: 'refreshToken' },
+    { $set: { token: refreshToken, expiry: tokenExpiry } },
+    { upsert: true }
+  );
+}
 
+async function refreshAccessToken() {
+  console.log('REFRESHING TOKEN');
 
+  const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      grant_type: 'refresh_token',
+      refresh_token: refreshToken || '',
+      client_id: clientId,
+      client_secret: clientSecret,
+    }),
+  });
+
+  const tokenData = await tokenResponse.json();
+
+  if (tokenData.access_token) {
+    accessToken = tokenData.access_token;
+    refreshToken = tokenData.refresh_token;
+    tokenExpiry = Date.now() + tokenData.expires_in * 1000;
+
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+    await collection.updateOne(
+      { type: 'accessToken' },
+      { $set: { token: accessToken, expiry: tokenExpiry } }
+    );
+    
+    await collection.updateOne(
+      { type: 'refreshToken' },
+      { $set: { token: refreshToken, expiry: tokenExpiry } }
+    );
+  } else {
+    throw new Error('Erreur lors du rafraîchissement du token.');
+  }
+}
+
+export async function fetchTracks(tracksLimit: number) {
+  await client.connect();
+  const db = client.db(dbName);
+  const collection = db.collection(collectionName);
+  
+  const accessTokenDoc = await collection.findOne({ type: 'accessToken' });
+  const refreshTokenDoc = await collection.findOne({ type: 'refreshToken' });
+
+  accessToken = accessTokenDoc?.token || null;
+  refreshToken = refreshTokenDoc?.token || null;
+  tokenExpiry = accessTokenDoc?.expiry || null;
+
+  const tokenExpiryConverted = tokenExpiry ? tokenExpiry : 0;
+
+  console.log('TOKEN EXPIRY FETCH TRACKS : ', tokenExpiry);
+  console.log('REFRESH TOKEN', refreshToken);
+  console.log('ACCESS TOKEN', accessToken);
+  console.log('DATE NOW >= TOKEN EXPIRY', Date.now() >= tokenExpiryConverted);
+
+  if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiryConverted) {
+    if (!refreshToken) {
+      await getAccessToken();
+    } else {
+      await refreshAccessToken();
+    }
+  }
+
+  const tracksResponse = await fetch(
+    `https://api.soundcloud.com/users/${soundCloudUserId}/tracks?limit=${tracksLimit}`,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  ); 
+
+  console.log("USING TOKEN FOR TRACKS : ", accessToken)
+
+  if (!tracksResponse.ok) {
+    const errorBody = await tracksResponse.text();
+    console.error('Erreur API SoundCloud:', tracksResponse.statusText, errorBody);
+    throw new Error(`Erreur API SoundCloud: ${tracksResponse.statusText}`);
+  }
+
+  const tracks = await tracksResponse.json();
   return tracks;
 }
 
-// Fonction pour obtenir les playlists
 export async function fetchPlaylists() {
-  console.log("FETCH PLAYLIST");
+  await client.connect();
+  const db = client.db(dbName);
+  const collection = db.collection(collectionName);
 
-  const tokenResponse = await fetch(`${API_URL}/api/soundcloud/token`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const accessTokenDoc = await collection.findOne({ type: 'accessToken' });
+  const refreshTokenDoc = await collection.findOne({ type: 'refreshToken' });
 
-  if (!tokenResponse.ok) {
-    throw new Error(`Erreur lors de la récupération du token : ${tokenResponse.statusText}`);
+  accessToken = accessTokenDoc?.token || null;
+  refreshToken = refreshTokenDoc?.token || null;
+  tokenExpiry = accessTokenDoc?.expiry || null;
+
+  const tokenExpiryConverted = tokenExpiry ? tokenExpiry : 0;
+
+  console.log('TOKEN EXPIRY FETCH PLAYLIST : ', tokenExpiry);
+  console.log('REFRESH TOKEN', refreshToken);
+  console.log('ACCESS TOKEN', accessToken);
+  console.log('DATE NOW >= TOKEN EXPIRY', Date.now() >= tokenExpiryConverted);
+
+  if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiryConverted) {
+    if (!refreshToken) {
+      await getAccessToken();
+    } else {
+      await refreshAccessToken();
+    }
   }
 
-  const { accessToken } = await tokenResponse.json();
-  console.log('ACCESS TOKEN FROM ROUTE:', accessToken);
+  console.log("USING TOKEN FOR PLAYLIST : ", accessToken)
 
   const playlistResponse = await fetch(
-    `https://api.soundcloud.com/users/${userId}/playlists`,
+    `https://api.soundcloud.com/users/${soundCloudUserId}/playlists`,
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,

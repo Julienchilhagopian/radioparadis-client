@@ -11,7 +11,7 @@ function Footer(props: any) {
     <div className={styles.footerContainer}>
       <div className={styles.footerLink}>
         {props.menuItems.map((item: any, index: any) => (
-          <Link href={item.url}>
+          <Link href={item.url} key={`${item}-${index}`}>
             {item.title}
           </Link>
         ))}
