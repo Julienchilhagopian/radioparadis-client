@@ -12,7 +12,7 @@ function Socials(props: any) {
         <div>
           <Image
             quality={80}
-            src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/soundcloud_logo.png"}
+            src={`https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundcloud_logo_${props.color}.png`}
             alt="Logo"
             width={30}
             height={30}
@@ -23,7 +23,7 @@ function Socials(props: any) {
         <div>
           <Image
             quality={80}
-            src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/spotify_logo.png"}
+            src={`https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/spotify_logo_${props.color}.png`}
             alt="Logo"
             width={30}
             height={30}
@@ -34,7 +34,7 @@ function Socials(props: any) {
         <div>
           <Image
             quality={80}
-            src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/agenda/public/insta_logo.png"}
+            src={`https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/instagram_logo_${props.color}.png`}
             alt="Logo"
             width={30}
             height={30}

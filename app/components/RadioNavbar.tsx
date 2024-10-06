@@ -52,7 +52,7 @@ function RadioNavbar(props: any) {
               <div className={styles.radioPitch}>
                 <p>Radio Paradis est une radio musicale de quartier née en 2022 dans la rue de Paradis. 
                   Nous visons à construire une plateforme de dialogue entre la scène émergente musicale et les acteurs du 10ème arrondissement.</p>
-              <Socials />
+              <Socials color={"black"}/>
               </div>
             </NavbarMenuItem>
 
