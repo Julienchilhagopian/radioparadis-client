@@ -2,7 +2,6 @@
 import { MongoClient } from 'mongodb';
 
 const uri:string = process.env.NEXT_MONGO_URI;
-console.log("URI", uri)
 const client = new MongoClient(uri);
 
 const dbName = process.env.NEXT_MONGO_DB_NAME; // Remplace par le nom de ta base de données

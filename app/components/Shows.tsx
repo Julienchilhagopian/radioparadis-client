@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import Episode from "../components/Episode";
 import ShowsNav from './ShowsNav';
+import styles from '../styles/shows.module.scss';
+
 
 
 export default function Shows(props: any) {
-  const [focusShow, setFocusShow] = useState({id: 'all'});
+  const [focusShow, setFocusShow] = useState({ id: 'all' });
   const [filteredShows, setFilteredShows] = useState<any[]>(props.shows);
 
   useEffect(() => {
@@ -23,13 +25,19 @@ export default function Shows(props: any) {
     <div>
       <ShowsNav shows={props.shows} setFocusShow={setFocusShow} />
 
-      {filteredShows.length > 0 ? (
-        filteredShows.map((playlist: any) =>
-          playlist.tracks.map((episode: any) => <Episode key={episode.id} episode={episode} />)
-        )
-      ) : (
-        <div>Aucun épisode trouvé</div>
-      )}
+      <div className={styles.showsContainer}>
+        {filteredShows.length > 0 ? (
+          filteredShows.map((playlist: any) =>
+            playlist.tracks.map((episode: any) =>
+              <div key={episode.id} className={styles.showEpisode}>
+                <Episode key={episode.id} episode={episode} />
+              </div>
+            )
+          )
+        ) : (
+          <div>Aucun épisode trouvé</div>
+        )}
+      </div>
 
     </div>
   )
