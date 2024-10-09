@@ -1,19 +1,19 @@
 // lib/actions/archives.ts
 import { MongoClient } from 'mongodb';
 
-const uri:string = process.env.NEXT_MONGO_URI;
+const uri:string = process.env.NEXT_MONGO_URI || '';
 const client = new MongoClient(uri);
 
-const dbName = process.env.NEXT_MONGO_DB_NAME; // Remplace par le nom de ta base de données
-const collectionName = process.env.NEXT_MONGO_COLLECTION_NAME;
+const dbName = process.env.NEXT_MONGO_DB_NAME || ''; // Remplace par le nom de ta base de données
+const collectionName = process.env.NEXT_MONGO_COLLECTION_NAME || '';
 
 let accessToken: string | null = null;
 let refreshToken: string | null = null;
 let tokenExpiry: number | null = null;
 
-const clientId = process.env.NEXT_SOUNDCLOUD_CLIENT_ID;
-const clientSecret = process.env.NEXT_SOUNDCLOUD_CLIENT_SECRET;
-const soundCloudUserId = process.env.NEXT_SOUNDCLOUD_USER_ID; // ID du compte SoundCloud à partir duquel récupérer les sons
+const clientId = process.env.NEXT_SOUNDCLOUD_CLIENT_ID || '';
+const clientSecret = process.env.NEXT_SOUNDCLOUD_CLIENT_SECRET || '';
+const soundCloudUserId = process.env.NEXT_SOUNDCLOUD_USER_ID || ''; // ID du compte SoundCloud à partir duquel récupérer les sons
 
 // Fonction pour obtenir un nouveau jeton
 async function getAccessToken() {
