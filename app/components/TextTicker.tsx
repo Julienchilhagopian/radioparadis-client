@@ -2,7 +2,6 @@
 
 import React from "react";
 import styles from '../styles/textTicker.module.scss';
-import useSWR from "swr";
 
 type propsType = {
   content: string
