@@ -43,11 +43,11 @@ const menuItems = [
   },
   {
     title: "Se retrouver",
-    url: "#"
+    url: "../events"
   },
   {
-    title: "À propos",
-    url: "#"
+    title: "Manifeste",
+    url: "../manifeste"
   }
 ];
 
