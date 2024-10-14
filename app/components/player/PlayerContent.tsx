@@ -1,24 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from '../../styles/playerContent.module.scss';
 import TextTicker from "../TextTicker";
 import { getCurrentTrack } from '../../lib/actions/currentTrack';
-
-export type Track = {
-  now_playing: {
-    song: {
-      artist: string;
-      title: string;
-      art: string;
-    };
-    elapsed: number; // Temps écoulé en secondes
-    duration: number; // Durée totale en secondes
-  };
-}
+import { PlayContext } from '../../context/playContext'; 
 
 function PlayerContent() {
-  const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
+  const {currentTrack, setCurrentTrack} = useContext(PlayContext)
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,9 +15,9 @@ function PlayerContent() {
   const fetchCurrentTrack = async () => {
     try {
       const data = await getCurrentTrack();
-      if (data && data.now_playing && data.now_playing.song) {
+      if (data && data?.now_playing && data?.now_playing?.song) {
         // Vérifie si le morceau actuel a changé
-        if (!currentTrack || currentTrack.now_playing.song.id !== data.now_playing.song.id) {
+        if (!currentTrack || currentTrack?.now_playing?.song.id !== data?.now_playing?.song.id) {
           setCurrentTrack(data);
         }
       }
@@ -48,7 +37,7 @@ function PlayerContent() {
   }, []);
 
   useEffect(() => {
-    if (currentTrack) {
+    if (currentTrack && currentTrack.now_playing) {
   
       // Calculer le temps restant jusqu'à la fin du morceau
       const remainingTime = currentTrack.now_playing.duration - currentTrack.now_playing.elapsed;
