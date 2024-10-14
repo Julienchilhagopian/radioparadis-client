@@ -64,18 +64,6 @@ function Carousel(props: any) {
   return (
     <div className={styles.embla} ref={emblaRef}>
       <div className={styles.embla__container}>
-        {/* {sliderData.map((item) => (
-          <div className={styles.embla__slide} key={item.id}>
-            <Image
-              quality={100}
-              src={item.url}
-              alt="Carousel image"
-              fill={true}
-              className={styles.embla__slide__img}
-            />
-          </div>
-        ))} */}
-
         {
           props.tracks.length > 0 ? (
             props.tracks.slice(0, 5).map((episode: any) => (

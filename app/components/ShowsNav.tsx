@@ -9,25 +9,6 @@ import styles from '../styles/showsNav.module.scss'
 export default function ShowsNav(props: any) {
   let buttonRef = useRef<HTMLButtonElement | null>(null)
 
-  useEffect(() => {
-    // Gestionnaire d'événements global pour capter les clics
-    const handleClickOutside = (event: MouseEvent) => {
-   
-      if (buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
-        // Si on clique en dehors du bouton
-        props.setFocusShow({ id: 'all' }); // Défiltre les shows et affiche tous
-      }
-    };
-
-    // Ajouter l'écouteur d'événement
-    document.addEventListener('mousedown', handleClickOutside);
-
-    // Nettoyer l'écouteur lors du démontage du composant
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className={styles.buttonContainer}>
       <div className={styles.buttonWrap}>

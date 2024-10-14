@@ -11,11 +11,18 @@ import Socials from './Socials';
 function RadioNavbar(props: any) {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isSticky, setIsSticky] = React.useState(false)
+  const [isSticky, setIsSticky] = React.useState(false);
+
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="relative w-full">
-      <Navbar onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(position: any) => position >= 64 ? setIsSticky(true) : setIsSticky(false)}>
+      <Navbar isMenuOpen={isMenuOpen} 
+              onMenuOpenChange={setIsMenuOpen} 
+              onScrollPositionChange={(position: any) => position >= 64 ? setIsSticky(true) : setIsSticky(false)}
+              >
         <NavbarContent className="lg:hidden max-w-2.5">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -25,7 +32,9 @@ function RadioNavbar(props: any) {
 
         {props.menuItems.map((item: any, index: any) => (
             <NavbarItem key={`${item}-${index}`}>
-              <Link href={item.url}>
+              <Link 
+              href={item.url}
+              >
                 {item.title}
               </Link>
             </NavbarItem>
@@ -33,7 +42,12 @@ function RadioNavbar(props: any) {
         </NavbarContent>
 
         <NavbarContent justify="end">
-          <Logo size={40} />
+          <Link 
+          href="../"
+          onClick={handleMenuItemClick} 
+          >
+            <Logo size={40} />
+          </Link>
         </NavbarContent>
 
         <NavbarMenu>
@@ -42,6 +56,7 @@ function RadioNavbar(props: any) {
               <Link
                 className={styles.navLink}
                 href={item.url}
+                onClick={handleMenuItemClick} 
               >
                 {item.title}
               </Link>

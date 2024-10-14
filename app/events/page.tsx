@@ -36,11 +36,15 @@ export default async function Events() {
   return (
     <div className={styles.eventsContainer}>
     
-      <h1>Events</h1>
-      <h1>Events</h1>
-      <h1>Events</h1>
       <div className={styles.carouselContainer}>
         <PhotosCarousel data={carouselData}/>
+      </div>
+
+      <div className={styles.eventsTextContainer}>
+        <h1>Events</h1>
+        <p>
+          Testing
+        </p>
       </div>
 
      

@@ -35,11 +35,21 @@ export default async function Manifeste() {
   return (
     <div className={styles.manifesteContainer}>
     
-      <h1>Manifeste</h1>
-      <h1>Manifeste</h1>
-      <h1>Manifeste</h1>
-      <div className={styles.carouselContainer}>
+      <div className={styles.manifestCarouselContainer}>
         <PhotosCarousel data={carouselData}/>
+      </div>
+
+      <div className={styles.manifestTextContainer}>
+        <h1>Manifeste</h1>
+        <p>Radio Paradis est une web radio musicale de quartier née en 2022 dans la rue de Paradis au coeur du 10ème arrondissement. 
+          Nous souhaitons construire une plateforme d'expression pour la scène émergente musicale et les acteurs locaux du quartier.
+        </p>
+
+        <h1>Studio DJ</h1>
+        <p>Le s</p>
+
+        <h1>Studio dans le quartier</h1>
+
       </div>
 
     </div>
