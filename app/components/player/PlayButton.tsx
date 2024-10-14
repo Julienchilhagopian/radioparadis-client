@@ -18,7 +18,6 @@ function PlayButton() {
       radioPlayer.audioEl.current.load();
       radioPlayer.audioEl.current.play();
     } catch (e) {
-      //this.errorMsg();
       console.log("Player error", e);
     }
   }
@@ -27,7 +26,6 @@ function PlayButton() {
     try {
       radioPlayer.audioEl.current.pause();
     } catch (e) {
-      //this.errorMsg();
       console.log("Player error", e);
     }
   }
@@ -46,28 +44,14 @@ function PlayButton() {
       <ReactAudioPlayer
         ref={(element) => {
           radioPlayer = element;
-          // if (radioPlayer) {
-          //   radioPlayer.audioEl.current.volume = this.state.volume;
-          // }
         }}
         src={radioURL}
         preload={'auto'}
-      //onCanPlay={this.hideLoader}
       />
 
       <div className={styles.playContainer}>
         {
-          // (this.props.loading == false) ?
           <button onClick={() => setPlaying(!playing)} className={playing ? (styles.playBtn + " " + styles.paused) : styles.playBtn}></button>
-          // :
-          // <div className={styles.loader}>
-          //   <Logo
-          //     isMorning={this.props.isMorning}
-          //     isDay={this.props.isDay}
-          //     isPlaying={this.props.isPlaying}
-          //     size={70}
-          //   />
-          // </div>
         }
       </div>
     </div>
