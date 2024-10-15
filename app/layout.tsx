@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Radio Paradis",
-  description: "RADIO PARADIS - Paris 10ème arrondissement - Radio de quartier",
+  description: "RADIO PARADIS - Paris 10ème arrondissement - Radio de quartier"
 };
 
 export const viewport: Viewport = {
