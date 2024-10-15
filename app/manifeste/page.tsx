@@ -45,8 +45,8 @@ export default async function Manifeste() {
 
         <div className={styles.articleContainer}>
           <h1>Manifeste</h1>
-          <p>Radio Paradis est une web radio musicale de quartier née en 2022 dans la rue de Paradis au coeur du 10ème arrondissement.
-            Nous souhaitons construire une plateforme d'expression pour la scène émergente musicale et les acteurs locaux du quartier.
+          <p>Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis, au cœur du 10ᵉ arrondissement. 
+            Nous souhaitons construire une plateforme d'expression pour la scène musicale émergente et les acteurs locaux du quartier.
           </p>
           <p>L'équipe : &nbsp;
             <Link href='https://www.instagram.com/chadelirium/' target="_blank">
@@ -66,7 +66,7 @@ export default async function Manifeste() {
             </Link>, &nbsp;
             <Link href='https://www.instagram.com/funky_gigi1997/' target="_blank">
               Jérémy Berloty
-            </Link>, &nbsp;
+            </Link>&nbsp;et&nbsp;
             <Link href='https://www.instagram.com/julien.chilou/' target="_blank">
               Julien Chil Hagopian
             </Link>.
@@ -85,15 +85,15 @@ export default async function Manifeste() {
 
         <div className={styles.articleContainer}>
           <h1>Studio dans le quartier</h1>
-          <p>Les émissions tenues par les acteurs du 10ème arrondissement sont enregistrées depuis le studio du centre Paris Anim' de la Grange aux Belles.
-            On remercie l'association CRL10 d'avoir accepté de nous prêter cet espace.
+          <p>Les émissions tenues par les acteurs du 10ᵉ arrondissement sont enregistrées depuis le studio du centre Paris Anim' La Grange aux Belles. 
+            Nous remercions l'association CRL10 de nous avoir permis d'utiliser cet espace.
           </p>
         </div>
 
         <div className={styles.articleContainer}>
           <h1>Les supporters</h1>
           <p>On souhaite remercier chaleureusement les amis de la radio qui soutiennent ce projet depuis toujours.</p>
-          <p>L'infrastructure de la radio est composée de deux parties : le site web écrit en Next.js et le server de la radio basé sur le projet open source <Link href='https://www.azuracast.com/' target="_blank">
+          <p>L'infrastructure de la radio est composée de deux parties : le site web écrit en Next.js et le serveur de la radio basé sur le projet open source <Link href='https://www.azuracast.com/' target="_blank">
             AzuraCast
           </Link>.
             <br></br>
