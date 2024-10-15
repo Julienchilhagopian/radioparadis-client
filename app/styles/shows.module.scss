@@ -1,12 +1,13 @@
-
+@import 'variables';
 
 .showsContainer {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  grid-gap: 1rem;
 }
 
-.showEpisode {
-  max-width: 8rem;
+@media (min-width: $desktopWidth){ 
+  .showsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+  }
 }

@@ -1,5 +1,4 @@
 import styles from '../styles/archivesPage.module.scss';
-import Episode from "../components/Episode";
 import { fetchPlaylists } from '../lib/actions/archives';
 import Shows from '../components/Shows';
 

@@ -1,5 +1,3 @@
-
-import Episode from "../components/Episode";
 import { Button } from "@nextui-org/react";
 import { useRef, useEffect} from 'react';
 import styles from '../styles/showsNav.module.scss'

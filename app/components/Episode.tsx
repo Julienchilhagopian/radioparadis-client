@@ -26,7 +26,7 @@ function Episode(props: any) {
     }>
       <div>
         <Image
-          quality={100}
+          quality={props.quality}
           src={getImageUrl(props.episode.artwork_url)}
           alt="Episode image"
           className={styles.episodeImage}

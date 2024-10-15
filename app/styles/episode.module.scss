@@ -1,7 +1,11 @@
+@import 'variables';
 
 
 .episode {
   margin-bottom: 25px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .episode p {
@@ -10,11 +14,8 @@
   font-style: italic;
 }
 
-
-
 .episodeImage {
   width: 100vw;
   object-fit: cover;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
-

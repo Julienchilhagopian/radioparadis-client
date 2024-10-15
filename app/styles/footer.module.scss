@@ -1,3 +1,4 @@
+@import 'variables';
 
 .footerContainer {
   background-color: black;
@@ -40,4 +41,17 @@
 
 .footerBrand {
   text-align: center;
+}
+
+
+@media (min-width: $desktopWidth){ 
+
+  .footerLink {
+    font-size: 1.5rem;
+    justify-content: space-evenly;
+    max-width: 45vw;
+    margin: 0 auto;
+  }
+  
+ 
 }

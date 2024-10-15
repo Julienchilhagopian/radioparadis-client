@@ -5,7 +5,7 @@ import { fetchTracks } from './lib/actions/archives';
 import History from "./components/History";
 
 export default async function Home() {
-  const tracks = await fetchTracks(10);
+  const tracks = await fetchTracks(8);
 
   return (
     <main>

@@ -3,7 +3,6 @@
 .agendaContainer {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
-  margin-bottom: 40px;
 }
 
 .agendaContainer h1 {
@@ -41,8 +40,8 @@
 @media (min-width: $desktopWidth){ 
 
   .agendaContainer {
-    padding: unset;
-    margin-bottom: unset;
+    background: #ffceae;
+    padding: 1.5rem;
   }
 
   .agendaData {
@@ -50,6 +49,10 @@
     justify-content: space-between;
   }
 
+  .eventsDate {
+    margin-bottom: unset;
+  }
+  
   .eventsDate { 
     min-width: 18%;
     max-width: 18%;
