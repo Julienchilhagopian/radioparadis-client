@@ -33,7 +33,7 @@ export const inconsolata = Inconsolata({
 export const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['100', '200', '300', '500', '800']
+  weight: ['100', '200', '300', '500', '600', '800']
 })
 
 const menuItems = [

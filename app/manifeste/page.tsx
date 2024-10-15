@@ -1,5 +1,7 @@
 import styles from '../styles/manifeste.module.scss';
 import PhotosCarousel from '../components/PhotosCarousel';
+import Link from 'next/link'
+import Image from 'next/image';
 
 
 export default async function Manifeste() {
@@ -34,21 +36,82 @@ export default async function Manifeste() {
 
   return (
     <div className={styles.manifesteContainer}>
-    
+
       <div className={styles.manifestCarouselContainer}>
-        <PhotosCarousel data={carouselData}/>
+        <PhotosCarousel data={carouselData} />
       </div>
 
       <div className={styles.manifestTextContainer}>
-        <h1>Manifeste</h1>
-        <p>Radio Paradis est une web radio musicale de quartier née en 2022 dans la rue de Paradis au coeur du 10ème arrondissement. 
-          Nous souhaitons construire une plateforme d'expression pour la scène émergente musicale et les acteurs locaux du quartier.
-        </p>
 
-        <h1>Studio DJ</h1>
-        <p>Le s</p>
+        <div className={styles.articleContainer}>
+          <h1>Manifeste</h1>
+          <p>Radio Paradis est une web radio musicale de quartier née en 2022 dans la rue de Paradis au coeur du 10ème arrondissement.
+            Nous souhaitons construire une plateforme d'expression pour la scène émergente musicale et les acteurs locaux du quartier.
+          </p>
+          <p>L'équipe : &nbsp;
+            <Link href='https://www.instagram.com/chadelirium/' target="_blank">
+              Charlotte Guichard
+            </Link>, &nbsp;
+            <Link href='https://www.instagram.com/victor_tomasi_bro/' target="_blank">
+              Victor Legrand
+            </Link>, &nbsp;
+            <Link href='https://www.instagram.com/colobrisso/' target="_blank">
+              Colombe Brissonnet
+            </Link>, &nbsp;
+            <Link href='https://www.instagram.com/louisreine/' target="_blank">
+              Louis Reine
+            </Link>, &nbsp;
+            <Link href='https://www.instagram.com/paul_diac/' target="_blank">
+              Paul Diacquenod
+            </Link>, &nbsp;
+            <Link href='https://www.instagram.com/funky_gigi1997/' target="_blank">
+              Jérémy Berloty
+            </Link>, &nbsp;
+            <Link href='https://www.instagram.com/julien.chilou/' target="_blank">
+              Julien Chil Hagopian
+            </Link>.
+          </p>
+        </div>
 
-        <h1>Studio dans le quartier</h1>
+        <div className={styles.articleContainer}>
+          <h1>Studio DJ</h1>
+          <p>Les émissions musicales des résident.e.s de la radio sont enregistrées dans l'appartement de Jérém et Louis dans le 18ème arrondissement (juste à côté du 10ème).
+            Le set up suivant est installé :
+
+          </p>
+          <p>Attention l'ascenseur n'accepte pas plus de 4 personnes.
+          </p>
+        </div>
+
+        <div className={styles.articleContainer}>
+          <h1>Studio dans le quartier</h1>
+          <p>Les émissions tenues par les acteurs du 10ème arrondissement sont enregistrées depuis le studio du centre Paris Anim' de la Grange aux Belles.
+            On remercie l'association CRL10 d'avoir accepté de nous prêter cet espace.
+          </p>
+        </div>
+
+        <div className={styles.articleContainer}>
+          <h1>Les supporters</h1>
+          <p>On souhaite remercier chaleureusement les amis de la radio qui soutiennent ce projet depuis toujours.</p>
+          <p>L'infrastructure de la radio est composée de deux parties : le site web écrit en Next.js et le server de la radio basé sur le projet open source <Link href='https://www.azuracast.com/' target="_blank">
+          AzuraCast
+            </Link>.
+            <br></br>
+            Pour héberger toute cette histoire, nous bénéficions du programme "Nonprofit" du cloud Digital Ocean.
+          </p>
+        </div>
+
+
+        <div className={styles.manifestLogos}>
+        <Image
+          quality={100}
+          src={"/../../public/partners_logos/azura_cast_logo.png"}
+          alt="Supporter logo"
+          className={styles.manifestLogo}
+          width={30}
+          height={30}
+          />
+        </div>
 
       </div>
 
