@@ -45,7 +45,7 @@ export default async function Manifeste() {
 
         <div className={styles.articleContainer}>
           <h1>Manifeste</h1>
-          <p>Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis, au cœur du 10ᵉ arrondissement. 
+          <p>Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis au cœur du 10ᵉ arrondissement. 
             Nous souhaitons construire une plateforme d'expression pour la scène musicale émergente et les acteurs locaux du quartier.
           </p>
           <p>L'équipe : &nbsp;
