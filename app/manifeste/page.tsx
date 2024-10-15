@@ -1,7 +1,6 @@
 import styles from '../styles/manifeste.module.scss';
 import PhotosCarousel from '../components/PhotosCarousel';
 import Link from 'next/link'
-import Image from 'next/image';
 
 
 export default async function Manifeste() {
@@ -42,7 +41,6 @@ export default async function Manifeste() {
       </div>
 
       <div className={styles.manifestTextContainer}>
-
         <div className={styles.articleContainer}>
           <h1>Manifeste</h1>
           <p>Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis au cœur du 10ᵉ arrondissement. 
