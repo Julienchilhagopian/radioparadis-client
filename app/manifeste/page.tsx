@@ -1,6 +1,8 @@
 import styles from '../styles/manifeste.module.scss';
 import PhotosCarousel from '../components/PhotosCarousel';
 import Link from 'next/link'
+import Image from 'next/image'
+
 
 
 export default async function Manifeste() {
@@ -8,29 +10,24 @@ export default async function Manifeste() {
   const carouselData = [
     {
       id: 1,
-      title: "Serene Nature Scene with Sunlight Streaming Through Trees",
-      url: "https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg",
+      title: "Manifeste 1",
+      url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/manifeste_carousel_1.png",
     },
     {
       id: 2,
-      title: "Tranquil Beach with Gentle Waves and Clear Blue Sky",
-      url: "https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_1280.jpg",
+      title: "Manifeste 2",
+      url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/manifeste_carousel_2.jpg",
     },
     {
       id: 3,
-      title: "Lush Forest Scene with Rays of Sunlight Peeking Through",
-      url: "https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg",
+      title: "Manifeste 3",
+      url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/manifeste_carousel_3.jpg",
     },
     {
       id: 4,
-      title: "Elegant Woman in City Setting with a Chic Attitude",
-      url: "https://cdn.pixabay.com/photo/2014/12/16/22/25/woman-570883_1280.jpg",
-    },
-    {
-      id: 5,
-      title: "Majestic Tree in Vibrant Autumn Colors",
-      url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    },
+      title: "Manifeste 4",
+      url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/manifeste_carousel_4.jpg",
+    }
   ];
 
   return (
@@ -43,7 +40,7 @@ export default async function Manifeste() {
       <div className={styles.manifestTextContainer}>
         <div className={styles.articleContainer}>
           <h1>Manifeste</h1>
-          <p>Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis au cœur du 10ᵉ arrondissement. 
+          <p>Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis au cœur du 10ᵉ arrondissement.
             Nous souhaitons construire une plateforme d'expression pour la scène musicale émergente et les acteurs locaux du quartier.
           </p>
           <p>L'équipe : &nbsp;
@@ -73,24 +70,50 @@ export default async function Manifeste() {
 
         <div className={styles.articleContainer}>
           <h1>Studio DJ</h1>
-          <p>Les émissions musicales des résident.e.s de la radio sont enregistrées dans l'appartement de Jérém et Louis dans le 18ème arrondissement (juste à côté du 10ème).
-            Le set up suivant est installé :
-
-          </p>
-          <p>Attention l'ascenseur n'accepte pas plus de 4 personnes.
-          </p>
+          <div className={styles.article}>
+            <div className={styles.articleImageContainer}>
+              <Image
+                quality={50}
+                src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/studio_dj.jpg"}
+                alt="Partner logo"
+                fill={true}
+                className={styles.articleImage}
+              />
+            </div>
+            <div>
+              <p>Les émissions musicales des résident.e.s de la radio sont enregistrées dans l'appartement de Jérém et Louis dans le 18ème arrondissement (juste à côté du 10ème).
+                Le set up suivant est installé :
+                <br /> - 2cdj 2000
+                <br />
+                Attention l'ascenseur n'accepte pas plus de 4 personnes.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className={styles.articleContainer}>
           <h1>Studio dans le quartier</h1>
-          <p>Les émissions tenues par les acteurs du 10ᵉ arrondissement sont enregistrées depuis le studio du centre Paris Anim' La Grange aux Belles. 
-            Nous remercions l'association CRL10 de nous avoir permis d'utiliser cet espace.
-          </p>
+          <div className={styles.article}>
+            <div className={styles.articleImageContainer}>
+              <Image
+                quality={50}
+                src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/crl10_studio.png"}
+                alt="Partner logo"
+                fill={true}
+                className={styles.articleImage}
+              />
+            </div>
+            <div>
+              <p>Les émissions tenues par les acteurs du 10ᵉ arrondissement sont enregistrées depuis le studio du centre Paris Anim' La Grange aux Belles.
+                Nous remercions l'association CRL10 de nous avoir permis d'utiliser cet espace.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className={styles.articleContainer}>
           <h1>Les supporters</h1>
-          <p>On souhaite remercier chaleureusement les amis de la radio qui soutiennent ce projet depuis toujours.</p>
+          <p>Un gros merci aux amis de la radio qui soutiennent ce projet depuis toujours 🖤</p>
           <p>L'infrastructure de la radio est composée de deux parties : le site web écrit en Next.js et le serveur de la radio basé sur le projet open source <Link href='https://www.azuracast.com/' target="_blank">
             AzuraCast
           </Link>.
@@ -101,11 +124,45 @@ export default async function Manifeste() {
 
 
         <div className={styles.manifestLogos}>
-        
+          <div className={styles.manifestLogosImageContainer}>
+            <Image
+              quality={50}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/partners_logo/azuracast_logo.png"}
+              alt="Partner logo"
+              fill={true}
+              className={styles.manifestLogosImage}
+            />
+          </div>
+          <div className={styles.manifestLogosImageContainer}>
+            <Image
+              quality={50}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/partners_logo/crl_10_logo.png"}
+              alt="Partner logo"
+              fill={true}
+              className={styles.manifestLogosImage}
+            />
+          </div>
+          <div className={styles.manifestLogosImageContainer}>
+            <Image
+              quality={50}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/partners_logo/digital_ocean_logo.png"}
+              alt="Partner logo"
+              fill={true}
+              className={styles.manifestLogosImage}
+            />
+          </div>
+          <div className={styles.manifestLogosImageContainer}>
+            <Image
+              quality={50}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/partners_logo/vercel_logo.png"}
+              alt="Partner logo"
+              fill={true}
+              className={styles.manifestLogosImage}
+            />
+          </div>
         </div>
-
       </div>
 
-    </div>
+    </div >
   );
 }
