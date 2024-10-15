@@ -1,0 +1,21 @@
+@import 'variables';
+
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  height: 60vw;
+  margin-top: $playerHeight;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+}
+
+.embla__slide__img {
+  object-fit: cover;
+  
+} 

@@ -1,0 +1,29 @@
+@import 'variables';
+
+
+.episode {
+  margin-bottom: 25px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.episode p {
+  font-weight: 300;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.episodeImage {
+  width: 100vw;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+
+@media (min-width: $desktopWidth){ 
+  .episode:hover {
+    transform: scale(1.02);
+    transition: transform .2s;
+  }
+}

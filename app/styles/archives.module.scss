@@ -1,0 +1,28 @@
+@import 'variables';
+
+.archivesContainer {
+  background-color: #FEF6EB;
+  border-bottom: 1.5px solid black;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.archivesContainer h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+@media (min-width: $desktopWidth){ 
+  .archivesContainer h1 {
+    text-align: left;
+  }
+
+  .episodesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+    grid-gap: 1rem;
+  }
+}

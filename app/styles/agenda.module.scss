@@ -1,0 +1,71 @@
+@import 'variables';
+
+.agendaContainer {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.agendaContainer h1 {
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.eventsDate {
+  margin-bottom: 30px;
+}
+
+.eventsDate h3 {
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.agendaEvent {
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+
+.agendaEvent p {
+  margin-bottom: unset;
+  font-weight: 300;
+}
+
+
+@media (min-width: $ipadWidth){ 
+
+}
+
+
+@media (min-width: $desktopWidth){ 
+
+  .agendaContainer {
+    background: #ffceae;
+    padding: 1.5rem;
+  }
+
+  .agendaData {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .eventsDate {
+    margin-bottom: unset;
+  }
+  
+  .eventsDate { 
+    min-width: 18%;
+    max-width: 18%;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #fff6ea;
+  }
+
+  .agendaContainer h1 {
+    text-align: start;
+  }
+}
+
+@media (min-width: $desktopWidth-large){ 
+
+}

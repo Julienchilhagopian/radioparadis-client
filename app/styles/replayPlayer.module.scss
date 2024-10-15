@@ -1,0 +1,16 @@
+.replayPlayer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    z-index: 1;
+}
+
+.replayPlayer div {
+  height: 20vh !important;
+  width: 100vw !important;
+}
+
+.invisible {
+  display: none;
+}

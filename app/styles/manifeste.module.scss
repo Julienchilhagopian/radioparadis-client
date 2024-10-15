@@ -1,0 +1,72 @@
+@import 'variables';
+
+.manifestTextContainer {
+  padding: 1.5rem
+}
+
+.articleContainer {
+  margin-bottom: 3rem;
+}
+
+.articleContainer h1 {
+  margin-bottom: 1.5rem;
+}
+
+.articleContainer p {
+  margin-bottom: 1.5rem;
+}
+
+.articleContainer a {
+  font-weight: 600;
+}
+
+.articleImageContainer {
+  position: relative;
+  min-height: 60vw;
+  margin-bottom: 1.5rem;
+}
+
+.articleImage {
+  position: relative;
+  object-fit: cover;
+}
+
+.manifestLogos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.manifestLogosImageContainer {
+  position: relative;
+  min-height: 8rem;
+  min-width: 8rem;
+}
+
+.manifestLogosImage {
+  position: relative;
+  object-fit: contain;
+}
+
+@media (min-width: $desktopWidth){ 
+  .manifestTextContainer {
+    padding: 4rem;
+  }
+
+  .article {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .articleImageContainer {
+    position: relative;
+    min-height: 25vw;
+    min-width: 40vw;
+    margin-bottom: 1.5rem;
+  }
+
+  .article div {
+    max-width: 50vw;
+  }
+}

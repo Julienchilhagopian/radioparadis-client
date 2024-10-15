@@ -1,0 +1,57 @@
+@import 'variables';
+
+.footerContainer {
+  background-color: black;
+  color: white;
+  padding: 1.7rem;
+}
+
+.footerContainer p {
+  font-weight: 300;
+}
+
+.footerContainer a {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.footerLink {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.footerContact {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 300;
+  max-width: 65vw;
+  margin: 0 auto 1.5rem auto;
+}
+
+.footerContact a {
+  font-weight: 500;
+}
+
+.footerSocials {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.footerBrand {
+  text-align: center;
+}
+
+
+@media (min-width: $desktopWidth){ 
+
+  .footerLink {
+    font-size: 1.5rem;
+    justify-content: space-evenly;
+    max-width: 45vw;
+    margin: 0 auto;
+  }
+  
+ 
+}

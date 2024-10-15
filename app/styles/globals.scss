@@ -1,0 +1,123 @@
+@import 'variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0 0px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-prompt);
+  font-weight: bolder;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: var(--font-inter);
+  font-weight: bolder;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-family: var(--font-inter);
+  font-weight: 300;
+}
+
+p {
+  font-family: var(--font-inter);
+  font-size: 0.9rem;
+}
+
+a {
+  color: black;
+  font-family: var(--font-inter);
+}
+
+a:hover {
+  color: #58D68D;
+}
+
+
+
+// --- Modal submit button  --- //
+
+.requestBtn {
+  font-family: var(--font-inter);
+  border: none;
+  color: white;
+  padding: 13px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.requestBtn:disabled {
+  opacity: 0.4;
+}
+
+// --- Custom ant design --- //
+
+// --- Volume slider  --- //
+
+.ant-slider-track {
+  background-color: black;
+}
+
+.ant-slider-handle {
+  border: solid 2px black;
+}
+
+// --- Volume slider  --- //
+.ant-carousel .slick-list {
+  height: 100vh !important;
+} 
+
+.ant-carousel .slick-slide {
+  height: 100vh !important;
+} 
+
+
+// --- Popup message  --- //
+
+.popupMsg div {
+  border-radius: 15px;
+}
+
+
+@media (min-width: $desktopWidth){ 
+  h1 {
+    font-size: 40pt;
+  }
+}
+
+@media (min-width: $desktopWidth-large){
+  h1 {
+    font-size: 40pt;
+  }
+
+  h3 {
+    font-size: 16pt;
+  }
+
+  p {
+    font-size: 14pt;
+  }
+}

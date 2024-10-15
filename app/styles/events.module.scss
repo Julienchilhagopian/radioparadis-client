@@ -1,0 +1,23 @@
+@import 'variables';
+
+.eventsTextContainer {
+  padding: 1.5rem
+}
+
+.articleContainer {
+  margin-bottom: 2rem;
+}
+
+.articleContainer p {
+  margin-bottom: 1.5rem;
+}
+
+.articleContainer a {
+  font-weight: 600;
+}
+
+@media (min-width: $desktopWidth){ 
+  .eventsTextContainer {
+    padding: 4rem;
+  }
+}

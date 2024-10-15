@@ -1,0 +1,17 @@
+
+.radioHeaderSocials {
+  display:flex;
+}
+
+.radioHeaderSocials div {
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.radioHeaderSocials div:hover {
+  transform: scale(1.03); 
+}
+
+.radioHeaderSocials div:not(:first-of-type) {
+  margin-left: 20px;
+}
