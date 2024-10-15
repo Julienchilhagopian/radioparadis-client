@@ -94,8 +94,8 @@ export default async function Manifeste() {
           <h1>Les supporters</h1>
           <p>On souhaite remercier chaleureusement les amis de la radio qui soutiennent ce projet depuis toujours.</p>
           <p>L'infrastructure de la radio est composée de deux parties : le site web écrit en Next.js et le server de la radio basé sur le projet open source <Link href='https://www.azuracast.com/' target="_blank">
-          AzuraCast
-            </Link>.
+            AzuraCast
+          </Link>.
             <br></br>
             Pour héberger toute cette histoire, nous bénéficions du programme "Nonprofit" du cloud Digital Ocean.
           </p>
@@ -103,14 +103,7 @@ export default async function Manifeste() {
 
 
         <div className={styles.manifestLogos}>
-        <Image
-          quality={100}
-          src={"/../../public/partners_logos/azura_cast_logo.png"}
-          alt="Supporter logo"
-          className={styles.manifestLogo}
-          width={30}
-          height={30}
-          />
+        
         </div>
 
       </div>
