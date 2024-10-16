@@ -48,7 +48,7 @@ export default async function Manifeste() {
               Charlotte Guichard
             </Link>, &nbsp;
             <Link href='https://www.instagram.com/victor_tomasi_bro/' target="_blank">
-              Victor Legrand
+              Victor Tomasi
             </Link>, &nbsp;
             <Link href='https://www.instagram.com/colobrisso/' target="_blank">
               Colombe Brissonnet
@@ -81,10 +81,22 @@ export default async function Manifeste() {
               />
             </div>
             <div>
-              <p>Les émissions musicales des résident.e.s de la radio sont enregistrées dans l'appartement de Jérém et Louis dans le 18ème arrondissement (juste à côté du 10ème).
-                Le set up suivant est installé :
-                <br /> - 2cdj 2000
-                <br />
+              <p>Les émissions musicales des résident.e.s de la radio sont enregistrées dans l'appartement de Jérém et Louis dans le 18ème arrondissement (juste à côté du 10ème). Le set up suivant y est installé :</p>
+              <h4> Partie DJ </h4>
+              <ul>
+                <li>2 x technics - sl12000 m3d</li>
+                <li>2 x cdj 2000 (non - nexus)</li>
+                <li>1 x xone 23</li>
+              </ul>
+              <br />
+              <h4>Partie enregistrement</h4>
+              <ul>
+                <li>Yamaha 02R v2</li>
+                <li>Behringer UMC1820</li>
+                <li>2 micros</li>
+              </ul>
+              <br />
+              <p>
                 Attention l'ascenseur n'accepte pas plus de 4 personnes.
               </p>
             </div>
