@@ -6,8 +6,6 @@ export async function getCurrentTrack() {
   try {
     const currentTrack = await fetch(currentTrack_url)
     let currentTrackData = await currentTrack.json()
-
-    console.log("CURRENT TRACK", currentTrackData[0])
     
     return currentTrackData[0]
   } catch (err) {
