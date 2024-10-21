@@ -13,7 +13,7 @@ function Episode(props: any) {
   const getImageUrl = (url: string) => {
     const clean_url = url.replace(
       'large',
-      't3000x3000'
+      props.quality < 90 ? 't500x500' : 't3000x3000'
     )
     return clean_url
   }
