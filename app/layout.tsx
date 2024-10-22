@@ -61,13 +61,13 @@ export default function RootLayout({
     <html lang="fr" className={`${inconsolata.variable} ${prompt.variable} ${inter.variable}`}>
       <body>
         <Providers>
-          <RadioNavbar menuItems={menuItems}/>
+          <RadioNavbar menuItems={menuItems} />
           <ReplayPlayer />
 
           {children}
 
           <footer>
-            <Footer menuItems={menuItems}/>
+            <Footer menuItems={menuItems} />
           </footer>
 
         </Providers>

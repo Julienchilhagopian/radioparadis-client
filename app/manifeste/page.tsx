@@ -174,7 +174,6 @@ export default async function Manifeste() {
           </div>
         </div>
       </div>
-
     </div >
   );
 }
