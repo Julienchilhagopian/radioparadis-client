@@ -112,10 +112,10 @@ export async function fetchTracks(tracksLimit: number) {
 
   const tokenExpiryConverted = tokenExpiry ? tokenExpiry : 0;
 
-  console.warn('TOKEN EXPIRY FETCH TRACKS : ', tokenExpiry);
-  console.warn('REFRESH TOKEN', refreshToken);
-  console.warn('ACCESS TOKEN', accessToken);
-  console.warn('DATE NOW >= TOKEN EXPIRY', Date.now() >= tokenExpiryConverted);
+  console.log('TOKEN EXPIRY FETCH TRACKS : ', tokenExpiry);
+  console.log('REFRESH TOKEN', refreshToken);
+  console.log('ACCESS TOKEN', accessToken);
+  console.log('DATE NOW >= TOKEN EXPIRY', Date.now() >= tokenExpiryConverted);
 
   if (!accessToken || !tokenExpiry || Date.now() >= tokenExpiryConverted) {
     if (!refreshToken) {
