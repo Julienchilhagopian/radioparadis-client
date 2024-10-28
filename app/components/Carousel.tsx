@@ -44,7 +44,7 @@ function Carousel(props: any) {
               }>
                 <div>
                   <Image
-                    quality={100}
+                    quality={80}
                     src={getImageUrl(episode.artwork_url)}
                     alt="Episode image"
                     fill={true}
