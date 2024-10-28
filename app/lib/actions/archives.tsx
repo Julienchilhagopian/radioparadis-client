@@ -131,7 +131,7 @@ export async function fetchTracks(tracksLimit: number) {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
-      next: { revalidate: 60 }
+      cache: 'no-store'
     }
   ); 
 
@@ -182,7 +182,7 @@ export async function fetchPlaylists() {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
-      next: { revalidate: 60 }
+      cache: 'no-store'
     }
   );
 
