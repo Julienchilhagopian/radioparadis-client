@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Radio Paradis",
-  description: "RADIO PARADIS - Paris 10ème arrondissement - Radio de quartier"
+  description: "Radio Paradis est une web radio de quartier dans le 10ème arrondissement à Paris."
 };
 
 export const viewport: Viewport = {

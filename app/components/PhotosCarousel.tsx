@@ -22,7 +22,7 @@ function PhotosCarousel(props: any) {
         {props.data.map((item: any) => (
           <div className={styles.embla__slide} key={item.id}>
             <Image
-              quality={50}
+              quality={80}
               src={item.url}
               alt="Carousel image"
               fill={true}
