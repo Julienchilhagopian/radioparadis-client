@@ -10,7 +10,29 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Radio Paradis",
-  description: "Radio Paradis est une web radio de quartier dans le 10ème arrondissement à Paris."
+  description: "Radio Paradis est une web radio de quartier dans le 10ème arrondissement à Paris.",
+  openGraph: {
+    title: "Radio Paradis",
+    description: "Radio Paradis est une web radio de quartier dans le 10ème arrondissement à Paris.",
+    url: "https://www.radioparadis.live/",
+    siteName: "Radio Paradis",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/manifeste_carousel_3.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Radio Paradis Logo",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Radio Paradis",
+    description: "Radio Paradis est une web radio de quartier dans le 10ème arrondissement à Paris.",
+    images: ["https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/manifeste/manifeste_carousel_3.jpg"],
+  },
 };
 
 export const viewport: Viewport = {
