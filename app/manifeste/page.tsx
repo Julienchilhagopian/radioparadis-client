@@ -3,7 +3,10 @@ import PhotosCarousel from '../components/PhotosCarousel';
 import Link from 'next/link'
 import Image from 'next/image'
 
-
+export const metadata = {
+  title: "Manifeste - Radio Paradis",
+  description: "Radio Paradis est une webradio musicale de quartier née en 2022 dans la rue de Paradis au cœur du 10eme arrondissement.",
+};
 
 export default async function Manifeste() {
 
