@@ -17,7 +17,7 @@ export default async function Archives() {
     <div className={styles.archivesContainer}>
       <div className={styles.archivesHeader}>
         <h1>Archives</h1>
-        <p>Retrouve ici toutes les émissions de la radio</p>
+        <p>Retrouve ici toutes les archives de la radio</p>
       </div>
 
       <Shows shows={playlists} />
