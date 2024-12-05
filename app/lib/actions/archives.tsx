@@ -86,12 +86,14 @@ async function refreshAccessToken() {
     const collection = db.collection(collectionName);
     await collection.updateOne(
       { type: 'accessToken' },
-      { $set: { token: accessToken, expiry: tokenExpiry } }
+      { $set: { token: accessToken, expiry: tokenExpiry } }, 
+      { upsert: true }
     );
     
     await collection.updateOne(
       { type: 'refreshToken' },
-      { $set: { token: refreshToken, expiry: tokenExpiry } }
+      { $set: { token: refreshToken, expiry: tokenExpiry } },
+      { upsert: true }
     );
   } else {
     throw new Error('Erreur lors du rafraîchissement du token.');
