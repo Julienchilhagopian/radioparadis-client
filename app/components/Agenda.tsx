@@ -23,7 +23,7 @@ function Agenda() {
         {(!events.length) ?
           <h3>...chargement de l'agenda...</h3>
           :
-          events.slice(0, 5).map((day: any, index: number) => (
+          events.slice(0, 6).map((day: any, index: number) => (
             <div key={index} className={styles.eventsDate}>
               <h3>{day.date}</h3>
               {
