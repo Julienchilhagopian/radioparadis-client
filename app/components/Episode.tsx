@@ -11,10 +11,13 @@ function Episode(props: any) {
   const { playingReplay, setPlayingReplay } = useContext(PlayContext);
 
   const getImageUrl = (url: string) => {
-    const clean_url = url.replace(
+    const clean_url = url ? url.replace(
       'large',
       props.quality < 90 ? 't500x500' : 't3000x3000'
-    )
+    ) : 
+    'https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/pochette-min.png'
+
+    
     return clean_url
   }
 
