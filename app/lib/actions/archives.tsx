@@ -17,15 +17,18 @@ const soundCloudUserId = process.env.NEXT_SOUNDCLOUD_USER_ID || ''; // ID du com
 
 // Fonction pour obtenir un nouveau jeton
 async function getAccessToken() {
-  const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
+  const clientCredentials = `${clientId}:${clientSecret}`;
+  const encodedCredentials = Buffer.from(clientCredentials).toString('base64');
+
+  const tokenResponse = await fetch('https://secure.soundcloud.com/oauth/token', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': `Basic ${encodedCredentials}`,
+      'accept': 'application/json; charset=utf-8',
     },
     body: new URLSearchParams({
-      grant_type: 'client_credentials',
-      client_id: clientId,
-      client_secret: clientSecret,
+      grant_type: 'client_credentials'
     }),
   });
 
@@ -61,7 +64,7 @@ async function getAccessToken() {
 async function refreshAccessToken() {
   console.log('REFRESHING TOKEN');
 
-  const tokenResponse = await fetch('https://api.soundcloud.com/oauth2/token', {
+  const tokenResponse = await fetch('https://secure.soundcloud.com/oauth/token', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
