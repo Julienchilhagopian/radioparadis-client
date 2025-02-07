@@ -18,7 +18,7 @@ function Footer(props: any) {
       </div>
       <div className={styles.footerContact}>
         <p>Tu as une idée à proposer pour la radio ? Envoie-nous un message !</p>
-        <Link href="mailto:13radioparadis@gmail.com">13radioparadis@gmail.com</Link>
+        <Link href="mailto:team@radioparadis.live">team@radioparadis.live</Link>
       </div>
       <div className={styles.footerSocials}>
         <Socials color={'white'} />
