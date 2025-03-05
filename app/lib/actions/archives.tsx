@@ -149,6 +149,7 @@ export async function fetchTracks(tracksLimit: number) {
   }
 
   const tracks = await tracksResponse.json();
+  console.log(tracks)
   return tracks;
 }
 

@@ -62,6 +62,9 @@ export default async function Manifeste() {
             <Link href='https://www.instagram.com/paul_diac/' target="_blank">
               Paul Diacquenod
             </Link>, &nbsp;
+            <Link href='https://www.instagram.com/m4non_/' target="_blank">
+              Manon Rouquette
+            </Link>, &nbsp;
             <Link href='https://www.instagram.com/funky_gigi1997/' target="_blank">
               Jérémy Berloty
             </Link>&nbsp;et&nbsp;
@@ -97,6 +100,7 @@ export default async function Manifeste() {
                 <li>Yamaha 02R v2</li>
                 <li>Behringer UMC1820</li>
                 <li>2 micros</li>
+                <li>Zoom P8</li>
               </ul>
               <br />
               <p>
@@ -120,7 +124,7 @@ export default async function Manifeste() {
             </div>
             <div>
               <p>Les émissions tenues par les acteurs du 10ᵉ arrondissement sont enregistrées depuis le studio du centre Paris Anim' La Grange aux Belles.
-                Nous remercions l'association CRL10 de nous avoir permis d'utiliser cet espace.
+                Nous remercions l'association CRL10 de nous permettre d'utiliser cet espace.
               </p>
             </div>
           </div>
