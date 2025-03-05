@@ -40,23 +40,23 @@ export const viewport: Viewport = {
   width: 'device-width'
 }
 
-export const prompt = Prompt({
+const prompt = Prompt({
   subsets: ['latin'],
   variable: '--font-prompt',
   weight: ['500', '800']
-})
+});
 
-export const inconsolata = Inconsolata({
+const inconsolata = Inconsolata({
   subsets: ['latin'],
   variable: '--font-inconsolata',
   weight: ['500', '800']
-})
+});
 
-export const inter = Inter({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   weight: ['100', '200', '300', '500', '600', '800']
-})
+});
 
 const menuItems = [
   {
