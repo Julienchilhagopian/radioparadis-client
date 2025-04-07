@@ -65,22 +65,24 @@ export default async function Soundsystem() {
           <br />
           <p> 1. Les enceintes de grave </p>
           <p>Les enceintes de grave (subwoofers) ont été conçues pour être relativement compacte tout en ne sacrifiant pas la qualité sonore et le niveau qu’elles peuvent fournir. Elles sont équipés avec le haut parleur RCF LF18N405 et utilise la technologie bass reflex</p>
-          <div className={styles.articleImageContainer}>
+          <div className={styles.soundsystemImageContainer}>
             <Image
               quality={50}
               src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/ze_bass_1.png"}
               alt="Partner logo"
               fill={true}
-              className={styles.articleImage}
+              
             />
+            </div>
+          <div className={styles.soundsystemImageContainer}>
             <Image
               quality={50}
               src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/ze_bass_2.png"}
               alt="Partner logo"
               fill={true}
-              className={styles.articleImage}
+              
             />
-          </div>
+            </div>
           <br />
           <p> 2. Les enceintes bas-médium.</p>
           <p> Les enceintes bas-médium ont été conçues à partir du design du paraflex C2D, adapté grâce au simulation proposée par  <Link href='https://freeloudspeakerplan.rf.gd/?i=1' target="_blank">
@@ -88,7 +90,7 @@ export default async function Soundsystem() {
           </Link>   et adaptée pour le haut parleur LAVOCE WAF 123.00 à l’aide du logiciel FreeCAD.</p>
 
           <br />
-          <p> 3. Les enceintes d’aigüe.</p>
+          <p> 3. Les enceintes d’aigüe</p>
           <p>Les enceintes d’aigüe sont toujours en cours d’élaboration. En attendant, nous utilisons des Nexo PS15.</p>
 
           <br />

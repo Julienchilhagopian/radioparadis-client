@@ -24,8 +24,22 @@
   margin-bottom: 50px;
 }
 
+.soundsystemImageContainer {
+  position: relative;
+  min-height: 50vw;
+  max-width: 70vw;
+  margin: 30px auto;
+}
+
+.articleImage {
+  position: relative;
+  object-fit: cover;
+}
+
+
 @media (min-width: $desktopWidth){ 
   .soundsystemTextContainer {
     padding: 4rem;
   }
+
 }
