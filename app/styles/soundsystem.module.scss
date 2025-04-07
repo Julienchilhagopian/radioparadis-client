@@ -1,0 +1,31 @@
+@import 'variables';
+
+.soundsystemTextContainer {
+  padding: 1.5rem
+}
+
+.soundsystemContact {
+  font-weight: 700;
+}
+
+.articleContainer {
+  margin-bottom: 2rem;
+}
+
+.articleContainer p {
+  margin-bottom: 1.5rem;
+}
+
+.soundsystemTextContainer a {
+  font-weight: 700;
+}
+
+.soundsystemTextArticle {
+  margin-bottom: 50px;
+}
+
+@media (min-width: $desktopWidth){ 
+  .soundsystemTextContainer {
+    padding: 4rem;
+  }
+}

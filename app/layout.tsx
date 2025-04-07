@@ -64,8 +64,8 @@ const menuItems = [
     url: "../archives"
   },
   {
-    title: "Se retrouver",
-    url: "../events"
+    title: "Soundsystem",
+    url: "../soundsystem"
   },
   {
     title: "Manifeste",
