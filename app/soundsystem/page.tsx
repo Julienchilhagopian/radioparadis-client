@@ -59,7 +59,7 @@ export default async function Soundsystem() {
             Les simulations ont été réalisées à l’aide du logiciel Hornresp, les mesures avec le logiciel Open Sound Meter. La construction du système est réalisée dans l’atelier bois et réparation du Chamodix. Ils nous fournissent gracieusement du bois de récupération pour l’élaboration de certaines enceintes, notamment des enceintes bas-médium.</p>
           <br />
           <p> 1. Les enceintes de grave </p>
-          <p>Les enceintes de grave (subwoofers) ont été conçues pour être relativement compacte tout en ne sacrifiant pas la qualité sonore et le niveau qu’elles peuvent fournir. Elles sont équipés avec le haut parleur RCF LF18N405 et utilise la technologie bass reflex</p>
+          <p>Les enceintes de grave (subwoofers) ont été conçues pour être relativement compacte tout en ne sacrifiant pas la qualité sonore et le niveau qu’elles peuvent fournir. Elles sont équipés avec le haut parleur RCF LF18N405 et utilisent le principe du bass reflex</p>
           <div className={styles.soundsystemImageContainer}>
             <Image
               quality={50}
