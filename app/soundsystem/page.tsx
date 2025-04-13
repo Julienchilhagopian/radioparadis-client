@@ -49,6 +49,8 @@ export default async function Soundsystem() {
           <p className={styles.soundsystemContact}>  Vous faites un événement dans le 10ème arrondissement, vous êtes un acteur du quartier qui a besoin de sonorisation ? Envoyez un message sur <Link href="mailto:team@radioparadis.live">team@radioparadis.live</Link> ! </p>
           <br />
           <p>Notre système peut sonoriser des groupes de musique pour une audience jusqu’à 500 personnes. Nous acceptons les projets hors 10ème arrondissement, mais priorisons ceux liés à notre quartier.  Ce projet émane d’une volonté de rapprocher les branches quartier et musique de la radio à travers la diffusion de musique. Nous souhaitons aider à l’organisation d’événements créant du lien social, en sortant la radio dans le quartier. Pour cela nous proposons des prestations techniques avec notre système de diffusion construit par nos soins. </p>
+          <br />
+          <p>A travers ce système, nous voulons nous inclure plus directement dans la vie du quartier, et à l’avenir organiser une fête et événements en incluant les acteurs gravitant autour du projet, les résidents de la branche quartier, et les habitants.</p>
         </div>
 
         <div className={styles.soundsystemTextArticle}>
