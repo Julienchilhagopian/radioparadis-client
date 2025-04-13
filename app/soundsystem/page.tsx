@@ -84,9 +84,11 @@ export default async function Soundsystem() {
           <p> 2. Les enceintes bas-médium.</p>
           <p> Les enceintes bas-médium ont été conçues à partir du design du paraflex C2D, adapté grâce au simulation proposée par  <Link href='https://freeloudspeakerplan.rf.gd/?i=1' target="_blank">
             Free Loud Speaker
-          </Link>   et adaptée pour le haut parleur LAVOCE WAF 123.00 à l’aide du logiciel FreeCAD.</p>
+          </Link>   et adaptée pour le haut parleur LAVOCE WAF 123.00 à l’aide du logiciel <Link href='https://www.freecad.org/' target="_blank">FreeCAD  </Link>.</p>
 
           <br />
+
+          
           <p> 3. Les enceintes d’aigüe</p>
           <p>Les enceintes d’aigüe sont toujours en cours d’élaboration. En attendant, nous utilisons des Nexo PS15.</p>
 
