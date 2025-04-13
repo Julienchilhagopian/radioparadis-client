@@ -88,6 +88,24 @@ export default async function Soundsystem() {
 
           <br />
 
+          <div className={styles.soundsystemImageContainer}>
+            <Image
+              quality={50}
+              src={"https://github.com/Julienchilhagopian/radioparadis-client/blob/d5d7cd092d76004730c2ff51bc80f90f336966e5/public/soundsystem/Kick12%201%2015mm-1.png"}
+              alt="Partner logo"
+              fill={true}
+              
+            />
+            </div>
+          <div className={styles.soundsystemImageContainer}>
+            <Image
+              quality={50}
+              src={"https://github.com/Julienchilhagopian/radioparadis-client/blob/d5d7cd092d76004730c2ff51bc80f90f336966e5/public/soundsystem/Kick12%202%2015mm-1.png"}
+              alt="Partner logo"
+              fill={true}
+              
+            />
+            </div>
           
           <p> 3. Les enceintes d’aigüe</p>
           <p>Les enceintes d’aigüe sont toujours en cours d’élaboration. En attendant, nous utilisons des Nexo PS15.</p>
