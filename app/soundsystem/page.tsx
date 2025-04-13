@@ -26,12 +26,7 @@ export default async function Soundsystem() {
       id: 4,
       title: "Elegant Woman in City Setting with a Chic Attitude",
       url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/soundsystem_carousel_4.png",
-    },
-    {
-      id: 5,
-      title: "Majestic Tree in Vibrant Autumn Colors",
-      url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/soundsystem_carousel_5.png",
-    },
+    }
   ];
 
 
