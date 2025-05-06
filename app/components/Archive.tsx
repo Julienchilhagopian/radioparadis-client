@@ -12,7 +12,7 @@ export default async function Archive(props: any) {
         {
           props.tracks.length > 0 ? (
             props.tracks.map((episode: any) => (
-              <Episode key={episode.id} episode={episode} quality={100}/>
+              <Episode key={episode.id} episode={episode} quality={80}/>
             ))
           )
             :

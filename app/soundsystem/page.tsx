@@ -92,7 +92,7 @@ export default async function Soundsystem() {
             <Image
               quality={50}
               src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/kick_1.png"}
-              alt="Partner logo"
+              alt="Kick 1"
               fill={true}
               
             />
@@ -101,7 +101,7 @@ export default async function Soundsystem() {
             <Image
               quality={50}
               src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/kick_2.png"}
-              alt="Partner logo"
+              alt="Kick 1"
               fill={true}
               
             />

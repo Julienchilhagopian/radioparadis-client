@@ -30,7 +30,7 @@ export default function Shows(props: any) {
           filteredShows.map((playlist: any) =>
             playlist.tracks.map((episode: any) =>
               <div key={episode.id} className={styles.showEpisode}>
-                <Episode key={episode.id} episode={episode} quality={80}/>
+                <Episode key={episode.id} episode={episode} quality={70}/>
               </div>
             )
           )
