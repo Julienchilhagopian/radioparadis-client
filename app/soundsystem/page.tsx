@@ -9,22 +9,22 @@ export default async function Soundsystem() {
   const carouselData = [
     {
       id: 1,
-      title: "Serene Nature Scene with Sunlight Streaming Through Trees",
+      title: "Soundsystem",
       url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/soundsystem_carousel_1.png",
     },
     {
       id: 2,
-      title: "Tranquil Beach with Gentle Waves and Clear Blue Sky",
+      title: "Soundsystem",
       url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/soundsystem_carousel_2.png",
     },
     {
       id: 3,
-      title: "Lush Forest Scene with Rays of Sunlight Peeking Through",
+      title: "Soundsystem",
       url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/soundsystem_carousel_3.png",
     },
     {
       id: 4,
-      title: "Elegant Woman in City Setting with a Chic Attitude",
+      title: "Soundsystem",
       url: "https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/soundsystem_carousel_4.png",
     }
   ];
@@ -91,7 +91,7 @@ export default async function Soundsystem() {
           <div className={styles.soundsystemImageContainer}>
             <Image
               quality={50}
-              src={"https://github.com/Julienchilhagopian/radioparadis-client/blob/d5d7cd092d76004730c2ff51bc80f90f336966e5/public/soundsystem/Kick12%201%2015mm-1.png"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/kick_1.png"}
               alt="Partner logo"
               fill={true}
               
@@ -100,7 +100,7 @@ export default async function Soundsystem() {
           <div className={styles.soundsystemImageContainer}>
             <Image
               quality={50}
-              src={"https://github.com/Julienchilhagopian/radioparadis-client/blob/d5d7cd092d76004730c2ff51bc80f90f336966e5/public/soundsystem/Kick12%202%2015mm-1.png"}
+              src={"https://raw.githubusercontent.com/Julienchilhagopian/radioparadis-client/refs/heads/main/public/soundsystem/kick_2.png"}
               alt="Partner logo"
               fill={true}
               
